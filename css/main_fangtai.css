@@ -1,0 +1,198 @@
+* {  outline:none;}
+html,body { margin: 0px; padding: 0px; height: 100%; background: #274286;}
+ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
+.lv { color: #507b04}
+.hong { color: #670f0f}
+.lan { color: #085cb3}
+#content {
+    background: none repeat scroll 0 0 #eeeeee;
+    margin-left: 265px;
+    margin-right: 0;
+    padding-bottom: 25px;
+    position: relative;
+    min-height: 100%;
+    width: auto;
+    outline: none;
+}
+.weizhi {
+    height: 50px;
+    line-height:50px;
+    text-align: left;
+    font-size:14px;
+    color: #666;
+    background: url(../images/wzdot.png) no-repeat left;
+    padding-left:35px;
+    margin: 0px 20px;
+}
+.saixuanbox { padding: 10px 20px; margin: 20px 20px; height: auto; background: #6b8bdf; border-bottom: 10px solid #93a9e4; margin-top: 0px;}
+.saixuanbox .saixuanul { width: 100%; height: 40px;}
+.saixuanbox .saixuanul:after{ clear: both; content: ''; height: 0px; line-height: 0px; overflow: hidden; display: block}
+.saixuanbox .saixuanul .sxli { float: left; height: 40px;  margin-right: 10px; border: 1px solid #b5c5ef;position: relative; color: #fff;cursor:pointer; background-color: #89a2e5;}
+.my_fresh { padding:5px 10px; line-height: 30px; padding-left: 30px; position: relative}
+.my_xl { padding:5px 10px; position: relative; display:inline-block; text-align: left; padding-right: 30px; background: url(../images/my_xiala1.png) no-repeat right;}
+.my_xl_txt { width:auto; height: 30px; line-height: 30px; color: #fff; padding-left: 25px;}
+.my_xl_list{border:1px solid #ccc; background: #fff;}
+.my_xl_txt,.my_xl_list li{text-indent:0px;overflow:hidden;}
+.my_xl_list{z-index:99;position:absolute;top: 45px;left:-1px;z-index:88888;border-top:none; border-bottom: 0px; width:165px;display:none;_top:34px;margin-left:0px !important;}
+.my_xl_list:after { position: absolute;top: -7px;left: 49%;display: inline-block;border-right: 7px solid transparent;border-bottom: 7px solid #ccc;border-left: 7px solid transparent;border-bottom-color: #fff;content: '';}
+.my_xl_list li{list-style:none;height: 30px;line-height: 30px;cursor:default;background:#fff;color:#666; border-bottom: 1px solid #ccc; width: 145px; padding: 0px 10px;}
+.my_xl_list li.focus{background:#3399FF;color:#fff}
+
+.saixuanbox ul li i { position: absolute; left: 10px; top:12px;}
+
+.saixuanbox .userbox { float: right}
+.saixuanbox .userbox a {
+    padding: 9px 10px;
+    display: block;
+    cursor: pointer;
+    border: 1px solid #b5c5ef;
+    margin-right: 10px;
+    background: #89a2e5;
+    color: #fff;
+    text-shadow: none;
+    font-size: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    -webkit-box-shadow: 1px 1px 0px #666;
+    -moz-box-shadow: 1px 1px 0px #666;
+    box-shadow: 1px 1px 0px #666;
+    float: left;
+}
+.saixuanbox .userbox a span { display: none}
+.saixuanbox .userbox a i { margin: 0px; position: static; margin-top: -5px;}
+
+.mainRoomState {
+    height: 100%;
+    margin-left: 20px;
+    padding-bottom: 30px;
+}
+.mainRoomState ul {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.mainRoomState ul li {
+    margin: 5px 0 5px 10px;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 20px;
+}
+.mainRoomState li div { display: none; z-index: -1}
+.mainRoomState li:hover div { display: block; z-index:998}
+.mainRoomState li:hover div ul {
+    animation:xians 1s;
+    -webkit-animation: xians 1s;
+    -moz-animation: xians 1s;
+    -o-animation: xians 1s ; z-index: 999; display: block}
+.roomState {
+    width: 138px;
+    height: 125px;
+    box-shadow: 3px 3px 4px #bbb;
+    -webkit-box-shadow: 3px 3px 4px #bbb;
+    -moz-box-shadow: 3px 3px 4px #bbb;
+    float: left;
+    margin: 5px 10px 5px 0px;
+    padding: 5px 5px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    background: #e3e3e3;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    line-height: 20px;
+    position: relative;
+}
+.roomState div {
+    width: 50px;
+    height: 50px;
+    background: none;
+    position: absolute;
+    top: -203px;
+    z-index: 999;
+    left: -5px;
+}
+.roomState div ul {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    box-shadow: -2px -2px 2px rgba(0,0,0,0.1);
+    -webkit-box-shadow: -2px -2px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: -2px -2px 2px rgba(0,0,0,0.1);
+    -o-box-shadow: -2px -2px 2px rgba(0,0,0,0.1);
+    background: #fff;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+
+    display: none;
+}
+.roomState div ul:before{ position:absolute; bottom:-10px; left:60px;display: inline-block;border-right: 10px solid transparent;border-top: 10px solid #ccc;border-left: 10px solid transparent;border-top-color: #fff;content: '';}
+
+
+@keyframes xians  {0%{opacity: 0}20%{opacity: 0}40%{opacity: 0}60%{opacity: 0}80%{opacity: 0}100%{opacity: 1}
+
+}
+
+/*团队房*/
+.mainRoomState {
+    list-style-type: none;
+    margin-left: 20px;
+    padding-bottom:30px;
+}
+.mainRoomState:after { display: block; height: 0px; line-height: 0px;
+    overflow: hidden; clear: both; content: '';}
+.mainRoomState ul { position:relative; width: 100%; height: 100%; margin: 0px;}
+
+.mainRoomState ul li {
+    list-style-type: none;
+    margin: 5px 0 5px 10px;
+    font-size: 14px;
+    font-weight: 900;
+
+
+}
+.mainRoomState ul li:nth-child(2) {
+    position:absolute;
+    left: 0px;
+    bottom:5px;}
+.mainRoomState ul li:nth-child(3) { width: 56px; height: 56px;position:absolute; left:24%; bottom:30px;}
+.mainRoomState ul li span {
+    display: none;}
+.mainRoomState ul li.T { background: url("../images/ftpic.png") no-repeat 0px 0px}/*团队占房*/
+.mainRoomState ul li.S{ background: url("../images/ftpic.png") no-repeat -50px 0px}/*散客占房*/
+.mainRoomState ul li.V { background: url("../images/ftpic.png") no-repeat -125px 5px}/*可用房*/
+.mainRoomState ul li.R { background: url("../images/ftpic.png") no-repeat -185px 0px}/*预订房*/
+.mainRoomState ul li.L { background: url("../images/ftpic.png") no-repeat -257px 7px}/*走客房*/
+.mainRoomState ul li.X { background: url("../images/ftpic.png") no-repeat -320px 7px}/*维修房*/
+.mainRoomState ul li.H { background: url("../images/ftpic.png") no-repeat -450px 5px}/*钟点房*/
+.mainRoomState ul li.icon-czkf { background: url("../images/ftpic.png") no-repeat -520px 0px}/*常驻客房*/
+.mainRoomState ul li.icon-mds { background: url("../images/ftpic.png") no-repeat -585px 0px}/*没打扫*/
+.mainRoomState ul li.icon-zyf { background: url("../images/ftpic.png") no-repeat -645px 3px}/*自用房*/
+.mainRoomState ul li.icon-ylbz { background: url("../images/ftpic.png") no-repeat -390px 0px; position: absolute!important; right:-6px; bottom:-1px; width: 25px!important; height: 25px!important;}/*预离标志*/
+.mainRoomState ul li.icon-zfbz { background: url("../images/ftpic.png") no-repeat -390px -30px; position: absolute!important; top:-16px; left:-120px; width: 25px!important; height: 25px!important;}/*脏房标志*/
+.mainRoomState ul li.icon-gift {color: #fa62aa;}/*生日图标*/
+.mainRoomState ul li.icon-exclamation-sign {color: #ff1212;}/*特殊要求图标*/
+.mainRoomState ul li.icon-star {color: #ff8b03;}/*贵宾图标*/
+.mainRoomState ul li.icon-laptop {color: #7ec226;}/*团购图标*/
+.mainRoomState ul li.icon-flag {color: #1561d2;}/*领队图标*/
+.mainRoomState ul ul.rigtb {
+    width: 25px; height: 100%; position: relative;
+    float: right; margin-top: -20px;}
+.mainRoomState ul ul.rigtb>li {
+    position: static;
+    margin: 0px;
+    width:15px;
+    height: 15px;
+    font-style: 15px;
+    line-height:15px;
+    float: left;
+    margin-bottom: 5px;}
+.mainRoomState ul li:nth-child(n+4) {
+
+
+}

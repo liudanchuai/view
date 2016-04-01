@@ -1,0 +1,87 @@
+
+.contextMenuPlugin {
+  -webkit-user-select: none;
+  display: none;
+  font-family: tahoma, arial, sans-serif;
+  font-size: 11px;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  width: 280px;
+  list-style-type: none;
+  margin: 0;
+  background-color: #e0e8fd;
+  border: 5px solid #fff;
+  -webkit-box-shadow:0px 0px 5px #999;
+  -moz-box-shadow:0px 0px 5px #999;
+  box-shadow:0px 0px 5px #999;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+  padding:10px;
+}
+
+.contextMenuPlugin > li {
+  margin: 0 0 0 0;
+  padding: 1px;
+  background-repeat: no-repeat;
+  float:left;
+  width: 138px;
+
+}
+
+.contextMenuPlugin > li > a {
+  position: relative;
+  display: block;
+  padding: 3px 3px 3px 28px;
+  color: ButtonText;
+  text-decoration: none;
+  margin: 1px;
+  height: 20px;
+}
+
+.contextMenuPlugin > li > a i {
+   position: absolute;
+   left: 0px;
+   margin-top: -2px;
+   width: 30px;
+   height: 20px;
+  color:#274286;
+  font-size: 20px;
+ }
+.contextMenuPlugin > li > a span{
+  position: absolute;
+  left: 35px;
+  top: 5px;
+  margin-top: -2px;
+  font-size: 15px;
+}
+.contextMenuPlugin > li > a:hover {
+  border: 1px solid #fffbff;
+  outline: 1px solid #b5d3ff;
+  margin: 0;
+  background: rgba(180,180,255,0.5);
+  cursor: pointer;
+}
+
+.contextMenuPlugin > li.divider {
+  border-top: 1px solid #b2c8ff;
+  border-bottom: 1px solid #fff;
+  height: 0;
+  padding: 0;
+  margin: 5px 0 5px 0px;
+  width: 100%;
+
+}
+
+/*.contextMenuPlugin > .gutterLine {
+  position: absolute;
+  border-left: 1px solid #e7e3e7;
+  border-right: 1px solid #ffffff;
+  width: 0;
+  top: 0;
+  bottom: 0;
+  left: 140px;
+  z-index: 0;
+}*/
+.huang { color: #ff8400!important;}

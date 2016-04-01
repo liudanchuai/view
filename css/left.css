@@ -1,0 +1,133 @@
+@import url(common.css);
+html,body { height: 100%; background: #274286;}
+a,a:hover,a:active,a:link { text-decoration: none}
+.visible-phone {
+    display: none !important;
+}.lefbox { width: 265px; height: 100%; float: left; background: #274286; padding: 20px 0px;}
+.lefbox .logo { width: 265px; height:110px; text-align: center; line-height: 100px; }
+#sidebar .tongji {
+    padding: 10px;
+    position: relative;
+    color: #939DA8;
+}
+
+#sidebar .percent {
+    font-weight: 700;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+}
+
+#sidebar .progress {
+    margin-bottom: 2px;
+    margin-top: 2px;
+    width: 70%;
+}
+
+#sidebar .progress-mini {
+    height: 6px;
+}
+
+#sidebar .stat {
+    font-size: 11px;
+}
+
+#sidebar li a i {
+    margin-top: 2px;
+}
+/* Sidebar Navigation */
+#sidebar {
+    display: block;
+    float: left;
+    position: relative;
+    width: 265px;
+    z-index: 16;
+}
+
+#sidebar > ul {
+    list-style: none;
+    margin: 0px 0 0;
+    padding: 0;
+    position: absolute;
+    width: 265px;
+    display: block!important;
+}
+
+#sidebar > ul > li {
+    display: block;
+    position: relative;
+}
+
+#sidebar > ul > li > a {
+    padding: 13px 0 13px 15px;
+    display: block;
+    color: #fff;
+    font-size: 14px;
+}
+#sidebar > ul > li > a.visible-phone {
+    display: none!important;
+}
+
+#sidebar > ul > li > a > i {
+    margin-right: 10px;
+}
+
+#sidebar > ul > li.active > a {
+    background: url("../img/menu-active.png") no-repeat scroll right center transparent !important;
+    text-decoration: none;
+}
+
+#sidebar > ul > li > a > .label {
+    margin: 0 20px 0 0;
+    float: right;
+    padding: 3px 5px 2px;
+}
+
+#sidebar > ul li ul {
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar > ul li.open ul {
+    display: block;
+}
+
+#sidebar > ul li ul li a {
+    padding: 10px 0 10px 25px;
+    display: block;
+    color: #777777;
+}
+
+#sidebar > ul li ul li:first-child a {
+    border-top: 0;
+}
+
+#sidebar > ul li ul li:last-child a {
+    border-bottom: 0;
+}
+
+#sidebar > ul{border-bottom: 1px solid #37414b}
+#sidebar > ul > li:first-child { border-top:0px;}
+#sidebar > ul > li {
+    border-top: 1px solid #3f5593; border-bottom: 1px solid #182d69;
+}
+#sidebar > ul > li.active {
+    background-color: #27a9e3; border-top: 1px solid #3f5593; border-bottom: 1px solid #182d69;
+}
+#sidebar > ul > li.active a{ color:#fff; text-decoration:none;}
+
+#sidebar > ul > li > a > .label {
+    background-color:#F66;
+}
+#sidebar > ul > li > a:hover {
+    background-color: #27a9e3; color:#fff;
+}
+#sidebar > ul li ul {
+    background-color: #6b8bdf;
+}
+#sidebar > ul li ul li a{ color:#fff; padding-left: 45px;}
+#sidebar > ul li ul li a:hover, #sidebar > ul li ul li.active a {
+    color: #fff;
+    background-color: #27a9e3;
+}
