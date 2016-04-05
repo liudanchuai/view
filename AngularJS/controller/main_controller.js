@@ -7,7 +7,7 @@ App.controller('MainController', ['$scope', 'MainService', function ($scope, Mai
         roomId: '',
         category: '',
         price: '',
-        state:'',
+        state: '',
         dirty: '',
         selfAccount: '',
         groupAccount: '',
@@ -15,8 +15,15 @@ App.controller('MainController', ['$scope', 'MainService', function ($scope, Mai
         leaveTime: '',
         gOrS: '',
         name: '',
-        money: '',
-        reserveId: ''
+        important: '',
+        vip: '',
+        leader: '',
+        moneyIn: '',
+        moneyOut: '',
+        bookId: '',
+        birthday: '',
+        teamBuy: '',
+        todayLeave: ''
     };
     self.rooms = [];
     self.roomsShow = [];
@@ -114,7 +121,7 @@ App.controller('MainController', ['$scope', 'MainService', function ($scope, Mai
         var l = self.rooms.length;
         var j = 0;
         for (var i = 0; i < l; i++) {
-            if (((self.rooms[i].state == self.roomStateSelected.code)||(self.roomStateSelected.code=='all')) && ((self.rooms[i].category == self.roomCategorySelected.code)||(self.roomCategorySelected.code=='all'))) {
+            if (((self.rooms[i].state == self.roomStateSelected.code) || (self.roomStateSelected.code == 'all')) && ((self.rooms[i].category == self.roomCategorySelected.code) || (self.roomCategorySelected.code == 'all'))) {
                 self.roomsShow[j] = self.rooms[i];
                 j++;
             }

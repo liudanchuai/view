@@ -21,17 +21,17 @@
         <!-- 头部菜单iframe -->
         <iframe src="top.html" width="100%" height="100%" scrolling="no" frameborder="0"></iframe>
     </div>
+
     <!-- BreadcrumbNavigation begin -->
     <div class="weizhi">酒店之星 > 房态预览</div>
     <!-- BreadcrumbNavigation end -->
+
     <!--Filter begin-->
     <div class="saixuanbox">
         <ul class="userbox">
             <a title="" href="../login.html"><i class="icon-user"></i> <span
                     class="text">操作员设置</span></a>
             <a title="" href="../login.html"><i class="icon-signout"></i><span>退出</span></a>
-
-
         </ul>
         <ul class="saixuanul">
             <li class="sxli">
@@ -65,355 +65,35 @@
         </ul>
     </div>
     <!--Filter end-->
-
     <!--房态预览 begin-->
     <ul class="mainRoomState">
         <li class="roomState" ng-repeat="r in ctrl.roomsShow" id="{{r.roomId}}">
-             <ul>
-                <li ng-bind="r.roomId"></li>
+            <ul>
+                <li ng-bind="r.roomId" ></li>
                 <li ng-bind="r.categoryName"></li>
                 <li class="{{r.state}}"></li>
                 <ul class="rigtb">
-                    <li class="icon-gift" ng-if="1"><span>生日</span></li>
-                    <li class="icon-exclamation-sign"><span>特殊要求</span></li>
-                    <li class="icon-star"><span>贵宾标志</span></li>
-                    <li class="icon-laptop"><span>团购标志</span></li>
-                    <li class="icon-flag"><span>领队标志</span></li>
-                    <li class="icon-ylbz"><span>预离标志</span></li>
+                    <li class="icon-gift" ng-if="r.birthday"><span>生日</span></li>
+                    <li class="icon-exclamation-sign" ng-if="r.important"><span>特殊要求</span></li>
+                    <li class="icon-star" ng-if="r.vip"><span>贵宾标志</span></li>
+                    <li class="icon-laptop" ng-if="r.teamBuy"><span>团购标志</span></li>
+                    <li class="icon-flag" ng-if="r.leader"><span>领队标志</span></li>
+                    <li class="icon-ylbz" ng-if="r.todayLeave"><span>预离标志</span></li>
                     <li class="icon-zfbz" ng-if="r.dirty=='1'"><span>脏房标志</span></li>
                 </ul>
-              </ul>
-            <div>
-                <ul class="ces">你好文字！</ul>
-            </div>
-        </li>
-       <!--<li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="S"><span>散客占房</span></li>
-            </ul>
-           <div>
-             <ul class="ces">你好文字！</ul>
-           </div>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="V"><span>可用房间</span></li>
-
             </ul>
         </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="R"><span>预订房间</span></li>
-
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="L"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="X"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="H"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-czkf"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-mds"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-zyf"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <ul class="rigtb">
-                    <li class="icon-ylbz"></li>
-                </ul>
-
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="L"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-skzf"><span>散客占房</span></li>
-
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kyfj"><span>可用房间</span></li>
-
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-ydfj"><span>预订房间</span></li>
-
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-wxf"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-zdf"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-czkf"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-mds"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-zyf"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <ul class="rigtb">
-                    <li class="icon-ylbz"></li>
-                </ul>
-
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-        </li>
-        <li class="roomState">
-            <ul>
-                <li>0502</li>
-                <li>标准间</li>
-                <li class="icon-kzfb"></li>
-            </ul>
-            <div></div>
-        </li>-->
     </ul>
     <!--房态预览 end-->
-
 </div>
+
+<!--end-main-container-part-->
+
+<!--Footer-part-->
+<div style="width: 100%; height: 40px">
+    <iframe src="footer.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+</div>
+
 <!--main-container-part end-->
 
 
@@ -424,6 +104,7 @@
 
 <!--end-Footer-part-->
 
+>>>>>>> origin/master
 <!--AngularJS-->
 <script src="AngularJS/angular.js"></script>
 <script src="AngularJS/app.js"></script>
