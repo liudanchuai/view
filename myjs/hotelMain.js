@@ -77,6 +77,42 @@ function setPop() {
     });
 };
 
+/*左侧菜单导入*/
+function lefbox(){
+    $("#lefbox").load("left.html", function () {
+        $("#lefbox").fadeIn(100);
+    });
+
+};
+
+/*快捷菜单导入*/
+function topbox(){
+    $("#topbox").load("top.html", function () {
+        $("#topbox").fadeIn(100);
+    });
+
+};
+
+/*预订弹窗导入*/
+function jump() {
+    $("#mainBody").load("tanchuang.html", function () {
+        $("#mainBody").fadeIn(100);
+    });
+};
+
+/*预订弹窗删除*/
+function none() {
+    $('#mainBody').empty();
+};
+
+/*底部版权信息导入*/
+function botbox(){
+    $("#botbox").load("foot.html", function () {
+        $("#botbox").fadeIn(100);
+    });
+
+};
+
 
 
 
