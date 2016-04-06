@@ -15,7 +15,7 @@ $(function () {
 });
 /*为每个房态调用右键弹出功能*/
 function setPop() {
-    var roomState = $(".roomState");
+    var roomState = $(".mainRoomState");
     /*右键弹出功能*/
     roomState.contextPopup({
         items: [

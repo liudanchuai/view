@@ -31,7 +31,7 @@ ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
     margin: 0px 20px;
 }
 .saixuanbox { padding: 10px 20px; margin: 20px 20px; height: auto; background: #6b8bdf; border-bottom: 10px solid #93a9e4; margin-top: 0px;}
-.saixuanbox .saixuanul { width: 100%; height: 40px;}
+.saixuanbox .saixuanul { width: 100%; height: auto;}
 .saixuanbox .saixuanul:after{ clear: both; content: ''; height: 0px; line-height: 0px; overflow: hidden; display: block}
 .saixuanbox .saixuanul .sxli { float: left; height: 40px;  margin-right: 10px; border: 1px solid #b5c5ef;position: relative; color: #fff;cursor:pointer; background-color: #89a2e5;}
 .my_fresh { padding:5px 10px; line-height: 30px; padding-left: 30px; position: relative}
