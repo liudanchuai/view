@@ -1,5 +1,9 @@
 * {  outline:none;}
 html,body { margin: 0px; padding: 0px; height: 100%; background: #274286;}
+/* webkit, opera, IE9 */
+::selection { background:none; }
+/* mozilla firefox */
+::-moz-selection { background:none; }
 ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
 .lv { color: #507b04}
 .hong { color: #670f0f}
@@ -10,10 +14,12 @@ ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
     margin-right: 0;
     padding-bottom: 25px;
     position: relative;
-    min-height: 100%;
+    min-height: 900px;
     width: auto;
     outline: none;
 }
+#tanchuang { position:absolute; width: 100%; height: 100%; top:0px; bottom: 0px; left: 0px; right:0px; z-index: 999; background: rgba(0,0,0,0.5)}
+
 .weizhi {
     height: 50px;
     line-height:50px;
@@ -29,14 +35,15 @@ ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
 .saixuanbox .saixuanul:after{ clear: both; content: ''; height: 0px; line-height: 0px; overflow: hidden; display: block}
 .saixuanbox .saixuanul .sxli { float: left; height: 40px;  margin-right: 10px; border: 1px solid #b5c5ef;position: relative; color: #fff;cursor:pointer; background-color: #89a2e5;}
 .my_fresh { padding:5px 10px; line-height: 30px; padding-left: 30px; position: relative}
-.my_xl { padding:5px 10px; position: relative; display:inline-block; text-align: left; padding-right: 30px; background: url(../images/my_xiala1.png) no-repeat right;}
-.my_xl_txt { width:auto; height: 30px; line-height: 30px; color: #fff; padding-left: 25px;}
-.my_xl_list{border:1px solid #ccc; background: #fff;}
-.my_xl_txt,.my_xl_list li{text-indent:0px;overflow:hidden;}
-.my_xl_list{z-index:99;position:absolute;top: 45px;left:-1px;z-index:88888;border-top:none; border-bottom: 0px; width:165px;display:none;_top:34px;margin-left:0px !important;}
-.my_xl_list:after { position: absolute;top: -7px;left: 49%;display: inline-block;border-right: 7px solid transparent;border-bottom: 7px solid #ccc;border-left: 7px solid transparent;border-bottom-color: #fff;content: '';}
-.my_xl_list li{list-style:none;height: 30px;line-height: 30px;cursor:default;background:#fff;color:#666; border-bottom: 1px solid #ccc; width: 145px; padding: 0px 10px;}
-.my_xl_list li.focus{background:#3399FF;color:#fff}
+.sx_xl { padding:5px 10px; position: relative; display:inline-block; text-align: left;}
+.sx_xl_txt { width:auto; height: 30px; line-height: 30px; color: #fff; padding-left: 25px; padding-right: 30px; background: url(../images/my_xiala1.png) no-repeat right;}
+.sx_xl_list{border:1px solid #ccc; background: #fff;}
+.sx_xl_txt,.sx_xl_list li{text-indent:0px;overflow:hidden;}
+.sx_xl_list{z-index:99;position:absolute;top: 45px;left:-1px;z-index:88888;border-top:none; border-bottom: 0px; width:100%;display:none;_top:34px;margin-left:0px !important;}
+.sx_xl_list:after { position: absolute;top: -7px;left: 49%;display: inline-block;border-right: 7px solid transparent;border-bottom: 7px solid #ccc;border-left: 7px solid transparent;border-bottom-color: #fff;content: '';}
+.sx_xl_list li{list-style:none;height: 30px;line-height: 30px;cursor:default;background:#fff;color:#666; border-bottom: 1px solid #ccc; width: 100%;}
+.sx_xl_list li span { padding-left: 10px;}
+.sx_xl_list li.focus{background:#3399FF;color:#fff}
 
 .saixuanbox ul li i { position: absolute; left: 10px; top:12px;}
 
@@ -82,12 +89,12 @@ ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
     line-height: 20px;
 }
 .mainRoomState li div { display: none; z-index: -1}
-.mainRoomState li:hover div { display: block; z-index:998}
+.mainRoomState li:hover div { display: block; z-index:900}
 .mainRoomState li:hover div ul {
     animation:xians 1s;
     -webkit-animation: xians 1s;
     -moz-animation: xians 1s;
-    -o-animation: xians 1s ; z-index: 999; display: block}
+    -o-animation: xians 1s ; z-index: 901; display: block}
 .roomState {
     width: 138px;
     height: 125px;
@@ -134,9 +141,11 @@ ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
 .roomState div ul:before{ position:absolute; bottom:-10px; left:60px;display: inline-block;border-right: 10px solid transparent;border-top: 10px solid #ccc;border-left: 10px solid transparent;border-top-color: #fff;content: '';}
 
 
-@keyframes xians  {0%{opacity: 0}20%{opacity: 0}40%{opacity: 0}60%{opacity: 0}80%{opacity: 0}100%{opacity: 1}
-
-}
+@keyframes xians  {0%{opacity: 0}20%{opacity: 0}40%{opacity: 0}60%{opacity: 0}80%{opacity: 0}100%{opacity: 1} }
+@-webkit-keyframes xians  {0%{opacity: 0}20%{opacity: 0}40%{opacity: 0}60%{opacity: 0}80%{opacity: 0}100%{opacity: 1} }
+@-moz-keyframes xians  {0%{opacity: 0}20%{opacity: 0}40%{opacity: 0}60%{opacity: 0}80%{opacity: 0}100%{opacity: 1} }
+@-ms-keyframes xians  {0%{opacity: 0}20%{opacity: 0}40%{opacity: 0}60%{opacity: 0}80%{opacity: 0}100%{opacity: 1} }
+@-o-keyframes xians  {0%{opacity: 0}20%{opacity: 0}40%{opacity: 0}60%{opacity: 0}80%{opacity: 0}100%{opacity: 1} }
 
 /*团队房*/
 .mainRoomState {

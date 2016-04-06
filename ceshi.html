@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试文件</title>
+</head>
+<body>
+
+<div id="lefbox"></div>
+
+<script type="text/javascript" src="myjs/ajaxrequest.js"></script>
+
+
+<script type="text/javascript">
+    var ajaxobj=new AJAXRequest;    // 创建AJAX对象,类在刚刚那个文件里了
+    ajaxobj.method="GET";
+    ajaxobj.url="left.html" ;
+    ajaxobj.callback=function(xmlobj) {
+        document.getElementById("lefbox").innerHTML = xmlobj.responseText;
+    };
+    ajaxobj.send();    // 发送请求
+</script>
+</body>
+</html>

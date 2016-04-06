@@ -1,0 +1,143 @@
+
+    <link href="css/tanchuang.css" rel="stylesheet"/>
+<!-- 弹窗begin -->
+
+<div class="bgblack" onclick="none()">
+</div>
+<div class="tanchuang">
+    <dl>
+        <dt>房间号码：</dt>
+        <dd>12345</dd>
+        <dt>床位号码：</dt>
+        <dd>
+            1234567
+            <i class="icon-minus"><span>删减宾客</span></i>
+            <i class="icon-plus"><span>增加宾客</span></i>
+        </dd>
+        <dt>房间类别：</dt>
+        <dd>
+            <div class="my_xl tc_xl">
+                <input name="bkly" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;">
+                <div class="my_xl_txt tc_xl_txt">请选择</div>
+                <div class="my_xl_btn"></div>
+                <ul class="my_xl_list tc_xl_list">
+                    <li class="">豪华总统套房</li>
+                    <li class="">标准间</li>
+                    <li class="">商务套房</li>
+                </ul>
+            </div>
+        </dd>
+        <dt>入住天数：</dt>
+        <dd><input type="text" value="1" class="tsinput"> 天</dd>
+        <dt>标准房价：</dt>
+        <dd>280.00</dd>
+        <dt>结算房价：</dt>
+        <dd>560.00</dd>
+
+    </dl>
+    <dl>
+        <dt>宾客姓名：</dt>
+        <dd><input type="text" name="name"></dd>
+        <dt>会员卡号：</dt>
+        <dd>1234567890123</dd>
+        <dt>证件类别：</dt>
+        <dd>
+            <div class="my_xl tc_xl">
+                <input name="card" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;">
+                <div class="my_xl_txt tc_xl_txt">请选择</div>
+                <div class="my_xl_btn"></div>
+                <ul class="my_xl_list tc_xl_list">
+                    <li class="">身份证</li>
+                    <li class="">临时身份证</li>
+                    <li class="">军官证件</li>
+                </ul>
+            </div>
+        </dd>
+        <dt>证件号码：</dt>
+        <dd><input type="text" name="card"></dd>
+        <dt>宾客来源：</dt>
+        <dd>
+            <div class="my_xl tc_xl">
+                <input name="bkly" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;">
+                <div class="my_xl_txt tc_xl_txt">请选择</div>
+                <div class="my_xl_btn"></div>
+                <ul class="my_xl_list tc_xl_list">
+                    <li class="">宾客来源1</li>
+                    <li class="">宾客来源2</li>
+                    <li class="">宾客来源3</li>
+                </ul>
+            </div>
+        </dd>
+        <dt>早餐状态：</dt>
+        <dd>
+            <div class="my_xl tc_xl">
+                <input name="zhuangtai" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;">
+                <div class="my_xl_txt tc_xl_txt">请选择</div>
+                <div class="my_xl_btn"></div>
+                <ul class="my_xl_list tc_xl_list">
+                    <li class="">可用</li>
+                    <li class="">不可用</li>
+                    <li class="">免费</li>
+                </ul>
+            </div>
+        </dd>
+        <dt>协议单位：</dt>
+        <dd class="xieyi">
+            <div class="my_xl tc_xl" style="width: 465px; background-position: 450px 14px">
+                <input name="xieyi" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;">
+                <div class="my_xl_txt tc_xl_txt">请选择您的协议单位</div>
+                <div class="my_xl_btn"></div>
+                <ul class="my_xl_list tc_xl_list">
+                    <li class="llfd">贵德科技有限公司</li>
+                    <li class="llfd">美德科技有限公司</li>
+                    <li class="llfd">道德科技有限公司</li>
+                    <li class="llfd">郎德科技有限公司</li>
+                    <li class="llfd">宏德科技有限公司</li>
+                    <li class="llfd">道德科技有限公司</li>
+                </ul>
+            </div>
+        </dd>
+        <dt class="beizhu">备注：</dt>
+        <dd class="beizhu">
+            <textarea name="beizhu"></textarea>
+        </dd>
+    </dl>
+    <dl class="jiesuan">
+        <dt>预付款金额：</dt>
+        <dd style="width: 195px;">
+            <input type="text" name="money" class="input">
+        </dd>
+        <dt style="width: 50px!important;">币种：</dt>
+        <dd>
+            <div class="my_xl tc_xl">
+                <input name="zhuangtai" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;">
+                <div class="my_xl_txt tc_xl_txt">请选择</div>
+                <div class="my_xl_btn"></div>
+                <ul class="my_xl_list tc_xl_list">
+                    <li class="">人民币</li>
+                    <li class="">信用卡</li>
+                    <li class="">单位支付</li>
+                </ul>
+            </div>
+        </dd>
+        <dt>可签单单位：</dt>
+        <dd style="width: 195px;">
+            <div class="my_xl tc_xl">
+                <input name="zhuangtai" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;">
+                <div class="my_xl_txt tc_xl_txt">请选择</div>
+                <div class="my_xl_btn"></div>
+                <ul class="my_xl_list tc_xl_list">
+                    <li class="">贵德科技有限公司</li>
+                    <li class="">美德科技有限公司</li>
+                    <li class="">道德科技有限公司</li>
+                </ul>
+            </div>
+        </dd>
+        <dt style="width: 50px!important;">卡号：</dt>
+        <dd><input type="text" name="card" class="input"></dd>
+
+    </dl>
+    <dl class="button"><input type="button" value="确定付款"> </dl>
+</div>
+<!-- 弹窗end -->
+<script type="text/javascript" src="myjs/my_xiala.js"></script>

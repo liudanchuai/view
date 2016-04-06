@@ -5,7 +5,9 @@
 /*启动时加载*/
 $(function () {
     setPop();
-
+    lefbox();
+    topbox();
+    botbox();
     /*禁用右键菜单*/
     $('body').bind("contextmenu",function(){
         return false;
@@ -13,7 +15,7 @@ $(function () {
 });
 /*为每个房态调用右键弹出功能*/
 function setPop() {
-    var roomState = $(".ng-scope");
+    var roomState = $(".roomState");
     /*右键弹出功能*/
     roomState.contextPopup({
         items: [

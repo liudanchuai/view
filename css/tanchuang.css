@@ -1,0 +1,57 @@
+i { margin: 0px;
+    padding:0px;}
+
+.bgblack { width: 100%; height: 100%; top:0px; right:0px; left: 0px; bottom: 0px; background: rgba(0,0,0,0.2); position:fixed; z-index: 980; display: block}
+.tanchuang { position:fixed; top:10%; left: 0px; right: 0px; margin: auto; z-index: 990; width: 600px; height:auto; display: block; padding:30px 30px 30px 30px; background: #e5e5e5; border-radius: 15px;
+    -webkit-box-shadow: inset 0px 0px 10px #666;
+    -moz-box-shadow: inset 0px 0px 10px #666;
+    box-shadow: inset 0px 0px 10px #666;
+    border: 1px solid #ccc;
+    animation: bottomtotop 2s;
+    -webkit-animation: bottomtotop 0.5s;
+    -moz-animation: bottomtotop 0.5s;
+    -ms-animation: bottomtotop 0.5s;
+    -o-animation: bottomtotop 0.5s;
+}
+.tanchuang:after { content: ''; display: block; clear: both; height: 0px; line-height: 0px; overflow: hidden}
+.tanchuang dl { background: #c0cae3; font-size: 14px; margin-bottom: 10px; margin-top: 0px;}
+.tanchuang dl:after {  content: ''; display: block; clear: both; height: 0px; line-height: 0px;
+    overflow: hidden;}
+.tanchuang dl dt { padding: 0px 10px; width:75px; height: 45px; line-height: 45px; background: #a8b8e2; border-bottom: 1px solid #d3daeb; border-right: 1px solid #d3daeb; float: left; text-align: right }
+.tanchuang dl dd { padding: 0px 10px; margin: 0px; width: 183px; height: 45px; line-height: 45px; background: none; border-bottom: 1px solid #d3daeb; border-right: 1px solid #d3daeb; float: left; text-align: left }
+.tanchuang dl dd .lbselect { width: 174px; height: 30px; margin-top:7px; line-height: 30px; background: #fff; border:1px solid #eee;}
+.tanchuang dl dd.xieyi { width: 483px; height: 45px; line-height: 45px;}
+.tanchuang dl dt.beizhu { height: 90px;}
+.tanchuang dl dd.beizhu { width: 483px; height: 90px;}
+.tanchuang dl dd.beizhu textarea { width: 95%; height: 50px; line-height: 24px; padding: 10px; margin-top: 10px; background: #fff; border: 1px solid #ccc;}
+.tanchuang dl dd input[type=text] { width: 90%; height: 30px; text-align: left; padding: 0px 5px; height: 30px; margin-top: 7px; line-height: 30px; border:1px solid #eee;}
+.tanchuang dl dd .tsinput { width: 60px!important;}
+.tanchuang dl.add_delet { background: none; height: 30px; line-height: 30px; text-align: left; font-size:20px; margin: 0px; font-weight: lighter}
+.tanchuang dl dd i { width: 30px; height: 30px; line-height: 30px; float: right; font-size: 20px; color: #6b8bdf; margin-top: 10px;}
+.tanchuang dl dd i span { display: none}
+.tanchuang dl.jiesuan { padding:20px 0px; background: #eee; text-align: left; margin-top: 20px; border-top:2px solid #6b8bdf}
+.tanchuang dl.jiesuan dt { width: 98px; height: 40px; line-height: 40px; border-right: none; border-bottom: 1px solid #ccc; background: none; text-align: right;}
+.tanchuang dl.jiesuan dd { width: 173px; height: 40px; line-height: 40px; border-right: none; border-bottom: 1px solid #ccc; text-align: left }
+.tanchuang dl .dwselect { width:98%; height: 30px; margin-top: 5px; border: 1px solid #ccc; line-height: 30px; }
+.tanchuang dl.jiesuan .input { border: 1px solid #ccc; height: 28px; line-height: 28px; margin-top: 5px; width: 93%;}
+.tanchuang dl.button {  background: none; margin-top: 20px; text-align: center}
+.tanchuang dl.button input[type=button] { padding: 10px 20px; text-align: center; margin: 0px auto; border: none;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px; background: linear-gradient(#ff8400, #a75a07);
+    color: #fff;}
+.tc_xl{width: 90%; padding-left: 10px; position:relative;background: #fff url(../images/my_xiala1.gif) 90% 14px no-repeat;cursor:pointer; display:inline-block; height: 30px; margin-top: 5px; border: 1px solid #ccc; line-height: 30px;}
+.tc_xl_txt{float:left;width: 100%;line-height: 28px;padding-right:17px;color:#666;}
+.tc_xl,.tc_xl_list{border:1px solid #ccc; border-radius:4px}
+.tc_xl_txt,.tc_xl_list li{text-indent:0px;overflow:hidden;}
+.tc_xl_list{z-index:99;position:absolute;top: 34px;left:-1px;z-index:88888;border-top:none;width:100%;display:none;_top:23px;margin-left:0px !important}
+.tc_xl_list li{list-style:none;height: 30px;line-height: 30px;cursor:default;background:#fff;padding-left: 10px;color:#666}
+.tc_xl_list li.focus{background:#3399FF;color:#fff}
+.tc_xl_list li.llfd { width: 227px; float: left; text-align: left;}
+
+
+@keyframes bottomtotop {0%{top:20%; opacity: 0}100%{top:10%; opacity: 1}}
+@-webkit-keyframes bottomtotop {0%{top:20%; opacity: 0}100%{top:10%; opacity: 1}}
+@-moz-keyframes  bottomtotop {0%{top:20%; opacity: 0}100%{top:10%; opacity: 1}}
+@-ms-keyframes  bottomtotop {0%{top:20%; opacity: 0}100%{top:10%; opacity: 1}}
+@-o-keyframes  bottomtotop {0%{top:20%; opacity: 0}100%{top:10%; opacity: 1}}

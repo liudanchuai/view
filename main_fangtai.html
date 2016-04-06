@@ -9,51 +9,51 @@
     <link rel="stylesheet" href="css/main_fangtai.css"/>
 </head>
 <body ng-app="mainApp">
-<div style="width: 265px; height: 100%; float: left">
 
-    <!-- 左侧导航菜单iframe -->
-    <iframe src="left.html" width="100%" height="100%" scrolling="no" frameborder="0"></iframe>
+<div id="mainBody"></div>
+<div id="lefbox" style="width: 265px; height:100%; float: left">
+
 </div>
 
 <!--main-container-part-->
 <div id="content" ng-controller="MainController as ctrl">
-    <div style="width: 100%; height: 160px">
-        <!-- 头部菜单iframe -->
-        <iframe src="top.html" width="100%" height="100%" scrolling="no" frameborder="0"></iframe>
+    <div id="topbox">
+
     </div>
 
     <!-- BreadcrumbNavigation begin -->
     <div class="weizhi">酒店之星 > 房态预览</div>
     <!-- BreadcrumbNavigation end -->
-
     <!--Filter begin-->
     <div class="saixuanbox">
         <ul class="userbox">
             <a title="" href="../login.html"><i class="icon-user"></i> <span
                     class="text">操作员设置</span></a>
             <a title="" href="../login.html"><i class="icon-signout"></i><span>退出</span></a>
+
+
         </ul>
         <ul class="saixuanul">
             <li class="sxli">
-                <div class="my_xl">
+                <div class="my_xl sx_xl">
                     <i class="icon-tasks lv"></i>
-                    <div class="my_xl_txt" ng-bind="ctrl.roomCategorySelected.name"></div>
+                    <div class="my_xl_txt sx_xl_txt" ng-bind="ctrl.roomCategorySelected.name"></div>
                     <div class="my_xl_btn"></div>
-                    <ul class="my_xl_list">
+                    <ul class="my_xl_list sx_xl_list">
                         <li ng-repeat="c in ctrl.roomCategorys"
                             ng-click="ctrl.choiceRoomCategory(c)">
-                            {{c.categoryName+'-'+c.categoryCode}}
+                           <span>{{c.categoryName+'-'+c.categoryCode}}</span>
                         </li>
                     </ul>
                 </div>
             </li>
             <li class="sxli">
-                <div class="my_xl">
+                <div class="my_xl sx_xl">
                     <i class="icon-check hong"></i>
-                    <div class="my_xl_txt" ng-bind="ctrl.roomStateSelected.name"></div>
+                    <div class="my_xl_txt sx_xl_txt" ng-bind="ctrl.roomStateSelected.name"></div>
                     <div class="my_xl_btn"></div>
-                    <ul class="my_xl_list">
-                        <li ng-repeat="s in ctrl.roomStates" ng-click="ctrl.choiceRoomState(s)">{{s.name}}</li>
+                    <ul class="my_xl_list sx_xl_list">
+                        <li ng-repeat="s in ctrl.roomStates" ng-click="ctrl.choiceRoomState(s)"><span>{{s.name}}</span></li>
                     </ul>
                 </div>
             </li>
@@ -65,9 +65,10 @@
         </ul>
     </div>
     <!--Filter end-->
+
     <!--房态预览 begin-->
     <ul class="mainRoomState">
-        <li class="roomState" ng-repeat="r in ctrl.roomsShow" id="{{r.roomId}}">
+        <li class="roomState" ng-repeat="r in ctrl.roomsShow" id="{{r.roomId}}"onclick="jump();" >
             <ul>
                 <li ng-bind="r.roomId" ></li>
                 <li ng-bind="r.categoryName"></li>
@@ -81,7 +82,10 @@
                     <li class="icon-ylbz" ng-if="r.todayLeave"><span>预离标志</span></li>
                     <li class="icon-zfbz" ng-if="r.dirty=='1'"><span>脏房标志</span></li>
                 </ul>
-            </ul>
+              </ul>
+            <div>
+                <ul class="ces">你好文字！</ul>
+            </div>
         </li>
     </ul>
     <!--房态预览 end-->
@@ -90,21 +94,12 @@
 <!--end-main-container-part-->
 
 <!--Footer-part-->
-<div style="width: 100%; height: 40px">
-    <iframe src="footer.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+<div id="botbox">
+
 </div>
 
-<!--main-container-part end-->
 
 
-<!--Footer-part-->
-<div style="width: 100%; height: 40px">
-    <iframe src="foot.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
-</div>
-
-<!--end-Footer-part-->
-
->>>>>>> origin/master
 <!--AngularJS-->
 <script src="AngularJS/angular.js"></script>
 <script src="AngularJS/app.js"></script>
@@ -118,5 +113,35 @@
 <script src="js/jquery.avgrund.js"></script>
 <script src="myjs/hotelMain.js"></script>
 <script type="text/javascript" src="myjs/my_xiala.js"></script>
+
+<script language="javascript" type="text/javascript">
+    function lefbox(){
+        $("#lefbox").load("left.html", function () {
+            $("#lefbox").fadeIn(100);
+        });
+
+    };
+    function topbox(){
+        $("#topbox").load("top.html", function () {
+            $("#topbox").fadeIn(100);
+        });
+
+    };
+    function jump() {
+        $("#mainBody").load("tanchuang.html", function () {
+            $("#mainBody").fadeIn(100);
+        });
+    };
+    function none() {
+        $('#mainBody').empty();
+    };
+    function botbox(){
+        $("#botbox").load("foot.html", function () {
+            $("#botbox").fadeIn(100);
+        });
+
+    };
+
+</script>
 </body>
 </html>
