@@ -38,12 +38,14 @@
   text-decoration: none;
   margin: 1px;
   height: 20px;
+  line-height: 20px;
+  overflow: hidden;
 }
 
 .contextMenuPlugin > li > a i {
    position: absolute;
    left: 0px;
-   margin-top: -2px;
+   margin-top: 0px;
    width: 30px;
    height: 20px;
   color:#274286;

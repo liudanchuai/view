@@ -136,7 +136,6 @@ ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
     -moz-border-radius: 5px;
     -o-border-radius: 5px;
 
-    display: none;
 }
 .roomState div ul:before{ position:absolute; bottom:-10px; left:60px;display: inline-block;border-right: 10px solid transparent;border-top: 10px solid #ccc;border-left: 10px solid transparent;border-top-color: #fff;content: '';}
 

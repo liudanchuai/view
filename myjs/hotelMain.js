@@ -13,6 +13,42 @@ $(function () {
         return false;
     })
 });
+/*左侧菜单导入*/
+function lefbox(){
+    $("#lefbox").load("public/left.html", function () {
+        $("#lefbox").fadeIn(100);
+    });
+
+};
+
+/*快捷菜单导入*/
+function topbox(){
+    $("#topbox").load("public/top.html", function () {
+        $("#topbox").fadeIn(100);
+    });
+
+};
+
+/*预订弹窗导入*/
+function jump() {
+    $("#mainBody").load("reception/roomReservation.html", function () {
+        $("#mainBody").fadeIn(100);
+    });
+};
+
+/*预订弹窗删除*/
+function none() {
+    $('#mainBody').empty();
+};
+
+/*底部版权信息导入*/
+function botbox(){
+    $("#botbox").load("public/foot.html", function () {
+        $("#botbox").fadeIn(100);
+    });
+
+};
+
 /*为每个房态调用右键弹出功能*/
 function setPop() {
     var roomState = $(".mainRoomState");
@@ -20,23 +56,24 @@ function setPop() {
     roomState.contextPopup({
         items: [
             {
-                label: '散客开房', icon: 'icon-key huang', action: function () {
-                alert('clicked 1')
+                label: '收取预付', icon: 'icon-download-alt', action: function () {
+                $("#mainBody").load("cashier/chargeInAdvance.html", function () {
+                    $("#mainBody").fadeIn(100);
+                });
             }
             },
             {
-                label: '收取预付', icon: 'icon-download-alt', action: function () {
+                label: '杂单录入', icon: 'icon-edit', action: function () {
                 alert('clicked 2')
             }
             },
             {
-                label: '房吧录入', icon: 'icon-home', action: function () {
+                label: '冲账管理', icon: 'icon-exchange huang', action: function () {
                 alert('clicked 3')
             }
             },
-
             {
-                label: '杂单录入', icon: 'icon-edit', action: function () {
+                label: '房吧录入', icon: 'icon-home', action: function () {
                 alert('clicked 4')
             }
             },
@@ -51,67 +88,31 @@ function setPop() {
                 alert('clicked 6')
             }
             },
-
             {
-                label: '宾客续住', icon: 'icon-screenshot', action: function () {
+                label: '散客开房', icon: 'icon-key huang', action: function () {
                 alert('clicked 7')
             }
             },
             {
-                label: '散客预订', icon: 'icon-lock huang', action: function () {
+                label: '宾客续住', icon: 'icon-screenshot', action: function () {
                 alert('clicked 8')
             }
             },
             null, // divider
             {
-                label: '冲账管理', icon: 'icon-exchange huang', action: function () {
+                label: '散客预订', icon: 'icon-lock huang', action: function () {
                 alert('clicked 9')
             }
             },
             {
                 label: '联房管理', icon: 'icon-sitemap', action: function () {
-                alert('clicked 9')
+                alert('clicked 10')
             }
             }
         ]
     });
 };
 
-/*左侧菜单导入*/
-function lefbox(){
-    $("#lefbox").load("left.html", function () {
-        $("#lefbox").fadeIn(100);
-    });
-
-};
-
-/*快捷菜单导入*/
-function topbox(){
-    $("#topbox").load("top.html", function () {
-        $("#topbox").fadeIn(100);
-    });
-
-};
-
-/*预订弹窗导入*/
-function jump() {
-    $("#mainBody").load("tanchuang.html", function () {
-        $("#mainBody").fadeIn(100);
-    });
-};
-
-/*预订弹窗删除*/
-function none() {
-    $('#mainBody').empty();
-};
-
-/*底部版权信息导入*/
-function botbox(){
-    $("#botbox").load("foot.html", function () {
-        $("#botbox").fadeIn(100);
-    });
-
-};
 
 
 
