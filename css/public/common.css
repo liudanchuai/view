@@ -7,6 +7,8 @@ body {
     color: #000;
     background: #fff;
 }
+table {width: 100%; margin: 0px; padding: 0px; border-collapse: collapse; border-spacing: 0;}
+td { text-align: center}
 ul,li,dl,dt,dd{ list-style: none}
 a { text-decoration: none; color: #000}
 a:hover { text-decoration: none}
@@ -16,3 +18,5 @@ a:hover { text-decoration: none}
     padding:0px 20px;
     background: #eee;
 }
+.fr{ float: right}
+.fl{ float: left}

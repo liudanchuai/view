@@ -46,7 +46,7 @@ jQuery.fn.contextPopup = function(menuData) {
 
   // On contextmenu event (right click)
   this.bind('contextmenu', function(e) {
-    $(".hoverDiv").css("display","none");
+    $(".hoverDiv").hide();
     var menu = createMenu(e)
       .show();
     
@@ -63,7 +63,7 @@ jQuery.fn.contextPopup = function(menuData) {
     menu.css({zIndex:1000001, left:left, top:top})
       .bind('contextmenu', function() {
         return false;
-        $(".hoverDiv").hide();
+
       });
 
     // Cover rest of page with invisible div that when clicked will cancel the popup.
@@ -74,6 +74,7 @@ jQuery.fn.contextPopup = function(menuData) {
         // If click or right click anywhere else on page: remove clean up.
         bg.remove();
         menu.remove();
+        $(".hoverDiv").show();
         return false;
       });
 

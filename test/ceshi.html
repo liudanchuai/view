@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>测试文件</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <script src="../js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="../myjs/jquery.hotkeys.js" type="text/javascript"></script>
 </head>
 <body>
 
 <div id="lefbox"></div>
 
-
+<script type="text/javascript">
+    window.onload=function()
+    {
+        if(document.readyState=="complete")
+        {
+            document.getElementById("testInput").focus();
+        }
+    }
+</script>
+<input type="text" name="testInput" id="testInput" size="40" />
 
 <script type="text/javascript">
     var ajaxobj=new AJAXRequest;    // 创建AJAX对象,类在刚刚那个文件里了
@@ -19,5 +31,24 @@
     };
     ajaxobj.send();    // 发送请求
 </script>
+<script type="text/javascript">
+    /* $(function () {
+        $(document).bind("keydown", "esc", function (evt) { alert("您按下了Esc键！");  return false; })
+            .bind("keydown", "1", function (evt) { alert("您按下了1键！"); return false; })
+                    .bind("keydown", "2", function (evt) { alert("您按下了2键！"); return false; })
+                    .bind("keydown", "3", function (evt) { alert("您按下了3键！"); return false; })
+                    .bind("keydown", "4", function (evt) { alert("您按下了4键！"); return false; })
+        });*/
+    document.onkeyup = function (e)
+    {
+        e = e || window.event;
+        var code = e.which || e.keyCode;
+        if (code == 27)
+        {
+            alert("您按下了Esc键！");
+        }
+    }
+</script>
+
 </body>
 </html>

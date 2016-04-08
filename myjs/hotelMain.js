@@ -12,10 +12,6 @@ $(function () {
     $('body').bind("contextmenu",function(){
         return false;
     })
-    /*鼠标滑过房态显示*/
-    $(".roomState").mouseover(function(){
-         $(".hoverDiv").css("display","block");
-    });
 
 });
 /*左侧菜单导入*/
@@ -26,6 +22,7 @@ function lefbox(){
 
 };
 
+
 /*快捷菜单导入*/
 function topbox(){
     $("#topbox").load("public/top.html", function () {
@@ -34,17 +31,19 @@ function topbox(){
 
 };
 
-/*预订弹窗导入*/
+/*单击开房弹窗导入*/
 function jump() {
     $("#mainBody").load("reception/roomReservation.html", function () {
         $("#mainBody").fadeIn(100);
     });
+
 };
 
-/*预订弹窗删除*/
+/*单击开房弹窗删除*/
 function none() {
     $('#mainBody').empty();
 };
+
 
 /*明细打印列表导入*/
 function print() {
@@ -56,6 +55,21 @@ function print() {
 /*明细打印列表删除*/
 function printEmpty() {
     $('#print').empty();
+};
+
+document.onkeyup = function (e)
+{
+    e = e || window.event;
+    var code = e.which || e.keyCode;
+    if (code == 27)
+    {
+        if($("#mainBody").html!==''){
+            none() ;
+        };
+        if($("#print").html!==''){
+            printEmpty() ;
+        };
+    }
 };
 
 /*底部版权信息导入*/
@@ -81,17 +95,23 @@ function setPop() {
             },
             {
                 label: '杂单录入', icon: 'icon-edit', action: function () {
-                alert('clicked 2')
+                $("#mainBody").load("cashier/miscellaneousSingle.html", function () {
+                    $("#mainBody").fadeIn(100);
+                });
             }
             },
             {
                 label: '冲账管理', icon: 'icon-exchange huang', action: function () {
-                alert('clicked 3')
+                $("#mainBody").load("cashier/strikeABalance.html", function () {
+                    $("#mainBody").fadeIn(100);
+                });
             }
             },
             {
                 label: '房吧录入', icon: 'icon-home', action: function () {
-                alert('clicked 4')
+                $("#mainBody").load("cashier/snacksEntry.html", function () {
+                    $("#mainBody").fadeIn(100);
+                });
             }
             },
             null, // divider
@@ -149,4 +169,4 @@ $(".dropdown-menu li").click(function (e) {
             }
         })
     }
-})
+});

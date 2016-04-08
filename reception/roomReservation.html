@@ -1,11 +1,11 @@
 
 
-<!-- 宾客预订begin -->
+<!-- 单击开房begin -->
 
 <div class="bgblack" onclick="none()">
 </div>
 <div class="tanchuang">
-    <dl class="tctit"><h1>宾客预订</h1></dl>
+    <dl class="tctit"><h1>宾客开房</h1></dl>
     <table class="tableBordernone">
         <tr>
             <td>房间号码：</td>
@@ -27,17 +27,16 @@
         </tr>
     </table>
     <dl class="tabsheet">
-        <dt class="hover">切换按钮1</dt>
-        <dt>切换按钮2</dt>
-        <dt>切换按钮3</dt>
-        <dt>切换按钮4</dt>
+        <dt class="hover">同住1</dt>
+        <dt>同住2</dt>
+        <!--<dt>同住3</dt>不需要时隐藏-->
     </dl>
     <table class="tableBorderaaa">
         <tr>
             <td>宾客姓名：</td>
             <td><input type="text" name="name"></td>
-            <td>会员卡号：</td>
-            <td>1234567890123</td>
+            <td>床位号：</td>
+            <td>12345</td>
         </tr>
         <tr>
             <td>证件类别：</td>
@@ -107,6 +106,10 @@
     </table>
     <table class="tableBorderfff">
         <tr>
+            <td>会员卡号：</td>
+            <td colspan="3">123456789012</td>
+        </tr>
+        <tr>
             <td style="width:100px;">预付款金额：</td>
             <td><input type="text" name="money" class="input"></td>
             <td>币种：</td>
@@ -137,12 +140,13 @@
                     </ul>
                 </div>
             </td>
-            <td>卡号：</td>
+            <td>储值卡号：</td>
             <td><input type="text" name="card" class="input"></td>
         </tr>
     </table>
-    <dl class="button"><a class="sbeyellow"><i class="icon-ok"></i>确认付款</a> </dl>
+    <dl class="button"><a class="sbe"><i class="icon-edit"></i>预授权</a><a class="sbe"><i class="icon-ok"></i>确认付款</a> </dl>
 
 </div>
-<!-- 宾客预订end -->
-<script type="text/javascript" src="myjs/my_xiala.js"></script>
+
+
+

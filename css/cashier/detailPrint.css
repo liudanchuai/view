@@ -25,12 +25,14 @@
     background: linear-gradient(#eee,#aaa);
 }
 .print .printcon { margin: 10px; max-height: 650px;overflow-y:auto;}
-.print .printcon table { border: 1px solid #ccc; width: 100%; margin: 0px; padding: 0px; border-collapse: collapse; border-spacing: 0;}
-.print .printcon table tr { border-bottom: 1px solid #fff; height: auto}
-.print .printcon table td { width: auto; height: auto; padding: 5px 10px; border-right: 1px solid #fff; text-align: center; line-height: 24px; font-weight: normal}
-.print .printcon table tr td:last-child{ border-right: none}
-.print .printcon table tr:nth-child(odd){ background: #c0cae3}
-.print .printcon table tr:nth-child(even){ background: #e1eaff}
-.print .printcon table tr:first-child { background: linear-gradient(#4f7bee,#3e5797); color:#fff;}
+.printTable { border: 1px solid #ccc;}
+.printTable tr { border-bottom: 1px solid #fff; height: auto;}
+.printTable td { width: auto; height: auto; padding: 5px 10px; border-right: 1px solid #fff; text-align: center; line-height: 24px; font-weight: normal}
+.printTable tr td:last-child{ border-right: none}
+.printTable tr:nth-child(odd){ background: #c0cae3}
+.printTable tr:nth-child(even){ background: #e1eaff}
+.printTable tr:first-child { background: linear-gradient(#4f7bee,#3e5797); color:#fff;}
+.printTable tr:first-child:hover {background: linear-gradient(#4f7bee,#3e5797); cursor: inherit}
+.printTable tr:hover { background: #94aae1; cursor: pointer}
 
 @keyframes printIn {0%{opacity: 0}100%{opacity: 1}}

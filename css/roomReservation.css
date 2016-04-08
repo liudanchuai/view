@@ -54,7 +54,7 @@ text-shadow: 0px 2px 0px #fff,0px -2px 0px #fff,2px 0px 0px #fff, -2px 0px 0px #
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px; background: linear-gradient(#cfcfcf,#afafaf);
-    color: #000; cursor: pointer}
+    color: #000; cursor: pointer; font-weight: bold}
 .tanchuang dl.button a.sbe:hover { background: linear-gradient(#eee,#afafaf);}
 .tanchuang dl.button a.sbeyellow {background: linear-gradient(#f19300,#ae6a00); color: #fff;}
 .tanchuang dl.button a.sbeyellow:hover { background: linear-gradient(#ffac29,#ae6a00); color: #fff2de}
@@ -68,7 +68,7 @@ text-shadow: 0px 2px 0px #fff,0px -2px 0px #fff,2px 0px 0px #fff, -2px 0px 0px #
 .tanchuang dl.button .gray {background: linear-gradient(#ff8400, #a75a07);  color:#000; border: 1px solid #ccc}
 .tanchuang dl.button .red { background: linear-gradient(#a02121,#721010); color:#fff; border: 1px solid #ccc}
 .tc_xl{width:90%;padding-left: 10px; border-radius:4px; position:relative;background: #fff url(../images/my_xiala1.gif) 90% 12px no-repeat;cursor:pointer; height: 28px; line-height: 28px; border: 1px solid #ccc;}
-.tc_xl_txt{float:left;width: 100%;line-height: 28px;padding-right:17px;color:#000;}
+.tc_xl_txt{float:left;width: 100%;line-height: 28px;padding-right:17px;color:#000; font-size: 14px; font-weight: normal}
 .tc_xl_list{border:1px solid #ccc;}
 .tc_xl_txt,.tc_xl_list li{text-indent:0px;overflow:hidden;}
 .tc_xl_list{z-index:99;position:absolute;top: 30px;left:-1px;z-index:88888;border-top:none;width:100%;display:none;_top:23px;margin-left:0px !important}
@@ -90,7 +90,6 @@ td { padding: 5px 10px; height: 30px; line-height: 30px;}
 td:nth-child(odd) { width: 75px; text-align: right; font-weight: bold}
 td:nth-child(even){ text-align: left}
 table tr td:last-child{ border-right: none}
-.fr{ float: right}
 .price { color: #0d2460; font-weight: bold; margin-right: 5px;}
 .roomID { color: #a14e04; font-weight: bold}
 .tableBorderaaa { border:1px solid #aaa;}
@@ -105,5 +104,5 @@ table tr td:last-child{ border-right: none}
 .tableBorderfff { border: 5px solid #fff; background: #ccc;
     -webkit-box-shadow: 1px 1px 0px #bbb;
     -moz-box-shadow: 1px 1px 0px #bbb;
-    box-shadow: 1px 1px 0px #bbb;}
+    box-shadow: 1px 1px 0px #bbb; margin-top: 20px;}
 .tableBorderfff td { padding: 8px 10px; border-bottom: 1px solid #c1c1c1}
