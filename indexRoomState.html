@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="css/jquery.contextmenu.css"/>
     <link rel="stylesheet" href="css/indexRoomState.css"/>
+    <link rel="stylesheet" href="css/public/left.css"/>
+    <link rel="stylesheet"  href="css/public/top.css"/>
+    <link href="css/roomReservation.css" rel="stylesheet"/>
+    <link href="css/cashier/detailPrint.css" rel="stylesheet">
 </head>
-<body ng-app="mainApp">
 
+<body ng-app="mainApp">
+<div id="print"></div>
 <div id="mainBody"></div>
 <div id="lefbox" style="width: 265px; height:100%; float: left">
 
@@ -83,7 +88,19 @@
                     <li class="icon-zfbz" ng-if="r.dirty=='1'"><span>脏房标志</span></li>
                 </ul>
               </ul>
-            <div>
+            <div class="hoverDiv">
+                <ul class="ces">你好文字！</ul>
+            </div>
+        </li>
+        <li class="roomState" state="S" wrap="false" data-content="在店人数:1<br>预付：0<br>消费：0<br>欠款：0" data-placement="top"
+            data-toggle="popover" data-original-title="当前状态:散客房">
+            <ul>
+                <li>0502</li>
+                <li>标准间</li>
+                <li class="T"><span>散客占房</span></li>
+
+            </ul>
+            <div class="hoverDiv">
                 <ul class="ces">你好文字！</ul>
             </div>
         </li>

@@ -12,6 +12,11 @@ $(function () {
     $('body').bind("contextmenu",function(){
         return false;
     })
+    /*鼠标滑过房态显示*/
+    $(".roomState").mouseover(function(){
+         $(".hoverDiv").css("display","block");
+    });
+
 });
 /*左侧菜单导入*/
 function lefbox(){
@@ -39,6 +44,18 @@ function jump() {
 /*预订弹窗删除*/
 function none() {
     $('#mainBody').empty();
+};
+
+/*明细打印列表导入*/
+function print() {
+    $("#print").load("cashier/detailPrint.html", function () {
+        $("#print").fadeIn(100);
+    });
+};
+
+/*明细打印列表删除*/
+function printEmpty() {
+    $('#print').empty();
 };
 
 /*底部版权信息导入*/
@@ -110,6 +127,7 @@ function setPop() {
             }
             }
         ]
+
     });
 };
 

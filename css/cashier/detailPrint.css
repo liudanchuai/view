@@ -1,0 +1,36 @@
+.printbg { position: fixed; left: 0px; right: 0px; top:0px; bottom:0px; background: rgba(0,0,0,0.1); z-index: 998}
+.print {width:950px; position: fixed;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    top:10%;
+    left: 50%;
+    margin-left: -475px;
+    z-index: 999;
+    -webkit-box-shadow: 0px 0px 10px #999;
+    -moz-box-shadow: 0px 0px 10px #999;
+    box-shadow: 0px 0px 10px #999;
+    background: #fff;
+    border:1px solid #aaa;
+    -webkit-animation:printIn 0.5s;
+    -o-animation:printIn 0.5s;
+    animation:printIn 0.5s;
+    overflow: hidden;
+}
+.print h1 { height: 40px; line-height: 40px;
+    margin:0px;
+    padding:0px;
+    text-align: center;
+    font-size: 16px;
+    background: linear-gradient(#eee,#aaa);
+}
+.print .printcon { margin: 10px; max-height: 650px;overflow-y:auto;}
+.print .printcon table { border: 1px solid #ccc; width: 100%; margin: 0px; padding: 0px; border-collapse: collapse; border-spacing: 0;}
+.print .printcon table tr { border-bottom: 1px solid #fff; height: auto}
+.print .printcon table td { width: auto; height: auto; padding: 5px 10px; border-right: 1px solid #fff; text-align: center; line-height: 24px; font-weight: normal}
+.print .printcon table tr td:last-child{ border-right: none}
+.print .printcon table tr:nth-child(odd){ background: #c0cae3}
+.print .printcon table tr:nth-child(even){ background: #e1eaff}
+.print .printcon table tr:first-child { background: linear-gradient(#4f7bee,#3e5797); color:#fff;}
+
+@keyframes printIn {0%{opacity: 0}100%{opacity: 1}}

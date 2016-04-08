@@ -88,9 +88,9 @@ ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
     font-weight: 900;
     line-height: 20px;
 }
-.mainRoomState li div { display: none; z-index: -1}
-.mainRoomState li:hover div { display: block; z-index:900}
-.mainRoomState li:hover div ul {
+.mainRoomState li .hoverDiv { display: none; z-index: -1}
+.mainRoomState li:hover .hoverDiv { display: block; z-index:900}
+.mainRoomState li:hover .hoverDiv ul {
     animation:xians 1s;
     -webkit-animation: xians 1s;
     -moz-animation: xians 1s;
@@ -113,7 +113,7 @@ ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
     line-height: 20px;
     position: relative;
 }
-.roomState div {
+.roomState .hoverDiv {
     width: 50px;
     height: 50px;
     background: none;
@@ -122,7 +122,7 @@ ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
     z-index: 999;
     left: -5px;
 }
-.roomState div ul {
+.roomState .hoverDiv ul {
     width: 300px;
     height: 200px;
     border: 1px solid #ccc;
@@ -137,7 +137,7 @@ ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
     -o-border-radius: 5px;
 
 }
-.roomState div ul:before{ position:absolute; bottom:-10px; left:60px;display: inline-block;border-right: 10px solid transparent;border-top: 10px solid #ccc;border-left: 10px solid transparent;border-top-color: #fff;content: '';}
+.roomState .hoverDiv ul:before{ position:absolute; bottom:-10px; left:60px;display: inline-block;border-right: 10px solid transparent;border-top: 10px solid #ccc;border-left: 10px solid transparent;border-top-color: #fff;content: '';}
 
 
 @keyframes xians  {0%{opacity: 0}20%{opacity: 0}40%{opacity: 0}60%{opacity: 0}80%{opacity: 0}100%{opacity: 1} }
