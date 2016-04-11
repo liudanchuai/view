@@ -73,7 +73,7 @@
 
     <!--房态预览 begin-->
     <ul class="mainRoomState">
-        <li class="roomState" ng-repeat="r in ctrl.roomsShow" id="{{r.roomId}}"onclick="jump();" >
+        <li class="roomState" ng-repeat="r in ctrl.roomsShow" id="{{r.roomId}}" onclick="jump()" >
             <ul>
                 <li ng-bind="r.roomId" ></li>
                 <li ng-bind="r.categoryName"></li>

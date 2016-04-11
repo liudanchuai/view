@@ -1,0 +1,131 @@
+<!-- 离店结算begin -->
+<style>
+    .printTable { margin-right: 30px;}
+    .printTable td { line-height: 20px; padding: 0px 5px;}
+</style>
+<div class="bgblack" onclick="none()">
+</div>
+
+<div class="tanchuang">
+    <dl class="tctit"><h1>离店结算</h1></dl>
+    <table class="tableBordernone">
+        <tr>
+            <td>房间号：</td>
+            <td><span class="roomID">12345</span></td>
+            <td>姓名：</td>
+            <td>无某某</td>
+        </tr>
+        <tr>
+            <td>来店日期</td>
+            <td>2016-05-22</td>
+            <td>离店日期：</td>
+            <td>2016-05-23</td>
+        </tr>
+        <tr>
+            <td>加收房租：</td>
+            <td style="border: none">
+                <div class="my_xl tc_xl">
+                    <div class="my_xl_txt tc_xl_txt">请选择</div>
+                    <div class="my_xl_btn"></div>
+                    <ul class="my_xl_list tc_xl_list">
+                        <li class="">不加收房租</li>
+                        <li class="">加收半天房租</li>
+                        <li class="">加收一天房租</li>
+                    </ul>
+                </div>
+            </td>
+            <td colspan="2" style="text-align: left">
+                <input type="checkbox"> 延迟退房
+            </td>
+        </tr>
+        <tr>
+            <td>全结：</td>
+            <td colspan="3">
+                <table class="printTable fr" style="width: 250px;">
+                    <tr>
+                        <td>房号</td>
+                        <td>预付</td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td>预付</td>
+                    </tr>
+                    <tr>
+                        <td>房号</td>
+                        <td>预付</td>
+                    </tr>
+                </table>
+                <input type="checkbox"> 结账全选<br>
+                <input type="radio" checked> 按房间结算<br>
+                <input type="radio">选宾客结算
+            </td>
+        </tr>
+    </table>
+    <div>
+        <div class="leaveButton">
+            <dl class="button">
+                <a class="sbe"><i class="icon-user"></i>读取会员</a><a class="sbe"><i class="icon-inbox"></i>哑房处理</a>
+                <a class="sbe"><i class="icon-share"></i>转房客</a><a class="sbe"><i class="icon-external-link"></i>转单位</a>
+                <a class="sbe"><i class="icon-search"></i>预付查询</a><a class="sbe"><i class="icon-print"></i>明细打印</a>
+            </dl>
+        </div>
+        <table class="tableBorderaaa" style="width: 280px;">
+            <tr>
+                <td>房租：</td>
+                <td><input type="text" value="房租"></td>
+            </tr>
+            <tr>
+                <td>餐费：</td>
+                <td><input type="text" value="餐费"></td>
+            </tr>
+            <tr>
+                <td>洗衣：</td>
+                <td><input type="text" value="洗衣"></td>
+            </tr>
+            <tr>
+                <td>MiniBar：</td>
+                <td><input type="text" value="MiniBar"></td>
+            </tr>
+            <!--<tr>
+                <td>其他：</td>
+                <td><input type="text" value="其他"></td>
+            </tr>-->
+        </table>
+    </div>
+
+
+    <table class="tableBorderfff">
+        <tr>
+            <td>预付：</td>
+            <td><span class="price">500.00</span>元</td>
+            <td>预授权：</td>
+            <td><span class="price">500.00</span>元</td>
+        </tr>
+        <tr>
+            <td>消费：</td>
+            <td><span class="price">500.00</span>元</td>
+            <td>补交：</td>
+            <td><span class="price">500.00</span>元</td>
+        </tr>
+        <tr>
+            <td>合计：</td>
+            <td><span class="price">500.00</span>元 &nbsp;|&nbsp; 余<span class="price">500.00</span>元</td>
+            <td>币种：</td>
+            <td style="width: 180px;">
+                <div class="my_xl tc_xl">
+                    <div class="my_xl_txt tc_xl_txt">请选择</div>
+                    <div class="my_xl_btn"></div>
+                    <ul class="my_xl_list tc_xl_list">
+                        <li class="">人民币</li>
+                        <li class="">信用卡</li>
+                        <li class="">单位支付</li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+    <dl class="button"><a class="sbe"><i class="icon-ok"></i>确认</a><a class="sbe"><i class="icon-remove"></i>取消</a> </dl>
+
+</div>
+<script type="text/javascript" src="myjs/my_xiala.js"></script>

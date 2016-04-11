@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5b9c6b9-1e81-44cf-8345-dc9265bfe2d4" name="Default" comment="esc退出弹窗，添加房吧管理，冲账管理，杂单录入">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cashier/miscellaneousSingle.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cashier/snacksEntry.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cashier/strikeABalance.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/cashier/snacksEntry.css" />
+    <list default="true" id="a5b9c6b9-1e81-44cf-8345-dc9265bfe2d4" name="Default" comment="消费明细，离店结算弹窗添加">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cashier/leaveBalance.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/consumptionQuery/consumptionDetail.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/ceshi2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AngularJS/app.js" afterPath="$PROJECT_DIR$/AngularJS/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cashier/chargeInAdvance.html" afterPath="$PROJECT_DIR$/cashier/chargeInAdvance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cashier/detailPrint.html" afterPath="$PROJECT_DIR$/cashier/detailPrint.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cashier/miscellaneousSingle.html" afterPath="$PROJECT_DIR$/cashier/miscellaneousSingle.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cashier/snacksEntry.html" afterPath="$PROJECT_DIR$/cashier/snacksEntry.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/cashier/detailPrint.css" afterPath="$PROJECT_DIR$/css/cashier/detailPrint.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/cashier/snacksEntry.css" afterPath="$PROJECT_DIR$/css/cashier/snacksEntry.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/public/common.css" afterPath="$PROJECT_DIR$/css/public/common.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/roomReservation.css" afterPath="$PROJECT_DIR$/css/roomReservation.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexRoomState.html" afterPath="$PROJECT_DIR$/indexRoomState.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.contextmenu.js" afterPath="$PROJECT_DIR$/js/jquery.contextmenu.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myjs/hotelMain.js" afterPath="$PROJECT_DIR$/myjs/hotelMain.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reception/roomReservation.html" afterPath="$PROJECT_DIR$/reception/roomReservation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ceshi.html" afterPath="$PROJECT_DIR$/test/ceshi.html" />
@@ -43,9 +41,23 @@
         <entry file="file://$PROJECT_DIR$/myjs/hotelMain.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
+              <caret line="121" column="19" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="leaveBalance.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cashier/leaveBalance.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.361111">
+              <caret line="93" column="10" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="10" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#2;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#2;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#td#1;n#tr#3;n#table#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#3;n#tr#2;n#table#1;n#div#1;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,12 +66,12 @@
       <file leaf-file-name="miscellaneousSingle.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cashier/miscellaneousSingle.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.0">
-              <caret line="90" column="38" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="42" />
+            <state vertical-scroll-proportion="-12.75">
+              <caret line="35" column="50" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="50" />
               <folding>
-                <element signature="n#style#0;n#input#0;n#div#0;n#td#3;n#tr#0;n#table#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#1;n#table#1;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#td#3;n#tr#1;n#table#1;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#td#3;n#tr#0;n#table#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#1;n#table#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#td#3;n#tr#1;n#table#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,9 +80,11 @@
       <file leaf-file-name="detailPrint.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cashier/detailPrint.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="11.388889">
-              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-              <folding />
+            <state vertical-scroll-proportion="-5.25">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="57" selection-end-column="16" />
+              <folding>
+                <element signature="n#table#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -78,31 +92,20 @@
       <file leaf-file-name="snacksEntry.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cashier/snacksEntry.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.36111">
-              <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
+            <state vertical-scroll-proportion="-12.0">
+              <caret line="154" column="14" selection-start-line="154" selection-start-column="14" selection-end-line="154" selection-end-column="14" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#h1#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="snacksEntry.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="snacksEntry.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/cashier/snacksEntry.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43783784">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="107.125">
-              <caret line="0" column="12594" selection-start-line="0" selection-start-column="12594" selection-end-line="0" selection-end-column="12594" />
+            <state vertical-scroll-proportion="-4.909091">
+              <caret line="12" column="83" selection-start-line="12" selection-start-column="83" selection-end-line="12" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -111,20 +114,21 @@
       <file leaf-file-name="common.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/public/common.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.5">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.75">
+              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="indexRoomState.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/indexRoomState.html">
+      <file leaf-file-name="roomReservation.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reception/roomReservation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="14.25">
-              <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
+            <state vertical-scroll-proportion="-16.36111">
+              <caret line="143" column="63" selection-start-line="3" selection-start-column="0" selection-end-line="143" selection-end-column="63" />
               <folding>
-                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#td#1;n#tr#1;n#table#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#1;n#table#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,18 +137,18 @@
       <file leaf-file-name="detailPrint.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/cashier/detailPrint.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.611111">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state vertical-scroll-proportion="-16.36111">
+              <caret line="54" column="93" selection-start-line="54" selection-start-column="93" selection-end-line="54" selection-end-column="93" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="roomReservation.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="roomReservation.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/roomReservation.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.3636365">
-              <caret line="18" column="95" selection-start-line="18" selection-start-column="95" selection-end-line="18" selection-end-column="95" />
+            <state vertical-scroll-proportion="0.4990476">
+              <caret line="56" column="74" selection-start-line="56" selection-start-column="74" selection-end-line="56" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -155,8 +159,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -191,20 +195,25 @@
         <option value="E:/新建文件夹/jinpeng0331/jinpeng/css/animation.css" />
         <option value="$PROJECT_DIR$/AngularJS/app.js" />
         <option value="$PROJECT_DIR$/js/jquery.contextmenu.js" />
-        <option value="$PROJECT_DIR$/test/ceshi.html" />
         <option value="$PROJECT_DIR$/cashier/strikeBalance.html" />
-        <option value="$PROJECT_DIR$/reception/roomReservation.html" />
-        <option value="$PROJECT_DIR$/indexRoomState.html" />
-        <option value="$PROJECT_DIR$/cashier/miscellaneousSingle.html" />
         <option value="$PROJECT_DIR$/cashier/strikeABalance.html" />
         <option value="$PROJECT_DIR$/cashier/chargeInAdvance.html" />
         <option value="$PROJECT_DIR$/cashier/detailPrint.html" />
-        <option value="$PROJECT_DIR$/myjs/hotelMain.js" />
-        <option value="$PROJECT_DIR$/css/roomReservation.css" />
-        <option value="$PROJECT_DIR$/css/cashier/detailPrint.css" />
-        <option value="$PROJECT_DIR$/css/public/common.css" />
+        <option value="$PROJECT_DIR$/test/ceshi.html" />
+        <option value="$PROJECT_DIR$/test/ceshi2.html" />
+        <option value="$USER_HOME$/Desktop/animation.css" />
+        <option value="$PROJECT_DIR$/indexRoomState.html" />
+        <option value="$PROJECT_DIR$/reception/room.html" />
+        <option value="$PROJECT_DIR$/cashier/miscellaneousSingle.html" />
         <option value="$PROJECT_DIR$/cashier/snacksEntry.html" />
+        <option value="$PROJECT_DIR$/cashier/consumptionDetail.html" />
+        <option value="$PROJECT_DIR$/reception/roomReservation.html" />
+        <option value="$PROJECT_DIR$/myjs/hotelMain.js" />
+        <option value="$PROJECT_DIR$/css/public/common.css" />
         <option value="$PROJECT_DIR$/css/cashier/snacksEntry.css" />
+        <option value="$PROJECT_DIR$/css/cashier/detailPrint.css" />
+        <option value="$PROJECT_DIR$/cashier/leaveBalance.html" />
+        <option value="$PROJECT_DIR$/css/roomReservation.css" />
       </list>
     </option>
   </component>
@@ -244,8 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -288,7 +295,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="reception" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -362,11 +369,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cashier" />
+              <option name="myItemId" value="consumptionQuery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -381,25 +384,13 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cashier" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interface" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="interface" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AngularJS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -412,16 +403,17 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\interface\css\public" />
-      <recent name="E:\interface\receptionist" />
-      <recent name="E:\interface\public" />
-      <recent name="E:\interface\test" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\interface" />
       <recent name="E:\interface\js" />
       <recent name="E:\interface\myjs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\interface\consumptionQuery" />
+      <recent name="E:\interface\css\public" />
+      <recent name="E:\interface\receptionist" />
+      <recent name="E:\interface\public" />
+      <recent name="E:\interface\test" />
     </key>
   </component>
   <component name="RunManager">
@@ -515,7 +507,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460078134470</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="esc退出弹窗，添加房吧管理，冲账管理，杂单录入">
+      <created>1460106630121</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1460106630121</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -524,7 +522,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -559,44 +557,14 @@
     <MESSAGE value="整合修改，加入“收取预付”弹窗" />
     <MESSAGE value="收取预付弹窗修改，添加明细打印弹窗，IE右键问题" />
     <MESSAGE value="esc退出弹窗，添加房吧管理，冲账管理，杂单录入" />
-    <option name="LAST_COMMIT_MESSAGE" value="esc退出弹窗，添加房吧管理，冲账管理，杂单录入" />
+    <MESSAGE value="消费明细，离店结算弹窗添加" />
+    <option name="LAST_COMMIT_MESSAGE" value="消费明细，离店结算弹窗添加" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/myjs/hotelMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/public/left.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="129" column="1" selection-start-line="129" selection-start-column="1" selection-end-line="129" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/xitong/css/matrix-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/top.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="91" selection-start-line="18" selection-start-column="91" selection-end-line="18" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/public/common.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1445,13 +1413,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myjs/my_xiala.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/matrix.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.0964468">
@@ -1469,16 +1430,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AngularJS/controller/main_controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
-          <folding>
-            <marker date="1459830364545" expanded="true" signature="3473:3560" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1576,7 +1527,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1584,22 +1534,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://E:/view/main_fangtai.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="13" selection-start-line="89" selection-start-column="12" selection-end-line="97" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.contextmenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.821428">
-          <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1612,25 +1546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/ceshi.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.111111">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="49" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cashier/chargeInAdvance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.3888888">
-          <caret line="53" column="75" selection-start-line="53" selection-start-column="75" selection-end-line="53" selection-end-column="75" />
-          <folding>
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#1;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#3;n#tr#1;n#table#1;n#div#1;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AngularJS/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.09050279">
@@ -1639,30 +1554,115 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="12594" selection-start-line="0" selection-start-column="12594" selection-end-line="0" selection-end-column="12594" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AngularJS/controller/main_controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.030167598">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/view/main_fangtai.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47147846">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.contextmenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.150838">
+          <caret line="76" column="30" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ceshi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.36111">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="87" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ceshi2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.361111">
+          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myjs/my_xiala.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cashier/chargeInAdvance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79045403">
+          <caret line="53" column="75" selection-start-line="53" selection-start-column="75" selection-end-line="53" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cashier/strikeABalance.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.5">
+        <state vertical-scroll-proportion="1.4458673">
           <caret line="46" column="75" selection-start-line="46" selection-start-column="75" selection-end-line="46" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/animation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81140864">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/indexRoomState.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.5">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#3;n#tr#0;n#table#1;n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#1;n#table#1;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consumptionQuery/consumptionDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reception/roomReservation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.36111">
-          <caret line="148" column="6" selection-start-line="3" selection-start-column="0" selection-end-line="148" selection-end-column="6" />
+        <state vertical-scroll-proportion="-16.36111">
+          <caret line="143" column="63" selection-start-line="3" selection-start-column="0" selection-end-line="143" selection-end-column="63" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#1;n#table#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#0;n#table#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#3;n#tr#0;n#table#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#1;n#tr#1;n#table#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#1;n#table#2;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#table#3;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#3;n#tr#1;n#table#3;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#2;n#table#3;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#1;n#tr#1;n#table#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#1;n#table#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1670,90 +1670,85 @@
     <entry file="file://$PROJECT_DIR$/myjs/hotelMain.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="113" column="19" selection-start-line="113" selection-start-column="19" selection-end-line="113" selection-end-column="19" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/cashier/detailPrint.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.611111">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <caret line="121" column="19" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/indexRoomState.html">
+    <entry file="file://$PROJECT_DIR$/css/cashier/snacksEntry.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="14.25">
-          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cashier/miscellaneousSingle.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.0">
-          <caret line="90" column="38" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#3;n#tr#0;n#table#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#1;n#table#1;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#td#3;n#tr#1;n#table#1;n#div#1;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-4.909091">
+          <caret line="12" column="83" selection-start-line="12" selection-start-column="83" selection-end-line="12" selection-end-column="83" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/public/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.5">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state vertical-scroll-proportion="-12.75">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/roomReservation.css">
+    <entry file="file://$PROJECT_DIR$/css/cashier/detailPrint.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.3636365">
-          <caret line="18" column="95" selection-start-line="18" selection-start-column="95" selection-end-line="18" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="107.125">
-          <caret line="0" column="12594" selection-start-line="0" selection-start-column="12594" selection-end-line="0" selection-end-column="12594" />
+        <state vertical-scroll-proportion="-16.36111">
+          <caret line="54" column="93" selection-start-line="54" selection-start-column="93" selection-end-line="54" selection-end-column="93" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cashier/detailPrint.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="11.388889">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding />
+        <state vertical-scroll-proportion="-5.25">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="57" selection-end-column="16" />
+          <folding>
+            <element signature="n#table#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cashier/snacksEntry.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.36111">
-          <caret line="126" column="21" selection-start-line="126" selection-start-column="21" selection-end-line="126" selection-end-column="21" />
+        <state vertical-scroll-proportion="-12.0">
+          <caret line="154" column="14" selection-start-line="154" selection-start-column="14" selection-end-line="154" selection-end-column="14" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#h1#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/cashier/snacksEntry.css">
+    <entry file="file://$PROJECT_DIR$/cashier/miscellaneousSingle.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43783784">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+        <state vertical-scroll-proportion="-12.75">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#3;n#tr#0;n#table#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#1;n#tr#1;n#table#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#td#3;n#tr#1;n#table#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cashier/leaveBalance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.361111">
+          <caret line="93" column="10" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#td#1;n#tr#2;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#2;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#td#1;n#tr#3;n#table#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#2;n#table#1;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/roomReservation.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4990476">
+          <caret line="56" column="74" selection-start-line="56" selection-start-column="74" selection-end-line="56" selection-end-column="74" />
           <folding />
         </state>
       </provider>

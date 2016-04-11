@@ -10,8 +10,9 @@
 .tableBuy tr { cursor: pointer}
 .tableBuy tr:nth-child(odd) { background: #f1e9dd}
 .tableBuy tr:nth-child(even){ background: #e3d9c0}
-.tableBuy tr:first-child { background: linear-gradient(#d7be84,#be932c); color: #fff; text-align: center; font-weight: bold}
-.tableBuy tr:first-child:hover {background: linear-gradient(#d7be84,#be932c);}
+.tableBuy tr:first-child { background: linear-gradient(#d7be84,#be932c); color: #fff; text-align: center;}
+.tableBuy tr:first-child td { font-weight: bold}
+.tableBuy tr:first-child:hover {background: linear-gradient(#d7be84,#be932c); cursor: inherit}
 .tableBuy tr:hover { background:#d8c9a3;}
 .tableBuy td { width: auto; height: auto; padding: 5px 5px; border-right: 1px solid #fff; text-align: center; line-height: 24px; font-weight: normal}
 .inputCategory { width:77%; margin-top: 5px; float: left; margin-left: 10px;}

@@ -117,12 +117,16 @@ function setPop() {
             null, // divider
             {
                 label: '离店结算', icon: 'icon-share huang', action: function () {
-                alert('clicked 5')
+                $("#mainBody").load("cashier/leaveBalance.html", function () {
+                    $("#mainBody").fadeIn(100);
+                });
             }
             },
             {
                 label: '消费明细', icon: 'icon-file-alt', action: function () {
-                alert('clicked 6')
+                $("#mainBody").load("consumptionQuery/consumptionDetail.html", function () {
+                    $("#mainBody").fadeIn(100);
+                });
             }
             },
             {

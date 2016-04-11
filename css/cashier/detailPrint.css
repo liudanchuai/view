@@ -32,7 +32,27 @@
 .printTable tr:nth-child(odd){ background: #c0cae3}
 .printTable tr:nth-child(even){ background: #e1eaff}
 .printTable tr:first-child { background: linear-gradient(#4f7bee,#3e5797); color:#fff;}
+.printTable tr:first-child td { font-weight: bold}
 .printTable tr:first-child:hover {background: linear-gradient(#4f7bee,#3e5797); cursor: inherit}
 .printTable tr:hover { background: #94aae1; cursor: pointer}
 
 @keyframes printIn {0%{opacity: 0}100%{opacity: 1}}
+
+/*表格筛选样式*/
+.tableFilter { border: 1px solid #bbb; position: relative; padding: 20px; margin-bottom: 20px; margin-top: 20px;}
+.tableFilter .tFtit { width: 100px; height: 40px; line-height: 40px; text-align: center; font-weight: bold; font-size: 14px; color:#da0000; position: absolute; top:-30px; left: 10px; background: #e5e5e5; z-index: 999}
+.tableFilter .tFul { margin: 0px; padding: 0px;}
+.tableFilter .tFul:after { display: block; width: 100%; height: 0px; line-height: 0px; overflow: hidden; clear: both; content: ''}
+.tableFilter .tFul li { float: left; height: 30px; line-height: 30px; padding: 0px 5px;}
+.tableFilter .tFul li:nth-child(3) { margin-right: 15px;}
+.tableFilter .tFul li .tc_xl{ width: 120px;}
+
+.tableConsumption { height: 550px; overflow-y: auto}/*消费明细表格高度限制*/
+
+/*离店结算按钮样式*/
+.leaveButton { width: 290px; float: right}
+.leaveButton .button { margin: 0px; padding: 5px 0px; border: none}
+.leaveButton .button a.sbe { width: 80px; height: 20px; line-height: 20px; overflow: hidden; display: block; float: left; margin-bottom: 10px;}
+
+
+

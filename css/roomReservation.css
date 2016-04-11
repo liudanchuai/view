@@ -49,27 +49,33 @@ text-shadow: 0px 2px 0px #fff,0px -2px 0px #fff,2px 0px 0px #fff, -2px 0px 0px #
 .tanchuang .jiesuan .reprint input[type=checkbox]{ margin-top: -2px; margin-right: 3px;}
 .tanchuang dl .dwselect { width:98%; height: 30px; margin-top: 5px; border: 1px solid #ccc; line-height: 30px; }
 .tanchuang dl.jiesuan .input { border: 1px solid #ccc; height: 28px; line-height: 28px; width: 93%;}
-.tanchuang dl.button {  background: none; margin-top: 20px; text-align: center;border-top: 2px solid #c0cae3;  padding-top: 20px;}
-.tanchuang dl.button input[type=button],.tanchuang dl.button a.sbe,.tanchuang dl.button a.sbeyellow { padding: 9px 20px; text-align: center; margin: 0px auto; margin-right: 10px; border:1px solid #bbb;
+.tanchuang .button {  background: none; margin-top: 20px; text-align: center;border-top: 2px solid #c0cae3;  padding-top: 20px;}
+.tanchuang .button input[type=button],.tanchuang dl.button a.sbe,.tanchuang dl.button a.sbeyellow { padding: 9px 20px; text-align: center; margin: 0px auto; margin-right: 10px; border:1px solid #bbb;
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px; background: linear-gradient(#cfcfcf,#afafaf);
-    color: #000; cursor: pointer; font-weight: bold}
-.tanchuang dl.button a.sbe:hover { background: linear-gradient(#eee,#afafaf);}
-.tanchuang dl.button a.sbeyellow {background: linear-gradient(#f19300,#ae6a00); color: #fff;}
-.tanchuang dl.button a.sbeyellow:hover { background: linear-gradient(#ffac29,#ae6a00); color: #fff2de}
-.tanchuang dl.button a.sbe i { margin-right: 5px;}
-.tanchuang dl.button a.sbe i.icon-ok { color: #218e03}
-.tanchuang dl.button a.sbe i.icon-remove { color: #b70000}
-.tanchuang dl.button a.sbe i.icon-edit { color:#9a6407; font-size: 18px; margin-top: 7px;}
-.tanchuang dl.button a.sbe i.icon-signout { color: #0067b7; font-size: 18px;}
-.tanchuang dl.button a.sbe i.icon-print{color: #0067b7; font-size: 18px;}
+    color: #000; cursor: pointer; font-weight: bold; margin-bottom: 10px;}
+.tanchuang .button a.sbe:hover { background: linear-gradient(#eee,#afafaf);}
+.tanchuang .button a.sbeyellow {background: linear-gradient(#f19300,#ae6a00); color: #fff;}
+.tanchuang .button a.sbeyellow:hover { background: linear-gradient(#ffac29,#ae6a00); color: #fff2de}
+.tanchuang .button a.sbe i { margin-right: 5px;}
+.tanchuang .button a.sbe i.icon-ok { color: #218e03}
+.tanchuang .button a.sbe i.icon-remove { color: #b70000}
+.tanchuang .button a.sbe i.icon-edit { color:#9a6407; font-size: 18px;}
+.tanchuang .button a.sbe i.icon-signout { color: #0067b7; font-size: 18px;}
+.tanchuang .button a.sbe i.icon-print{color: #0067b7; }/*打印*/
+.tanchuang .button a.sbe i.icon-search { color: #77a515}/*查询*/
+.tanchuang .button a.sbe i.icon-user { color: #da7600}/*读取会员*/
+.tanchuang .button a.sbe i.icon-inbox { color:#d41212;}/*哑房处理*/
+.tanchuang .button a.sbe i.icon-share { color: #0067b7}/*转房客*/
+.tanchuang .button a.sbe i.icon-external-link { color:#77a515}/*转单位*/
 
-.tanchuang dl.button .gray {background: linear-gradient(#ff8400, #a75a07);  color:#000; border: 1px solid #ccc}
-.tanchuang dl.button .red { background: linear-gradient(#a02121,#721010); color:#fff; border: 1px solid #ccc}
+
+.tanchuang .button .gray {background: linear-gradient(#ff8400, #a75a07);  color:#000; border: 1px solid #ccc}
+.tanchuang .button .red { background: linear-gradient(#a02121,#721010); color:#fff; border: 1px solid #ccc}
 .tc_xl{width:90%;padding-left: 10px; border-radius:4px; position:relative;background: #fff url(../images/my_xiala1.gif) 90% 12px no-repeat;cursor:pointer; height: 28px; line-height: 28px; border: 1px solid #ccc;}
 .tc_xl_txt{float:left;width: 100%;line-height: 28px;padding-right:17px;color:#000; font-size: 14px; font-weight: normal}
-.tc_xl_list{border:1px solid #ccc;}
+.tc_xl_list{border:1px solid #ccc; background: #fff}
 .tc_xl_txt,.tc_xl_list li{text-indent:0px;overflow:hidden;}
 .tc_xl_list{z-index:99;position:absolute;top: 30px;left:-1px;z-index:88888;border-top:none;width:100%;display:none;_top:23px;margin-left:0px !important}
 .tc_xl_list li{list-style:none;height: 30px;line-height: 30px;cursor:default;background:#fff;padding-left: 10px;color:#000}
