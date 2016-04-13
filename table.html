@@ -6,36 +6,141 @@
 </head>
 <body ng-app="mainApp">
 <div ng-controller="ConfigureController as ctrl">
-<table class="nameTable">
-    <tr>
-        <td>用户名</td>
-        <td>密码</td>
-        <td>密码</td>
-        <td>密码</td>
-        <td>密码</td>
-        <td>密码</td>
-    </tr>
-    <tr>
-        <td>RB</td>
-        <td>人民币</td>
-    </tr>
-    <tr>
-        <td>RB</td>
-        <td>人民币</td>
-    </tr>
-    <tr>
-        <td>RB</td>
-        <td>人民币</td>
-    </tr>
-    <tr>
-        <td>RB</td>
-        <td>人民币</td>
-    </tr>
-    <tr>
-        <td>RB</td>
-        <td>人民币</td>
-    </tr>
-</table>
-    </div>
+    <div>操作员表</div>
+    <table class="nameTable">
+        <tr>
+            <td>工号</td>
+            <td>姓名</td>
+            <td>密码</td>
+            <td>类别</td>
+            <td>权限</td>
+            <td>营业部门</td>
+        </tr>
+        <tr ng-repeat="u in ctrl.users">
+            <td ng-bind="u.userId"></td>
+            <td ng-bind="u.userName"></td>
+            <td ng-bind="u.userPassword"></td>
+            <td ng-bind="u.userCategory"></td>
+            <td ng-bind="u.userLevel"></td>
+            <td ng-bind="u.posNumber"></td>
+        </tr>
+
+    </table>
+    <div>房间定义</div>
+    <table>
+        <tr>
+            <td>房号</td>
+            <td>楼区</td>
+            <td>房间类别</td>
+            <td>房价</td>
+        </tr>
+        <tr ng-repeat="r in ctrl.rooms">
+            <td ng-bind="r.roomId"></td>
+            <td ng-bind="r.area"></td>
+            <td ng-bind="r.roomCategory"></td>
+            <td ng-bind="r.price"></td>
+        </tr>
+    </table>
+    <div>协议房价</div>
+    <table>
+        <tr>
+            <td>协议编码</td>
+            <td>协议名称</td>
+            <td>房间类别</td>
+            <td>房间价格</td>
+        </tr>
+        <tr ng-repeat="p in ctrl.protocol">
+            <td ng-bind="p.protocolCode"></td>
+            <td ng-bind="p.protocolName"></td>
+            <td ng-bind="p.roomCategory"></td>
+            <td ng-bind="p.roomPrice"></td>
+        </tr>
+    </table>
+    <div>核心参数</div>
+    <table>
+        <tr>
+            <td>参数编码</td>
+            <td>参数数值</td>
+            <td>参数说明</td>
+        </tr>
+        <tr ng-repeat="o in ctrl.otherParams">
+            <td ng-bind="o.otherParamsCode"></td>
+            <td ng-bind="o.otherParamsValue"></td>
+            <td ng-bind="o.otherParamsDescription"></td>
+        </tr>
+    </table>
+    <div>单位签单人</div>
+    <table>
+        <tr>
+            <td>单位编码</td>
+            <td>签单人编码</td>
+            <td>签单人姓名</td>
+        </tr>
+        <tr ng-repeat="cl in ctrl.companyLords">
+            <td ng-bind="cl.companyCode"></td>
+            <td ng-bind="cl.lordCode"></td>
+            <td ng-bind="cl.lordName"></td>
+        </tr>
+    </table>
+    <div>单位帐卡</div>
+    <table>
+        <tr>
+            <td>单位编码</td>
+            <td>单位名称</td>
+        </tr>
+        <tr ng-repeat="cc in ctrl.companyCards">
+            <td ng-bind="cc.companyCode"></td>
+            <td ng-bind="cc.companyName"></td>
+        </tr>
+    </table>
+    <div>币种</div>
+    <table>
+        <tr>
+            <td>币种编码</td>
+            <td>币种名称</td>
+        </tr>
+        <tr ng-repeat="cl in ctrl.currencies">
+            <td ng-bind="cl.currencyCode"></td>
+            <td ng-bind="cl.currencyName"></td>
+        </tr>
+    </table>
+    <div>协议映射</div>
+    <table>
+        <tr>
+            <td>协议编码</td>
+            <td>映射号</td>
+        </tr>
+        <tr ng-repeat="pm in ctrl.protocolMaps">
+            <td ng-bind="pm.protocolCode"></td>
+            <td ng-bind="pm.protocolMap"></td>
+        </tr>
+    </table>
+    <div>房间类型</div>
+    <table>
+        <tr>
+            <td>房间类型编码</td>
+            <td>房间类型名称</td>
+        </tr>
+        <tr ng-repeat="rc in ctrl.roomCategories">
+            <td ng-bind="rc.categoryCode"></td>
+            <td ng-bind="rc.categoryName"></td>
+        </tr>
+    </table>
+    <div>客源</div>
+    <table>
+        <tr>
+            <td>客源编码</td>
+            <td>客源名称</td>
+        </tr>
+        <tr ng-repeat="g in ctrl.guestSources">
+            <td ng-bind="g.sourceCode"></td>
+            <td ng-bind="g.sourceName"></td>
+        </tr>
+    </table>
+</div>
+<script src="AngularJS/angular.js"></script>
+<script src="AngularJS/app.js"></script>
+<script src="AngularJS/service/configure_service.js"></script>
+<script src="AngularJS/controller/configure_controller.js"></script>
 </body>
 </html>
