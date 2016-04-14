@@ -22,6 +22,43 @@ App.factory('ConfigureService', ['$http', '$q', 'host', function ($http, $q, hos
                 }
             );
         },
+        createUsers:function(users){
+            return $http.post(host+'/user',users)
+                .then(
+                function (response) {
+                    return response.data;
+                },
+                function (errResponse) {
+                    console.error('Error while creating user');
+                    return $q.reject(errResponse);
+                }
+            );
+        },
+        updateUsers:function(users){
+            return $http.put(host+'/user',users)
+                .then(
+                function (response) {
+                    return response.data;
+                },
+                function (errResponse) {
+                    console.error('Error while updating user');
+                    return $q.reject(errResponse);
+                }
+            );
+        },
+        deleteUsers:function(id){
+            return $http.delete(host+'/user/'+id)
+                .then(
+                function (response) {
+                    return response.data;
+                },
+                function (errResponse) {
+                    console.error('Error while deleting user');
+                    return $q.reject(errResponse);
+                }
+            );
+        },
+
         /**
          * 房间定义
          */

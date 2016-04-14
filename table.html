@@ -5,26 +5,46 @@
     <title>Title</title>
 </head>
 <body ng-app="mainApp">
-<div ng-controller="ConfigureController as ctrl">
+<div ng-controller="ConfigureController">
     <div>操作员表</div>
     <table class="nameTable">
         <tr>
+            <td>序号</td>
             <td>工号</td>
             <td>姓名</td>
             <td>密码</td>
             <td>类别</td>
             <td>权限</td>
             <td>营业部门</td>
+            <td>操作</td>
         </tr>
-        <tr ng-repeat="u in ctrl.users">
+        <tr ng-repeat="u in users">
+            <td ng-bind="u.id"></td>
             <td ng-bind="u.userId"></td>
             <td ng-bind="u.userName"></td>
             <td ng-bind="u.userPassword"></td>
             <td ng-bind="u.userCategory"></td>
             <td ng-bind="u.userLevel"></td>
             <td ng-bind="u.posNumber"></td>
+            <td ng-click="">
+                <button id="UserEdit+{{u.id}}" ng-click="updateClick(u.id)">编辑</button><!--updateClick里填写代码让上边输入框变成可编辑状态-->
+                <button id="UserPost+{{u.id}}" ng-click="updateUsers(u)">提交</button>
+                <button ng-click="deleteUsers(u.id)">删除</button>
+            </td>
+            <td><input type="text" ng-model="u.userName"></td>
         </tr>
-
+        <tr>
+            <td ng-bind="userPost.id"></td>
+            <td><input type="text" ng-model="userPost.userId" required></td>
+            <td><input type="text" ng-model="userPost.userName"></td>
+            <td><input type="text" ng-model="userPost.userPassword"></td>
+            <td><input type="text" ng-model="userPost.userCategory"></td>
+            <td><input type="text" ng-model="userPost.userLevel"></td>
+            <td><input type="text" ng-model="userPost.posNumber"></td>
+            <td>
+                <button ng-click="createUsers()">增加</button>
+            </td>
+        </tr>
     </table>
     <div>房间定义</div>
     <table>
