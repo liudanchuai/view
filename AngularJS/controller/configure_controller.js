@@ -21,8 +21,9 @@ App.controller('ConfigureController', ['$scope', 'ConfigureService', function ($
      */
     $scope.users = [];//操作员表
     $scope.userChoice = 'update';//操作员表
+    $scope.checkPassword = '';//操作员核对密码
     $scope.userPost = {
-        id:'',
+        id: '',
         userId: '',
         userName: '',
         userPassword: '',
@@ -46,6 +47,9 @@ App.controller('ConfigureController', ['$scope', 'ConfigureService', function ($
             .then(
             function (d) {
                 $scope.getAllUsers();
+                $scope.userPost.userId = '';
+                $scope.userPost.userName = '';
+                $scope.userPost.userPassword = '';
             },
             function (errResponse) {
                 console.error('Error while creating users' + errResponse.data.message);
@@ -53,46 +57,59 @@ App.controller('ConfigureController', ['$scope', 'ConfigureService', function ($
             }
         )
     };
-    $scope.deleteUsers = function (id) {
-        ConfigureService.deleteUsers(id)
-            .then(
-            function (d) {
-                $scope.getAllUsers();
-            },
-            function (errResponse) {
-                console.error('Error while creating users' + errResponse.toString());
-            }
-        );
+    $scope.deleteUsers = function (user) {
+        if (checkUserPassword(user)) {
+            ConfigureService.deleteUsers(user.id)
+                .then(
+                function (d) {
+                    $scope.getAllUsers();
+                },
+                function (errResponse) {
+                    console.error('Error while creating users' + errResponse.toString());
+                }
+            );
+        } else {
+            alert("密码错误");
+        }
     };
     $scope.updateUsers = function (user) {
-        ConfigureService.updateUsers(user)
-            .then(
-            function (d) {
-                $scope.getAllUsers();
-            },
-            function (errResponse) {
-                console.error('Error while creating users' + errResponse.toString());
-            }
-        );
+        if (checkUserPassword(user)) {
+            ConfigureService.updateUsers(user)
+                .then(
+                function (d) {
+                    $scope.getAllUsers();
+                },
+                function (errResponse) {
+                    console.error('Error while creating users' + errResponse.toString());
+                }
+            );
+        } else {
+            alert("密码错误");
+        }
     };
     /*点击编辑*/
-    $scope.updateClick = function(u){
-        u.checked='true';
+    $scope.updateClick = function (u) {
+        u.checked = 'true';
+        var selectId = ".users" + u.id;
+    };
+    /*核对密码*/
+    var checkUserPassword = function checkUserPassword(u) {
+        return u.userPassword == $scope.checkPassword;
     };
     /**
      * 房间定义
      */
-        $scope.getAllRooms = function () {
-            ConfigureService.getAllRooms()
-                .then(
-                function (d) {
-                    $scope.rooms = d;
-                },
-                function (errResponse) {
-                    console.error('Error while getting rooms:' + errResponse.toString());
-                }
-            );
-        };
+    $scope.getAllRooms = function () {
+        ConfigureService.getAllRooms()
+            .then(
+            function (d) {
+                $scope.rooms = d;
+            },
+            function (errResponse) {
+                console.error('Error while getting rooms:' + errResponse.toString());
+            }
+        );
+    };
     /**
      * 房间类别
      */
@@ -124,17 +141,17 @@ App.controller('ConfigureController', ['$scope', 'ConfigureService', function ($
     /*/!**
      * 协议映射
      *!/
-    $scope.getAllProtocolMaps = function () {
-        ConfigureService.getAllProtocolMaps()
-            .then(
-            function (d) {
-                $scope.protocolMaps = d;
-            },
-            function (errResponse) {
-                console.error('Error while getting protocolMaps:' + errResponse.toString());
-            }
-        );
-    };*/
+     $scope.getAllProtocolMaps = function () {
+     ConfigureService.getAllProtocolMaps()
+     .then(
+     function (d) {
+     $scope.protocolMaps = d;
+     },
+     function (errResponse) {
+     console.error('Error while getting protocolMaps:' + errResponse.toString());
+     }
+     );
+     };*/
     /**
      * 其他参数
      */

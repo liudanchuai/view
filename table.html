@@ -5,8 +5,14 @@
     <title>Title</title>
 </head>
 <body ng-app="mainApp">
+<table>
+    <tr>
+        <td contenteditable="true">这是一个可编辑的段落。</td>
+    </tr>
+</table>
 <div ng-controller="ConfigureController">
     <div>操作员表</div>
+    <input ng-model="checkPassword" type="password">核对密码
     <table class="nameTable">
         <tr>
             <td>序号</td>
@@ -19,32 +25,34 @@
             <td>操作</td>
         </tr>
         <tr ng-repeat="u in users">
-            <td contenteditable="false" ng-bind="u.id"></td>
-            <td contenteditable="{{u.checked=='true'}}" ng-model="u.userId">{{u.userId}}</td>
-            <td contenteditable="{{u.checked=='true'}}" ng-model="u.userName">{{u.userName}}</td>
-            <td contenteditable="{{u.checked=='true'}}" ng-model="u.userPassword">{{u.userPassword}}</td>
-            <td contenteditable="{{u.checked=='true'}}" ng-model="u.userCategory">{{u.userCategory}}</td>
-            <td contenteditable="{{u.checked=='true'}}" ng-model="u.userLevel">{{u.userLevel}}</td>
-            <td contenteditable="{{u.checked=='true'}}" ng-model="u.posNumber">{{u.posNumber}}</td>
+            <td><input ng-readonly="true" ng-model="u.id"></td>
+            <td><input ng-readonly="u.checked==null" ng-model="u.userId"></td>
+            <td><input ng-readonly="u.checked==null" ng-model="u.userName"></td>
+            <td><input type="password" ng-readonly="u.checked==null" ng-model="u.userPassword"></td>
+            <td><input ng-readonly="u.checked==null" ng-model="u.userCategory"></td>
+            <td><input ng-readonly="u.checked==null" ng-model="u.userLevel"></td>
+            <td><input ng-readonly="u.checked==null" ng-model="u.posNumber"></td>
             <td ng-click="">
-                <button id="edit{{u.id}}" ng-click="updateClick(u)" ng-if="u.checked==null">编辑</button><!--updateClick里填写代码让上边输入框变成可编辑状态-->
+                <button id="edit{{u.id}}" ng-click="updateClick(u)" ng-if="u.checked==null">编辑</button>
+                <!--updateClick里填写代码让上边输入框变成可编辑状态-->
                 <button id="post{{u.id}}" ng-click="updateUsers(u)" ng-if="u.checked=='true'">提交</button>
-                <button id="delete{{u.id}}" ng-click="deleteUsers(u.id)">删除</button>
-            </td>
-        </tr>
-        <tr>
-            <td ng-bind="userPost.id"></td>
-            <td><input type="text" ng-model="userPost.userId" required></td>
-            <td><input type="text" ng-model="userPost.userName"></td>
-            <td><input type="text" ng-model="userPost.userPassword"></td>
-            <td><input type="text" ng-model="userPost.userCategory"></td>
-            <td><input type="text" ng-model="userPost.userLevel"></td>
-            <td><input type="text" ng-model="userPost.posNumber"></td>
-            <td>
-                <button ng-click="createUsers()">增加</button>
+                <button id="delete{{u.id}}" ng-click="deleteUsers(u)">删除</button>
             </td>
         </tr>
     </table>
+    <form name="formUser" ng-submit="createUsers()">
+        <input ng-model="userPost.id" readonly>
+        <input type="text" ng-model="userPost.userId" required name="userId">
+                <span style="color:red" ng-show="formUser.userId.$dirty && formUser.userId.$invalid">
+                <span ng-show="formUser.userId.$error.required">用户名是必须的。</span>
+                </span>
+        <input type="text" ng-model="userPost.userName">
+        <input type="text" ng-model="userPost.userPassword">
+        <input type="text" ng-model="userPost.userCategory">
+        <input type="text" ng-model="userPost.userLevel">
+        <input type="text" ng-model="userPost.posNumber">
+        <input type="submit"  value="增加"  ng-disabled="formUser.$invalid">
+    </form>
     <div>房间定义</div>
     <table>
         <tr>
@@ -161,6 +169,5 @@
 <script src="AngularJS/app.js"></script>
 <script src="AngularJS/service/configure_service.js"></script>
 <script src="AngularJS/controller/configure_controller.js"></script>
-<script src="AngularJS/directive/contentEditTable.js"></script>
 </body>
 </html>
