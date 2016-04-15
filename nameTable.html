@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>参数定义</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/jquery.contextmenu.css"/>
+    <link rel="stylesheet" href="css/public/common.css">
+    <link rel="stylesheet" href="css/public/left.css"/>
+    <link rel="stylesheet"  href="css/public/top.css"/>
+    <link rel="stylesheet"  href="css/nameTable.css"/>
+    <link rel="stylesheet" href="css/public/jquery.mCustomScrollbar.css">
+</head>
+<body>
+<div id="print">
+
+</div>
+<div id="mainBody">
+
+</div>
+<div id="lefbox" style="width: 265px; height:100%; float: left">
+
+</div>
+
+<!--main-container-part-->
+<div id="content" ng-controller="MainController as ctrl">
+    <div id="topbox">
+
+    </div>
+    <!-- BreadcrumbNavigation begin -->
+    <div class="weizhi">酒店之星 > 参数定义</div>
+    <!-- BreadcrumbNavigation end -->
+    <!--Filter begin-->
+    <div class="saixuanbox">
+        <ul class="userbox">
+            <a title="" href="../login.html"><i class="icon-user"></i> <span class="text">操作员设置</span></a>
+            <a title="" href="../login.html"><i class="icon-signout"></i><span>退出</span></a>
+
+        </ul>
+        <ul class="saixuanul">
+            <li class="nameButton hover">客人信息</li>
+            <li class="nameButton">客房信息</li>
+            <li class="nameButton">宾馆信息</li>
+            <li class="nameButton">系统参数</li>
+        </ul>
+    </div>
+    <!--Filter end-->
+    <div id="main">
+        <div class="nameLeft">
+            <div class="nameClassBox">
+                <h1>客人信息</h1>
+                <ul>
+                    <li>客源</li>
+                    <li class="hover">证件种类</li>
+                    <li>特别要求</li>
+                    <li>付款方式</li>
+                    <li>价格类型</li>
+                    <li>早餐标准</li>
+                    <li>团队服务</li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="nameRight">
+            <div class="nameTableDiv">
+                <div class="tableHeadDiv">
+                    <table class="nameTableHead">
+                        <tr>
+                            <td style="width: 220px;">字段缩写</td>
+                            <td style="width: 259px;">字段内容</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tableDiv" style="max-height: 400px;">
+                    <table class="nameTable">
+                        <tr>
+                            <td style="width: 220px;">RMB</td>
+                            <td style="width: 259px;">人民币</td>
+                        </tr>
+                        <tr>
+                            <td>RB</td>
+                            <td>人民币</td>
+                        </tr>
+                        <tr>
+                            <td>RB</td>
+                            <td>人民币</td>
+                        </tr>
+                        <tr>
+                            <td>RB</td>
+                            <td>人民币</td>
+                        </tr>
+                        <tr>
+                            <td>RB</td>
+                            <td>人民币</td>
+                        </tr>
+                        <tr>
+                            <td>RB</td>
+                            <td>人民币</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<!--Footer-part-->
+<div id="botbox">
+
+</div>
+
+
+
+<!--AngularJS-->
+<script src="AngularJS/angular.js"></script>
+<script src="AngularJS/app.js"></script>
+<script src="AngularJS/service/main_service.js"></script>
+<script src="AngularJS/controller/main_controller.js"></script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.contextmenu.js"></script>
+<script src="js/matrix.js"></script>
+<script src="js/jquery.avgrund.js"></script>
+<script src="myjs/hotelMain.js"></script>
+<script type="text/javascript" src="myjs/jquery.hotkeys.js"></script>
+<script type="text/javascript" src="myjs/my_xiala.js"></script>
+<script>window.jQuery || document.write('<script src="js/minified/jquery-1.11.0.min.js"><\/script>')</script>
+
+<!-- custom scrollbar plugin -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+    (function($){
+        $(window).load(function(){
+
+            $(".tableDiv").mCustomScrollbar({theme:"minimal-dark"});
+
+        });
+    })(jQuery);
+</script>
+
+</body>
+</html>

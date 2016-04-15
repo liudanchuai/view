@@ -1,14 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script type="text/javascript" src="myjs/my_xiala.js"></script>
+    <title>杂单录入</title>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
+    <link href="../css/popup.css" rel="stylesheet">
 </head>
 <body>
 
 <!-- 杂单录入begin -->
-<div class="bgblack" onclick="none()">
+<div class="bgblack">
 </div>
 <div class="tanchuang">
     <dl class="tctit"><h1>散客杂单</h1></dl>
@@ -52,7 +53,6 @@
             <td>币种：</td>
             <td>
                 <div class="my_xl tc_xl">
-                    <input name="zhuangtai" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;">
                     <div class="my_xl_txt tc_xl_txt">请选择</div>
                     <div class="my_xl_btn"></div>
                     <ul class="my_xl_list tc_xl_list">
@@ -68,7 +68,6 @@
             <td>销售点：</td>
             <td>
                 <div class="my_xl tc_xl">
-                    <input name="zhuangtai" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;">
                     <div class="my_xl_txt tc_xl_txt">请选择</div>
                     <div class="my_xl_btn"></div>
                     <ul class="my_xl_list tc_xl_list">
@@ -79,9 +78,8 @@
                 </div>
             </td>
             <td>杂单摘要：</td>
-            <td>
+            <td style="width: 200px;">
                 <div class="my_xl tc_xl">
-                    <input name="zhuangtai" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;">
                     <div class="my_xl_txt tc_xl_txt">杂单：</div>
                     <div class="my_xl_btn"></div>
                     <ul class="my_xl_list tc_xl_list">
@@ -100,5 +98,15 @@
         <a class="sbe"><i class="icon-edit"></i>记账</a><a class="sbe"><i class="icon-ok"></i>付款</a><a class="sbe"><i class="icon-remove"></i>取消</a>
     </dl>
 </div>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../myjs/my_xiala.js"></script>
+<script type="text/javascript">
+    (function(){
+        $(".bgblack").on("click",function(){
+//$(window.parent.document.getElementById("np-pop-iframe")).remove();
+            $("#np-pop-iframe",window.parent.document).remove();
+        });
+    })(jQuery);
+</script>
 </body>
 </html>

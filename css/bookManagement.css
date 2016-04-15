@@ -1,0 +1,18 @@
+.bookBox { margin: 20px; border: 1px solid #274286; border-radius: 5px; position: relative; margin-right: 40px;}
+.bookListHead { position:absolute; width: 100%; z-index: 9; line-height: 35px; border-top:1px solid #fff; border-radius: 5px 5px 0px 0px; background: #6b8bdf}
+.listHead { margin: 0px;}
+.listHead tr td { border-right: 1px solid #fff; padding: 5px 5px; line-height: 20px; text-align:center; height: auto; font-weight: normal; text-align: center; /*color: #ff8400;*/ color:#0c2055; font-weight: bold;
+    /*text-shadow: 1px 0px 0px #fff,0px 1px 0px #fff,-1px 0px 0px #fff,0px -1px 0px #fff*/}
+.listHead tr td:last-child{ border-right: none}
+
+.tableBookDiv { height: 310px; overflow-y:scroll; margin-top: 35px;}
+.tableBook {}
+.tableBook tr { height: 30px; line-height: 30px; border-bottom: 1px solid #fff;}
+.tableBook tr:nth-child(odd) { background: #c0cae3;}
+.tableBook tr:nth-child(even) { background: #e1eaff;}
+.tableBook tr td { border-right:1px solid #fff; padding: 5px; line-height: 20px; height: auto; font-weight: normal; text-align: center; width: auto}
+.tableBook tr:hover{ background: #8faaef; cursor: pointer; color: #d20000}
+
+.saixuanul .button { border: 0px!important; margin-top:0px; padding-top: 0px; }
+.button a.sbeyellow { display: block; float: left; padding: 0px 10px!important;}
+.saixuanul .button a { padding-left: 30px!important; position: relative}

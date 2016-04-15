@@ -1,7 +1,14 @@
-
-<script src="../js/jquery.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>收取预付</title>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
+    <link href="../css/popup.css" rel="stylesheet">
+</head>
+<body>
 <!-- 收取预付begin -->
-<div class="bgblack" onclick="none()">
+<div class="bgblack">
 </div>
 <div class="tanchuang">
     <dl class="tctit"><h1>收取预付</h1></dl>
@@ -66,17 +73,20 @@
 
     <dl class="button">
 
-        <a class="sbe"><i class="icon-signout"></i>单退预付</a><a class="sbe"><i class="icon-edit"></i>预授权</a><a class="sbe"><i class="icon-ok"></i>确认付款</a><a class="sbe"><i class="icon-remove"></i>取消</a><a class="sbe" onclick="print()"><i class="icon-print"></i>明细打印</a>
+        <a class="sbe"><i class="icon-signout"></i>单退预付</a><a class="sbe"><i class="icon-edit"></i>预授权</a><a class="sbe"><i class="icon-ok"></i>确认付款</a><a class="sbe"><i class="icon-remove"></i>取消</a><a class="sbe" onclick="printTable()"><i class="icon-print"></i>明细打印</a>
     </dl>
 </div>
 <!-- 收取预付end -->
-
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../myjs/hotelMain.js"></script>
+<script type="text/javascript" src="../myjs/my_xiala.js"></script>
 <script type="text/javascript">
-    window.onload=function()
-    {
-        if(document.readyState=="complete")
-        {
-            document.getElementById("money").focus();
-        }
-    }
+    (function(){
+        $(".bgblack").on("click",function(){
+//$(window.parent.document.getElementById("np-pop-iframe")).remove();
+            $("#np-pop-iframe",window.parent.document).remove();
+        });
+    })(jQuery);
 </script>
+</body>
+</html>

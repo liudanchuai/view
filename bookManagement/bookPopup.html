@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增预订</title>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
+    <link href="../css/popup.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/public/jquery.mCustomScrollbar.css">
+</head>
+<body>
+<!-- 新增预订弹窗begin -->
+<div class="bgblack">
+</div>
+<div class="tanchuang" style="width: 750px;">
+    <dl class="tctit"><h1>增加预订</h1></dl>
+
+    <div class="snackbox fl">
+        <h1>
+            <span class="fl">选择房类:</span>
+            <div class="my_xl tc_xl inputCategory">
+                <div class="my_xl_txt tc_xl_txt">请选择</div>
+                <div class="my_xl_btn"></div>
+                <ul class="my_xl_list tc_xl_list">
+                    <li class="">标准间</li>
+                    <li class="">豪华套房</li>
+                    <li class="">单人间</li>
+                </ul>
+            </div>
+        </h1>
+
+        <div class="snackListBox">
+            <div class="tableHeadDiv">
+                <table class="printTableHead">
+                    <tr>
+                        <td style="width: 99px;">房类</td>
+                        <td style="width: 99px;">房号</td>
+                        <td style="width: 99px;">单价</td>
+                        <td style="width: 58px;">选择</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tableDiv" style="height: 320px;">
+                <table class="printTable">
+
+                    <tr>
+                        <td style="width: 99px;">标准间</td>
+                        <td style="width: 99px;">5001</td>
+                        <td style="width: 99px;">200.00元</td>
+                        <td style="width: 58px;"><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>标准间</td>
+                        <td>5002</td>
+                        <td>200.00元</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>标准间</td>
+                        <td>5003</td>
+                        <td>200.00元</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>单人间</td>
+                        <td>5004</td>
+                        <td>100.00元</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>单人间</td>
+                        <td>5005</td>
+                        <td>100.00元</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>单人间</td>
+                        <td>5006</td>
+                        <td>100.00元</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>豪华套房</td>
+                        <td>5007</td>
+                        <td>600.00元</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>豪华套房</td>
+                        <td>5008</td>
+                        <td>600.00元</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>豪华套房</td>
+                        <td>5009</td>
+                        <td>600.00元</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>豪华套房</td>
+                        <td>5008</td>
+                        <td>600.00元</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>豪华套房</td>
+                        <td>5009</td>
+                        <td>600.00元</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="float: left; width: 320px; margin-left: 30px; margin-top: 50px;">
+        <table class="tableBorderfff">
+            <tr>
+                <td>姓名：</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>电话：</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>单位：</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>账单号：</td>
+                <td>18602488888</td>
+            </tr>
+            <tr>
+                <td>来店日期：</td>
+                <td>
+                    <div class="my_xl tc_xl">
+                        <div class="my_xl_txt tc_xl_txt">2016-03-21</div>
+                        <div class="my_xl_btn"></div>
+                        <ul class="my_xl_list tc_xl_list">
+                            <li class="">2016-03-22</li>
+                            <li class="">2016-03-23</li>
+                            <li class="">2016-03-24</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>离店日期：</td>
+                <td>
+                    <div class="my_xl tc_xl">
+                        <div class="my_xl_txt tc_xl_txt">2016-03-21</div>
+                        <div class="my_xl_btn"></div>
+                        <ul class="my_xl_list tc_xl_list">
+                            <li class="">2016-03-22</li>
+                            <li class="">2016-03-23</li>
+                            <li class="">2016-03-24</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+
+        <dl class="button"><a class="sbe"><i class="icon-ok"></i>确定</a><a class="sbe" onclick="none()"><i class="icon-remove"></i>取消</a> </dl>
+    </div>
+
+
+</div>
+<!-- 新增预订弹窗end -->
+
+<script type="text/javascript" src="../myjs/my_xiala.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../js/minified/jquery-1.11.0.min.js"><\/script>')</script>
+
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+    (function($){
+        $(window).load(function(){
+
+            $(".tableDiv").mCustomScrollbar({theme:"minimal-dark"});
+
+
+        });
+    })(jQuery);
+</script>
+<script type="text/javascript">
+    (function(){
+        $(".bgblack").on("click",function(){
+//$(window.parent.document.getElementById("np-pop-iframe")).remove();
+            $("#np-pop-iframe",window.parent.document).remove();
+        });
+    })(jQuery);
+</script>
+</body>
+</html>
+

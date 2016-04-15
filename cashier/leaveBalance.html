@@ -1,9 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>离店结算</title>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
+    <link href="../css/popup.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/public/jquery.mCustomScrollbar.css">
+    <style type="text/css">
+        .printTable { margin-right: 30px;}
+        .printTable td { line-height: 20px; padding: 0px 5px;}
+        .printTableHead tr td { line-height: 20px; padding: 0px 5px;}
+    </style>
+</head>
+<body>
 <!-- 离店结算begin -->
-<style>
-    .printTable { margin-right: 30px;}
-    .printTable td { line-height: 20px; padding: 0px 5px;}
-</style>
-<div class="bgblack" onclick="none()">
+
+<div class="bgblack">
 </div>
 
 <div class="tanchuang">
@@ -41,20 +53,53 @@
         <tr>
             <td>全结：</td>
             <td colspan="3">
-                <table class="printTable fr" style="width: 250px;">
-                    <tr>
-                        <td>房号</td>
-                        <td>预付</td>
-                    </tr>
-                    <tr>
-                        <td>房号</td>
-                        <td>预付</td>
-                    </tr>
-                    <tr>
-                        <td>房号</td>
-                        <td>预付</td>
-                    </tr>
-                </table>
+                <div class="fr" style="width: 275px; position: relative; border: 1px solid #ccc">
+                    <div class="tableHeadDiv">
+                        <table class="printTableHead">
+                            <tr>
+                                <td style="width: 91px;">房号</td>
+                                <td style="width: 91px;">预付</td>
+                                <td style="width: 61px;">选择</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tableDiv" style="height: 85px;">
+                        <table class="printTable">
+                            <tr>
+                                <td style="width: 91px;">房号</td>
+                                <td style="width: 91px;">预付</td>
+                                <td style="width: 61px;"><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>房号</td>
+                                <td>预付</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>房号</td>
+                                <td>预付</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 91px;">房号</td>
+                                <td style="width: 91px;">预付</td>
+                                <td style="width: 61px;"><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>房号</td>
+                                <td>预付</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                            <tr>
+                                <td>房号</td>
+                                <td>预付</td>
+                                <td><input type="checkbox"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
                 <input type="checkbox"> 结账全选<br>
                 <input type="radio" checked> 按房间结算<br>
                 <input type="radio">选宾客结算
@@ -128,4 +173,27 @@
     <dl class="button"><a class="sbe"><i class="icon-ok"></i>确认</a><a class="sbe"><i class="icon-remove"></i>取消</a> </dl>
 
 </div>
-<script type="text/javascript" src="myjs/my_xiala.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../myjs/my_xiala.js"></script>
+<script>window.jQuery || document.write('<script src="../js/minified/jquery-1.11.0.min.js"><\/script>')</script>
+
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+    (function($){
+        $(window).load(function(){
+            $(".tableDiv").mCustomScrollbar({theme:"minimal-dark"});
+        });
+    })(jQuery);
+</script>
+<script type="text/javascript">
+    (function(){
+        $(".bgblack").on("click",function(){
+//$(window.parent.document.getElementById("np-pop-iframe")).remove();
+            $("#np-pop-iframe",window.parent.document).remove();
+        });
+    })(jQuery);
+</script>
+</body>
+</html>

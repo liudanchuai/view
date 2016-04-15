@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>预订管理</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/jquery.contextmenu.css"/>
+    <link rel="stylesheet" href="css/public/common.css">
+    <link rel="stylesheet" href="css/public/left.css"/>
+    <link rel="stylesheet"  href="css/public/top.css"/>
+    <link rel="stylesheet"  href="css/bookManagement.css"/>
+    <link rel="stylesheet" href="css/public/jquery.mCustomScrollbar.css">
+</head>
+<body>
+<div id="lefbox" style="width: 265px; height:100%; float: left">
+
+</div>
+<!--main-container-part-->
+<div id="content">
+    <div id="topbox">
+
+    </div>
+    <!-- BreadcrumbNavigation begin -->
+    <div class="weizhi">酒店之星 > 预订管理</div>
+    <!-- BreadcrumbNavigation end -->
+    <!--Filter begin-->
+    <div class="saixuanbox">
+        <ul class="userbox">
+            <a title="" href="../login.html"><i class="icon-user"></i> <span class="text">操作员设置</span></a>
+            <a title="" href="../login.html"><i class="icon-signout"></i><span>退出</span></a>
+
+        </ul>
+        <ul class="saixuanul">
+            <li class="sxtit">操作日期：</li>
+            <li class="sxli">
+                <div class="my_xl sx_xl">
+                    <i class="icon-tasks lv"></i>
+                    <div class="my_xl_txt sx_xl_txt">2016-04-21</div>
+                    <div class="my_xl_btn"></div>
+                    <ul class="my_xl_list sx_xl_list">
+                        <li><span>2016-04-22</span></li>
+                        <li><span>2016-04-23</span></li>
+                        <li><span>2016-04-24</span></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="sxtit">-</li>
+            <li class="sxli">
+                <div class="my_xl sx_xl">
+                    <i class="icon-tasks lv"></i>
+                    <div class="my_xl_txt sx_xl_txt">2016-04-21</div>
+                    <div class="my_xl_btn"></div>
+                    <ul class="my_xl_list sx_xl_list">
+                        <li><span>2016-04-22</span></li>
+                        <li><span>2016-04-23</span></li>
+                        <li><span>2016-04-24</span></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="sxli">
+
+                <i class="icon-refresh lan"></i>
+                <div class="my_fresh">刷新全部预订</div>
+            </li>
+            <li class="sxtit button">
+                <a class="sbeyellow" onclick="book()"><i class="icon-plus"></i>增加新预订</a>
+            </li>
+        </ul>
+    </div>
+    <!--Filter end-->
+    <div class="bookBox">
+        <div class="bookListHead">
+            <table class="listHead">
+                <tr>
+                    <td style="width: 12%">订单号</td>
+                    <td style="width: 8%">房号</td>
+                    <td style="width: 8%">房价</td>
+                    <td style="width: 12%">来店日期</td>
+                    <td style="width: 12%">预离日期</td>
+                    <td style="width: 5%">预付订金</td>
+                    <td style="width: 8%">协议</td>
+                    <td style="width: 12%">电话</td>
+                    <td style="width: 12%">公付账号</td>
+                    <td style="width: 150px;">操作日期</td>
+                </tr>
+            </table>
+        </div>
+        <div id="content-md" class="tableBookDiv">
+            <table class="tableBook">
+                <tr>
+                    <td style="width: 12%">012345678912</td>
+                    <td style="width: 8%">5004</td>
+                    <td style="width: 8%">208.00元</td>
+                    <td style="width: 12%">2016-04-22</td>
+                    <td style="width: 12%">2016-04-23</td>
+                    <td style="width: 5%">50.00元</td>
+                    <td style="width: 8%">协议</td>
+                    <td style="width: 12%">1860248888888</td>
+                    <td style="width: 12%">123456789012</td>
+                    <td style="width: 133px;">2016-04-18</td>
+                </tr>
+                <tr>
+                    <td>012345678912</td>
+                    <td>5001</td>
+                    <td>300.00元</td>
+                    <td>2016-04-22</td>
+                    <td>2016-04-23</td>
+                    <td>50.00元</td>
+                    <td>协议</td>
+                    <td>1860248888888</td>
+                    <td>123456789012</td>
+                    <td>2016-04-18</td>
+                </tr>
+                <tr>
+                    <td>012345678912</td>
+                    <td>5001</td>
+                    <td>300.00元</td>
+                    <td>2016-04-22</td>
+                    <td>2016-04-23</td>
+                    <td>50.00元</td>
+                    <td>协议</td>
+                    <td>1860248888888</td>
+                    <td>123456789012</td>
+                    <td>2016-04-18</td>
+                </tr>
+                <tr>
+                    <td>012345678912</td>
+                    <td>5001</td>
+                    <td>300.00元</td>
+                    <td>2016-04-22</td>
+                    <td>2016-04-23</td>
+                    <td>50.00元</td>
+                    <td>协议</td>
+                    <td>1860248888888</td>
+                    <td>123456789012</td>
+                    <td>2016-04-18</td>
+                </tr>
+                <tr>
+                    <td>012345678912</td>
+                    <td>5001</td>
+                    <td>300.00元</td>
+                    <td>2016-04-22</td>
+                    <td>2016-04-23</td>
+                    <td>50.00元</td>
+                    <td>协议</td>
+                    <td>1860248888888</td>
+                    <td>123456789012</td>
+                    <td>2016-04-18</td>
+                </tr>
+                <tr>
+                    <td>012345678912</td>
+                    <td>5001</td>
+                    <td>300.00元</td>
+                    <td>2016-04-22</td>
+                    <td>2016-04-23</td>
+                    <td>50.00元</td>
+                    <td>协议</td>
+                    <td>1860248888888</td>
+                    <td>123456789012</td>
+                    <td>2016-04-18</td>
+                </tr>
+                <tr>
+                    <td>012345678912</td>
+                    <td>5001</td>
+                    <td>300.00元</td>
+                    <td>2016-04-22</td>
+                    <td>2016-04-23</td>
+                    <td>50.00元</td>
+                    <td>协议</td>
+                    <td>1860248888888</td>
+                    <td>123456789012</td>
+                    <td>2016-04-18</td>
+                </tr>
+                <tr>
+                    <td>012345678912</td>
+                    <td>5001</td>
+                    <td>300.00元</td>
+                    <td>2016-04-22</td>
+                    <td>2016-04-23</td>
+                    <td>50.00元</td>
+                    <td>协议</td>
+                    <td>1860248888888</td>
+                    <td>123456789012</td>
+                    <td>2016-04-18</td>
+                </tr>
+                <tr>
+                    <td>012345678912</td>
+                    <td>5001</td>
+                    <td>300.00元</td>
+                    <td>2016-04-22</td>
+                    <td>2016-04-23</td>
+                    <td>50.00元</td>
+                    <td>协议</td>
+                    <td>1860248888888</td>
+                    <td>123456789012</td>
+                    <td>2016-04-18</td>
+                </tr>
+                <tr>
+                    <td>012345678912</td>
+                    <td>5001</td>
+                    <td>300.00元</td>
+                    <td>2016-04-22</td>
+                    <td>2016-04-23</td>
+                    <td>50.00元</td>
+                    <td>协议</td>
+                    <td>1860248888888</td>
+                    <td>123456789012</td>
+                    <td>2016-04-18</td>
+                </tr>
+                <tr>
+                    <td>012345678912</td>
+                    <td>5001</td>
+                    <td>300.00元</td>
+                    <td>2016-04-22</td>
+                    <td>2016-04-23</td>
+                    <td>50.00元</td>
+                    <td>协议</td>
+                    <td>1860248888888</td>
+                    <td>123456789012</td>
+                    <td>2016-04-18</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+<!--end-main-container-part-->
+
+<!--Footer-part-->
+<div id="botbox">
+
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="myjs/hotelMain.js"></script>
+<script src="js/jquery.contextmenu.js"></script>
+<script type="text/javascript" src="myjs/my_xiala.js"></script>
+
+<script>window.jQuery || document.write('<script src="js/minified/jquery-1.11.0.min.js"><\/script>')</script>
+
+<!-- custom scrollbar plugin -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+    (function($){
+        $(window).load(function(){
+
+            $("#content-md").mCustomScrollbar({theme:"minimal-dark"});
+
+
+        });
+    })(jQuery);
+</script>
+</body>
+</html>

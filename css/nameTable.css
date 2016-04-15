@@ -1,0 +1,32 @@
+.nameTableHead tr {background:#a58431; font-weight: bold; color: #fff; }
+.nameTableHead tr td { padding: 5px; line-height: 20px; border-right: 1px solid #fff; text-align: center;}
+.nameTableHead tr td:last-child { border-right: none}
+.nameTableDiv { width: 500px; border: 1px solid #ccc; position: relative}
+.nameTable tr { border-bottom: 1px solid #fff; cursor: pointer}
+.nameTable tr:nth-child(odd) { background:#e3d9c0;}
+.nameTable tr:nth-child(even) { background: #f1e9dd}
+.nameTable tr:last-child { border-bottom: 1px solid #ccc}
+.nameTable tr td { text-align: center; padding: 5px 5px; line-height: 20px; border-right: 1px solid #fff;}
+.nameTable tr td:last-child { border: none}
+.nameTable tr:hover { background: #ddc893; color: #d20000;}
+
+.nameLeft { width: 250px; float: left; margin-top: 50px; margin-left: 50px;}
+.nameRight { width: 700px; float: left; margin-top: 50px; margin-left: 100px;}
+.nameClassBox { border: 2px solid #ccc; position: relative; border-radius: 10px; padding: 20px 15px;}
+.nameClassBox h1 { width: 130px; height: 20px; line-height: 20px; text-align: center; position: absolute; left: 50%; margin-left: -65px; background: #eee; top: -20px;
+ font-size: 16px;
+}
+.nameClassBox:after { content: ''; display: block; height: 0px; line-height: 0px; clear: both; overflow: hidden}
+.nameClassBox ul { width: 236px;margin-right: -19px; float: right; background: #eeeeee}
+.nameClassBox ul li { width: 210px; padding:5px 10px; position: relative; text-align: center; cursor: pointer; line-height: 24px; border: 2px solid #ccc; margin: 5px 0px; font-weight: bold; float: left;color: #705614;}
+.nameClassBox ul li:hover,.nameClassBox ul li.hover { background: #a58431; color: #fff; border: 2px solid #a58431; }
+.nameClassBox ul li:hover:after,.nameClassBox ul li.hover:after{
+    position: absolute;
+    left: 232px;
+    top:-2px;
+    border-top: 19px solid transparent;
+    border-bottom: 19px solid transparent;
+    border-left: 19px solid #a58431;
+    border-left-color: #a58431;
+    content: '';
+}

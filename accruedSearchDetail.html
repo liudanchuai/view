@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>应收应付帐明细</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/jquery.contextmenu.css"/>
+    <link rel="stylesheet" href="css/public/common.css">
+    <link rel="stylesheet" href="css/public/left.css"/>
+    <link rel="stylesheet"  href="css/public/top.css"/>
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/public/jquery.mCustomScrollbar.css">
+
+</head>
+<body>
+<div id="lefbox" style="width: 265px; height:100%; float: left">
+
+</div>
+<!--main-container-part-->
+<div id="content">
+    <div id="topbox">
+
+    </div>
+    <!-- BreadcrumbNavigation begin -->
+    <div class="weizhi">酒店之星 > 应收应付</div>
+    <!-- BreadcrumbNavigation end -->
+    <!--Filter begin-->
+    <div class="saixuanbox">
+        <ul class="userbox">
+            <a title="" href="../login.html"><i class="icon-user"></i> <span class="text">操作员设置</span></a>
+            <a title="" href="../login.html"><i class="icon-signout"></i><span>退出</span></a>
+        </ul>
+        <ul class="saixuanul">
+            <li class="sxtit">应计管理：</li>
+            <li class="nameButton"><a href="accruedManagement.html">挂账协议管理</a> </li>
+            <li class="nameButton hover"><a href="accruedSearchDetail.html">应收应付帐明细</a> </li>
+            <li class="nameButton"><a href="#">应收帐结算</a> </li>
+        </ul>
+    </div>
+    <!--Filter end-->
+    <div id="main">
+
+        <div class="accruedBox" style="width: 300px;">
+            <h1 class="accruedTitle">应收应付帐查询</h1>
+            <table class="tableBorderaaa">
+                <tr>
+                    <td>协议号：</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>总账：</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>成员帐：</td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+            <dl class="button"><a class="sbe"><i class="icon-ok"></i>查 询</a> </dl>
+        </div>
+        <div class="accruedTableBox">
+            <div class="tableHeadDiv">
+                <table class="buyTableHead">
+                    <tr>
+                        <td style="width: 130px;">建账日期</td>
+                        <td style="width: 130px;">金额</td>
+                        <td style="width: 100px;">操作员</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tableDiv" style="max-height:450px;">
+                <table class="tableBuy">
+                    <tr>
+                        <td style="width: 130px;">2016-05-22</td>
+                        <td style="width: 130px;">500.00元</td>
+                        <td style="width: 100px;">李某某</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 130px;">2016-05-22</td>
+                        <td style="width: 130px;">500.00元</td>
+                        <td style="width: 100px;">李某某</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 130px;">2016-05-22</td>
+                        <td style="width: 130px;">500.00元</td>
+                        <td style="width: 100px;">李某某</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 130px;">2016-05-22</td>
+                        <td style="width: 130px;">500.00元</td>
+                        <td style="width: 100px;">李某某</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 130px;">2016-05-22</td>
+                        <td style="width: 130px;">500.00元</td>
+                        <td style="width: 100px;">李某某</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 130px;">2016-05-22</td>
+                        <td style="width: 130px;">500.00元</td>
+                        <td style="width: 100px;">李某某</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!--Footer-part-->
+<div id="botbox">
+
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="myjs/hotelMain.js"></script>
+<script src="js/jquery.contextmenu.js"></script>
+<script type="text/javascript" src="myjs/my_xiala.js"></script>
+
+
+<script>window.jQuery || document.write('<script src="js/minified/jquery-1.11.0.min.js"><\/script>')</script>
+
+<!-- custom scrollbar plugin -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+    (function($){
+        $(window).load(function(){
+
+            $(".tableDiv").mCustomScrollbar({theme:"minimal-dark"});
+
+
+        });
+    })(jQuery);
+</script>
+
+</body>
+</html>

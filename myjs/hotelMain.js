@@ -16,67 +16,48 @@ $(function () {
 });
 /*左侧菜单导入*/
 function lefbox(){
-    $("#lefbox").load("public/left.html", function () {
-        $("#lefbox").fadeIn(100);
-    });
+    $("#lefbox").load("public/left.html")
 
 };
 
 
 /*快捷菜单导入*/
 function topbox(){
-    $("#topbox").load("public/top.html", function () {
-        $("#topbox").fadeIn(100);
-    });
+    $("#topbox").load("public/top.html")
 
 };
 
 /*单击开房弹窗导入*/
-function jump() {
-    $("#mainBody").load("reception/roomReservation.html", function () {
-        $("#mainBody").fadeIn(100);
-    });
-
+function jump(){
+    $(top.document.body).append('<iframe src="reception/roomReservation.html" id="np-pop-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
 };
 
-/*单击开房弹窗删除*/
-function none() {
-    $('#mainBody').empty();
+/*新增预订弹窗导入*/
+function book() {
+    $(top.document.body).append('<iframe src="bookManagement/bookPopup.html" id="np-pop-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
 };
 
 
 /*明细打印列表导入*/
-function print() {
-    $("#print").load("cashier/detailPrint.html", function () {
-        $("#print").fadeIn(100);
-    });
+function printTable() {
+    $(top.document.body).append('<iframe src="cashier/detailPrint.html" id="np-pop-iframe-print" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
 };
 
-/*明细打印列表删除*/
-function printEmpty() {
-    $('#print').empty();
-};
-
+/*esc退出弹窗*/
 document.onkeyup = function (e)
 {
     e = e || window.event;
     var code = e.which || e.keyCode;
     if (code == 27)
     {
-        if($("#mainBody").html!==''){
-            none() ;
-        };
-        if($("#print").html!==''){
-            printEmpty() ;
-        };
+        $("#np-pop-iframe-print",window.parent.document).remove();
+        $("#np-pop-iframe",window.parent.document).remove();
     }
 };
 
 /*底部版权信息导入*/
 function botbox(){
-    $("#botbox").load("public/foot.html", function () {
-        $("#botbox").fadeIn(100);
-    });
+    $("#botbox").load("public/foot.html")
 
 };
 
@@ -88,45 +69,33 @@ function setPop() {
         items: [
             {
                 label: '收取预付', icon: 'icon-download-alt', action: function () {
-                $("#mainBody").load("cashier/chargeInAdvance.html", function () {
-                    $("#mainBody").fadeIn(100);
-                });
+                $(top.document.body).append('<iframe src="cashier/chargeInAdvance.html" id="np-pop-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
             }
             },
             {
                 label: '杂单录入', icon: 'icon-edit', action: function () {
-                $("#mainBody").load("cashier/miscellaneousSingle.html", function () {
-                    $("#mainBody").fadeIn(100);
-                });
+                $(top.document.body).append('<iframe src="cashier/miscellaneousSingle.html" id="np-pop-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
             }
             },
             {
                 label: '冲账管理', icon: 'icon-exchange huang', action: function () {
-                $("#mainBody").load("cashier/strikeABalance.html", function () {
-                    $("#mainBody").fadeIn(100);
-                });
+                $(top.document.body).append('<iframe src="cashier/strikeABalance.html" id="np-pop-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
             }
             },
             {
                 label: '房吧录入', icon: 'icon-home', action: function () {
-                $("#mainBody").load("cashier/snacksEntry.html", function () {
-                    $("#mainBody").fadeIn(100);
-                });
+                $(top.document.body).append('<iframe src="cashier/snacksEntry.html" id="np-pop-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
             }
             },
             null, // divider
             {
                 label: '离店结算', icon: 'icon-share huang', action: function () {
-                $("#mainBody").load("cashier/leaveBalance.html", function () {
-                    $("#mainBody").fadeIn(100);
-                });
+                $(top.document.body).append('<iframe src="cashier/leaveBalance.html" id="np-pop-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
             }
             },
             {
                 label: '消费明细', icon: 'icon-file-alt', action: function () {
-                $("#mainBody").load("consumptionQuery/consumptionDetail.html", function () {
-                    $("#mainBody").fadeIn(100);
-                });
+                $(top.document.body).append('<iframe src="consumptionQuery/consumptionDetail.html" id="np-pop-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
             }
             },
             {

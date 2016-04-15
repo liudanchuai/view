@@ -6,12 +6,12 @@ html,body { height: auto;}
     background: #dedede;
 }
 
-.topbox ul {
+.topbox .ulQuick {
     border-bottom: 2px solid #8da4df;
     height:auto;
 }
 
-.topbox ul:after {
+.topbox .ulQuick:after {
     content: '';
     display: block;
     clear: both;
@@ -22,18 +22,18 @@ html,body { height: auto;}
 }
 .clear { clear: both; height: 1px; line-height: 1px;
     overflow: hidden;}
-.topbox ul li {
+.topbox .ulQuick li {
     float: left;
     margin-right: 10px;
     margin-bottom: 20px;
     margin-top: 10px;
 }
 
-.topbox ul li:nth-child(3), .topbox ul li:nth-child(6) {
+.topbox .ulQuick li:nth-child(3), .topbox ul li:nth-child(6) {
     margin-right: 25px;
 }
 
-.topbox ul li a {
+.topbox .ulQuick li a {
     padding: 10px 23px;
     height: 65px;
     background: #eee;
@@ -52,7 +52,7 @@ html,body { height: auto;}
     border: 1px solid #ccc;
 }
 
-.topbox ul li a i[class^="icon-"] {
+.topbox .ulQuick li a i[class^="icon-"] {
     width: 50px;
     height: 40px;
     display: block;
@@ -62,7 +62,7 @@ html,body { height: auto;}
     vertical-align: text-top;
 }
 
-.topbox ul li a .label {
+.topbox .ulQuick li a .label {
     position: absolute;
     padding: 5px;
     top: -10px;
@@ -77,6 +77,33 @@ html,body { height: auto;}
     white-space: nowrap;
     vertical-align: baseline;
 }
+
+
+.userbox { float: right;}
+.userbox a {
+    padding: 5px 6px;
+    display: block;
+    cursor: pointer;
+    border: 1px solid #b5c5ef;
+    margin-right: 10px;
+    background: #89a2e5;
+    color: #fff;
+    text-shadow: none;
+    font-size: 26px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    -webkit-box-shadow: 1px 1px 0px #666;
+    -moz-box-shadow: 1px 1px 0px #666;
+    box-shadow: 1px 1px 0px #666;
+    float: left;
+    text-align: center;
+}
+.userbox a span { display: none}
+.userbox a i { margin: 0px; position: static;}
 
 .label-red {
     background-color: #b94a48;

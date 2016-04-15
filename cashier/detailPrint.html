@@ -1,60 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>当日明细打印</title>
+    <link rel="stylesheet" href="../css/popup.css">
+    <link rel="stylesheet" href="../css/public/jquery.mCustomScrollbar.css">
+</head>
+<body>
 
 <!-- 当日明细打印begin -->
 
-    <div class="printbg" onclick="printEmpty()"></div>
+<div class="printbg"></div>
 <div class="print">
     <h1>当日明细</h1>
     <div class="printcon">
-        <table class="printTable">
-            <tr>
-                <td>记账日期</td>
-                <td>时间</td>
-                <td>销售点</td>
-                <td>金额</td>
-                <td>摘要</td>
-            </tr>
-            <tr>
-                <td>2016-05-22</td>
-                <td>09:20:50</td>
-                <td>000</td>
-                <td><span class="price">200.00</span>元</td>
-                <td>预付备注摘要</td>
-            </tr>
-            <tr>
-                <td>2016-05-22</td>
-                <td>09:20:50</td>
-                <td>000</td>
-                <td><span class="price">200.00</span>元</td>
-                <td>预付备注摘要</td>
-            </tr>
-            <tr>
-                <td>2016-05-22</td>
-                <td>09:20:50</td>
-                <td>000</td>
-                <td><span class="price">200.00</span>元</td>
-                <td>预付备注摘要</td>
-            </tr>
-            <tr>
-                <td>2016-05-22</td>
-                <td>09:20:50</td>
-                <td>000</td>
-                <td><span class="price">200.00</span>元</td>
-                <td>预付备注摘要</td>
-            </tr>
-            <tr>
-                <td>2016-05-22</td>
-                <td>09:20:50</td>
-                <td>000</td>
-                <td><span class="price">200.00</span>元</td>
-                <td>预付备注摘要</td>
-            </tr>
-            <tr>
-                <td>2016-05-22</td>
-                <td>09:20:50</td>
-                <td>000</td>
-                <td><span class="price">200.00</span>元</td>
-                <td>预付备注摘要</td>
-            </tr>
-        </table>
+        <div class="tableHeadDiv">
+            <table class="printTableHead">
+                <tr>
+                    <td style="width: 130px;">记账日期</td>
+                    <td style="width: 130px;">时间</td>
+                    <td style="width: 170px;">销售点</td>
+                    <td style="width: 130px;">金额</td>
+                    <td style="width: 314px;">摘要</td>
+                </tr>
+            </table>
+        </div>
+        <div class="tableDiv">
+            <table class="printTable">
+                <tr>
+                    <td style="width: 130px;">2016-05-22</td>
+                    <td style="width: 130px;">09:20:50</td>
+                    <td style="width: 170px;">000</td>
+                    <td style="width: 130px;"><span class="price">200.00</span>元</td>
+                    <td style="width: 314px;">预付备注摘要</td>
+                </tr>
+                <tr>
+                    <td>2016-05-22</td>
+                    <td>09:20:50</td>
+                    <td>000</td>
+                    <td><span class="price">200.00</span>元</td>
+                    <td>预付备注摘要</td>
+                </tr>
+                <tr>
+                    <td>2016-05-22</td>
+                    <td>09:20:50</td>
+                    <td>000</td>
+                    <td><span class="price">200.00</span>元</td>
+                    <td>预付备注摘要</td>
+                </tr>
+                <tr>
+                    <td>2016-05-22</td>
+                    <td>09:20:50</td>
+                    <td>000</td>
+                    <td><span class="price">200.00</span>元</td>
+                    <td>预付备注摘要</td>
+                </tr>
+                <tr>
+                    <td>2016-05-22</td>
+                    <td>09:20:50</td>
+                    <td>000</td>
+                    <td><span class="price">200.00</span>元</td>
+                    <td>预付备注摘要</td>
+                </tr>
+                <tr>
+                    <td>2016-05-22</td>
+                    <td>09:20:50</td>
+                    <td>000</td>
+                    <td><span class="price">200.00</span>元</td>
+                    <td>预付备注摘要</td>
+                </tr>
+            </table>
+        </div>
+
     </div>
 </div>
+<script src="../js/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../js/minified/jquery-1.11.0.min.js"><\/script>')</script>
+
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+    (function($){
+        $(window).load(function(){
+            $(".tableDiv").mCustomScrollbar({theme:"minimal-dark"});
+        });
+    })(jQuery);
+</script>
+<script type="text/javascript">
+    (function(){
+        $(".printbg").on("click",function(){
+//$(window.parent.document.getElementById("np-pop-iframe-print")).remove();
+            $("#np-pop-iframe-print",window.parent.document).remove();
+        });
+    })(jQuery);
+</script>
+</body>
+</html>

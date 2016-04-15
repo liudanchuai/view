@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="css/jquery.contextmenu.css"/>
     <link rel="stylesheet" href="css/indexRoomState.css"/>
+    <link rel="stylesheet" href="css/public/common.css">
     <link rel="stylesheet" href="css/public/left.css"/>
     <link rel="stylesheet"  href="css/public/top.css"/>
-    <link href="css/roomReservation.css" rel="stylesheet"/>
+    <link href="css/popup.css" rel="stylesheet"/>
     <link href="css/cashier/detailPrint.css" rel="stylesheet">
 </head>
 
 <body ng-app="mainApp">
-<div id="print"></div>
-<div id="mainBody"></div>
+
 <div id="lefbox" style="width: 265px; height:100%; float: left">
 
 </div>
@@ -32,10 +32,8 @@
     <!--Filter begin-->
     <div class="saixuanbox">
         <ul class="userbox">
-            <a title="" href="../login.html"><i class="icon-user"></i> <span
-                    class="text">操作员设置</span></a>
+            <a title="" href="../login.html"><i class="icon-user"></i> <span class="text">操作员设置</span></a>
             <a title="" href="../login.html"><i class="icon-signout"></i><span>退出</span></a>
-
 
         </ul>
         <ul class="saixuanul">
@@ -63,7 +61,6 @@
                 </div>
             </li>
             <li class="sxli">
-
                     <i class="icon-refresh lan"></i>
                     <div class="my_fresh">刷新全部房态</div>
             </li>
@@ -88,10 +85,11 @@
                     <li class="icon-zfbz" ng-if="r.dirty=='1'"><span>脏房标志</span></li>
                 </ul>
               </ul>
-            <div class="hoverDiv">
-                <ul class="ces">你好文字！</ul>
-            </div>
+              <div class="hoverDiv">
+                  <ul>你好文字</ul>
+              </div>
         </li>
+
 
     </ul>
     <!--房态预览 end-->
@@ -120,7 +118,6 @@
 <script src="myjs/hotelMain.js"></script>
 <script type="text/javascript" src="myjs/jquery.hotkeys.js"></script>
 <script type="text/javascript" src="myjs/my_xiala.js"></script>
-
 
 </body>
 </html>

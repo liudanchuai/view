@@ -1,6 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>消费明细</title>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
+    <link href="../css/popup.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/public/jquery.mCustomScrollbar.css">
+</head>
+<body>
 <!-- 消费明细 -->
 
-<div class="bgblack" onclick="none()">
+<div class="bgblack">
 </div>
 <div class="tanchuang" style="width: 850px;">
     <dl class="tctit"><h1>消费明细</h1></dl>
@@ -45,130 +55,174 @@
         </ul>
     </div>
     <div class="tableConsumption">
-        <table class="printTable">
-            <tr>
-                <td>签单日期</td>
-                <td>时间</td>
-                <td>营业部门</td>
-                <td>金额</td>
-                <td>摘要</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
-            <tr>
-                <td>2016-03-21</td>
-                <td>14:57:59</td>
-                <td>营业部门</td>
-                <td>22</td>
-                <td>吧台明细/双汇王中王,5.00(1.00)</td>
-            </tr>
+        <div class="tableHeadDiv">
+            <table class="printTableHead">
 
-        </table>
+                <tr>
+                    <td style="width: 120px;">签单日期</td>
+                    <td style="width: 120px;">时间</td>
+                    <td style="width: 150px;">营业部门</td>
+                    <td style="width: 120px;">金额</td>
+                    <td style="width: 286px;">摘要</td>
+                </tr>
+            </table>
+        </div>
+        <div class="tableDiv" style="height: 520px">
+            <table class="printTable">
+                <tbody>
+                <tr>
+                    <td style="width: 120px;">签单日期</td>
+                    <td style="width: 120px;">时间</td>
+                    <td style="width: 150px;">营业部门</td>
+                    <td style="width: 120px;">金额</td>
+                    <td style="width: 286px;">摘要</td>
+                </tr>
+
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                <tr>
+                    <td>2016-03-21</td>
+                    <td>14:57:59</td>
+                    <td>营业部门</td>
+                    <td>22</td>
+                    <td>吧台明细/双汇王中王,5.00(1.00)</td>
+                </tr>
+                </tbody>
+
+
+            </table>
+        </div>
     </div>
 
 </div>
 
-<script type="text/javascript" src="myjs/my_xiala.js"></script>
+<script type="text/javascript" src="../myjs/my_xiala.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../js/minified/jquery-1.11.0.min.js"><\/script>')</script>
+
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+    (function($){
+        $(window).load(function(){
+
+            $(".tableDiv").mCustomScrollbar({theme:"minimal-dark"});
+
+
+        });
+    })(jQuery);
+</script>
+<script type="text/javascript">
+    (function(){
+        $(".bgblack").on("click",function(){
+//$(window.parent.document.getElementById("np-pop-iframe")).remove();
+            $("#np-pop-iframe",window.parent.document).remove();
+        });
+    })(jQuery);
+</script>
+</body>
+</html>

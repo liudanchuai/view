@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>应收应付管理</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/jquery.contextmenu.css"/>
+    <link rel="stylesheet" href="css/public/common.css">
+    <link rel="stylesheet" href="css/public/left.css"/>
+    <link rel="stylesheet"  href="css/public/top.css"/>
+    <link rel="stylesheet" href="css/popup.css">
+
+</head>
+<body>
+<div id="lefbox" style="width: 265px; height:100%; float: left">
+
+</div>
+<!--main-container-part-->
+<div id="content">
+    <div id="topbox">
+
+    </div>
+    <!-- BreadcrumbNavigation begin -->
+    <div class="weizhi">酒店之星 > 应收应付</div>
+    <!-- BreadcrumbNavigation end -->
+    <!--Filter begin-->
+    <div class="saixuanbox">
+        <ul class="userbox">
+            <a title="" href="../login.html"><i class="icon-user"></i> <span class="text">操作员设置</span></a>
+            <a title="" href="../login.html"><i class="icon-signout"></i><span>退出</span></a>
+
+        </ul>
+        <ul class="saixuanul">
+            <li class="sxtit">应计管理：</li>
+            <li class="nameButton hover"><a href="accruedManagement.html">挂账协议管理</a> </li>
+            <li class="nameButton"><a href="accruedSearchDetail.html">应收应付帐明细</a> </li>
+            <li class="nameButton"><a href="#">应收帐结算</a> </li>
+        </ul>
+    </div>
+    <!--Filter end-->
+    <div id="main">
+        <div class="accruedBox">
+            <h1 class="accruedTitle">挂账协议管理</h1>
+            <table class="tableBorderaaa">
+                <tr>
+                    <td>助记符：</td>
+                    <td><input type="text" name="name"></td>
+                    <td>总帐：</td>
+                    <td><input type="text"  value="readonly" readonly></td>
+                </tr>
+                <tr>
+                    <td>成员帐：</td>
+                    <td>
+                        <input type="text">
+                    </td>
+                    <td>联系电话：</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>结算类型：</td>
+                    <td>
+                        <div class="my_xl tc_xl">
+                            <div class="my_xl_txt tc_xl_txt">请选择</div>
+                            <div class="my_xl_btn"></div>
+                            <ul class="my_xl_list tc_xl_list">
+                                <li class="">担保挂账</li>
+                                <li class="">城市挂账</li>
+                                <li class="">员工挂账</li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td colspan="2"></td>
+
+                </tr>
+            </table>
+            <table class="tableBorderfff">
+                <tr>
+                    <td>账号：</td>
+                    <td><input type="text"></td>
+                    <td>建帐日期：</td>
+                    <td>2016-05-21</td>
+                </tr>
+                <tr>
+                    <td style="width:100px; color: #d20000">应付款：</td>
+                    <td><input type="text" name="money" class="input"></td>
+                    <td>付款方式：</td>
+                    <td>
+                        <div class="my_xl tc_xl">
+                            <div class="my_xl_txt tc_xl_txt">请选择</div>
+                            <div class="my_xl_btn"></div>
+                            <ul class="my_xl_list tc_xl_list">
+                                <li class="">人民币</li>
+                                <li class="">信用卡</li>
+                                <li class="">单位支付</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>操作员：</td>
+                    <td><input type="text"></td>
+                    <td>备注：</td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+            <dl class="button"><a class="sbe"><i class="icon-ok"></i>确认</a> </dl>
+        </div>
+
+
+    </div>
+</div>
+<!--Footer-part-->
+<div id="botbox">
+
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="myjs/hotelMain.js"></script>
+<script src="js/jquery.contextmenu.js"></script>
+<script type="text/javascript" src="myjs/my_xiala.js"></script>
+</body>
+</html>

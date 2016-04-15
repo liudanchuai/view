@@ -1,7 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>单击开房</title>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
+    <link href="../css/popup.css" rel="stylesheet">
 
-<html>
+</head>
 <body>
-<div class="bgblack" onclick="none()">
+
+<!-- 单击开房begin -->
+<div class="bgblack">
 </div>
 
 <div class="tanchuang">
@@ -141,10 +150,19 @@
     <dl class="button"><a class="sbe"><i class="icon-edit"></i>预授权</a><a class="sbe"><i class="icon-ok"></i>确认付款</a> </dl>
 
 </div>
-<script type="text/javascript" src="myjs/my_xiala.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../myjs/my_xiala.js"></script>
+<script type="text/javascript">
+    (function(){
+        $(".bgblack").on("click",function(){
+//$(window.parent.document.getElementById("np-pop-iframe")).remove();
+            $("#np-pop-iframe",window.parent.document).remove();
+        });
+    })(jQuery);
+</script>
 </body>
 </html>
-<!-- 单击开房begin -->
+
 
 
 

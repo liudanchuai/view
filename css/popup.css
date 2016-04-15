@@ -1,0 +1,236 @@
+body { margin: 0px; padding: 0px; font-size: 14px; font-family: "Microsoft Yahei"}
+div,ul,li{ margin: 0px; padding: 0px;}
+ul,li { list-style: none}
+i { margin: 0px;
+    padding:0px;}
+table { border-collapse: collapse; border-spacing: 0px; font-size: 14px;}
+table,tr,td { margin: 0px; padding: 0px;}
+input[type=text]{ border: 1px solid #ccc; border-radius: 5px; padding: 4px 5px; width: 90%; line-height: 20px;}
+.inputNumber { width: 20px!important; height: 14px;}
+.fl { float: left}
+.fr { float: right}
+.clear { height: 1px; line-height: 1px; overflow: hidden; clear: both;}
+#tanchuang { position:absolute; width: 100%; height: 100%; top:0px; bottom: 0px; left: 0px; right:0px; z-index: 999; background: rgba(0,0,0,0.5)}
+.bgblack { width: 100%; height: 100%; top:0px; right:0px; left: 0px; bottom: 0px; background: rgba(0,0,0,0.2); position:fixed; z-index: 980; display: block}
+.tanchuang { position:fixed; top:10%; left: 0px; right: 0px; margin: auto; z-index: 990; width: 600px; height:auto; display: block; padding:40px 30px 30px 30px; background: #e5e5e5; border-radius: 15px;
+    -webkit-box-shadow: inset 0px 0px 10px #666;
+    -moz-box-shadow: inset 0px 0px 10px #666;
+    box-shadow: inset 0px 0px 10px #666;
+    border: 1px solid #ccc;
+    animation: bottomtotop 0.5s;
+    -webkit-animation: bottomtotop 0.5s;
+    -moz-animation: bottomtotop 0.5s;
+    -ms-animation: bottomtotop 0.5s;
+    -o-animation: bottomtotop 0.5s;
+}
+.tanchuang:after { content: ''; display: block; clear: both; height: 0px; line-height: 0px; overflow: hidden}
+.tanchuang dl { font-size: 14px; margin-bottom: 10px; margin-top: 0px;}
+.tanchuang dl:after {  content: ''; display: block; clear: both; height: 0px; line-height: 0px;
+    overflow: hidden;}
+.tanchuang dl dt { padding: 5px 10px; width:75px; min-height:30px; line-height: 30px; border-bottom: 1px solid #d3daeb; border-right: 1px solid #d3daeb; float: left; text-align: right }
+.tanchuang dl dd { padding: 5px 10px; margin: 0px; width: 183px; line-height: 30px; overflow: visible; background:#c0cae3; border-bottom: 1px solid #d3daeb; border-right: 1px solid #d3daeb; float: left; text-align: left }
+.tanchuang dl dd span { float: right}
+.tanchuang dl dd b { color: #0d2460;}
+.tanchuang dl dd strong { color: #a14e04;}
+.tanchuang dl dd .lbselect { width: 174px; height: 28px; line-height: 28px; background: #fff; border:1px solid #eee; margin: 0px;}
+.tanchuang dl dd.xieyi { width: 483px; line-height: 30px;}
+.tanchuang dl dt.beizhu { border-bottom:0}
+.tanchuang dl dd.beizhu { width: 483px; border: none}
+.tanchuang dl dd.beizhu textarea { width: 95%; height: 50px; line-height: 24px; padding: 10px; margin-top: 10px; background: #fff; border: 1px solid #ccc;}
+.tanchuang dl dd input[type=text] { width: 90%; height: 28px; text-align: left; padding: 0px 5px;line-height: 28px; border: 1px solid #ccc; margin: 0px;margin-top: -4px;}
+.tsinput { width: 60px!important; margin: 0px;}
+.tanchuang dl.add_delet { background: none; height: 25px; line-height: 25px; text-align: left; font-size:20px; margin: 0px; font-weight: lighter}
+.tanchuang dl dd i { width: 25px; height: 25px; line-height: 25px; float: right; font-size: 20px; color: #6b8bdf; margin: 0px; margin-top: 3px;}
+.tanchuang dl dd i span { display: none}
+.tanchuang dl.tctit { height: 2px; line-height: 2px; background: #a8b8e2; position: relative}
+.tanchuang dl.tctit h1 { font-size: 16px; line-height: 30px; position: absolute; width: 150px; top:-30px; left: 50%; margin-left: -75px; text-align: center; padding: 0px 10px; color: #274286; background: #e5e5e5;
+text-shadow: 0px 2px 0px #fff,0px -2px 0px #fff,2px 0px 0px #fff, -2px 0px 0px #fff;
+}
+.tanchuang dl.tabsheet { margin-bottom: 0px; margin-top: 20px; background: none;line-height: 25px;text-shadow: 1px 0px 0px #fff,-1px 0px 0px #fff,0px 1px 1px #fff,0px -1px 0px #fff;color: #274286;}
+.tanchuang dl.tabsheet dt { width: 100px; height: 25px; line-height: 25px; border:1px solid #aaa; border-bottom:0; border-radius: 3px 3px 0px 0px; text-align: center; margin-right: 5px; float: left;
+    color: #274286; cursor: pointer; background: linear-gradient(#c0d1fc, #9db1e7);
+}
+.tanchuang dl.tabsheet dt:hover,.tanchuang dl.tabsheet dt.hover {background: linear-gradient(#4a5ba4, #dee7fe); }
+.tanchuang .jiesuan { padding:20px 0px; background: #ccc; text-align: left; margin-top: 20px; border:1px dashed #6b8bdf}
+.tanchuang .jiesuan dt { width: 98px; border-right: none; border-bottom: 1px solid #aaa; background: none; text-align: right;}
+.tanchuang .jiesuan dd { width: 175px; border-right: none; border-bottom: 1px solid #aaa; background: none; text-align: left }
+.tanchuang .jiesuan .reprint { width: 245px; text-align: right; color: #e00808; text-shadow: 1px 1px 0px #bbb;}
+.tanchuang .jiesuan .reprint input[type=checkbox]{ margin-top: -2px; margin-right: 3px;}
+.tanchuang dl .dwselect { width:98%; height: 30px; margin-top: 5px; border: 1px solid #ccc; line-height: 30px; }
+.tanchuang dl.jiesuan .input { border: 1px solid #ccc; height: 28px; line-height: 28px; width: 93%;}
+
+
+.tc_xl{width:90%;padding-left: 10px; border-radius:4px; position:relative;background: #fff url(../images/my_xiala1.gif) 90% 12px no-repeat;cursor:pointer; height: 28px; line-height: 28px; border: 1px solid #ccc;}
+.tc_xl_txt{float:left;width: 100%;line-height: 28px;padding-right:17px;color:#000; font-size: 14px; font-weight: normal}
+.tc_xl_list{border:1px solid #ccc; background: #fff}
+.tc_xl_txt,.tc_xl_list li{text-indent:0px;overflow:hidden;}
+.tc_xl_list{z-index:99;position:absolute;top: 30px;left:-1px;z-index:88888;border-top:none;width:100%;display:none;_top:23px;margin-left:0px !important}
+.tc_xl_list li{list-style:none;height: 30px;line-height: 30px;cursor:default;background:#fff;padding-left: 10px;color:#000; font-size: 14px; font-weight: normal}
+.tc_xl_list li.focus{background:#3399FF;color:#fff}
+.tc_xl_list li.llfd { width: 227px; float: left; text-align: left;}
+
+
+@keyframes bottomtotop {0%{top:20%; opacity: 0}100%{top:10%; opacity: 1}}
+@-webkit-keyframes bottomtotop {0%{top:20%; opacity: 0}100%{top:10%; opacity: 1}}
+@-moz-keyframes  bottomtotop {0%{top:20%; opacity: 0}100%{top:10%; opacity: 1}}
+@-ms-keyframes  bottomtotop {0%{top:20%; opacity: 0}100%{top:10%; opacity: 1}}
+@-o-keyframes  bottomtotop {0%{top:20%; opacity: 0}100%{top:10%; opacity: 1}}
+
+
+/*表格样式*/
+table { width: 100%; margin-bottom: 10px;}
+td { padding: 5px 10px; height: 30px; line-height: 30px;}
+td:nth-child(odd) { width: 75px; text-align: right; font-weight: bold}
+td:nth-child(even){ text-align: left}
+table tr td:last-child{ border-right: none}
+.price { color: #0d2460; font-weight: bold; margin-right: 5px;}
+.roomID { color: #a14e04; font-weight: bold}
+.tableBorderaaa { border:1px solid #aaa;}
+.tableBorderaaa tr { border-bottom: 1px solid #aaa}
+.tableBorderaaa tr td { border-right:1px solid #ccc; background: #c0cae3}
+.tableBorderaaa tr td:nth-child(even){ background: #fff;}
+.tableBordernone { border: none}
+.tableBordernone tr { border-bottom: 1px solid #fff; background:#c0cae3 }
+.tableBordernone tr td { border: none; background: none; border-right: 1px solid #fff;}
+.tableBordernone tr td:last-child{border-right: none}
+.tableBordernone tr:nth-child(2n){ background: #e1eaff}
+.tableBorderfff { border: 5px solid #fff; background: #ccc;
+    -webkit-box-shadow: 1px 1px 0px #bbb;
+    -moz-box-shadow: 1px 1px 0px #bbb;
+    box-shadow: 1px 1px 0px #bbb; margin-top: 20px;}
+.tableBorderfff td { padding: 8px 10px; border-bottom: 1px solid #c1c1c1}
+
+/*明细打印表格*/
+.printbg { position: fixed; left: 0px; right: 0px; top:0px; bottom:0px; background: rgba(0,0,0,0.1); z-index: 998}
+.print {width:950px; position: fixed;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    top:10%;
+    left: 50%;
+    margin-left: -475px;
+    z-index: 999;
+    -webkit-box-shadow: 0px 0px 10px #999;
+    -moz-box-shadow: 0px 0px 10px #999;
+    box-shadow: 0px 0px 10px #999;
+    background: #fff;
+    border:1px solid #aaa;
+    -webkit-animation:printIn 0.5s;
+    -o-animation:printIn 0.5s;
+    animation:printIn 0.5s;
+    overflow: hidden;
+}
+.print h1 { height: 40px; line-height: 40px;
+    margin:0px;
+    padding:0px;
+    text-align: center;
+    font-size: 16px;
+    background: linear-gradient(#eee,#aaa);
+}
+.print .printcon { margin: 10px; position: relative; border: 1px solid #ccc;}
+.tableHeadDiv { width: 100%; position: absolute; top:0px; height: 35px;}
+.printTableHead tr {  background: linear-gradient(#4f7bee,#3e5797); color:#fff; font-weight: bold}
+.printTableHead tr td { border-right: 1px solid #fff; text-align: center; line-height: 35px; padding: 0px 5px;}
+.printTableHead tr td:last-child { border-right: none}
+
+.tableDiv { margin-top: 35px; overflow: auto}
+.printTable { display: table;}
+.printTable tr { border-bottom: 1px solid #fff; height: auto;}
+.printTable td { width: auto; height: auto; padding: 5px 5px; border-right: 1px solid #fff; text-align: center; line-height: 24px; font-weight: normal}
+.printTable tr td:last-child{ border-right: none}
+.printTable tr:nth-child(odd){ background: #c0cae3}
+.printTable tr:nth-child(even){ background: #e1eaff}
+.printTable tr:hover { background: #94aae1; cursor: pointer; color: #d20000}
+
+
+.tableHeadDiv { width: 100%; position: absolute; top:0px; height: 35px;}
+.tableDiv { margin-top: 35px; overflow: auto}
+.buyTableHead tr {  background: linear-gradient(#d7be84,#be932c); color:#fff; font-weight: bold; text-align: center;}
+.buyTableHead tr td { border-right: 1px solid #fff; text-align: center; line-height: 35px; padding: 0px 5px;}
+.buyTableHead tr td:last-child { border-right: none}
+.tableBuy {}
+.tableBuy tr { cursor: pointer}
+.tableBuy tr:nth-child(odd) { background: #f1e9dd}
+.tableBuy tr:nth-child(even){ background: #e3d9c0}
+.tableBuy tr:hover { background:#d8c9a3; color:#d20000}
+.tableBuy td { width: auto; height: auto; padding: 5px 5px; border-right: 1px solid #fff; text-align: center; line-height: 24px; font-weight: normal}
+.inputCategory { width:77%; margin-top: 5px; float: left; margin-left: 10px;}
+
+
+/*房吧录入*/
+.snackbox { width: 400px; margin-top: 10px;}
+.snackbox h1 { height: 40px; line-height: 40px; margin: 0px; padding: 0px; text-align: left; font-size: 16px; color: #da0000}
+.snackbox .snackListBox { width:398px; border: 1px solid #ccc; height: 360px; background: #fff; position: relative}
+.snackButton { width: 50px; padding-top: 180px;}
+.snackButton i{ width: 35px; height: 25px; line-height: 25px; font-size: 16px; text-align: center; display: block; float: left; margin-bottom: 10px;
+    margin-left: 7px; background: linear-gradient(#eee,#bbb); border: 1px solid #ccc;
+}
+
+
+.productSearch { width: 398px; border: 1px solid #ccc; height: 28px; line-height: 28px; background: #fff;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px; margin-top: 10px;}
+.productSearch input { width: 340px; height: 25px; line-height: 25px; margin: 0px; border: none; padding: 0px; outline: none}
+.productSearch i { width: 30px; height: 28px; line-height: 28px; text-align: center; font-size: 20px; color: #bbb; float: left; display: block}
+
+@keyframes printIn {0%{opacity: 0}100%{opacity: 1}}
+
+/*表格筛选样式*/
+.tableFilter { border: 1px solid #bbb; position: relative; padding: 20px; margin-bottom: 20px; margin-top: 20px;}
+.tableFilter .tFtit { width: 100px; height: 40px; line-height: 40px; text-align: center; font-weight: bold; font-size: 14px; color:#da0000; position: absolute; top:-30px; left: 10px; background: #e5e5e5; z-index: 999}
+.tableFilter .tFul { margin: 0px; padding: 0px;}
+.tableFilter .tFul:after { display: block; width: 100%; height: 0px; line-height: 0px; overflow: hidden; clear: both; content: ''}
+.tableFilter .tFul li { float: left; height: 30px; line-height: 30px; padding: 0px 5px;}
+.tableFilter .tFul li:nth-child(3) { margin-right: 15px;}
+.tableFilter .tFul li .tc_xl{ width: 120px;}
+
+.tableConsumption { height: 550px; position: relative; border: 1px solid #ccc}/*消费明细表格高度限制*/
+
+/*离店结算按钮样式*/
+.leaveButton { width: 290px; float: right}
+.leaveButton .button { margin: 0px; padding: 5px 0px; border: none}
+.leaveButton .button a.sbe { width: 80px; height: 20px; line-height: 20px; overflow: hidden; display: block; float: left; margin-bottom: 10px;}
+
+
+
+
+
+/*按钮*/
+.button {  background: none; margin-top: 20px; text-align: center;border-top: 2px solid #c0cae3;  padding-top: 20px;}
+.button input[type=button],.button a.sbe,.button a.sbeyellow { padding: 9px 20px; text-align: center; margin: 0px auto; margin-right: 9px; border:1px solid #bbb;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px; background: linear-gradient(#cfcfcf,#afafaf);
+    color: #000; cursor: pointer; font-weight: bold; margin-bottom: 10px;}
+.button a.sbe:hover { background: linear-gradient(#eee,#afafaf);}
+.button a.sbeyellow {background: linear-gradient(#f19300,#ae6a00); color: #fff;}
+.button a.sbeyellow:hover { background: linear-gradient(#ffac29,#ae6a00); color: #fff2de}
+.button i { margin-right: 5px;}
+.button i.icon-ok { color: #218e03}
+.button i.icon-remove { color: #b70000}
+.button i.icon-edit { color:#9a6407; font-size: 18px;}
+.button i.icon-signout { color: #0067b7; font-size: 18px;}
+.button i.icon-print{color: #0067b7; }/*打印*/
+.button i.icon-search { color: #77a515}/*查询*/
+.button i.icon-user { color: #da7600}/*读取会员*/
+.button i.icon-inbox { color:#d41212;}/*哑房处理*/
+.button i.icon-share { color: #0067b7}/*转房客*/
+.button i.icon-external-link { color:#77a515}/*转单位*/
+.button i.icon-plus { color: #d20000;}
+
+
+.button .gray {background: linear-gradient(#ff8400, #a75a07);  color:#000; border: 1px solid #ccc}
+.button .red { background: linear-gradient(#a02121,#721010); color:#fff; border: 1px solid #ccc}
+
+/**/
+.accruedBox { width: 700px; margin-top: 50px; float: left; margin-left: 50px; border: 2px solid #ccc; background: #eee; position: relative; padding: 30px;
+    -webkit-box-shadow:3px 3px 0px #ccc;
+    -moz-box-shadow:3px 3px 0px #ccc;
+    box-shadow:3px 3px 0px #ccc;}
+.accruedTitle { width: 120px; height: 20px; line-height: 20px; font-size: 16px; font-weight: bold; text-align: center; background: #eee; position: absolute; top: -20px; left: 50%; margin-left: -60px;color: #3e5797;
+    text-shadow: 2px 2px 0px #fff,-2px -2px 0px #fff;}
+
+.accruedTableBox { float: left; margin-left: 50px; margin-top: 50px; position: relative}
+
+

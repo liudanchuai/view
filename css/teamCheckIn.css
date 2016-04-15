@@ -1,0 +1,40 @@
+.teamLeft { width: 385px; float: left;}
+.teamLeftBox { width: 278px; margin-top: 0px; border: 1px solid #ccc; position: relative; height:auto}
+.checkInRoomBox { border: 2px solid #ccc; background: #eee; position: relative; padding: 10px;}
+.checkInTitle { width: 120px; height: 20px; line-height: 20px; font-size: 16px; font-weight: bold; text-align: center; background: #eee; position: absolute; top: -20px; left: 50%; margin-left: -60px;color: #3e5797;
+    text-shadow: 2px 2px 0px #fff,-2px -2px 0px #fff;}
+.checkInNote { border-bottom: 1px solid #ccc; text-align: right; color: #d20000; line-height: 20px; padding: 0px; margin-top: 20px;}
+.checkInRoom { margin-right: -10px;}
+.checkInRoom .roomID:nth-child(4n){ margin-right: 0px}
+.checkInRoomC .roomID:nth-child(3n) { margin-right: 0px!important;}
+.checkInRoom .roomID,.checkInRoomC .roomID { width: 80px; height: 35px; line-height: 35px; text-align: center; border: 1px solid #fff; background: #e5e5e5;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    box-shadow: 2px 2px 2px #ccc;
+    -webkit-box-shadow: 2px 2px 2px #ccc;
+    -moz-box-shadow: 2px 2px 2px #ccc;
+    float: left;
+    display: block;
+    margin-right: 10px;
+    margin-top: 10px;
+    color:#3e5797
+}
+.checkInRoom .roomID:hover,.checkInRoomC .roomID:hover { color: #a14e04}
+.checkInRoom .roomID.hover,.checkInRoomC .roomID.hover  { background:#a14e04; color: #fff; }
+
+.teamCenter { width: 295px; float: left; margin-left: 100px; padding-right: 70px;}
+.teamRight { width: 605px; float: left;}
+
+#teamLine { width: 2px; background: #cfcfcf; margin-right:70px; float: left}
+
+.title2 { border-bottom: 2px solid #ccc; font-size: 16px; text-align: left; line-height: 30px; color: #d20000}
+
+.teamInformation { border: 2px solid #ccc; margin-bottom: 30px; padding: 10px;}
+
+.tableBorder { border:1px solid #ccc; position: relative}
+
+.tableInformation tr { border-bottom: 1px dashed #ccc;}
+.tableInformation tr td { padding: 5px 5px; line-height: 24px;}
+.tableInformation tr td:nth-child(odd){ font-weight: bold; text-align: right}
+.tableInformation tr td:nth-child(even){ text-align: left}
