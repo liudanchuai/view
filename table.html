@@ -19,19 +19,18 @@
             <td>操作</td>
         </tr>
         <tr ng-repeat="u in users">
-            <td ng-bind="u.id"></td>
-            <td ng-bind="u.userId"></td>
-            <td ng-bind="u.userName"></td>
-            <td ng-bind="u.userPassword"></td>
-            <td ng-bind="u.userCategory"></td>
-            <td ng-bind="u.userLevel"></td>
-            <td ng-bind="u.posNumber"></td>
+            <td contenteditable="false" ng-bind="u.id"></td>
+            <td contenteditable="{{u.checked=='true'}}" ng-model="u.userId">{{u.userId}}</td>
+            <td contenteditable="{{u.checked=='true'}}" ng-model="u.userName">{{u.userName}}</td>
+            <td contenteditable="{{u.checked=='true'}}" ng-model="u.userPassword">{{u.userPassword}}</td>
+            <td contenteditable="{{u.checked=='true'}}" ng-model="u.userCategory">{{u.userCategory}}</td>
+            <td contenteditable="{{u.checked=='true'}}" ng-model="u.userLevel">{{u.userLevel}}</td>
+            <td contenteditable="{{u.checked=='true'}}" ng-model="u.posNumber">{{u.posNumber}}</td>
             <td ng-click="">
-                <button id="UserEdit+{{u.id}}" ng-click="updateClick(u.id)">编辑</button><!--updateClick里填写代码让上边输入框变成可编辑状态-->
-                <button id="UserPost+{{u.id}}" ng-click="updateUsers(u)">提交</button>
-                <button ng-click="deleteUsers(u.id)">删除</button>
+                <button id="edit{{u.id}}" ng-click="updateClick(u)" ng-if="u.checked==null">编辑</button><!--updateClick里填写代码让上边输入框变成可编辑状态-->
+                <button id="post{{u.id}}" ng-click="updateUsers(u)" ng-if="u.checked=='true'">提交</button>
+                <button id="delete{{u.id}}" ng-click="deleteUsers(u.id)">删除</button>
             </td>
-            <td><input type="text" ng-model="u.userName"></td>
         </tr>
         <tr>
             <td ng-bind="userPost.id"></td>
@@ -162,5 +161,6 @@
 <script src="AngularJS/app.js"></script>
 <script src="AngularJS/service/configure_service.js"></script>
 <script src="AngularJS/controller/configure_controller.js"></script>
+<script src="AngularJS/directive/contentEditTable.js"></script>
 </body>
 </html>

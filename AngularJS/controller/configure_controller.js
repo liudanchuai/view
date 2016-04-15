@@ -48,7 +48,8 @@ App.controller('ConfigureController', ['$scope', 'ConfigureService', function ($
                 $scope.getAllUsers();
             },
             function (errResponse) {
-                console.error('Error while creating users' + errResponse.toString());
+                console.error('Error while creating users' + errResponse.data.message);
+                alert(errResponse.data.message);
             }
         )
     };
@@ -75,9 +76,8 @@ App.controller('ConfigureController', ['$scope', 'ConfigureService', function ($
         );
     };
     /*点击编辑*/
-    $scope.updateClick = function(){
-        $scope.userChoice='post';
-
+    $scope.updateClick = function(u){
+        u.checked='true';
     };
     /**
      * 房间定义
@@ -121,9 +121,9 @@ App.controller('ConfigureController', ['$scope', 'ConfigureService', function ($
             }
         );
     };
-    /**
+    /*/!**
      * 协议映射
-     */
+     *!/
     $scope.getAllProtocolMaps = function () {
         ConfigureService.getAllProtocolMaps()
             .then(
@@ -134,7 +134,7 @@ App.controller('ConfigureController', ['$scope', 'ConfigureService', function ($
                 console.error('Error while getting protocolMaps:' + errResponse.toString());
             }
         );
-    };
+    };*/
     /**
      * 其他参数
      */
@@ -212,7 +212,7 @@ App.controller('ConfigureController', ['$scope', 'ConfigureService', function ($
     $scope.getAllRooms();
     $scope.getAllRoomCategories();
     $scope.getAllProtocols();
-    $scope.getAllProtocolMaps();
+    /*$scope.getAllProtocolMaps();*/
     $scope.getAllOtherParams();
     $scope.getAllGuestSources();
     $scope.getAllCurrencies();
