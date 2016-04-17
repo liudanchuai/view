@@ -1,6 +1,6 @@
 'use strict';
 
-App.controller('MainController', ['$scope', 'MainService', function ($scope, MainService) {
+App.controller('MainController', ['$scope', 'Service', function ($scope, Service) {
     var self = this;
     /*房间对象，全部数组，显示数组*/
     self.room = {
@@ -47,8 +47,8 @@ App.controller('MainController', ['$scope', 'MainService', function ($scope, Mai
     /**
      * 获取全部房间状态信息
      */
-    self.fetchAllRooms = function () {
-        MainService.fetchAllRooms()
+    self.getAllMainState = function () {
+        Service.getAllMainState()
             .then(
             function (d) {
                 self.rooms = d;
@@ -59,14 +59,15 @@ App.controller('MainController', ['$scope', 'MainService', function ($scope, Mai
             },
             function (errResponse) {
                 console.error('Error while fetching rooms:' + errResponse.toString());
+                alert(errResponse.data.message);
             }
         );
     };
     /**
      * 获取全部房间类别
      */
-    self.fetchAllRoomCategory = function () {
-        MainService.fetchAllRoomCategory()
+    self.getAllRoomCategory = function () {
+        Service.getAllRoomCategory()
             .then(
             function (d) {
                 self.roomCategorys = d;
@@ -84,8 +85,8 @@ App.controller('MainController', ['$scope', 'MainService', function ($scope, Mai
     /**
      * 获取全部房间状态
      */
-    self.fetchAllRoomState = function () {
-        MainService.fetchAllRoomState()
+    self.getAllRoomState = function () {
+        Service.getAllRoomState()
             .then(
             function (d) {
                 self.roomStates = d;
@@ -117,6 +118,9 @@ App.controller('MainController', ['$scope', 'MainService', function ($scope, Mai
         //开始排序,先判断房间状态有没有选择，有选择的话要包含上
         self.roomSortBy();
     };
+    /**
+     * 根据两个标签选择的值进行排序
+     */
     self.roomSortBy = function () {
         var l = self.rooms.length;
         var j = 0;
@@ -129,8 +133,8 @@ App.controller('MainController', ['$scope', 'MainService', function ($scope, Mai
         self.roomsShow.length = j;
     }
 
-    self.fetchAllRooms();
-    self.fetchAllRoomCategory();
-    self.fetchAllRoomState();
+    self.getAllMainState();
+    self.getAllRoomCategory();
+    self.getAllRoomState();
 
 }]);

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="mainApp">
+<div ng-controller="LoginController">
+    <form ng-submit="loginCheck(user)">
+        <input ng-model="user.userId" name="userId">
+        <input ng-model="user.userPassword" name="userPassword">
+        <input ng-model="user.userCategory" name="userCategory">
+        <input type="submit">
+    </form>
+</div>
+    <script src="AngularJS/angular.js"></script>
+    <script src="AngularJS/app.js"></script>
+    <script src="AngularJS/service/service.js"></script>
+    <script src="AngularJS/controller/loginController.js"></script>
+</body>
+
+</html>
