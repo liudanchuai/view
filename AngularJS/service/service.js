@@ -50,6 +50,7 @@ App.factory('Service', ['$http', '$q','host', function ($http, $q,host) {
                 }
             );
         },
+        /*根据条件查找*/
         getSelectByPath:function(object,path){
             return $http.post(host+'/'+path+'/selectSome',object)
                 .then(
@@ -60,6 +61,6 @@ App.factory('Service', ['$http', '$q','host', function ($http, $q,host) {
                     return $q.reject(errResponse);
                 }
             );
-        }
+        },
     };
 }]);

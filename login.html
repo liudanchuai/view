@@ -7,8 +7,11 @@
 <body ng-app="mainApp">
 <div ng-controller="LoginController">
     <form ng-submit="loginCheck(user)">
+        <p>工号</p>
         <input ng-model="user.userId" name="userId">
+        <p>密码</p>
         <input ng-model="user.userPassword" name="userPassword">
+        <p>类别</p>
         <input ng-model="user.userCategory" name="userCategory">
         <input type="submit">
     </form>

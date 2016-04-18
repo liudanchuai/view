@@ -21,7 +21,7 @@
 </div>
 
 <!--main-container-part-->
-<div id="content" ng-controller="MainController as ctrl">
+<div id="content" ng-controller="MainController">
     <div id="topbox">
 
     </div>
@@ -40,11 +40,11 @@
             <li class="sxli">
                 <div class="my_xl sx_xl">
                     <i class="icon-tasks lv"></i>
-                    <div class="my_xl_txt sx_xl_txt" ng-bind="ctrl.roomCategorySelected.name"></div>
+                    <div class="my_xl_txt sx_xl_txt" ng-bind="roomCategorySelected.name"></div>
                     <div class="my_xl_btn"></div>
                     <ul class="my_xl_list sx_xl_list">
-                        <li ng-repeat="c in ctrl.roomCategorys"
-                            ng-click="ctrl.choiceRoomCategory(c)">
+                        <li ng-repeat="c in roomCategorys"
+                            ng-click="choiceRoomCategory(c)">
                            <span>{{c.categoryName+'-'+c.categoryCode}}</span>
                         </li>
                     </ul>
@@ -53,10 +53,10 @@
             <li class="sxli">
                 <div class="my_xl sx_xl">
                     <i class="icon-check hong"></i>
-                    <div class="my_xl_txt sx_xl_txt" ng-bind="ctrl.roomStateSelected.name"></div>
+                    <div class="my_xl_txt sx_xl_txt" ng-bind="roomStateSelected.name"></div>
                     <div class="my_xl_btn"></div>
                     <ul class="my_xl_list sx_xl_list">
-                        <li ng-repeat="s in ctrl.roomStates" ng-click="ctrl.choiceRoomState(s)"><span>{{s.name}}</span></li>
+                        <li ng-repeat="s in roomStates" ng-click="choiceRoomState(s)"><span>{{s.name}}</span></li>
                     </ul>
                 </div>
             </li>
@@ -70,7 +70,7 @@
 
     <!--房态预览 begin-->
     <ul class="mainRoomState">
-        <li class="roomState" ng-repeat="r in ctrl.roomsShow" id="{{r.roomId}}" onclick="jump()" >
+        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" onclick="jump()" >
             <ul>
                 <li ng-bind="r.roomId" ></li>
                 <li ng-bind="r.categoryName"></li>
@@ -82,7 +82,7 @@
                     <li class="icon-laptop" ng-if="r.teamBuy"><span>团购标志</span></li>
                     <li class="icon-flag" ng-if="r.leader"><span>领队标志</span></li>
                     <li class="icon-ylbz" ng-if="r.todayLeave"><span>预离标志</span></li>
-                    <li class="icon-zfbz" ng-if="r.dirty=='1'"><span>脏房标志</span></li>
+                    <li class="icon-zfbz" ng-if="r.dirty==true"><span>脏房标志</span></li>
                 </ul>
               </ul>
               <div class="hoverDiv">

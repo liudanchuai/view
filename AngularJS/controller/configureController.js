@@ -86,7 +86,6 @@ App.controller('ConfigureController', ['$scope', 'Service', function ($scope, Se
             }
         );
     };
-
     /*点击编辑--操作员表需要核对一下操作员密码*/
     $scope.updateClickUser = function (r) {
         if (checkUserPassword(r)) {
@@ -95,7 +94,6 @@ App.controller('ConfigureController', ['$scope', 'Service', function ($scope, Se
             alert("密码错误");
         }
     };
-
     /*核对密码*/
     var checkUserPassword = function checkUserPassword(r) {
         if (r.userPassword == null)return true;
@@ -114,6 +112,7 @@ App.controller('ConfigureController', ['$scope', 'Service', function ($scope, Se
                 $scope.getAllRoomCategory();
                 $scope.roomCategoryAdded.categoryCode = null;
                 $scope.roomCategoryAdded.categoryName = null;
+                $scope.formRoomCategory.categoryCode.$dirty = false;
                 $scope.formRoomCategory.categoryName.$dirty = false;
             },
             function (errResponse) {
@@ -209,106 +208,250 @@ App.controller('ConfigureController', ['$scope', 'Service', function ($scope, Se
             }
         );
     };
-    /*/!**
-     * 协议房价
-     *!/
-    $scope.getAllProtocol = function () {
-        Service.getAllProtocol()
-            .then(
-            function (d) {
-                $scope.protocols = d;
-            },
-            function (errResponse) {
-                console.error('Error while getting protocols:' + errResponse.toString());
-            }
-        );
-    };
-    /!**
-     * 其他参数
-     *!/
-    $scope.getAllOtherParam = function () {
-        Service.getAllOtherParam()
-            .then(
-            function (d) {
-                $scope.otherParams = d;
-            },
-            function (errResponse) {
-                console.error('Error while getting otherParams:' + errResponse.toString());
-            }
-        );
-    };
-    /!**
+    /**
      * 客源
-     *!/
+     * guestSources：
+     * guestSource
+     * guestSourceAdded
+     */
+    $scope.createGuestSource = function () {
+        Service.createByPath($scope.guestSourceAdded,'guestSource')
+            .then(
+            function (d) {
+                $scope.getAllGuestSource();
+                $scope.guestSourceAdded.sourceCode = null;
+                $scope.guestSourceAdded.sourceName = null;
+                $scope.formGuestSource.sourceCode.$dirty = false;
+                $scope.formGuestSource.sourceName.$dirty = false;
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        )
+    };
+    $scope.deleteGuestSource = function (guestSource) {
+        Service.deleteByPath(guestSource.id,'guestSource')
+            .then(
+            function (d) {
+                $scope.getAllGuestSource();
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        );
+    };
+    $scope.updateGuestSource = function (guestSource) {
+        Service.updateByPath(guestSource,'guestSource')
+            .then(
+            function (d) {
+                $scope.getAllGuestSource();
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        );
+    };
     $scope.getAllGuestSource = function () {
-        Service.getAllGuestSource()
+        Service.getAllByPath('guestSource')
             .then(
             function (d) {
                 $scope.guestSources = d;
             },
             function (errResponse) {
-                console.error('Error while getting guestSources:' + errResponse.toString());
+                alert(errResponse.data.message);
             }
         );
     };
-    /!**
+    /**
      * 币种
-     *!/
+     * currencies：
+     * currency
+     * currencyAdded
+     */
+    $scope.createCurrency = function () {
+        Service.createByPath($scope.currencyAdded,'currency')
+            .then(
+            function (d) {
+                $scope.getAllCurrency();
+                $scope.currencyAdded.currencyCode = null;
+                $scope.currencyAdded.currencyName = null;
+                $scope.formCurrency.currencyCode.$dirty = false;
+                $scope.formCurrency.currencyName.$dirty = false;
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        )
+    };
+    $scope.deleteCurrency = function (currency) {
+        Service.deleteByPath(currency.id,'currency')
+            .then(
+            function (d) {
+                $scope.getAllCurrency();
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        );
+    };
+    $scope.updateCurrency = function (currency) {
+        Service.updateByPath(currency,'currency')
+            .then(
+            function (d) {
+                $scope.getAllCurrency();
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        );
+    };
     $scope.getAllCurrency = function () {
-        Service.getAllCurrency()
+        Service.getAllByPath('currency')
             .then(
             function (d) {
                 $scope.currencies = d;
             },
             function (errResponse) {
-                console.error('Error while getting currencies:' + errResponse.toString());
+                alert(errResponse.data.message);
             }
         );
     };
-    /!**
+    /**
+     * 核心参数
+     * otherParams：
+     * otherParam
+     * otherParamAdded
+     */
+    $scope.createOtherParam = function () {
+        Service.createByPath($scope.otherParamAdded,'otherParam')
+            .then(
+            function (d) {
+                $scope.getAllOtherParam();
+                $scope.otherParamAdded.otherParamCode = null;
+                $scope.otherParamAdded.otherParamValue = null;
+                $scope.otherParamAdded.otherParamDescription = null;
+                $scope.formOtherParam.otherParamCode.$dirty = false;
+                $scope.formOtherParam.otherParamValue.$dirty = false;
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        )
+    };
+    $scope.deleteOtherParam = function (otherParam) {
+        Service.deleteByPath(otherParam.id,'otherParam')
+            .then(
+            function (d) {
+                $scope.getAllOtherParam();
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        );
+    };
+    $scope.updateOtherParam = function (otherParam) {
+        Service.updateByPath(otherParam,'otherParam')
+            .then(
+            function (d) {
+                $scope.getAllOtherParam();
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        );
+    };
+    $scope.getAllOtherParam = function () {
+        Service.getAllByPath('otherParam')
+            .then(
+            function (d) {
+                $scope.otherParams = d;
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        );
+    };
+    /*/!**
+     * 协议房价
+     *!/
+     $scope.getAllProtocol = function () {
+     Service.getAllProtocol()
+     .then(
+     function (d) {
+     $scope.protocols = d;
+     },
+     function (errResponse) {
+     console.error('Error while getting protocols:' + errResponse.toString());
+     }
+     );
+     };
+     /!**
+     * 其他参数
+     *!/
+     $scope.getAllOtherParam = function () {
+     Service.getAllOtherParam()
+     .then(
+     function (d) {
+     $scope.otherParams = d;
+     },
+     function (errResponse) {
+     console.error('Error while getting otherParams:' + errResponse.toString());
+     }
+     );
+     };
+     /!**
+     * 币种
+     *!/
+     $scope.getAllCurrency = function () {
+     Service.getAllCurrency()
+     .then(
+     function (d) {
+     $scope.currencies = d;
+     },
+     function (errResponse) {
+     console.error('Error while getting currencies:' + errResponse.toString());
+     }
+     );
+     };
+     /!**
      * 单位帐卡
      *!/
-    $scope.getAllCompanyCard = function () {
-        Service.getAllCompanyCard()
-            .then(
-            function (d) {
-                $scope.companyCards = d;
-            },
-            function (errResponse) {
-                console.error('Error while getting companyCards:' + errResponse.toString());
-            }
-        );
-    };
-    /!**
+     $scope.getAllCompanyCard = function () {
+     Service.getAllCompanyCard()
+     .then(
+     function (d) {
+     $scope.companyCards = d;
+     },
+     function (errResponse) {
+     console.error('Error while getting companyCards:' + errResponse.toString());
+     }
+     );
+     };
+     /!**
      * 单位签单人
      *!/
-    $scope.getAllCompanyLord = function () {
-        Service.getAllCompanyLord()
-            .then(
-            function (d) {
-                $scope.companyLords = d;
-            },
-            function (errResponse) {
-                console.error('Error while getting companyLords:' + errResponse.toString());
-            }
-        );
-    };*/
+     $scope.getAllCompanyLord = function () {
+     Service.getAllCompanyLord()
+     .then(
+     function (d) {
+     $scope.companyLords = d;
+     },
+     function (errResponse) {
+     console.error('Error while getting companyLords:' + errResponse.toString());
+     }
+     );
+     };*/
 
 
     /*页面加载之后调用的方法*/
     $scope.getAllByPath();
     $scope.getAllRoom();
     $scope.getAllRoomCategory();
-    /*$scope.getAllProtocol();
-    $scope.getAllOtherParam();
     $scope.getAllGuestSource();
     $scope.getAllCurrency();
-    $scope.getAllCompanyCard();
-    $scope.getAllCompanyLord();*/
+    $scope.getAllOtherParam();
+    /*$scope.getAllProtocol();
+     $scope.getAllCompanyCard();
+     $scope.getAllCompanyLord();*/
     alert(sessionStorage.getItem("userId"));
-    alert(sessionStorage.getItem("userName"));
-    alert(sessionStorage.getItem("userPassword"));
-    alert(sessionStorage.getItem("userCategory"));
-    alert(sessionStorage.getItem("userLevel"));
-    alert(sessionStorage.getItem("posNumber"));
 }]);

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="css/nameTable.css" rel="stylesheet">
 </head>
 <body ng-app="mainApp">
 <div ng-controller="ConfigureController">
@@ -70,9 +71,10 @@
     </table>
     <form name="formRoomCategory" ng-submit="createRoomCategory()">
         <input ng-model="roomCategoryAdded.id" readonly>
-        <input type="text" ng-model="roomCategoryAdded.categoryCode" name="categoryCode" ng-maxlength="4"><!--点击增加后自动获得焦点-->
+        <input type="text" ng-model="roomCategoryAdded.categoryCode" name="categoryCode" ng-maxlength="4" required><!--点击增加后自动获得焦点-->
             <span style="color:red" ng-show="formRoomCategory.categoryCode.$dirty && formRoomCategory.categoryCode.$invalid">
                 <span ng-show="formRoomCategory.categoryCode.$error.maxlength">最大长度是4</span>
+                <span ng-show="formRoomCategory.categoryCode.$error.required">房间编码是必需的</span>
             </span>
         <input type="text" ng-model="roomCategoryAdded.categoryName" required name="categoryName">
             <span style="color:red" ng-show="formRoomCategory.categoryName.$dirty && formRoomCategory.categoryName.$invalid">
@@ -127,6 +129,102 @@
             </span>
         <input type="submit" value="增加" ng-disabled="formRoom.$invalid">
     </form>
+    <div>客源</div>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>客源编码</td>
+            <td>客源名称</td>
+        </tr>
+        <tr ng-repeat="r in guestSources">
+            <td><input ng-readonly="true" ng-model="r.id"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.sourceCode"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.sourceName"></td>
+            <td>
+                <button ng-click="updateClick(r)" ng-if="r.checked==null">编辑</button>
+                <button ng-click="updateGuestSource(r)" ng-if="r.checked=='true'">提交</button>
+                <button ng-click="deleteGuestSource(r)">删除</button>
+            </td>
+        </tr>
+    </table>
+    <form name="formGuestSource" ng-submit="createGuestSource()">
+        <input ng-model="guestSourceAdded.id" readonly>
+        <input type="text" ng-model="guestSourceAdded.sourceCode" name="sourceCode" ng-maxlength="4" required><!--点击增加后自动获得焦点-->
+            <span style="color:red" ng-show="formGuestSource.sourceCode.$dirty && formGuestSource.sourceCode.$invalid">
+                <span ng-show="formGuestSource.sourceCode.$error.maxlength">最大长度是4</span>
+                <span ng-show="formGuestSource.sourceCode.$error.required">客源编码是必需的</span>
+            </span>
+        <input type="text" ng-model="guestSourceAdded.sourceName" required name="sourceName">
+            <span style="color:red" ng-show="formGuestSource.sourceName.$dirty && formGuestSource.sourceName.$invalid">
+                <span ng-show="formGuestSource.sourceName.$error.required">客源名称是必需的</span>
+            </span>
+        <input type="submit" value="增加" ng-disabled="formGuestSource.$invalid">
+    </form>
+    <div>币种</div>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>币种编码</td>
+            <td>币种名称</td>
+        </tr>
+        <tr ng-repeat="r in currencies">
+            <td><input ng-readonly="true" ng-model="r.id"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.currencyCode"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.currencyName"></td>
+            <td>
+                <button ng-click="updateClick(r)" ng-if="r.checked==null">编辑</button>
+                <button ng-click="updateCurrency(r)" ng-if="r.checked=='true'">提交</button>
+                <button ng-click="deleteCurrency(r)">删除</button>
+            </td>
+        </tr>
+    </table>
+    <form name="formCurrency" ng-submit="createCurrency()">
+        <input ng-model="currencyAdded.id" readonly>
+        <input type="text" ng-model="currencyAdded.currencyCode" name="currencyCode" ng-maxlength="4" required><!--点击增加后自动获得焦点-->
+            <span style="color:red" ng-show="formCurrency.currencyCode.$dirty && formCurrency.currencyCode.$invalid">
+                <span ng-show="formCurrency.currencyCode.$error.maxlength">最大长度是4</span>
+                <span ng-show="formCurrency.currencyCode.$error.required">客源编码是必需的</span>
+            </span>
+        <input type="text" ng-model="currencyAdded.currencyName" required name="currencyName">
+            <span style="color:red" ng-show="formCurrency.currencyName.$dirty && formCurrency.currencyName.$invalid">
+                <span ng-show="formCurrency.currencyName.$error.required">客源名称是必需的</span>
+            </span>
+        <input type="submit" value="增加" ng-disabled="formCurrency.$invalid">
+    </form>
+    <div>核心参数</div>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>参数编码</td>
+            <td>参数数值</td>
+            <td>参数说明</td>
+        </tr>
+        <tr ng-repeat="r in otherParams">
+            <td><input ng-readonly="true" ng-model="r.id"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.otherParamCode"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.otherParamValue"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.otherParamDescription"></td>
+            <td>
+                <button ng-click="updateClick(r)" ng-if="r.checked==null">编辑</button>
+                <button ng-click="updateOtherParam(r)" ng-if="r.checked=='true'">提交</button>
+                <button ng-click="deleteOtherParam(r)">删除</button>
+            </td>
+        </tr>
+    </table>
+    <form name="formOtherParam" ng-submit="createOtherParam()">
+        <input ng-model="otherParamAdded.id" readonly>
+        <input type="text" ng-model="otherParamAdded.otherParamCode" name="otherParamCode" ng-maxlength="4" required><!--点击增加后自动获得焦点-->
+            <span style="color:red" ng-show="formOtherParam.otherParamCode.$dirty && formOtherParam.otherParamCode.$invalid">
+                <span ng-show="formOtherParam.otherParamCode.$error.maxlength">最大长度是4</span>
+                <span ng-show="formOtherParam.otherParamCode.$error.required">编码是必需的</span>
+            </span>
+        <input type="text" ng-model="otherParamAdded.otherParamValue" required name="otherParamValue">
+            <span style="color:red" ng-show="formOtherParam.otherParamValue.$dirty && formOtherParam.otherParamValue.$invalid">
+                <span ng-show="formOtherParam.otherParamValue.$error.required">编码值是必需的</span>
+            </span>
+        <input type="text" ng-model="otherParamAdded.otherParamDescription" name="otherParamDescription">
+        <input type="submit" value="增加" ng-disabled="formOtherParam.$invalid">
+    </form>
     <div>协议房价</div>
     <table>
         <tr>
@@ -140,19 +238,6 @@
             <td ng-bind="p.protocolName"></td>
             <td ng-bind="p.roomCategory"></td>
             <td ng-bind="p.roomPrice"></td>
-        </tr>
-    </table>
-    <div>核心参数</div>
-    <table>
-        <tr>
-            <td>参数编码</td>
-            <td>参数数值</td>
-            <td>参数说明</td>
-        </tr>
-        <tr ng-repeat="o in ctrl.otherParams">
-            <td ng-bind="o.otherParamsCode"></td>
-            <td ng-bind="o.otherParamsValue"></td>
-            <td ng-bind="o.otherParamsDescription"></td>
         </tr>
     </table>
     <div>单位签单人</div>
@@ -177,39 +262,6 @@
         <tr ng-repeat="cc in ctrl.companyCards">
             <td ng-bind="cc.companyCode"></td>
             <td ng-bind="cc.companyName"></td>
-        </tr>
-    </table>
-    <div>币种</div>
-    <table>
-        <tr>
-            <td>币种编码</td>
-            <td>币种名称</td>
-        </tr>
-        <tr ng-repeat="cl in ctrl.currencies">
-            <td ng-bind="cl.currencyCode"></td>
-            <td ng-bind="cl.currencyName"></td>
-        </tr>
-    </table>
-    <div>协议映射</div>
-    <table>
-        <tr>
-            <td>协议编码</td>
-            <td>映射号</td>
-        </tr>
-        <tr ng-repeat="pm in ctrl.protocolMaps">
-            <td ng-bind="pm.protocolCode"></td>
-            <td ng-bind="pm.protocolMap"></td>
-        </tr>
-    </table>
-    <div>客源</div>
-    <table>
-        <tr>
-            <td>客源编码</td>
-            <td>客源名称</td>
-        </tr>
-        <tr ng-repeat="g in ctrl.guestSources">
-            <td ng-bind="g.sourceCode"></td>
-            <td ng-bind="g.sourceName"></td>
         </tr>
     </table>
 </div>

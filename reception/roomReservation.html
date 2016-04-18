@@ -7,14 +7,14 @@
     <link href="../css/popup.css" rel="stylesheet">
 
 </head>
-<body>
+<body ng-app="mainApp">
 
 <!-- 单击开房begin -->
 <div class="bgblack">
 </div>
 
-<div class="tanchuang">
-    <dl class="tctit"><h1>宾客开房</h1></dl>
+<div class="tanchuang" ng-controller="CheckInController">
+    <dl class="tctit"><h1>宾客开房{{2+2}}</h1></dl>
     <table class="tableBordernone">
         <tr>
             <td>房间号码：</td>
@@ -150,6 +150,12 @@
     <dl class="button"><a class="sbe"><i class="icon-edit"></i>预授权</a><a class="sbe"><i class="icon-ok"></i>确认付款</a> </dl>
 
 </div>
+<!--AngularJS-->
+<script src="../AngularJS/angular.js"></script>
+<script src="../AngularJS/app.js"></script>
+<script src="../AngularJS/service/service.js"></script>
+<script src="../AngularJS/controller/checkInController.js"></script>
+
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../myjs/my_xiala.js"></script>
 <script type="text/javascript">
