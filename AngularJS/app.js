@@ -1,7 +1,7 @@
 'use strict';
 
 var App = angular.module('mainApp',[]);
-App.constant('host','http://localhost:8080');
+App.constant('host','http://192.168.1.77:8080');
 App.config(['$httpProvider', function($httpProvider) {
     //initialize get if not there
     if (!$httpProvider.defaults.headers.get) {

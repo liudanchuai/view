@@ -1,0 +1,899 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>帮您找房，全程买房指导 - 房小二网</title>
+    <meta name="keywords" content="帮您找房,新房分析,楼盘分析,买房指导,买房分析,买房知识,楼盘分析,沈阳买房,房小二网"/>
+    <meta name="description" content="房小二网帮您找房，简单几步发布您的需求，剩下的工作交给我们，更高效、靠谱、省心，全程买房指导。告诉我您的需求，为您定制选房报告。关注楼盘，随时随地了解楼盘动态。一个预约专职司机，全程看房接送。楼盘评测，为您提供专业的楼盘评测服务。"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://static.fangxiaoer.com/web/styles/bootstrap-responsive.css" rel="stylesheet"  type="text/css" />
+    <link href="http://static.fangxiaoer.com/web/styles/sy/formulate/house_new.css" rel="Stylesheet" type="text/css"/>
+
+    <link rel="stylesheet" type="text/css" href="http://static.fangxiaoer.com/web/styles/sy/formulate/jquery.datetimepicker.css"/>
+    <script type="text/javascript" src="http://static.fangxiaoer.com/js/jquery-1.8.3.min.js"></script>
+
+</head>
+
+<body>
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".nav_one").children().each(function (i, _i) {
+            if ($(_i).attr("class") == "active") {
+                $(".nav_hover").show();
+            }
+        })
+        $(".search_input").bind({
+            focus: function () {
+                $(this).next().hide();
+            },
+            blur: function () {
+                if ($(this).val() == "") {
+                    $(this).next().show();
+                }
+            }
+        })
+        $(".header_tel").bind({
+            mouseover: function () {
+                if (!$(this).is(":animated")) {
+                    $(this).animate({ height: "88px" }, 300);
+                }
+            },
+            mouseleave: function () {
+                $(this).animate({ height: "30px" }, 100);
+            }
+        })
+        $(".nav_one a").mouseover(function () {
+            var nav_one_active=0
+            $(".nav_one li").each(function () {
+                if ($(this).attr("class") == "active") {
+                    nav_one_active=1
+                }
+            })
+            if (nav_one_active == "0") {
+                if ($(this).attr("id") == "shouyeli") {
+                    $(".nav_hover").hide();
+                    $(".nav_one").find("li").attr("class", "");
+                    return;
+                }
+            }
+            $(this).parent().index()
+            $(".nav_hover ul").hide();
+            if ($(this).parent().index() == 0) {
+                var shownav = $(".nav_one .active").find("a").attr("class");
+                $(".nav_one li").removeClass("a_hover");
+                if (shownav != undefined) {
+                    shownav = shownav.substr(5);
+                    $(".nav_hover").show();
+                    $("#" + shownav).show();
+                }
+            } else {
+                var shownav = $(this).attr("class");
+                $(".nav_one li").removeClass("a_hover");
+                if ($(this).parent().hasClass("active") == false) {
+                    $(this).parent().addClass("a_hover");
+                    if (shownav != "") {
+                        shownav = shownav.substr(5);
+                        $(".nav_hover").show();
+                        $("#" + shownav).show();
+                    }
+                } else {
+                    if (shownav != "") {
+                        shownav = shownav.substr(5);
+                        $(".nav_hover").show();
+                        $("#" + shownav).show();
+                    }
+                }
+            }
+        })
+        $(".nav_show").mouseleave(function () {
+            var kaiguan = 0;
+            $(".nav_one").children().each(function (i, _i) {
+                if ($(_i).attr("class") == "active") {
+                    kaiguan = 1
+                }
+            })
+            if (kaiguan != 1) {
+                $(".nav_hover").hide();
+            }
+            $(".nav_hover ul").hide();
+            $(".nav_one").find("li").removeClass("a_hover");
+            var active = $(".nav_one .active a").attr("class");
+            if (active != "") {
+                if (active != undefined) {
+                    active = active.substr(5);
+                }
+                $("#" + active).show()
+            } else {
+                $(".nav_hover").hide()
+            }
+        })
+        $(".nav_one li").mouseleave(function () {
+            var classname = $(this).find("a").attr("class")
+            var active = $(".nav_one .active a").attr("class");
+            if (classname == "") {
+                $(this).removeClass("a_hover");
+                if (active != undefined) {
+                    $(".nav_hover").show();
+                    active = active.substr(5);
+                    $("#" + active).show()
+                }
+            }
+        })
+        function changeauto(method) {
+            $(".search_input").autocomplete('/Action/PageHandler.ashx?method=' + method + '&city=1', {
+                multiple: false,
+                scrollHeight: 300,    // 下拉框的高度， Default: 180
+                max: 20,
+                parse: function (data) {
+                    //alert(data);
+                    return $.map(eval(data), function (row) {
+                        return {
+                            data: row,
+                            value: row.CompanyName,
+                            result: row.CompanyName
+                        };
+                    });
+                },
+                formatItem: function (item) {
+                    var txt = $("#chid").val();
+                    switch (txt) {
+                        case "5":
+                            if (item.ID == 0) {
+                                return "<i style='float:left '>未找到关键字请重新输入条件！</i>";
+                            } else {
+                                return "<i style='float:right'></i>" + item.CompanyName;
+                            }
+                            break;
+                        default:
+                            if (item.ID == 0) {
+                                return "<i style='float:left '>未找到项目请重新输入条件！</i>";
+                            } else {
+                                return "<i style='float:right'>" + item.Address + " [ 直达 ]</i>" + item.CompanyName;
+                            }
+                            break;
+                    }
+                }
+            }).result(function (e, item) {
+                if (item.Telephone == 1) {
+                    $("#chid").val("1");
+                    window.location.href = "/house/view/" + item.ID;
+                } else if (item.Telephone == 2) {
+                    $("#chid").val("2");
+                    window.location.href = "/villa/view/" + item.ID;
+                } else if (item.Telephone == 3) {
+                    $("#chid").val("3");
+                    window.location.href = "/office/view/" + item.ID;
+                } else if (item.Telephone == 5) {
+                    $("#chid").val("5");
+                    window.location.href = "/news/view/" + item.ID;
+                }
+                else if (item.Telephone == 6) {//二手房小区
+                    $("#chid").val("6");
+                    window.location.href = "/UHouse/Subdistrict/view/" + item.ID;
+                }
+                else {
+                    $(".ac_input").val(item.CompanyName);
+                    $("#chid").val("4");
+                }
+
+            });
+        };
+
+        $(".ac_input").bind("click", function () {
+            var txt = $("#chid").val();
+            switch (txt) {
+                case "5":
+                    changeauto("getxinwen");
+                    break;
+                case "6":
+                    changeauto("getsub");
+                    break;
+                default:
+                    changeauto("get1");
+                    break;
+            }
+        });
+
+        $(".search_btn").click(function () {
+            var txt = $("#chid").val();
+            input = $(this).prev().find("input").val(); //取输入框值
+            if (input != "") {
+                switch (txt) {
+                    case "1":
+                        url = "/house/1_0_-1_-1_-1_-1_0_0_0_0_0_" + input + "_1";
+                        break;
+                    case "3":
+                        url = "/office/1_0_0_0_0_0_" + input + "_1";
+                        break;
+                    case "4":
+                        url = "/house/search.aspx?keys=" + input;
+                        break;
+                    case "5":
+                        url = "/news/default.aspx?keys=" + input;
+                        break;
+                    case "6":
+                        url = "/UHouse/Subdistrict/SubdistrictList.aspx?keys=" + input;
+                        break;
+                }
+                window.location.href = url;
+            }; //判断结束
+        });
+        var keys = '';
+        if (keys != "" && keys != "null" && keys != null && keys != "0") {
+            $("#txtkeys").val(keys);
+        }
+        $(".ac_input").each(function () {
+            var thisVal = $(".ac_input").val();    //判断文本框的值是否为空，有值的情况就隐藏提示语，没有值就显示
+            if (thisVal != "") { $(".ac_input").siblings("span").hide(); }
+            else { $(".ac_input").siblings("span").show(); }
+            $(".ac_input").keyup(function () {
+                $(".ac_input").siblings("span").hide();
+            }).blur(function () {
+                var val = $(this).val();
+                if (val != "") {
+                    $(this).siblings("span").hide();
+                } else {
+                    $(this).siblings("span").show();
+                }
+            });
+        });
+    });
+
+    $(document).keydown(function (event) {
+        if (event.keyCode == 13) {
+            $(".search_btn").click();
+            var type = $("#chid").val();
+
+            switch (type) {
+                case "1":
+                    url = "/house/search.aspx?keys=" + keys;
+                    break;
+                case "3":
+                    url = "/office/1_0_0_0_0_0_" + keys + "_1";
+                    break;
+                case "5":
+                    url = "/news/default.aspx?keys=" + input;
+                    break;
+
+            } window.location.href = url;
+        }
+        $(".nav_one").children().bind("click", function () {
+            $(this).addclass("")
+        })
+    });
+
+</script>
+
+
+
+<div id="sy_head">
+    <div class="sy_head_w">
+        <div class="sy_head_r">
+            <div style="background: none;padding-right:16px">
+
+                <a href="http://sy.fangxiaoer.com/house/housemap/" target="_blank">地图找房</a>
+
+
+            </div>
+            <div>手机找房<p style="width:220px;right:-43px;"><i><img src="http://static.fangxiaoer.com/web/images/ico/head/head_top_ico.gif" alt="向上"></i><img src="http://static.fangxiaoer.com/web/images/ico/head/head_top_ewm.gif" alt="app二维码" class="head_app"><span style="float:left; line-height:17px;color:#666;margin: 6px 0;"><a href="http://download.fangxiaoer.com/" target="_blank" style="color:#666">扫描下载安装<br>房小二网APP</a></span><span style="float:left; line-height:17px;color:#666;border-top: 1px solid #e5e5e5;padding-top: 7px;">手机浏览器访问<br><a href="http://m.fangxiaoer.com" target="_blank" style="color:#ff5200">m.fangxiaoer.com</a></span></p></div>
+            <div style="border:none">联系我们<p style="width:325px;right:0px;"><i style="left: inherit;right: 8px;"><img src="http://static.fangxiaoer.com/web/images/ico/head/head_top_ico.gif" alt="向上"></i><img src="http://static.fangxiaoer.com/web/images/ico/head/head_top_tel.gif" alt="联系我们二维码" class="head_app"><span style="float:left;border-left:1px solid #dfdfdf;padding-left: 10px;line-height: 22px;color: #666;">关注房小二网微信，了解最新楼盘信息<br>企业合作：400-894-1777<br>新房客服：400-970-0101转12345<br>二手房客服：400-970-0101转11111</span></p></div>
+        </div>
+        <div class="sy_head_l">
+            <span class=""><a href="http://my.fangxiaoer.com/login.aspx" style="background:no-repeat">个人登录</a><a href="http://agent.fangxiaoer.com/">经纪人登录</a><a href="http://my.fangxiaoer.com/register.aspx" class="no-border">免费注册</a>　</span>
+            <span class="hid"><em>Hi，</em><i><a href="http://my.fangxiaoer.com/"></a></i><a href="/Action/logout.aspx">退出</a></span>
+        </div>
+    </div>
+</div>
+
+
+<div class="header">
+    <div class="header_container">
+        <a href="/" class="logo">
+            <img src="http://static.fangxiaoer.com/web/images/ico/head/logo.png" alt="房小二logo" /></a>
+
+        <div class="header_search">
+            <input type="hidden" name="chid" id="chid" value="4" />
+            <label style="float: left">
+                <span style="display: block;">请输入关键字 如：万锦紫园</span>
+                <input type="text" style="z-index: 0" id="txtkeys" class="search_input ac_input" autocomplete="off">
+            </label>
+            <input name="" type="button" class="search_btn" value="" style="position: absolute" />
+        </div>
+
+        <a href="http://download.fangxiaoer.com/" target="_blank" class="header_gg">
+            <img src="http://static.fangxiaoer.com/web/images/ico/head/nav_gg.png" alt="手机买房" /></a>
+        <div class="cl">
+        </div>
+    </div>
+</div>
+<div class="nav_show">
+    <div class="nav">
+        <div class="nav_container">
+
+            <ul class="nav_one">
+                <li ><a href="/"  id="shouyeli">首页</a></li>
+                <li ><a href="/house/index.aspx" class="show_house">买新房</a></li>
+                <li ><a href="/UHouse/sale/Region/" class="show_uhouse">买二手房</a></li>
+                <li ><a href="/UHouse/rent/RentRegion/" class="show_rent">租房</a></li>
+                <li ><a href="/need/" class="show_need">房仔生活</a></li>
+                <li ><a href="/UHouse/sale/SaleHouse.aspx" class="show_form">免费发布</a></li>
+                <li ><a href="/news/" class="show_strategy">资讯</a></li>
+            </ul>
+            <div class="nav_login" style="display:none">
+
+                <img src="http://static.fangxiaoer.com/web/images/ico/head/login.png" alt="注册" /><a href="http://my.fangxiaoer.com" target="_blank" class="nav_login_login">登录</a> <a href="http://my.fangxiaoer.com/register.aspx" target="_blank" class="nav_login_reg">注册</a>
+                <a href="http://my.fangxiaoer.com/index.aspx" target="_blank" style="width: 116px;float: left;text-align: center;"></a><a href="/Action/logout.aspx" class="nav_login_reg" style="margin-left:0">退出</a></span>
+            </div>
+            <div class="cl">
+            </div>
+        </div>
+    </div>
+    <div class="nav_hover" style="display:none">
+        <div class="nav_float">
+            <!--买新房列表-->
+            <ul id="house" >
+
+                <li ><a href="/house/residence/" >找楼盘</a></li>
+                <li ><a href="/marketing/default.aspx">抢优惠<img src="http://static.fangxiaoer.com/web/images/ico/head/head_fd.png" style="top:-7px" alt="抢优惠"></a></li>
+                <li ><a href="/subway/" >地铁沿线</a></li>
+                <li ><a href="/school/" >优质学区</a></li>
+                <li ><a href="/logpay/" >低首付</a></li>
+                <li ><a href="/exits/" >现房</a></li>
+                <li ><a href="/jingzhuang/s/">精装房</a></li>
+                <li ><a href="/house/list.aspx" >户型找房</a></li>
+                <li ><a href="/Brand/s/">品牌房企</a></li>
+
+                <li><a href="/formulate/house.aspx" target="_blank">帮您找房</a></li>
+                <li  class="borderRnone"><a href="/house/housemap/">地图找房<img src="http://static.fangxiaoer.com/web/images/ico/head/head_hot.gif"  alt="热门"/></a></li>
+            </ul>
+            <!--买二手房列表-->
+            <ul id="uhouse" >
+                <li><a href="/UHouse/sale/Region/">出售房源</a></li>
+                <li><a href="/UHouse/Subdistrict/SubdistrictList/">小区找房</a></li>
+                <li><a href="/UHouse/sale/UHouseSubway/">地铁沿线</a></li>
+
+                <li><a href="/formulate/house.aspx?ids=2" target="_blank" class="activeoff">帮您找房</a></li>
+                <li><a href="/UHouse/sale/SaleHouse.aspx" target="_blank" class="activeoff">我要卖房</a></li>
+                <li class="borderRnone"><a href="/uhouse/housemap/">地图找房<img src="http://static.fangxiaoer.com/web/images/ico/head/head_hot.gif" alt="热门"/></a></li>
+            </ul>
+            <!--租房-->
+            <ul id="rent" >
+
+                <li><a href="/UHouse/rent/RentRegion/1_-1_-1_-1_-1_-1_-1_0_0_0_-1_-1_1">出租房源</a></li>
+                <li><a href="/UHouse/rent/RentRegion/1_-1_-1_-1_-1_-1_-1_1_0_0_-1_-1_1">个人房源</a></li>
+                <li><a href="/UHouse/rent/RentRegion/1_-1_-1_-1_-1_-1_-1_2_0_0_-1_-1_1/">经纪人房源</a></li>
+                <li><a href="/UHouse/rent/rent_form_1.aspx" target="_blank">我要出租</a></li>
+                <li class="borderRnone"><a href="/rent/housemap/">地图找房<img src="http://static.fangxiaoer.com/web/images/ico/head/head_hot.gif" alt="热门" /></a></li>
+            </ul>
+            <!--房仔生活-->
+            <ul id="need" >
+
+                <li><a href="/need/homeAct.aspx" >房仔活动</a></li>
+                <li class="borderRnone"><a href="/need/integral.aspx" >积分商城</a></li>
+
+
+            </ul>
+            <!--免费发布-->
+            <ul id="form" >
+                <li><a href="/UHouse/sale/SaleHouse.aspx">我要卖房</a></li>
+                <li class="borderRnone"><a href="/UHouse/rent/rent_form_1.aspx">我要出租</a></li>
+
+            </ul>
+            <!--资讯-->
+            <ul id="strategy" >
+                <li><a href='/news/149'>小二公告</a></li>
+                <li><a href='/news/148'>小二踩点</a></li>
+                <li><a href='/news/151'>小二特惠</a></li>
+                <li><a href='/news/150'>小二活动</a></li>
+                <li><a href='/news/154'>工程进度</a></li>
+                <li><a href='/news/156'>专题活动</a></li>
+                <li><a href='/videos/3'>活动视频</a></li>
+                <li><a href='/videos/7'>采访视频</a></li>
+
+                <li><a href='/videos/5'>微电影</a></li>
+                <li class="borderRnone"><a href='/videos/1'>企业视频</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<form  class="bbb" id="jsUpForm" method="post" name="jsUpForm">
+    <div class="house_top">
+        <h1>帮您找房</h1>
+        <div class="house_title">
+            <p>在线值班时间：08:30-19:30　客服热线：400-970-0101转12345</p>
+        </div>
+        <div class="house_center">
+            <div class="house_form">
+                <div class="house_nav">
+                    <span>我要</span>
+                    <ul class="houseqh">
+                        <li id="hqh1" onclick="setTab('hqh',1,5)" class="hover">买新房</li>
+                        <li id="hqh2" onclick="setTab('hqh',2,5)">买二手房</li>
+                        <li id="hqh3" onclick="setTab('hqh',3,5)">看房</li>
+                        <li id="hqh4" onclick="setTab('hqh',4,5)">楼盘评测</li>
+                        <li id="hqh5" onclick="setTab('hqh',5,5)">过户代办</li>
+                    </ul>
+                </div>
+                <div class="sale_form_r">
+                    <!--买新房-->
+                    <div id="con_hqh_1">
+                        <ul class="hf_ul">
+                            <li>
+                                <div class="hf_ts"><span>*</span>您想在哪里买</div>
+                                <div class="my_xl xx">
+                                    <!--<input type="hidden" class="my_xl_input" >-->
+                                    <input name="one_qy" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;"/>
+                                    <div class="my_xl_txt" id="new_qy">请选择区域</div>
+                                    <div class="my_xl_btn"></div>
+                                    <ul class="my_xl_list">
+                                        <li class="">沈河区</li>
+                                        <li class="">大东区</li>
+                                        <li class="">皇姑区</li>
+                                        <li class="">和平区</li>
+                                        <li class="">铁西区</li>
+                                        <li class="">于洪区</li>
+                                        <li class="">浑南区</li>
+                                        <li class="">沈北新区</li>
+                                        <li class="">苏家屯</li>
+                                    </ul>
+                                </div>
+                                <i id="one_qy" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+
+                            <li>
+                                <div class="hf_ts"><span>*</span>您的价格预算</div>
+                                <div class="my_xl xx">
+                                    <!--<input type="hidden" class="my_xl_input" >-->
+                                    <input name="new_price" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;"/>
+                                    <div class="my_xl_txt" id="new_yusuan">请选择价格</div>
+                                    <div class="my_xl_btn"></div>
+                                    <ul class="my_xl_list">
+                                        <li class="">35万以下</li>
+                                        <li class="">35-50万</li>
+                                        <li class="">50-80万</li>
+                                        <li class="">80-100万</li>
+                                        <li class="">100-120万</li>
+                                        <li class="">120-150万</li>
+                                        <li class="">150万以上</li>
+                                    </ul>
+                                </div>
+                                <span>元</span>
+                                <i id="new_price" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span>*</span>您想买几居室</div>
+                                <div class="my_xl xx">
+                                    <!--<input  type="hidden" class="my_xl_input">-->
+                                    <input name="new_hx" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;"/>
+                                    <div class="my_xl_txt" id="new_huxing">请选择户型</div>
+                                    <div class="my_xl_btn"></div>
+                                    <ul class="my_xl_list">
+                                        <li class="">一居</li>
+                                        <li class="">二居</li>
+                                        <li class="">三居</li>
+                                        <li class="">四居</li>
+                                        <li class="">五居及以上</li>
+                                    </ul>
+                                </div>
+                                <i id="new_hx" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span>*</span>您的手机号码</div>
+                                <input name="tel_newh" type="text" class="hf_input" id="phone0" placeholder="请输入手机号码"  maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                                <i id="tel_newh" class="ljz">　</i>
+                                <div class="errorBox"></div>
+                                <div class="cl"></div>
+
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span></span></div>
+                                <input name="yzm" type="text" class="hf_input yzm_input" id="yzm0" >
+                                <span class="yzm_btn" id="xf_djs"></span>
+                                <a class="yzm_btn" id="xf_hqyzm">获取验证码</a>
+                                <i id="yzm" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li class="area_li">
+                                <div class="hf_ts"><span></span>描　　　　述</div>
+                                <textarea class="hf_input hf_textarea" rows="5" cols="10" id="newms"  placeholder="补充说点什么吧..."></textarea>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                        </ul>
+                        <input type="submit" class="hf_submit submitBtnFroms" value="提交" id="new_submit"/>
+                    </div>
+                    <!--买二手房-->
+                    <div id="con_hqh_2" style="display:none">
+                        <ul class="hf_ul">
+                            <li>
+                                <div class="hf_ts"><span>*</span>您想在哪里买</div>
+                                <div class="my_xl xx">
+                                    <!--<input type="hidden" class="my_xl_input" >-->
+                                    <input name="two_qy" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;"/>
+                                    <div class="my_xl_txt" id="esfqy">请选择区域</div>
+                                    <div class="my_xl_btn"></div>
+                                    <ul class="my_xl_list">
+                                        <li class="">沈河区</li>
+                                        <li class="">大东区</li>
+                                        <li class="">皇姑区</li>
+                                        <li class="">和平区</li>
+                                        <li class="">铁西区</li>
+                                        <li class="">于洪区</li>
+                                        <li class="">浑南区</li>
+                                        <li class="">沈北新区</li>
+                                        <li class="">苏家屯</li>
+                                    </ul>
+                                </div>
+                                <i id="two_qy" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span>*</span>您的价格预算</div>
+                                <div class="my_xl xx">
+                                    <input name="two_price" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;"/>
+                                    <div class="my_xl_txt" id="esfyusuan">请选择价格</div>
+                                    <div class="my_xl_btn"></div>
+                                    <ul class="my_xl_list">
+                                        <li class="">35万以下</li>
+                                        <li class="">35-50万</li>
+                                        <li class="">50-80万</li>
+                                        <li class="">80-100万</li>
+                                        <li class="">100-120万</li>
+                                        <li class="">120-150万</li>
+                                        <li class="">150万以上</li>
+                                    </ul>
+                                </div>
+                                <span>元</span>
+                                <i id="two_price" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span>*</span>您想买几居室</div>
+                                <div class="my_xl xx">
+                                    <input name="two_hx" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;"/>
+                                    <div class="my_xl_txt" id="esfhuxing">请选择户型</div>
+                                    <div class="my_xl_btn"></div>
+                                    <ul class="my_xl_list">
+                                        <li class="">一居</li>
+                                        <li class="">二居</li>
+                                        <li class="">三居</li>
+                                        <li class="">四居</li>
+                                        <li class="">五居及以上</li>
+                                    </ul>
+                                </div>
+                                <i id="two_hx" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span>*</span>您的手机号码</div>
+                                <input name="tel_twoh" type="text" class="hf_input" id="phone1" placeholder="请输入手机号码" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                                <i id="tel_twoh" class="ljz">　</i>
+                                <div class="errorBox"></div>
+                                <div class="cl"></div>
+
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span></span></div>
+                                <input name="yzm_twoh" type="text" class="hf_input yzm_input" id="yzm1">
+                                <span class="yzm_btn" id="xf_djs"></span>
+                                <a class="yzm_btn" id="esf_hqyzm">获取验证码</a>
+                                <i id="yzm_twoh" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li class="area_li">
+                                <div class="hf_ts"><span></span>描　　　　述</div>
+                                <textarea class="hf_input hf_textarea" rows="5" cols="10" id="esfms" placeholder="补充说点什么吧..."></textarea>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                        </ul>
+                        <input type="submit" class="hf_submit submitBtnFroms" value="提交" id="two_submit"/>
+                    </div>
+                    <!--看房-->
+                    <div id="con_hqh_3" style="display:none">
+                        <ul class="hf_ul">
+                            <li>
+                                <div class="hf_ts"><span>*</span>您要看的楼盘</div>
+                                <input name="lp_name" id="kfname" type="text" class="hf_input" placeholder="请填写楼盘名称">
+                                <i id="lp_name" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span>*</span>您上车的地点</div>
+                                <div class="my_xl xx">
+                                    <input name="kf_dd" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;"/>
+                                    <div class="my_xl_txt" id="kpaddress">请选择地点</div>
+                                    <div class="my_xl_btn"></div>
+                                    <ul class="my_xl_list">
+                                        <li class="">三台子地铁B出口</li>
+                                        <li class="">奥体中心地铁A出口</li>
+                                        <li class="">铁西广场苏宁电器门前</li>
+                                    </ul>
+                                </div>
+                                <i id="kf_dd" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li>
+
+                                <div class="hf_ts"><span>*</span>您上车的时间</div>
+                                <input name="kf_sj" type="text" value="" class="hf_input" id="datetimepicker_mask"/>
+
+                                <i id="kf_sj" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span>*</span>您的手机号码</div>
+                                <input name="tel_kf" type="text" class="hf_input" id="phone2" placeholder="请输入手机号码" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                                <i id="tel_kf" class="ljz">　</i>
+                                <div class="errorBox"></div>
+                                <div class="cl"></div>
+
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span></span></div>
+                                <input name="yzm_kf" type="text" class="hf_input yzm_input"  id="yzm2">
+                                <span class="yzm_btn" id="xf_djs"></span>
+                                <a class="yzm_btn" id="kf_hqyzm">获取验证码</a>
+                                <i id="yzm_kf" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li class="area_li">
+                                <div class="hf_ts"><span></span>描　　　　述</div>
+                                <textarea class="hf_input hf_textarea" rows="5" cols="10" id="kfms" placeholder="补充说点什么吧..."></textarea>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                        </ul>
+                        <input type="submit" class="hf_submit submitBtnFroms" value="提交" id="kf_submit"/>
+                    </div>
+                    <!--楼盘评测-->
+                    <div id="con_hqh_4" style="display:none">
+                        <ul class="hf_ul">
+                            <li>
+                                <div class="hf_ts"><span>*</span>您要了解的项目</div>
+                                <input name="lp_name1" id="lppcname" type="text" class="hf_input" placeholder="请填写楼盘名称">
+                                <i id="lp_name1" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span>*</span>您的手机号码</div>
+                                <input name="tel_pc" type="text" class="hf_input" id="phone3" placeholder="请输入手机号码" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                                <i id="tel_pc" class="ljz">　</i>
+                                <div class="errorBox"></div>
+                                <div class="cl"></div>
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span></span></div>
+                                <input name="yzm_pc" type="text" class="hf_input yzm_input" id="yzm3">
+                                <span class="yzm_btn" id="xf_djs"></span>
+                                <a class="yzm_btn" id="lppc_hqyzm">获取验证码</a>
+                                <i id="yzm_pc" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                        </ul>
+                        <input type="submit" class="hf_submit submitBtnFroms" value="提交" id="lppc_submit"/>
+                    </div>
+                    <!--过户代办-->
+                    <div id="con_hqh_5" style="display:none">
+                        <ul class="hf_ul">
+                            <li>
+                                <div class="hf_ts"><span>*</span>楼盘区域</div>
+                                <div class="my_xl xx">
+                                    <input name="gh_qy" type="text" class="my_xl_input" value="" style="position:absolute;top:-9999px;"/>
+                                    <div class="my_xl_txt" id="gh_qyv">请选择区域</div>
+                                    <div class="my_xl_btn"></div>
+                                    <ul class="my_xl_list">
+                                        <li class="">沈河区</li>
+                                        <li class="">大东区</li>
+                                        <li class="">皇姑区</li>
+                                        <li class="">和平区</li>
+                                        <li class="">铁西区</li>
+                                        <li class="">于洪区</li>
+                                        <li class="">浑南区</li>
+                                        <li class="">沈北新区</li>
+                                        <li class="">苏家屯</li>
+                                    </ul>
+                                </div>
+                                <i id="gh_qy" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span>*</span>您的姓名</div>
+                                <input name="Contacts" type="text" id="uname" class="hf_input" placeholder="请输入您的姓名">
+                                <i id="Contacts" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span>*</span>您的手机号</div>
+                                <input name="tel_gh" type="text" class="hf_input" id="phone4" placeholder="请输入手机号码" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                                <i id="tel_gh" class="ljz">　</i>
+                                <div class="errorBox"></div>
+                                <div class="cl"></div>
+
+                            </li>
+                            <li>
+                                <div class="hf_ts"><span></span></div>
+                                <input name="yzm_gh" type="text" class="hf_input yzm_input" id="yzm4" >
+                                <span class="yzm_btn" id="xf_djs"></span>
+                                <a class="yzm_btn" id="gh_hqyzm">获取验证码</a>
+                                <i id="yzm_gh" class="ljz">　</i>
+                                <div class="cl"></div>
+                                <div class="errorBox"></div>
+                            </li>
+                        </ul>
+                        <input type="submit" class="hf_submit submitBtnFroms" value="提交" id="gh_submit"/>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+<div class="house_bottom">
+
+    <div class="house_bot hb_bg">
+        <div class="container">
+            <div class="hb_left hb_mart marr">
+                <a class="hb_icon"></a>
+                <a class="hb_title">及时回复</a>
+                <div class="hb_desc">提交您的需求，10分钟内为您定制专属购房分析方案</div>
+            </div>
+            <div class="hb_right"></div>
+            <div class="cl"></div>
+        </div>
+    </div>
+    <div class="house_bot">
+        <div class="container">
+            <div class="hb_right hb_right2 marr"></div>
+            <div class="hb_left hb_mart">
+                <a class="hb_icon hb_icon2"></a>
+                <a class="hb_title">专属服务</a>
+                <div class="hb_desc">分析师一对一专业购房指导、免费带看服务</div>
+            </div>
+
+            <div class="cl"></div>
+        </div>
+    </div>
+    <div class="house_bot hb_bg">
+        <div class="container">
+            <div class="hb_left hb_mart marr">
+                <a class="hb_icon hb_icon3"></a>
+                <a class="hb_title">看房直通车</a>
+                <div class="hb_desc">一个预约，看房直通车为您提供免费及时的看房服务</div>
+            </div>
+            <div class="hb_right hb_right3"></div>
+            <div class="cl"></div>
+        </div>
+    </div>
+    <div class="house_bot">
+        <div class="container">
+            <div class="hb_right hb_right4 marr"></div>
+            <div class="hb_left hb_mart">
+                <a class="hb_icon hb_icon4"></a>
+                <a class="hb_title">工程进度</a>
+                <div class="hb_desc">购房成功客户，可在网站查询项目工程进展情况，
+                    工程进度每月更新一次<a href="http://sy.fangxiaoer.com/news/154" target="_blank" class="hb_gcjd">点击查看 ></a></div>
+            </div>
+            <div class="cl"></div>
+        </div>
+    </div>
+    <div class="house_bot hb_bg">
+        <div class="container">
+            <div class="hb_left hb_mart marr">
+                <a class="hb_icon hb_icon5"></a>
+                <a class="hb_title">购房优惠</a>
+                <div class="hb_desc">房小二网部分合作楼盘，购房者享受全城最低价购房</div>
+            </div>
+            <div class="hb_right hb_right5"></div>
+            <div class="cl"></div>
+        </div>
+    </div>
+</div>
+<div class="success_tc">
+    <div class="su_left"><img src="http://static.fangxiaoer.com/web/images/sy/formulate/tj_success.png" alt="成功"/></div>
+    <div class="su_right">
+        <div class="su_cg">&nbsp;提交成功！</div>
+        <p>您的需求已受理，分析师会尽快与您联系。</p>
+    </div>
+    <img src="http://static.fangxiaoer.com/web/images/sy/formulate/succ_close.png" class="su_close" alt="关闭"/>
+</div>
+
+<script type="text/javascript" src="http://static.fangxiaoer.com/js/search_qh.js"></script>
+
+<script src="http://static.fangxiaoer.com/js/jquery.datetimepicker.js"></script>
+
+<script>
+
+    $('#datetimepicker_mask').datetimepicker({
+        //    mask: '9999/19/39 29:59'
+    });
+
+</script>
+<script language="javascript">
+    $(function () {
+        var url = window.location.href;
+        if (url.indexOf("ids=") > 0) {
+            url_id = url.substring(url.indexOf("ids=") + 4, url.length);
+            $(".houseqh li").removeClass("hover")
+            $("#con_hqh_1").hide()
+            $("#hqh" + url_id).addClass("hover")
+            $("#con_hqh_" + url_id).show()
+        }
+    })
+</script>
+
+<div class="cl"></div>
+<div class="footer">
+
+
+    <div class="footer_ewm footer_width">
+        <div class="footer_ewm_img">
+            <img src="http://static.fangxiaoer.com/web/images/ico/head/ewm_1.jpg"/>
+            <p>扫描下载APP</p>
+            手机浏览器访问网址<br>m.fangxiaoer.com
+        </div>
+        <div class="footer_ewm_img">
+            <img src="http://static.fangxiaoer.com/web/images/ico/head/ewm_2.jpg"/>
+            <p>关注微信服务号</p>
+            手指移动，轻松掌握房产最新优惠活动
+        </div>
+        <div class="footer_ewm_img">
+            <img src="http://static.fangxiaoer.com/web/images/ico/head/ewm_3.jpg"/>
+            <p>关注微信订阅号</p>
+            了解最新楼盘信息
+        </div>
+        <img src="http://static.fangxiaoer.com/web/images/ico/head/footer_160309.png" class="footer_biaoshi"/>
+    </div>
+    <div class="footer_copy footer_width">
+        <a href="http://www.fangxiaoer.org/" target="_blank">佳恒传媒</a>
+        <a href="http://www.fangxiaoer.com/Index" target="_blank">关于房小二</a>
+        <a href="http://sy.fangxiaoer.com/Sitemap.html" target="_blank">网站地图</a>
+        <a href="http://www.fangxiaoer.com/Join" target="_blank">招兵买马</a>
+        <a href="http://www.fangxiaoer.com/About/team" target="_blank">团队介绍</a>
+        <a href="http://www.fangxiaoer.com/About/development" target="_blank">发展历程</a>
+        <a href="http://www.fangxiaoer.com/About/reports" target="_blank">媒体报道</a>
+        <a href="http://www.fangxiaoer.com/About/contactus" target="_blank">联系我们</a>
+        <a href="http://www.fangxiaoer.com/About/copyright" target="_blank">版权声明</a>
+        <a href="http://www.fangxiaoer.com/About/disclaimer" target="_blank">免责声明</a>
+        <a href="http://www.fangxiaoer.com/Help" target="_blank" class="bor_n">使用帮助</a>
+        <div class="cl"></div>
+        <p>版权所有 Copyright © 2008-2016 www.fangxiaoer.com All Rights Reserved　辽B-2-4-20100077</p>
+    </div>
+</div>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?198ca7ea94df8291001d3c6ac845c77f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

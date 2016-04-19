@@ -5,6 +5,7 @@
     <title>单击开房</title>
     <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
     <link href="../css/popup.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../myjs/jquery.datetimepicker.css"/>
 
 </head>
 <body>
@@ -14,152 +15,343 @@
 </div>
 
 <div class="tanchuang">
-    <dl class="tctit"><h1>宾客开房</h1></dl>
+    <dl class="tctit"><h1>入住登记单</h1></dl>
     <table class="tableBordernone">
         <tr>
-            <td>房间号码：</td>
-            <td><span class="roomID">12345</span></td>
-            <td>床位号码：</td>
-            <td>1234567</td>
-        </tr>
-        <tr>
             <td>房间类别：</td>
-            <td>豪华总统套房</td>
-            <td>入住天数：</td>
-            <td><input type="text" value="1" class="tsinput"> 天</td>
+            <td>
+                <select disabled="disabled" style="width: 131px;">
+                    <option value="豪华总统套房">豪华总统套房</option>
+                    <option value="标准间" selected="selected">标准间</option>
+                    <option value="单人间">单人间</option>
+                </select>
+            </td>
+            <td>房间号码：</td>
+            <td><input type="text" value="" style="width: 135px;"></td>
+            <td>会员卡号：</td>
+            <td colspan="3"><input type="text" value="" style="width: 277px;"></td>
         </tr>
         <tr>
-            <td>标准房价：</td>
-            <td><span class="price">280.00</span>元</td>
-            <td>结算房价：</td>
-            <td><span class="price">560.00</span>元</td>
+            <td>客人来源：</td>
+            <td>
+                <select style="width: 131px;">
+                    <option value="客人自入" selected="selected">客人自入</option>
+                    <option value="美团">美团</option>
+                    <option value="糯米团">糯米团</option>
+                </select>
+            </td>
+            <td>房价协议：</td>
+            <td>
+                <select style="width: 148px;">
+                    <option value="客人自入">客人自入</option>
+                    <option value="美团">美团</option>
+                    <option value="糯米团">糯米团</option>
+                </select>
+            </td>
+            <td>房租方式：</td>
+            <td>
+                <select style="width: 120px;">
+                    <option value="小时房">小时房</option>
+                    <option value="常驻房">常驻房</option>
+                    <option value="房租方式2">房租方式2</option>
+                </select>
+            </td>
+            <td>房价：</td>
+            <td><input type="text" value="100.00" disabled="disabled" class="inputCover" style="width: 60px;">&nbsp;<font color="#d20000">双早</font> </td>
+        </tr>
+        <tr>
+            <td>当前时间：</td>
+            <td>
+                <input type="text" value="2016-05-22 10:00" disabled="disabled" style="width: 120px;">
+            </td>
+            <td>预住天数：</td>
+            <td>
+                <input type="button" class="jia reduceDays" value="-" style="margin-right: -1px;">
+                <input type="text"m value="1" style="width: 60px;" id="Days">
+                <input type="button" class="jia addDays" value="+" style="margin-left: -1px;">
+            </td>
+            <td>预离时间：</td>
+            <td colspan="3">
+                <input type="text" value="2016-05-23 10:00" style="width: 110px;" class="datetimepicker_mask">
+            </td>
         </tr>
     </table>
-    <dl class="tabsheet">
-        <dt class="hover">同住1</dt>
-        <dt>同住2</dt>
-        <!--<dt>同住3</dt>不需要时隐藏-->
-    </dl>
     <table class="tableBorderaaa">
         <tr>
-            <td>宾客姓名：</td>
-            <td><input type="text" name="name"></td>
-            <td>床位号：</td>
-            <td>12345</td>
-        </tr>
-        <tr>
-            <td>证件类别：</td>
+            <td>客人姓名：</td>
+            <td><input type="text" name="name" style="width: 130px;"></td>
+            <td>证件类型：</td>
             <td>
-                <div class="my_xl tc_xl">
-                    <div class="my_xl_txt tc_xl_txt">请选择</div>
-                    <div class="my_xl_btn"></div>
-                    <ul class="my_xl_list tc_xl_list">
-                        <li class="">身份证</li>
-                        <li class="">临时身份证</li>
-                        <li class="">军官证件</li>
-                    </ul>
-                </div>
+                <select style="width: 120px;">
+                    <option value="身份证" selected="selected">身份证</option>
+                    <option value="二代身份证">二代身份证</option>
+                    <option value="护照">护照</option>
+                    <option value="军官证">军官证</option>
+                </select>
             </td>
             <td>证件号码：</td>
-            <td><input type="text" name="card"></td>
+            <td><input type="text" value="" style="width: 250px"></td>
         </tr>
-    </table>
-    <table class="tableBorderaaa">
         <tr>
-            <td>宾客来源：</td>
+            <td>出生日期：</td>
+            <td><input type="text" value="" style="width: 130px;" class="birthday datetimepicker_mask"></td>
+            <td>性别：</td>
             <td>
-                <div class="my_xl tc_xl">
-                    <div class="my_xl_txt tc_xl_txt">请选择</div>
-                    <div class="my_xl_btn"></div>
-                    <ul class="my_xl_list tc_xl_list">
-                        <li class="">宾客来源1</li>
-                        <li class="">宾客来源2</li>
-                        <li class="">宾客来源3</li>
-                    </ul>
-                </div>
+                <select style="width: 120px;">
+                    <option value="女">女</option>
+                    <option value="男" selected="selected">男</option>
+                </select>
             </td>
-            <td>早餐状态：</td>
+            <td>民族：</td>
             <td>
-                <div class="my_xl tc_xl">
-                    <div class="my_xl_txt tc_xl_txt">请选择</div>
-                    <div class="my_xl_btn"></div>
-                    <ul class="my_xl_list tc_xl_list">
-                        <li class="">可用</li>
-                        <li class="">不可用</li>
-                        <li class="">免费</li>
-                    </ul>
-                </div>
+                <select style="width: 158px;display: inline">
+                    <option value="汉族" selected="selected">汉族</option>
+                    <option value="阿昌族">阿昌族</option>
+                    <option value="白族">白族</option>
+                    <option value="保安族">保安族</option>
+                    <option value="布朗族">布朗族</option>
+                    <option value="布依族">布依族</option>
+                    <option value="朝鲜族">朝鲜族</option>
+                    <option value="达斡尔族">达斡尔族</option>
+                    <option value="傣族">傣族</option>
+                </select>
             </td>
         </tr>
         <tr>
-            <td>协议单位：</td>
-            <td colspan="3">
-                <div class="my_xl tc_xl" style="width: 465px; background-position: 450px 12px">
-                    <div class="my_xl_txt tc_xl_txt">请选择您的协议单位</div>
-                    <div class="my_xl_btn"></div>
-                    <ul class="my_xl_list tc_xl_list">
-                        <li class="llfd">贵德科技有限公司</li>
-                        <li class="llfd">美德科技有限公司</li>
-                        <li class="llfd">道德科技有限公司</li>
-                        <li class="llfd">郎德科技有限公司</li>
-                        <li class="llfd">宏德科技有限公司</li>
-                        <li class="llfd">道德科技有限公司</li>
-                    </ul>
-                </div>
-            </td>
+            <td>地址：</td>
+            <td colspan="5"><input type="text" value="" style="width: 770px;"></td>
         </tr>
     </table>
+    <h1 class="addCustomerh1">
+         新增随客信息 &nbsp;<a href="javascript:void(0)" class="sss btnOpenCustomer">展开</a>
+    </h1>
+    <div class="divOtherCustomer none">
+        <table cellpadding="0" cellspacing="0" class="ruzhu tableBlue">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th style="width: 90px">出生年月</th>
+                <th>性别</th>
+                <th>民族</th>
+                <th>证件类型</th>
+                <th width="160">证件号码</th>
+                <th width="180">地址</th>
+                <th width="65">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr>
+                <td>
+                    <input type="text" value="" style="width: 65px;"></td>
+                <td>
+                    <input type="text" value="" style="width: 80px;" class="datetimepicker_mask"></td>
+                <td>
+                    <select>
+                        <option>男</option>
+                        <option>女</option>
+                    </select></td>
+                <td>
+                    <select>
+                        <option value="">请选择</option>
+                        <option value="汉族">汉族</option>
+                        <option value="阿昌族">阿昌族</option>
+                        <option value="白族">白族</option>
+                        <option value="保安族">保安族</option>
+                        <option value="布朗族">布朗族</option>
+                        <option value="布依族">布依族</option>
+                        <option value="朝鲜族">朝鲜族</option>
+                    </select>
+                </td>
+                <td>
+                    <select>
+                        <option value="身份证">身份证</option>
+                        <option value="二代身份证">二代身份证</option>
+                        <option value="护照">护照</option>
+                        <option value="军官证">军官证</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" style="width: 160px" value=""></td>
+                <td>
+                    <input type="text" style="width: 160px" value=""></td>
+                <td>
+                    <img src="../images/save.png" width="12" height="12" alt="保存">
+                    <img src="../images/010.gif" width="12" height="12" alt="删除">
+                </td>
+            </tr>-->
+            </tbody>
+        </table>
+        <input type="button" value="+" class="butn btnAddOtherCustomer" />
+    </div>
+
     <table class="tableBorderfff">
         <tr>
-            <td>会员卡号：</td>
-            <td colspan="3">123456789012</td>
-        </tr>
-        <tr>
-            <td style="width:100px;">预付款金额：</td>
-            <td><input type="text" name="money" class="input"></td>
-            <td>币种：</td>
-            <td>
-                <div class="my_xl tc_xl">
-                    <div class="my_xl_txt tc_xl_txt">请选择</div>
-                    <div class="my_xl_btn"></div>
-                    <ul class="my_xl_list tc_xl_list">
-                        <li class="">人民币</li>
-                        <li class="">信用卡</li>
-                        <li class="">单位支付</li>
-                    </ul>
-                </div>
+            <td style="width:100px;">预付款：</td>
+            <td><input type="text" name="money" class="input" style="width: 100px;"></td>
+            <td>支付方式：</td>
+            <td colspan="3">
+                <select style="width: 130px;">
+                    <option value="人民币">人民币</option>
+                    <option value="信用卡">信用卡</option>
+                    <option value="单位支付">单位支付</option>
+                </select>
             </td>
         </tr>
         <tr>
-            <td>可签单单位：</td>
+            <td>可挂账单位：</td>
             <td>
-                <div class="my_xl tc_xl">
-                    <div class="my_xl_txt tc_xl_txt">请选择</div>
-                    <div class="my_xl_btn"></div>
-                    <ul class="my_xl_list tc_xl_list">
-                        <li class="">贵德科技有限公司</li>
-                        <li class="">美德科技有限公司</li>
-                        <li class="">道德科技有限公司</li>
-                    </ul>
-                </div>
+                <select style="width: 220px;">
+                    <option value="可挂账单位1">可挂账单位1</option>
+                    <option value="可挂账单位2">可挂账单位2</option>
+                    <option value="可挂账单位3">可挂账单位3</option>
+                </select>
             </td>
             <td>储值卡号：</td>
-            <td><input type="text" name="card" class="input"></td>
+            <td colspan="3"><input type="text" style="width: 300px"></td>
+        </tr>
+        <tr>
+            <td>备注：</td>
+            <td colspan="5">
+                <textarea style="width: 735px; height: 50px;">备注内容</textarea>
+            </td>
         </tr>
     </table>
-    <dl class="button"><a class="sbe"><i class="icon-edit"></i>预授权</a><a class="sbe"><i class="icon-ok"></i>确认付款</a> </dl>
+    <dl class="button">
+        <div class="fl"><a class="sbe">读取身份证</a> &nbsp; <input type="checkbox">是否贵宾</div>
+        <div class="fr"><a class="sbe">确认付款</a><a class="sbegray">关闭</a></div>
+    </dl>
 
 </div>
+<table id="divEditRow" class="none">
+    <tbody>
+    <tr>
+        <td>
+            <input type="text" value="" style="width: 65px;"></td>
+        <td>
+            <input type="text" value="" style="width: 80px;" class=" datetimepicker_mask"></td>
+        <td>
+            <select>
+                <option>男</option>
+                <option>女</option>
+            </select></td>
+        <td>
+            <select>
+                <option value="">请选择</option>
+                <option value="汉族">汉族</option>
+                <option value="阿昌族">阿昌族</option>
+                <option value="白族">白族</option>
+                <option value="保安族">保安族</option>
+                <option value="布朗族">布朗族</option>
+                <option value="布依族">布依族</option>
+                <option value="朝鲜族">朝鲜族</option>
+            </select>
+        </td>
+        <td>
+            <select>
+                <option value="身份证">身份证</option>
+                <option value="二代身份证">二代身份证</option>
+                <option value="护照">护照</option>
+                <option value="军官证">军官证</option>
+            </select>
+        </td>
+        <td>
+            <input type="text" style="width: 160px" value=""></td>
+        <td>
+            <input type="text" style="width: 160px" value=""></td>
+        <td>
+            <img src="../images/save.png" width="12" height="12" alt="保存">
+            <img src="../images/010.gif" width="12" height="12" onclick="RowDelete(this)" alt="删除">
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table id="divDetailRow" class="none">
+    <tbody>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <input type="hidden" name="RowData" />
+            <input type="hidden" name="RowState" value="0" />
+            <a href="javascript:void(0)" onclick="RowEdit(this)">
+                <img src="../images/037.gif" width="12" height="12" alt="" /></a>
+            <a href="javascript:void(0)" onclick="RowDelete(this)">
+                <img src="../images/010.gif" width="12" height="12" alt="" /></a></td>
+    </tr>
+    </tbody>
+</table>
+
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../myjs/my_xiala.js"></script>
 <script type="text/javascript">
     (function(){
-        $(".bgblack").on("click",function(){
+        $(".bgblack,.sbegray").on("click",function(){
 //$(window.parent.document.getElementById("np-pop-iframe")).remove();
             $("#np-pop-iframe",window.parent.document).remove();
         });
     })(jQuery);
+    //预住天数事件绑定
+    $(".addDays").click(function () {
+        var days = parseInt($("#Days").val());
+        if (days < 30) {
+            $("#Days").val(days + 1);
+            $("#Days").blur();
+            getTotalAccount();//显示总房价
+        }
+    });
+    $(".reduceDays").click(function () {
+        var days = parseInt($("#Days").val());
+        if (days > 1) {
+            $("#Days").val(days - 1);
+            $("#Days").blur();
+            getTotalAccount();//显示总房价
+        }
+    });
+    //随客绑定事件
+    var isOne = true;   //执行一次
+    $(".btnOpenCustomer").click(function () {
+        if ($(".divOtherCustomer").is(":hidden")) {
+            $(".divOtherCustomer").show();
+            $(".btnOpenCustomer").html('隐藏');
+            if (isOne) {
+                $(".btnAddOtherCustomer").click();
+                isOne = false;
+            }
+        }
+        else {
+            $(".divOtherCustomer").hide();
+            $(".btnOpenCustomer").html('展开');
+        }
+    });
+    //添加随客
+    $(".btnAddOtherCustomer").click(function () {
+        if ($(".ruzhu tbody tr").length >= 4) {
+            alert("同一个房间最多只能新增4个随客");
+            return;
+        }
+        var trobj = $($("#divEditRow tbody").html());
+        $(".ruzhu tbody").append(trobj);
+    });
+    function RowDelete(obj) {
+        var trobj = $(obj).parent().parent();
+        $(trobj).remove();
+    }
 </script>
+<script src="../myjs/jquery.datetimepicker.js"></script>
+<script>
+
+    $('.datetimepicker_mask').datetimepicker({
+
+    });
+
+</script>
+
+
 </body>
 </html>
 
