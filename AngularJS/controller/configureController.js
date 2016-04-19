@@ -10,10 +10,6 @@
 
 App.controller('ConfigureController', ['$scope', 'Service', function ($scope, Service) {
 
-    $scope.protocols = [];//协议房价
-    $scope.otherParams = [];//其他参数
-    $scope.guestSources = [];//客源
-    $scope.currencies = [];//币种
     $scope.companyCards = [];//单位帐卡
     $scope.companyLords = [];//单位签单人----单位帐卡从表 3列
     /**
@@ -371,6 +367,66 @@ App.controller('ConfigureController', ['$scope', 'Service', function ($scope, Se
             }
         );
     };
+    /**
+     * 协议价定义
+     * protocols：
+     * protocol
+     * protocolAdded
+     */
+    $scope.createProtocol = function () {
+        Service.createByPath($scope.protocolAdded,'protocol')
+            .then(
+            function (d) {
+                $scope.getAllProtocol();
+                $scope.protocolAdded.protocolCode = null;
+                $scope.protocolAdded.protocolName = null;
+                $scope.protocolAdded.roomCategory = null;
+                $scope.protocolAdded.roomPrice = null;
+                $scope.protocolAdded.breakfast = null;
+                $scope.formProtocol.protocolCode.$dirty = false;
+                $scope.formProtocol.protocolName.$dirty = false;
+                $scope.formProtocol.roomCategory.$dirty = false;
+                $scope.formProtocol.roomPrice.$dirty = false;
+                $scope.formProtocol.breakfast.$dirty = false;
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        )
+    };
+    $scope.deleteProtocol = function (protocol) {
+        Service.deleteByPath(protocol.id,'protocol')
+            .then(
+            function (d) {
+                $scope.getAllProtocol();
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        );
+    };
+    $scope.updateProtocol = function (protocol) {
+        Service.updateByPath(protocol,'protocol')
+            .then(
+            function (d) {
+                $scope.getAllProtocol();
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        );
+    };
+    $scope.getAllProtocol = function () {
+        Service.getAllByPath('protocol')
+            .then(
+            function (d) {
+                $scope.protocols = d;
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        );
+    };
     /*/!**
      * 协议房价
      *!/
@@ -450,7 +506,8 @@ App.controller('ConfigureController', ['$scope', 'Service', function ($scope, Se
     $scope.getAllGuestSource();
     $scope.getAllCurrency();
     $scope.getAllOtherParam();
-    /*$scope.getAllProtocol();
+    $scope.getAllProtocol();
+    /*
      $scope.getAllCompanyCard();
      $scope.getAllCompanyLord();*/
     alert(sessionStorage.getItem("userId"));

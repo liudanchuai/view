@@ -62,5 +62,17 @@ App.factory('Service', ['$http', '$q','host', function ($http, $q,host) {
                 }
             );
         },
+        /*进行逻辑业务操作*/
+        doAction:function(path,object){
+            return $http.post(host+'/'+path,object)
+                .then(
+                function (response) {
+                    return response.data;
+                },
+                function (errResponse) {
+                    return $q.reject(errResponse);
+                }
+            );
+        }
     };
 }]);

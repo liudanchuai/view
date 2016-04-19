@@ -90,6 +90,7 @@
             <td>楼区</td>
             <td>房间类别</td>
             <td>房价</td>
+            <td>早餐标志</td>
             <td>总共床位</td>
         </tr>
         <tr ng-repeat="r in rooms">
@@ -98,6 +99,7 @@
             <td><input ng-readonly="r.checked==null" ng-model="r.area"></td>
             <td><input ng-readonly="r.checked==null" ng-model="r.roomCategory"></td><!--下拉-->
             <td><input ng-readonly="r.checked==null" ng-model="r.price"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.breakfast"></td>
             <td><input ng-readonly="r.checked==null" ng-model="r.totalBed"></td>
             <td>
                 <button ng-click="updateClick(r)" ng-if="r.checked==null">编辑</button>
@@ -122,6 +124,10 @@
         <input type="text" ng-model="roomAdded.price" required name="price">
             <span style="color:red" ng-show="formRoom.price.$dirty && formRoom.price.$invalid">
                 <span ng-show="formRoom.price.$error.required">房价是必需的</span>
+            </span>
+        <input type="text" ng-model="roomAdded.breakfast" required name="breakfast">
+            <span style="color:red" ng-show="formRoom.breakfast.$dirty && formRoom.breakfast.$invalid">
+                <span ng-show="formRoom.breakfast.$error.required">房间床位是必需的</span>
             </span>
         <input type="text" ng-model="roomAdded.totalBed" required name="totalBed">
             <span style="color:red" ng-show="formRoom.totalBed.$dirty && formRoom.totalBed.$invalid">
@@ -225,21 +231,53 @@
         <input type="text" ng-model="otherParamAdded.otherParamDescription" name="otherParamDescription">
         <input type="submit" value="增加" ng-disabled="formOtherParam.$invalid">
     </form>
-    <div>协议房价</div>
+    <div>协议价定义</div>
     <table>
         <tr>
-            <td>协议编码</td>
+            <td>序号</td>
+            <td>协议代码</td>
             <td>协议名称</td>
             <td>房间类别</td>
             <td>房间价格</td>
+            <td>早餐标志</td>
         </tr>
-        <tr ng-repeat="p in ctrl.protocol">
-            <td ng-bind="p.protocolCode"></td>
-            <td ng-bind="p.protocolName"></td>
-            <td ng-bind="p.roomCategory"></td>
-            <td ng-bind="p.roomPrice"></td>
+        <tr ng-repeat="r in protocols">
+            <td><input ng-readonly="true" ng-model="r.id"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.protocolCode"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.protocolName"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.roomCategory"></td><!--下拉-->
+            <td><input ng-readonly="r.checked==null" ng-model="r.roomPrice"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.breakfast"></td><!--下拉-->
+            <td>
+                <button ng-click="updateClick(r)" ng-if="r.checked==null">编辑</button>
+                <button ng-click="updateProtocol(r)" ng-if="r.checked=='true'">提交</button>
+                <button ng-click="deleteProtocol(r)">删除</button>
+            </td>
         </tr>
     </table>
+    <form name="formProtocol" ng-submit="createProtocol()">
+        <input ng-model="protocolAdded.id" readonly>
+        <input type="text" ng-model="protocolAdded.protocolCode" name="protocolCode" ng-maxlength="5" required><!--点击增加后自动获得焦点-->
+            <span style="color:red" ng-show="formProtocol.protocolCode.$dirty && formProtocol.protocolCode.$invalid">
+                <span ng-show="formProtocol.protocolCode.$error.maxlength">最大长度是5</span>
+                <span ng-show="formProtocol.protocolCode.$error.required">房号是必需的</span>
+            </span>
+        <input type="text" ng-model="protocolAdded.protocolName" required name="protocolName">
+            <span style="color:red" ng-show="formProtocol.protocolName.$dirty && formProtocol.protocolName.$invalid">
+                <span ng-show="formProtocol.protocolName.$error.maxlength">最大长度是2</span>
+                <span ng-show="formProtocol.protocolName.$error.required">楼区是必需的</span>
+            </span>
+        <input type="text" ng-model="protocolAdded.roomCategory" required name="roomCategory"><!--下拉-->
+        <input type="text" ng-model="protocolAdded.roomPrice" required name="roomPrice">
+            <span style="color:red" ng-show="formProtocol.roomPrice.$dirty && formProtocol.roomPrice.$invalid">
+                <span ng-show="formProtocol.roomPrice.$error.required">房价是必需的</span>
+            </span>
+        <input type="text" ng-model="protocolAdded.breakfast" required name="breakfast">
+            <span style="color:red" ng-show="formProtocol.breakfast.$dirty && formProtocol.breakfast.$invalid"><!--下拉-->
+                <span ng-show="formProtocol.breakfast.$error.required">房间床位是必需的</span>
+            </span>
+        <input type="submit" value="增加" ng-disabled="formProtocol.$invalid">
+    </form>
     <div>单位签单人</div>
     <table>
         <tr>
