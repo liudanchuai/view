@@ -99,7 +99,7 @@
 .mainRoomState ul li:nth-child(3) { width: 56px; height: 56px;position:absolute; left:24%; bottom:30px;}
 .mainRoomState ul li span {
     display: none;}
-.mainRoomState ul li.T { background: url("../images/ftpic.png") no-repeat 0px 0px}/*团队占房*/
+.mainRoomState ul li.G { background: url("../images/ftpic.png") no-repeat 0px 0px}/*团队占房*/
 .mainRoomState ul li.S{ background: url("../images/ftpic.png") no-repeat -50px 0px}/*散客占房*/
 .mainRoomState ul li.V { background: url("../images/ftpic.png") no-repeat -125px 5px}/*可用房*/
 .mainRoomState ul li.R { background: url("../images/ftpic.png") no-repeat -185px 0px}/*预订房*/
