@@ -29,7 +29,7 @@ function topbox(){
 
 /*单击开房弹窗导入*/
 function jump(){
-    $(top.document.body).append('<iframe src="reception/roomReservation.html" id="np-pop-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
+    $(top.document.body).append('<iframe src="reception/GuestIn.html" id="np-pop-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
 };
 
 /*新增预订弹窗导入*/

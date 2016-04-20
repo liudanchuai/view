@@ -34,7 +34,6 @@
         <ul class="userbox">
             <a title="" href="../login.html"><i class="icon-user"></i> <span class="text">操作员设置</span></a>
             <a title="" href="../login.html"><i class="icon-signout"></i><span>退出</span></a>
-
         </ul>
         <ul class="saixuanul">
             <li class="sxli">
@@ -70,7 +69,7 @@
 
     <!--房态预览 begin-->
     <ul class="mainRoomState">
-        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" onclick="jump()" >
+        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" ng-click="GuestIn(r)"  >
             <ul>
                 <li ng-bind="r.roomId" ></li>
                 <li ng-bind="r.categoryName"></li>
@@ -109,6 +108,7 @@
 <script src="AngularJS/app.js"></script>
 <script src="AngularJS/service/service.js"></script>
 <script src="AngularJS/controller/mainController.js"></script>
+<script src="AngularJS/controller/GuestInController.js"></script>
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>

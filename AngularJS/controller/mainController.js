@@ -1,8 +1,8 @@
 'use strict';
 
-App.controller('MainController', ['$scope', 'Service', function ($scope, Service) {
+App.controller('MainController',['$scope','Service',  function ($scope, Service) {
     /*筛选后显示的房态*/
-    $scope.roomsShow=[];
+    $scope.roomsShow = [];
     /*选中的房间类别*/
     $scope.roomCategorySelected = {
         name: '房间类别:全部',
@@ -99,7 +99,15 @@ App.controller('MainController', ['$scope', 'Service', function ($scope, Service
             }
         }
         $scope.roomsShow.length = j;
-    }
+    };
+    /**
+     * 左键单击房间开房
+     */
+    $scope.GuestIn = function(r){
+        sessionStorage.setItem("roomId", r.roomId);
+        sessionStorage.setItem("categoryName", r.categoryName);
+        $(top.document.body).append('<iframe src="reception/GuestIn.html" id="np-pop-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
+    };
 
     $scope.getAllMainState();
     $scope.getAllRoomCategory();
