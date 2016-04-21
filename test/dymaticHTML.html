@@ -19,6 +19,7 @@
     </div>-->
     <div sz-back="asd">ppp</div>
     <div sz-pop="../reception/GuestIn.html">compile</div>
+    <div id="sz-popup-frame"></div>
 </div>
 
 <script src="../AngularJS/angular.js"></script>
@@ -30,10 +31,15 @@
             // directive factory creates a link function
             return function (scope, element, attrs) {
                 element.bind("click", function () {
-                    scope.aaa = 'click';
+                    var html = '<div ng-include="\''+attrs.szPop+'\'" id="np-pop-iframe"></div>';
+                    var template = angular.element(html);
+                    var mobileDialogElement = $compile(template)(scope);
+                    //angular.element(document.body).remove();
+                    angular.element(document.getElementById('sz-popup-frame')).append(mobileDialogElement);
+                    //scope.aaa = 'click';
                     scope.$apply();
                 });
-                scope.$watch(
+                /*scope.$watch(
                         'aaa',
                         function (value) {
                             //element.html('<div ng-include="\'../reception/GuestIn.html\'"></div>');
@@ -44,14 +50,14 @@
                                 var template = angular.element(html);
                                 var mobileDialogElement = $compile(template)(scope);
                                 //angular.element(document.body).remove();
-                                angular.element(document.body).append(mobileDialogElement);
+                                angular.element(document.getElementById('sz-popup-frame')).append(mobileDialogElement);
                             }
-                            /*if(scope.aaa=='click'){
+                            /!*if(scope.aaa=='click'){
                              element.append('<div ng-include="\'../reception/GuestIn.html\'" id="np-pop-iframe"></div>');
                              $compile(element.contents())(scope);
-                             }*/
+                             }*!/
                         }
-                );
+                );*/
             };
         });
         $compileProvider.directive('szBack', function () {
@@ -64,7 +70,7 @@
                      //angular.element(document.body).remove();
                      angular.element(document.body).append(mobileDialogElement);*/
                     //element.append('<div ng-include="\'testInclude.html\'"></div>');
-                    scope.$emit('readyGo', 'ready');
+                    //scope.$emit('readyGo', 'ready');
                     angular.element(document.getElementById('np-pop-iframe')).remove();
 
                 });
@@ -97,17 +103,17 @@
          }
          };
          })*/
-            .directive("addBook", function ($compile) {
+            /*.directive("addBook", function ($compile) {
                 return {
                     restrict: "A",
                     link: function (scope, element, attrs) {
                         element.bind("click", function () {
-                            /*var html2=angular.template('testInclude.html');
+                            /!*var html2=angular.template('testInclude.html');
                              var html='<div>asdasd</div>';
                              var template = angular.element(html);
                              var mobileDialogElement = $compile(template)(scope);
                              //angular.element(document.body).remove();
-                             angular.element(document.body).append(mobileDialogElement);*/
+                             angular.element(document.body).append(mobileDialogElement);*!/
                             //element.append('<div ng-include="\'testInclude.html\'"></div>');
                             element.append('<div onclick="asd()">123</div>');
                             $compile(element.contents())(scope);
@@ -124,7 +130,7 @@
                         });
                     }
                 }
-            })
+            })*/
             .controller('GreeterController', ['$scope', function ($scope) {
                 $scope.name = 'Angular';
                 $scope.html = 'Hello ';

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a5b9c6b9-1e81-44cf-8345-dc9265bfe2d4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reception/GuestIn.html" afterPath="$PROJECT_DIR$/reception/GuestIn.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/ceshi2.html" afterPath="$PROJECT_DIR$/test/ceshi2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/dymaticHTML.html" afterPath="$PROJECT_DIR$/test/dymaticHTML.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -27,14 +28,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dymaticHTML.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dymaticHTML.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/dymaticHTML.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.0">
-              <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
+            <state vertical-scroll-proportion="0.65008026">
+              <caret line="73" column="87" selection-start-line="73" selection-start-column="87" selection-end-line="73" selection-end-column="87" />
               <folding>
-                <element signature="e#3329#3945#0" expanded="false" />
-                <element signature="e#5007#5317#0" expanded="false" />
+                <element signature="e#3803#4419#0" expanded="false" />
+                <element signature="e#5873#6540#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -80,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GuestIn.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GuestIn.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reception/GuestIn.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39004815">
-              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+            <state vertical-scroll-proportion="-13.5">
+              <caret line="210" column="74" selection-start-line="210" selection-start-column="74" selection-end-line="210" selection-end-column="74" />
               <folding>
                 <element signature="n#style#0;n#select#0;n#td#1;n#tr#0;n#table#0;n#div#1;n#div#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#table#0;n#div#1;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -124,21 +125,19 @@
       <file leaf-file-name="ceshi.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/ceshi.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GuestInController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AngularJS/controller/GuestInController.js">
+      <file leaf-file-name="ceshi2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/ceshi2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-              <folding>
-                <marker date="1461234733840" expanded="true" signature="506:1410" placeholder="{...}" />
-              </folding>
+            <state vertical-scroll-proportion="-8.25">
+              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,18 +148,6 @@
             <state vertical-scroll-proportion="-7.9444447">
               <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="angular-route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AngularJS/angular-route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -192,7 +179,6 @@
         <option value="$PROJECT_DIR$/reception/bookManagement.html" />
         <option value="$PROJECT_DIR$/css/indexRoomState.css" />
         <option value="E:/素材/malihu-custom-scrollbar-plugin-master/examples/scrollbar_themes_demo.html" />
-        <option value="$PROJECT_DIR$/test/ceshi2.html" />
         <option value="$PROJECT_DIR$/public/foot.html" />
         <option value="$PROJECT_DIR$/css/public/left.css" />
         <option value="$PROJECT_DIR$/css/public/top.css" />
@@ -238,6 +224,7 @@
         <option value="$PROJECT_DIR$/AngularJS/controller/GuestInController.js" />
         <option value="$PROJECT_DIR$/test/testRoute.html" />
         <option value="$PROJECT_DIR$/reception/GuestIn.html" />
+        <option value="$PROJECT_DIR$/test/ceshi2.html" />
         <option value="$PROJECT_DIR$/test/dymaticHTML.html" />
       </list>
     </option>
@@ -704,7 +691,7 @@
       <workItem from="1461071971546" duration="5000" />
       <workItem from="1461150821379" duration="7787000" />
       <workItem from="1461234626726" duration="189000" />
-      <workItem from="1461234920032" duration="6616000" />
+      <workItem from="1461234920032" duration="7657000" />
     </task>
     <task id="LOCAL-00001" summary="增加弹窗，左侧，快捷菜单框架修改">
       <created>1459903657128</created>
@@ -754,11 +741,17 @@
       <option name="project" value="LOCAL" />
       <updated>1461159409434</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="通过directive实现了页面动态加载&#10;加载:sz-pop&#10;退出sz-back">
+      <created>1461243725954</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1461243725954</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14597000" />
+    <option name="totallyTimeSpent" value="15638000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -766,6 +759,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -786,7 +780,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864866" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -812,14 +805,15 @@
     <MESSAGE value="esc退出弹窗，添加房吧管理，冲账管理，杂单录入" />
     <MESSAGE value="消费明细，离店结算弹窗添加" />
     <MESSAGE value="测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试" />
+    <MESSAGE value="通过directive实现了页面动态加载&#10;加载:sz-pop&#10;退出sz-back" />
+    <option name="LAST_COMMIT_MESSAGE" value="通过directive实现了页面动态加载&#10;加载:sz-pop&#10;退出sz-back" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/test/dymaticHTML.html</url>
-          <line>99</line>
+          <line>105</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -828,14 +822,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AngularJS/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09050279">
-          <caret line="3" column="42" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1068,13 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/ceshi2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.75">
-          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AngularJS/service/service.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1132,20 +1111,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/ceshi.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AngularJS/controller/GuestInController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
           <folding>
-            <marker date="1461234733840" expanded="true" signature="506:1410" placeholder="{...}" />
+            <marker date="1461234733840" expanded="true" signature="-1:-1" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1190,21 +1161,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/dymaticHTML.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.0">
-          <caret line="40" column="66" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
-          <folding>
-            <element signature="e#3329#3945#0" expanded="false" />
-            <element signature="e#5007#5317#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reception/GuestIn.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39004815">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        <state vertical-scroll-proportion="-13.5">
+          <caret line="210" column="74" selection-start-line="210" selection-start-column="74" selection-end-line="210" selection-end-column="74" />
           <folding>
             <element signature="n#style#0;n#select#0;n#td#1;n#tr#0;n#table#0;n#div#1;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#table#0;n#div#1;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -1236,6 +1196,41 @@
             <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#tbody#0;n#table#3;n#div#1;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#td#5;n#tr#0;n#tbody#0;n#table#3;n#div#1;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#td#6;n#tr#0;n#tbody#0;n#table#3;n#div#1;n#div#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ceshi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/ceshi2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34670946">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ceshi2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.25">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/dymaticHTML.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65008026">
+          <caret line="73" column="87" selection-start-line="73" selection-start-column="87" selection-end-line="73" selection-end-column="87" />
+          <folding>
+            <element signature="e#3803#4419#0" expanded="false" />
+            <element signature="e#5873#6540#0" expanded="false" />
           </folding>
         </state>
       </provider>
