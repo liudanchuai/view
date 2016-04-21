@@ -13,82 +13,101 @@
     <input ng-model="name" id="#aaa"> <br>
     <!--<textarea ng-model="html"></textarea> <br>-->
     <div onclick="asd()">123</div>
-    <div add-book>add</div>
+<!--    <div add-book>add</div>
     <div del-book>del
         <div id="aaa">aaa</div>
-    </div>
-    <div compile="html">compile</div>
+    </div>-->
+    <div sz-back="asd">ppp</div>
+    <div sz-pop="../reception/GuestIn.html">compile</div>
 </div>
 
 <script src="../AngularJS/angular.js"></script>
 <script>
-    angular.module('App', [], function($compileProvider) {
+    angular.module('App', [], function ($compileProvider) {
         // configure new 'compile' directive by passing a directive
         // factory function. The factory function injects the '$compile'
-        $compileProvider.directive('compile', function($compile) {
+        $compileProvider.directive('szPop', function ($compile) {
             // directive factory creates a link function
-            return function(scope, element, attrs) {
-                element.bind( "click", function() {
-                    scope.aaa='click';
+            return function (scope, element, attrs) {
+                element.bind("click", function () {
+                    scope.aaa = 'click';
                     scope.$apply();
                 });
                 scope.$watch(
-                        function(scope) {
-                            // watch the 'compile' expression for changes
-                            return scope.aaa;
-                        },
-                        function(value) {
+                        'aaa',
+                        function (value) {
                             //element.html('<div ng-include="\'../reception/GuestIn.html\'"></div>');
                             //angular.element(#aaa);
                             //$compile(element.contents())(scope);
-                            if(scope.aaa=='click'){
-                                element.append('<div ng-include="\'../reception/GuestIn.html\'" id="np-pop-iframe"></div>');
-                                $compile(element.contents())(scope);
-                                scope.aaa='ready';
-                                scope.$apply();
+                            if (scope.aaa == 'click') {
+                                var html = '<div ng-include="\''+attrs.szPop+'\'" id="np-pop-iframe"></div>';
+                                var template = angular.element(html);
+                                var mobileDialogElement = $compile(template)(scope);
+                                //angular.element(document.body).remove();
+                                angular.element(document.body).append(mobileDialogElement);
                             }
+                            /*if(scope.aaa=='click'){
+                             element.append('<div ng-include="\'../reception/GuestIn.html\'" id="np-pop-iframe"></div>');
+                             $compile(element.contents())(scope);
+                             }*/
                         }
                 );
             };
         });
+        $compileProvider.directive('szBack', function () {
+            return function (scope, element, attrs) {
+                element.bind("click", function () {
+                    /*var html2=angular.template('testInclude.html');
+                     var html='<div>asdasd</div>';
+                     var template = angular.element(html);
+                     var mobileDialogElement = $compile(template)(scope);
+                     //angular.element(document.body).remove();
+                     angular.element(document.body).append(mobileDialogElement);*/
+                    //element.append('<div ng-include="\'testInclude.html\'"></div>');
+                    scope.$emit('readyGo', 'ready');
+                    angular.element(document.getElementById('np-pop-iframe')).remove();
+
+                });
+            }
+        });
     })
-            /*.directive('script', function() {
-                return {
-                    restrict: 'E',
-                    scope: false,
-                    link: function(scope, elem, attr)
-                    {
-                        if (attr.type==='text/javascript-lazy')
-                        {
-                            var s = document.createElement("script");
-                            s.type = "text/javascript";
-                            var src = elem.attr('src');
-                            if(src!==undefined)
-                            {
-                                s.src = src;
-                            }
-                            else
-                            {
-                                var code = elem.text();
-                                s.text = code;
-                            }
-                            document.head.appendChild(s);
-                            elem.remove();
-                        }
-                    }
-                };
-            })*/
-            .directive( "addBook",  function($compile) {
+        /*.directive('script', function() {
+         return {
+         restrict: 'E',
+         scope: false,
+         link: function(scope, elem, attr)
+         {
+         if (attr.type==='text/javascript-lazy')
+         {
+         var s = document.createElement("script");
+         s.type = "text/javascript";
+         var src = elem.attr('src');
+         if(src!==undefined)
+         {
+         s.src = src;
+         }
+         else
+         {
+         var code = elem.text();
+         s.text = code;
+         }
+         document.head.appendChild(s);
+         elem.remove();
+         }
+         }
+         };
+         })*/
+            .directive("addBook", function ($compile) {
                 return {
                     restrict: "A",
-                    link: function( scope, element, attrs ) {
-                        element.bind( "click", function() {
+                    link: function (scope, element, attrs) {
+                        element.bind("click", function () {
                             /*var html2=angular.template('testInclude.html');
-                            var html='<div>asdasd</div>';
-                            var template = angular.element(html);
-                            var mobileDialogElement = $compile(template)(scope);
-                            //angular.element(document.body).remove();
-                            angular.element(document.body).append(mobileDialogElement);*/
+                             var html='<div>asdasd</div>';
+                             var template = angular.element(html);
+                             var mobileDialogElement = $compile(template)(scope);
+                             //angular.element(document.body).remove();
+                             angular.element(document.body).append(mobileDialogElement);*/
                             //element.append('<div ng-include="\'testInclude.html\'"></div>');
                             element.append('<div onclick="asd()">123</div>');
                             $compile(element.contents())(scope);
@@ -96,43 +115,51 @@
                     }
                 }
             })
-            .directive( "delBook",   function($compile) {
+            .directive("delBook", function ($compile) {
                 return {
                     restrict: "A",
-                    link: function( scope, element, attrs ) {
-                        element.bind( "click", function() {
+                    link: function (scope, element, attrs) {
+                        element.bind("click", function () {
                             element.remove();
                         });
                     }
                 }
             })
-            .controller('GreeterController', ['$scope', function($scope) {
+            .controller('GreeterController', ['$scope', function ($scope) {
                 $scope.name = 'Angular';
                 $scope.html = 'Hello ';
-                $scope.pop = function(){
-                    $scope.html='click';
-                    $scope.aaa='click';
+                $scope.pop = function () {
+                    $scope.html = 'click';
+                    $scope.aaa = 'click';
+                };
+                $scope.guestSource = [];
+                $scope.guestSource[0] = {
+                    sourceName: '123',
+                    sourceCode: '456'
+                };
+                $scope.$on('readyGo', function (event, data) {
+                    $scope.aaa = data;
+                });
+                $scope.checkLoggedIn = function () {
+                    var type = $scope.transferType;
                 }
             }])
-            .controller('GuestInController',['$scope','$element',function($scope,$element){
-                $scope.test=function(){
-                    $element.remove();
+            .controller('GuestInController', ['$scope', '$element', function ($scope, $element) {
+                $scope.test = function () {
+                    $element.parent().remove();
                 };
-                $scope.guestSource=[];
-                $scope.guestSource[0]={
-                    sourceName:'123',
-                    sourceCode:'456'
-                };
+                $scope.aaa = 'ready';
+                $scope.$emit('readyGo', 'ready');
             }])
 
 </script>
 <script type="text/javascript">
-    var asd=function(){
+    var asd = function () {
         alert(123);
     };
-    var close=function(){
+    var close = function () {
 //$(window.parent.document.getElementById("np-pop-iframe")).remove();
-            $("#np-pop-iframe",window.parent.document).remove();
+        $("#np-pop-iframe", window.parent.document).remove();
     }
 </script>
 </body>
