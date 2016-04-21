@@ -6,8 +6,12 @@
 </head>
 <body ng-app="App">
 <div ng-controller="GreeterController">
-    <input ng-model="name"> <br>
+    <input ng-model="name" id="#aaa"> <br>
     <textarea ng-model="html"></textarea> <br>
+    <button add-book>add</button>
+    <div del-book>del
+        <div id="aaa">aaa</div>
+    </div>
     <div compile="html"></div>
 </div>
 
@@ -28,6 +32,7 @@
                             // when the 'compile' expression changes
                             // assign it into the current DOM
                             element.html('<div ng-include="\'../reception/GuestIn.html\'"></div>');
+                            //angular.element(#aaa);
                             // compile the new DOM and link it to the current
                             // scope.
                             // NOTE: we only compile .childNodes so that
@@ -38,13 +43,41 @@
             };
         });
     })
+            .directive( "addBook",  function($compile) {
+                return {
+                    restrict: "A",
+                    link: function( scope, element, attrs ) {
+                        element.bind( "click", function() {
+                            var html2=angular.template('testInclude.html');
+                            var html='<div ng-include="testInclude.html"></div>';
+                            var template = angular.element(html2);
+                            var mobileDialogElement = $compile(template)(scope);
+                            //angular.element(document.body).remove();
+                            angular.element(document.body).append(mobileDialogElement);
+                            /*element.html('<div>123</div>');
+                            $compile(element.contents())(scope);*/
+                        });
+                    }
+                }
+            })
+            .directive( "delBook",   function($compile) {
+                return {
+                    restrict: "A",
+                    templateUrl:'testInclude.html',
+                    link: function( scope, element, attrs ) {
+                        element.bind( "click", function() {
+                            element.remove();
+                        });
+                    }
+                }
+            })
             .controller('GreeterController', ['$scope', function($scope) {
                 $scope.name = 'Angular';
                 $scope.html = 'Hello ';
             }])
             .controller('GuestInController',['$scope','$element',function($scope,$element){
                 $scope.test=function(){
-                    $element.remove()
+                    angular.element(document.body).remove();
                 };
                 $scope.guestSource=[];
                 $scope.guestSource[0]={

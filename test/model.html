@@ -1,0 +1,76 @@
+<html lang="en"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-start{border-spacing:1px 1px;-ms-zoom:1.0001;}.ng-animate-active{border-spacing:0px 0px;-ms-zoom:1;}</style>
+    <meta charset="UTF-8">
+    <title>FE-演示平台</title>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="../AngularJS/angularjs1.2.5.js"></script>
+    <script src="../AngularJS/ui-bootstrap0.11.2.js"></script>
+</head>
+<body ng-app="myApp" style="background:#4A4A4A" class="row ng-scope">
+<div style="color:#fff; font-size:30px; font-weight:bold; text-shadow:3px 3px 3px #ccc;-webkit-text-shadow:3px 3px 3px #ccc; text-align:center; margin-top:30px;">FE-演示平台</div>
+<section class="row">
+    <section ng-controller="modalDemo" class="col-md-6 ng-scope" style="margin:40px auto; float:none; background:#fff; padding:30px;">
+        <script type="text/ng-template" id="myModelContent.html">
+            <div class="modal-header">
+                <h3 class="modal-title">html5jq模态框</h3>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li ng-repeat="item in items">
+                        <a ng-click="selected.item = item">{{item}}</a>
+                    </li>
+                    当前选择： <b>{{selected.item}}</b>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="ok()">
+                    确认
+                </button>
+                <button class="btn btn-warning" ng-click="cancel()">退出</button>
+            </div>
+        </script>
+        <button class="btn btn-info" ng-click="open()">点我！</button>
+        <button class="btn btn-default" ng-click="open('lg')">大模态</button>
+        <button class="btn btn-default" ng-click="open('sm')">小模态</button>
+        <hr>
+        <div ng-show="selected" class="ng-binding">当前选择：html5</div>
+    </section>
+</section>
+
+
+<script>
+    angular.module('myApp',['ui.bootstrap']).controller('modalDemo',function($scope,$modal,$log){
+        $scope.items = ['html5','jq','FE-演示平台'];
+        $scope.open = function(size){
+            var modalInstance = $modal.open({
+                templateUrl : '../reception/GuestIn.html',
+                controller : 'ModalInstanceCtrl',
+                scope:$scope,
+                size : size,
+                resolve : {
+                    items : function(){
+                        return $scope.items;
+                    }
+                }
+            })
+            modalInstance.result.then(function(selectedItem){
+                $scope.selected = selectedItem;
+            },function(){
+                $log.info('Modal dismissed at: ' + new Date())
+            })
+        }
+    })
+    angular.module('myApp').controller('ModalInstanceCtrl',function($scope,$modalInstance){
+        $scope.selected = {
+            item : $scope.items[0]
+        };
+        $scope.items.push('aaa');
+        $scope.items.push('aaa');
+        $scope.ok = function(){
+            $modalInstance.close($scope.selected.item);
+        };
+        $scope.cancel = function(){
+            $modalInstance.dismiss('cancel');
+        }
+    })
+</script>
+</body></html>
