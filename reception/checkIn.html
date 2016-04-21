@@ -1,0 +1,266 @@
+
+<!-- 单击开房begin -->
+<div class="bgblack" onclick="removePopup()">
+</div>
+
+<div class="tanchuang">
+    <dl class="tctit"><h1>入住登记单</h1></dl>
+    <table class="tableBordernone">
+        <tr>
+            <td>房间类别：</td>
+            <td>
+                <select disabled="disabled" style="width: 131px;">
+                    <option value="豪华总统套房">豪华总统套房</option>
+                    <option value="标准间" selected="selected">标准间</option>
+                    <option value="单人间">单人间</option>
+                </select>
+            </td>
+            <td>房间号码：</td>
+            <td><input type="text" value="" style="width: 135px;"></td>
+            <td>会员卡号：</td>
+            <td colspan="3"><input type="text" value="" style="width: 277px;"></td>
+        </tr>
+        <tr>
+            <td>客人来源：</td>
+            <td>
+                <select style="width: 131px;">
+                    <option value="客人自入" selected="selected">客人自入</option>
+                    <option value="美团">美团</option>
+                    <option value="糯米团">糯米团</option>
+                </select>
+            </td>
+            <td>房价协议：</td>
+            <td>
+                <select style="width: 148px;">
+                    <option value="客人自入">客人自入</option>
+                    <option value="美团">美团</option>
+                    <option value="糯米团">糯米团</option>
+                </select>
+            </td>
+            <td>房租方式：</td>
+            <td>
+                <select style="width: 120px;">
+                    <option value="小时房">小时房</option>
+                    <option value="常驻房">常驻房</option>
+                    <option value="房租方式2">房租方式2</option>
+                </select>
+            </td>
+            <td>房价：</td>
+            <td><input type="text" value="100.00" disabled="disabled" class="inputCover" style="width: 60px;">&nbsp;<font color="#d20000">双早</font> </td>
+        </tr>
+        <tr>
+            <td>当前时间：</td>
+            <td>
+                <input type="text" value="2016-05-22 10:00" disabled="disabled" style="width: 120px;">
+            </td>
+            <td>预住天数：</td>
+            <td>
+                <input type="button" class="jia reduceDays" value="-" style="margin-right: -1px;">
+                <input type="text"m value="1" style="width: 60px;" id="Days">
+                <input type="button" class="jia addDays" value="+" style="margin-left: -1px;">
+            </td>
+            <td>预离时间：</td>
+            <td colspan="3">
+                <input type="text" value="2016-05-23 10:00" style="width: 110px;" class="datetimepicker_mask">
+            </td>
+        </tr>
+    </table>
+    <table class="tableBorderaaa">
+        <tr>
+            <td>客人姓名：</td>
+            <td><input type="text" name="name" style="width: 130px;"></td>
+            <td>证件类型：</td>
+            <td>
+                <select style="width: 120px;">
+                    <option value="身份证" selected="selected">身份证</option>
+                    <option value="二代身份证">二代身份证</option>
+                    <option value="护照">护照</option>
+                    <option value="军官证">军官证</option>
+                </select>
+            </td>
+            <td>证件号码：</td>
+            <td><input type="text" value="" style="width: 250px"></td>
+        </tr>
+        <tr>
+            <td>出生日期：</td>
+            <td><input type="text" value="" style="width: 130px;" class="birthday datetimepicker_mask"></td>
+            <td>性别：</td>
+            <td>
+                <select style="width: 120px;">
+                    <option value="女">女</option>
+                    <option value="男" selected="selected">男</option>
+                </select>
+            </td>
+            <td>民族：</td>
+            <td>
+                <select id="Customer_Ethnic" style="width: 158px; margin-right: 0px; display: inline">
+                    <option value="">请选择民族</option>
+                    <option value="汉族">汉族</option><option value="阿昌族">阿昌族</option><option value="白族">白族</option><option value="保安族">保安族</option><option value="布朗族">布朗族</option><option value="布依族">布依族</option><option value="朝鲜族">朝鲜族</option><option value="达斡尔族">达斡尔族</option><option value="傣族">傣族</option><option value="德昂族">德昂族</option><option value="侗族">侗族</option><option value="东乡族">东乡族</option><option value="独龙族">独龙族</option><option value="鄂伦春族">鄂伦春族</option><option value="俄罗斯族">俄罗斯族</option><option value="鄂温克族">鄂温克族</option><option value="高山族">高山族</option><option value="仡佬族">仡佬族</option><option value="哈尼族">哈尼族</option><option value="哈萨克族">哈萨克族</option><option value="回族">回族</option><option value="基诺族">基诺族</option><option value="京族">京族</option><option value="景颇族">景颇族</option><option value="柯尔克孜族">柯尔克孜族</option><option value="拉祜族">拉祜族</option><option value="黎族">黎族</option><option value="傈僳族">傈僳族</option><option value="珞巴族">珞巴族</option><option value="满族">满族</option><option value="毛南族">毛南族</option><option value="门巴族">门巴族</option><option value="蒙古族">蒙古族</option><option value="苗族">苗族</option><option value="仫佬族">仫佬族</option><option value="纳西族">纳西族</option><option value="怒族">怒族</option><option value="普米族">普米族</option><option value="羌族">羌族</option><option value="撒拉族">撒拉族</option><option value="畲族">畲族</option><option value="水族">水族</option><option value="塔吉克族">塔吉克族</option><option value="塔塔尔族">塔塔尔族</option><option value="土族">土族</option><option value="土家族">土家族</option><option value="佤族">佤族</option><option value="维吾尔族">维吾尔族</option><option value="乌兹别克族">乌兹别克族</option><option value="瑶族">瑶族</option><option value="彝族">彝族</option><option value="裕固族">裕固族</option><option value="藏族">藏族</option><option value="壮族">壮族</option><option value="赫哲族">赫哲族</option></select>
+            </td>
+        </tr>
+        <tr>
+            <td>地址：</td>
+            <td colspan="5"><input type="text" value="" style="width: 770px;"></td>
+        </tr>
+    </table>
+    <h1 class="addh1">
+         新增随客信息 &nbsp;<a href="javascript:void(0)" class="sss btnOpenCustomer">展开</a>
+    </h1>
+    <div class="divOtherCustomer none">
+        <table cellpadding="0" cellspacing="0" class="ruzhu tableBlue">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th style="width: 90px">出生年月</th>
+                <th>性别</th>
+                <th>民族</th>
+                <th>证件类型</th>
+                <th width="160">证件号码</th>
+                <th width="180">地址</th>
+                <th width="65">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <input type="button" value="+" class="butn btnAddOtherCustomer" />
+    </div>
+
+    <table class="tableBorderfff">
+        <tr>
+            <td style="width:100px;">预付款：</td>
+            <td><input type="text" name="money" class="input" style="width: 100px;"></td>
+            <td>支付方式：</td>
+            <td colspan="3">
+                <select style="width: 130px;">
+                    <option value="人民币">人民币</option>
+                    <option value="信用卡">信用卡</option>
+                    <option value="单位支付">单位支付</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>可挂账单位：</td>
+            <td>
+                <select style="width: 220px;">
+                    <option value="可挂账单位1">可挂账单位1</option>
+                    <option value="可挂账单位2">可挂账单位2</option>
+                    <option value="可挂账单位3">可挂账单位3</option>
+                </select>
+            </td>
+            <td>储值卡号：</td>
+            <td colspan="3"><input type="text" style="width: 300px"></td>
+        </tr>
+        <tr>
+            <td>备注：</td>
+            <td colspan="5">
+                <textarea style="width: 735px; height: 50px;">备注内容</textarea>
+            </td>
+        </tr>
+    </table>
+    <dl class="button">
+        <div class="fl"><a class="sbe">读取身份证</a> &nbsp; <input type="checkbox">是否贵宾</div>
+        <div class="fr"><a class="sbe">确认付款</a><a class="sbegray">关闭</a></div>
+    </dl>
+
+</div>
+<table id="divEditRow" class="none">
+    <tbody>
+    <tr>
+        <td>
+            <input type="text" value="" style="width: 65px;"></td>
+        <td>
+            <input type="text" value="" style="width: 80px;" class=" datetimepicker_mask"></td>
+        <td>
+            <select>
+                <option>男</option>
+                <option>女</option>
+            </select></td>
+        <td>
+            <select>
+                <option value="">请选择</option>
+                <option value="汉族">汉族</option>
+                <option value="阿昌族">阿昌族</option>
+                <option value="白族">白族</option>
+                <option value="保安族">保安族</option>
+                <option value="布朗族">布朗族</option>
+                <option value="布依族">布依族</option>
+                <option value="朝鲜族">朝鲜族</option>
+            </select>
+        </td>
+        <td>
+            <select>
+                <option value="身份证">身份证</option>
+                <option value="二代身份证">二代身份证</option>
+                <option value="护照">护照</option>
+                <option value="军官证">军官证</option>
+            </select>
+        </td>
+        <td>
+            <input type="text" style="width: 160px" value=""></td>
+        <td>
+            <input type="text" style="width: 160px" value=""></td>
+        <td>
+            <img src="images/save.png" width="12" height="12" alt="保存">
+            <img src="images/010.gif" width="12" height="12" onclick="RowDelete(this)" alt="删除">
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<script type="text/javascript">
+
+    //预住天数事件绑定
+    $(".addDays").click(function () {
+        var days = parseInt($("#Days").val());
+        if (days < 30) {
+            $("#Days").val(days + 1);
+            $("#Days").blur();
+            getTotalAccount();//显示总房价
+        }
+    });
+    $(".reduceDays").click(function () {
+        var days = parseInt($("#Days").val());
+        if (days > 1) {
+            $("#Days").val(days - 1);
+            $("#Days").blur();
+            getTotalAccount();//显示总房价
+        }
+    });
+    //随客绑定事件
+    var isOne = true;   //执行一次
+    $(".btnOpenCustomer").click(function () {
+        if ($(".divOtherCustomer").is(":hidden")) {
+            $(".divOtherCustomer").show();
+            $(".btnOpenCustomer").html('隐藏');
+            if (isOne) {
+                $(".btnAddOtherCustomer").click();
+                isOne = false;
+            }
+        }
+        else {
+            $(".divOtherCustomer").hide();
+            $(".btnOpenCustomer").html('展开');
+        }
+    });
+    //添加随客
+    $(".btnAddOtherCustomer").click(function () {
+        if ($(".ruzhu tbody tr").length >= 4) {
+            alert("同一个房间最多只能新增4个随客");
+            return;
+        }
+        var trobj = $($("#divEditRow tbody").html());
+        $(".ruzhu tbody").append(trobj);
+    });
+    function RowDelete(obj) {
+        var trobj = $(obj).parent().parent();
+        $(trobj).remove();
+    }
+</script>
+
+
+
+
+
+

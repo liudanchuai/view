@@ -510,5 +510,5 @@ App.controller('ConfigureController', ['$scope', 'Service', function ($scope, Se
     /*
      $scope.getAllCompanyCard();
      $scope.getAllCompanyLord();*/
-    alert(JSON.parse(sessionStorage.getItem("user")).userId);
+    //alert(JSON.parse(sessionStorage.getItem("user")).userId);
 }]);

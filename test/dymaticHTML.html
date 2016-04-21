@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
+    <link href="../css/popup.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../myjs/jquery.datetimepicker.css"/>
+
 </head>
 <body ng-app="App">
 <div ng-controller="GreeterController">
     <input ng-model="name" id="#aaa"> <br>
-    <textarea ng-model="html"></textarea> <br>
-    <button add-book>add</button>
+    <!--<textarea ng-model="html"></textarea> <br>-->
+    <div onclick="asd()">123</div>
+    <div add-book>add</div>
     <div del-book>del
         <div id="aaa">aaa</div>
     </div>
-    <div compile="html"></div>
+    <div compile="html">compile</div>
 </div>
 
 <script src="../AngularJS/angular.js"></script>
@@ -23,39 +28,70 @@
         $compileProvider.directive('compile', function($compile) {
             // directive factory creates a link function
             return function(scope, element, attrs) {
+                element.bind( "click", function() {
+                    scope.aaa='click';
+                    scope.$apply();
+                });
                 scope.$watch(
                         function(scope) {
                             // watch the 'compile' expression for changes
-                            return scope.$eval(attrs.compile);
+                            return scope.aaa;
                         },
                         function(value) {
-                            // when the 'compile' expression changes
-                            // assign it into the current DOM
-                            element.html('<div ng-include="\'../reception/GuestIn.html\'"></div>');
+                            //element.html('<div ng-include="\'../reception/GuestIn.html\'"></div>');
                             //angular.element(#aaa);
-                            // compile the new DOM and link it to the current
-                            // scope.
-                            // NOTE: we only compile .childNodes so that
-                            // we don't get into infinite loop compiling ourselves
-                            $compile(element.contents())(scope);
+                            //$compile(element.contents())(scope);
+                            if(scope.aaa=='click'){
+                                element.append('<div ng-include="\'../reception/GuestIn.html\'" id="np-pop-iframe"></div>');
+                                $compile(element.contents())(scope);
+                                scope.aaa='ready';
+                                scope.$apply();
+                            }
                         }
                 );
             };
         });
     })
+            /*.directive('script', function() {
+                return {
+                    restrict: 'E',
+                    scope: false,
+                    link: function(scope, elem, attr)
+                    {
+                        if (attr.type==='text/javascript-lazy')
+                        {
+                            var s = document.createElement("script");
+                            s.type = "text/javascript";
+                            var src = elem.attr('src');
+                            if(src!==undefined)
+                            {
+                                s.src = src;
+                            }
+                            else
+                            {
+                                var code = elem.text();
+                                s.text = code;
+                            }
+                            document.head.appendChild(s);
+                            elem.remove();
+                        }
+                    }
+                };
+            })*/
             .directive( "addBook",  function($compile) {
                 return {
                     restrict: "A",
                     link: function( scope, element, attrs ) {
                         element.bind( "click", function() {
-                            var html2=angular.template('testInclude.html');
-                            var html='<div ng-include="testInclude.html"></div>';
-                            var template = angular.element(html2);
+                            /*var html2=angular.template('testInclude.html');
+                            var html='<div>asdasd</div>';
+                            var template = angular.element(html);
                             var mobileDialogElement = $compile(template)(scope);
                             //angular.element(document.body).remove();
-                            angular.element(document.body).append(mobileDialogElement);
-                            /*element.html('<div>123</div>');
-                            $compile(element.contents())(scope);*/
+                            angular.element(document.body).append(mobileDialogElement);*/
+                            //element.append('<div ng-include="\'testInclude.html\'"></div>');
+                            element.append('<div onclick="asd()">123</div>');
+                            $compile(element.contents())(scope);
                         });
                     }
                 }
@@ -63,7 +99,6 @@
             .directive( "delBook",   function($compile) {
                 return {
                     restrict: "A",
-                    templateUrl:'testInclude.html',
                     link: function( scope, element, attrs ) {
                         element.bind( "click", function() {
                             element.remove();
@@ -74,10 +109,14 @@
             .controller('GreeterController', ['$scope', function($scope) {
                 $scope.name = 'Angular';
                 $scope.html = 'Hello ';
+                $scope.pop = function(){
+                    $scope.html='click';
+                    $scope.aaa='click';
+                }
             }])
             .controller('GuestInController',['$scope','$element',function($scope,$element){
                 $scope.test=function(){
-                    angular.element(document.body).remove();
+                    $element.remove();
                 };
                 $scope.guestSource=[];
                 $scope.guestSource[0]={
@@ -86,6 +125,15 @@
                 };
             }])
 
+</script>
+<script type="text/javascript">
+    var asd=function(){
+        alert(123);
+    };
+    var close=function(){
+//$(window.parent.document.getElementById("np-pop-iframe")).remove();
+            $("#np-pop-iframe",window.parent.document).remove();
+    }
 </script>
 </body>
 </html>

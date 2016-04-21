@@ -57,6 +57,8 @@ App.controller('GuestInController',['$scope','Service', function ($scope, Servic
                 alert(errResponse.data.message);
             }
         );
+        /*获取当前时间*/
+        $scope.getNowTime();
     };
     /*获取当前时间*/
     $scope.getNowTime=function(){
@@ -82,7 +84,9 @@ App.controller('GuestInController',['$scope','Service', function ($scope, Servic
             }
         )
     };
-    /*获取当前时间*/
-    $scope.getNowTime();
+    /*关闭*/
+    $scope.close = function(){
+        $("#np-pop-iframe",window.parent.document).remove();
+    };
     $scope.onLoad();
 }]);

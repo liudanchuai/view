@@ -3,18 +3,14 @@
 <head>
     <meta charset="utf-8">
     <title>单击开房</title>
-    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
-    <link href="../css/popup.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../myjs/jquery.datetimepicker.css"/>
-
 </head>
-<body ng-app="mainApp">
+<div ng-controller="GuestInController">
 
 <!-- 单击开房begin -->
 <div class="bgblack">
 </div>
 
-<div class="tanchuang" ng-controller="GuestInController">
+<div class="tanchuang"  id="">
     <dl class="tctit"><h1>入住登记单{{2+2}}{{guestSource[0].sourceName}}</h1></dl>
     <table class="tableBordernone">
         <tr>
@@ -211,79 +207,74 @@
         </tr>
     </table>
     <dl class="button">
-        <div class="fl"><a class="sbe">读取身份证</a> &nbsp; <input type="checkbox">是否贵宾</div>
-        <div class="fr"><a class="sbe">确认付款</a><a class="sbegray">关闭</a></div>
+        <div class="fl"><a class="sbe" ng-click="test()">读取身份证</a> &nbsp; <input type="checkbox">是否贵宾</div>
+        <div class="fr"><a class="sbe">确认付款</a><a class="sbegray" onclick="close()">关闭</a></div>
     </dl>
 
+    <table id="divEditRow" class="none">
+        <tbody>
+        <tr>
+            <td>
+                <input type="text" value="" style="width: 65px;"></td>
+            <td>
+                <input type="text" value="" style="width: 80px;" class=" datetimepicker_mask"></td>
+            <td>
+                <select>
+                    <option>男</option>
+                    <option>女</option>
+                </select></td>
+            <td>
+                <select>
+                    <option value="">请选择</option>
+                    <option value="汉族">汉族</option>
+                    <option value="阿昌族">阿昌族</option>
+                    <option value="白族">白族</option>
+                    <option value="保安族">保安族</option>
+                    <option value="布朗族">布朗族</option>
+                    <option value="布依族">布依族</option>
+                    <option value="朝鲜族">朝鲜族</option>
+                </select>
+            </td>
+            <td>
+                <select>
+                    <option value="身份证">身份证</option>
+                    <option value="二代身份证">二代身份证</option>
+                    <option value="护照">护照</option>
+                    <option value="军官证">军官证</option>
+                </select>
+            </td>
+            <td>
+                <input type="text" style="width: 160px" value=""></td>
+            <td>
+                <input type="text" style="width: 160px" value=""></td>
+            <td>
+                <img src="../images/save.png" width="12" height="12" alt="保存">
+                <img src="../images/010.gif" width="12" height="12" onclick="RowDelete(this)" alt="删除">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table id="divDetailRow" class="none">
+        <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <input type="hidden" name="RowData" />
+                <input type="hidden" name="RowState" value="0" />
+                <a href="javascript:void(0)" onclick="RowEdit(this)">
+                    <img src="../images/037.gif" width="12" height="12" alt="" /></a>
+                <a href="javascript:void(0)" onclick="RowDelete(this)">
+                    <img src="../images/010.gif" width="12" height="12" alt="" /></a></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-<table id="divEditRow" class="none">
-    <tbody>
-    <tr>
-        <td>
-            <input type="text" value="" style="width: 65px;"></td>
-        <td>
-            <input type="text" value="" style="width: 80px;" class=" datetimepicker_mask"></td>
-        <td>
-            <select>
-                <option>男</option>
-                <option>女</option>
-            </select></td>
-        <td>
-            <select>
-                <option value="">请选择</option>
-                <option value="汉族">汉族</option>
-                <option value="阿昌族">阿昌族</option>
-                <option value="白族">白族</option>
-                <option value="保安族">保安族</option>
-                <option value="布朗族">布朗族</option>
-                <option value="布依族">布依族</option>
-                <option value="朝鲜族">朝鲜族</option>
-            </select>
-        </td>
-        <td>
-            <select>
-                <option value="身份证">身份证</option>
-                <option value="二代身份证">二代身份证</option>
-                <option value="护照">护照</option>
-                <option value="军官证">军官证</option>
-            </select>
-        </td>
-        <td>
-            <input type="text" style="width: 160px" value=""></td>
-        <td>
-            <input type="text" style="width: 160px" value=""></td>
-        <td>
-            <img src="../images/save.png" width="12" height="12" alt="保存">
-            <img src="../images/010.gif" width="12" height="12" onclick="RowDelete(this)" alt="删除">
-        </td>
-    </tr>
-    </tbody>
-</table>
-<table id="divDetailRow" class="none">
-    <tbody>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
-            <input type="hidden" name="RowData" />
-            <input type="hidden" name="RowState" value="0" />
-            <a href="javascript:void(0)" onclick="RowEdit(this)">
-                <img src="../images/037.gif" width="12" height="12" alt="" /></a>
-            <a href="javascript:void(0)" onclick="RowDelete(this)">
-                <img src="../images/010.gif" width="12" height="12" alt="" /></a></td>
-    </tr>
-    </tbody>
-</table>
-
-<script src="../AngularJS/angular.js"></script>
-<script src="../AngularJS/app.js"></script>
-<script src="../AngularJS/service/service.js"></script>
-<script src="../AngularJS/controller/GuestInController.js"></script>
 
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../myjs/my_xiala.js"></script>
@@ -351,7 +342,7 @@
 </script>
 
 
-</body>
+</div>
 </html>
 
 
