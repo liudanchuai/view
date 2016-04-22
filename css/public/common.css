@@ -11,7 +11,7 @@ ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
 .lan { color: #085cb3}
 
 #content {
-    background: none repeat scroll 0 0 #eeeeee;
+    background: none repeat scroll 0 0 #fff;
     margin-left: 265px;
     margin-right: 0;
     padding-bottom: 25px;
@@ -44,10 +44,15 @@ ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
     padding-left:35px;
     height: 30px;line-height: 30px;margin-left: 0px;
 }
-.saixuanbox { padding: 10px 20px; margin: 20px 20px; height: auto; background: #6b8bdf; border-bottom: 10px solid #93a9e4; margin-top: 0px;}
+.saixuanbox { padding: 10px 20px; margin: 20px 20px; font-size: 14px; height: auto; background: #6b8bdf; border-bottom: 10px solid #93a9e4; margin-top: 0px;}
+.saixuanbox input,.saixuanbox select,.saixuanbox textarea { background: rgba(255,255,255,0.15); margin-top: 3px; border: 1px solid #c5d1ff; color: #fff; box-shadow: none}
+.saixuanbox select option { background: #fff; line-height: 20px; height: 20px; color:#666;}
+.saixuanbox input{ outline: none;}
+.saixuanbox input:focus { box-shadow: none; border: 1px solid #c5d1ff;}
 .saixuanbox .saixuanul { width: 100%; height: auto;}
 .saixuanbox .saixuanul:after{ clear: both; content: ''; height: 0px; line-height: 0px; overflow: hidden; display: block}
-.saixuanbox .saixuanul .sxli { float: left; height: 35px;  margin-right: 10px; border: 1px solid #b5c5ef; border-radius:5px;position: relative; color: #fff;cursor:pointer; background-color: #89a2e5;}
+.saixuanbox .saixuanul .sxli { float: left; height: 35px;  margin-right: 30px; border: 1px solid #b5c5ef; border-radius:5px;position: relative; color: #fff;cursor:pointer; background-color: #89a2e5;}
+.saixuanbox .saixuanul .sxli2 { float: left; height: 35px;  margin-right: 30px; position: relative; }
 .saixuanbox .saixuanul .sxtit{ float: left; margin-right: 10px; height: 35px; line-height: 35px; color: #fff; font-weight: bold;}
 .my_fresh { padding:2px 10px; line-height: 30px; padding-left: 30px; position: relative}
 .sx_xl { padding:2px 10px; position: relative; display:inline-block; text-align: left;}
@@ -66,8 +71,8 @@ body {
     margin: 0px;
     padding: 0px;
     font-family:"Microsoft Yahei";
-    font-size: 14px;
-    color: #000;
+    font-size: 12px;
+    color: #333;
     width: 100%;
     overflow-x: hidden;
 }

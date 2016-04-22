@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>房态预览</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../css/jquery.contextmenu.css"/>
+    <link rel="stylesheet" href="../css/indexRoomState.css"/>
+    <link rel="stylesheet" href="../css/public/common.css">
+    <link rel="stylesheet" href="../css/public/left.css"/>
+    <link rel="stylesheet" href="../css/public/top.css"/>
+    <link href="../css/popup.css" rel="stylesheet"/>
+
+    <!--jquery-->
+    <script src="../js/jquery.min.js"></script>
+
+    <!--AngularJS-->
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <script src="service/service.js"></script>
+    <script src="service/util.js"></script>
+    <script src="mainController.js"></script>
+    <script src="GuestIn/GuestInController.js"></script>
+    <script src="directive/szPop.js"></script>
+    <script src="directive/szBack.js"></script>
+    <script src="directive/common.js"></script>
+    <script src="directive/myJquery.js"></script>
+</head>
+
+<body ng-app="mainApp">
+
+<div id="lefbox" style="width: 265px; height:100%; float: left">
+
+</div>
+
+<!--main-container-part-->
+<div id="content" ng-controller="MainController">
+    <div id="topbox">
+
+    </div>
+
+    <!-- BreadcrumbNavigation begin -->
+    <div class="weizhi">酒店之星 > 房态预览</div>
+    <!-- BreadcrumbNavigation end -->
+    <!--Filter begin-->
+    <div class="saixuanbox">
+        <ul class="userbox">
+            <a title="" href="../login.html"><i class="icon-user"></i> <span class="text">操作员设置</span></a>
+            <a title="" href="../login.html"><i class="icon-signout"></i><span>退出</span></a>
+        </ul>
+        <ul class="saixuanul">
+            <li class="sxli">
+                <div class="my_xl sx_xl">
+                    <i class="icon-tasks lv"></i>
+                    <div class="my_xl_txt sx_xl_txt" ng-bind="roomCategorySelected.name"></div>
+                    <div class="my_xl_btn"></div>
+                    <ul class="my_xl_list sx_xl_list">
+                        <li ng-repeat="c in roomCategorys"
+                            ng-click="choiceRoomCategory(c)">
+                           <span>{{c.categoryName+'-'+c.categoryCode}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="sxli">
+                <div class="my_xl sx_xl">
+                    <i class="icon-check hong"></i>
+                    <div class="my_xl_txt sx_xl_txt" ng-bind="roomStateSelected.name"></div>
+                    <div class="my_xl_btn"></div>
+                    <ul class="my_xl_list sx_xl_list">
+                        <li ng-repeat="s in roomStates" ng-click="choiceRoomState(s)"><span>{{s.name}}</span></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="sxli">
+                    <i class="icon-refresh lan"></i>
+                    <div class="my_fresh">刷新全部房态</div>
+            </li>
+        </ul>
+    </div>
+    <!--Filter end-->
+
+    <!--房态预览 begin-->
+    <ul class="mainRoomState">
+        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" sz-pop="GuestIn/GuestIn.html" ng-mouseenter="GuestIn(r)">
+            <ul>
+                <li ng-bind="r.roomId" ></li>
+                <li ng-bind="r.temp1"></li>
+                <li class="{{r.state}}"></li>
+                <ul class="rigtb">
+                    <li class="icon-gift" ng-if="r.birthday"><span>生日</span></li>
+                    <li class="icon-exclamation-sign" ng-if="r.important"><span>特殊要求</span></li>
+                    <li class="icon-star" ng-if="r.vip"><span>贵宾标志</span></li>
+                    <li class="icon-laptop" ng-if="r.teamBuy"><span>团购标志</span></li>
+                    <li class="icon-flag" ng-if="r.leader"><span>领队标志</span></li>
+                    <li class="icon-ylbz" ng-if="r.todayLeave"><span>预离标志</span></li>
+                    <li class="icon-zfbz" ng-if="r.dirty==true"><span>脏房标志</span></li>
+                </ul>
+              </ul>
+              <div class="hoverDiv">
+                  <ul>你好文字</ul>
+              </div>
+        </li>
+
+
+    </ul>
+    <!--房态预览 end-->
+</div>
+
+<!--end-main-container-part-->
+
+<!--Footer-part-->
+<div id="botbox"></div>
+
+</body>
+</html>
