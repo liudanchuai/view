@@ -5,7 +5,7 @@
 App.directive('szBack', function () {
     return function (scope, element, attrs) {
         element.bind("click", function () {
-            angular.element(document.getElementById('np-pop-iframe')).remove();
+            angular.element(document.getElementById('sz-popup-frame')).remove();
         });
     }
 });
