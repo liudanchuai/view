@@ -38,8 +38,8 @@ App.controller('MainController',['$scope','Service',  function ($scope, Service)
         Service.getAllByPath('roomCategory')
             .then(
             function (d) {
-                $scope.roomCategorys = d;
-                $scope.roomCategorys.push({
+                $scope.roomCategories = d;
+                $scope.roomCategories.push({
                     categoryId: '100',
                     categoryCode: 'all',
                     categoryName: '全部'

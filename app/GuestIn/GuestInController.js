@@ -3,7 +3,7 @@
  */
 'use strict';
 
-App.controller('GuestInController',['$scope','Service', function ($scope, Service) {
+App.controller('GuestInController',['$scope','Service','Util', function ($scope, Service,Util) {
     /**
      * 用于提交的对象
      */
@@ -84,5 +84,6 @@ App.controller('GuestInController',['$scope','Service', function ($scope, Servic
             }
         )
     };
+    $scope.$emit('room',{qwe:'999',asd:'666'});
     $scope.onLoad();
 }]);

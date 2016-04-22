@@ -15,8 +15,9 @@
     <script src="angular.js"></script>
     <script src="app.js"></script>
     <script src="service/service.js"></script>
-    <script src="controller/mainController.js"></script>
-    <script src="controller/GuestInController.js"></script>
+    <script src="service/util.js"></script>
+    <script src="mainController.js"></script>
+    <script src="GuestIn/GuestInController.js"></script>
     <script src="directive/szPop.js"></script>
     <script src="directive/szBack.js"></script>
 </head>
@@ -76,10 +77,10 @@
 
     <!--房态预览 begin-->
     <ul class="mainRoomState">
-        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" sz-pop="GuestIn/GuestIn.html">
+        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" sz-pop="GuestIn/GuestIn.html" ng-mouseenter="GuestIn(r)">
             <ul>
                 <li ng-bind="r.roomId" ></li>
-                <li ng-bind="r.categoryName"></li>
+                <li ng-bind="r.temp1"></li>
                 <li class="{{r.state}}"></li>
                 <ul class="rigtb">
                     <li class="icon-gift" ng-if="r.birthday"><span>生日</span></li>
