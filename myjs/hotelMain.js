@@ -20,6 +20,18 @@ function lefbox(){
 
 };
 
+/*单击开房代码引入主页面*/
+function checkIn(){
+    $("#mainBody").load("reception/checkIn.html")
+
+};
+
+/*移除弹出窗口*/
+function removePopup(){
+    $("#mainBody").empty()
+
+};
+
 
 /*快捷菜单导入*/
 function topbox(){
@@ -33,8 +45,8 @@ function jump(){
 };
 
 /*新增预订弹窗导入*/
-function book() {
-    $(top.document.body).append('<iframe src="bookManagement/bookPopup.html" id="np-pop-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
+function indivibook() {
+    $(top.document.body).append('<iframe src="bookManagement/individualBookPopup.html" id="np-pop-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe>');
 };
 
 

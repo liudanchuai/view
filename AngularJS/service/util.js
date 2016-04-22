@@ -1,9 +1,5 @@
-'use strict';
-
 App.factory('Service', ['$http', '$q','host', function ($http, $q,host) {
     return {
-        test:'',
-        /*增*/
         createByPath:function(object,path){
             return $http.post(host+'/'+path,object)
                 .then(

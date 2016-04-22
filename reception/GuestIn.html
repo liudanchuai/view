@@ -3,57 +3,47 @@
 <head>
     <meta charset="utf-8">
     <title>单击开房</title>
-    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
-    <link href="../css/popup.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../myjs/jquery.datetimepicker.css"/>
-
 </head>
-<body>
+<div ng-controller="GuestInController">
 
 <!-- 单击开房begin -->
-<div class="bgblack">
+<div class="bgblack" sz-back>
 </div>
 
-<div class="tanchuang">
-    <dl class="tctit"><h1>入住登记单</h1></dl>
+<div class="tanchuang"  id="">
+    <dl class="tctit"><h1>入住登记单{{2+2}}{{guestSource[0].sourceName}}</h1></dl>
     <table class="tableBordernone">
         <tr>
             <td>房间类别：</td>
             <td>
                 <select disabled="disabled" style="width: 131px;">
                     <option value="豪华总统套房">豪华总统套房</option>
-                    <option value="标准间" selected="selected">标准间</option>
+                    <option value="标准间" selected="selected" ng-bind="roomCategory"></option>
                     <option value="单人间">单人间</option>
                 </select>
             </td>
             <td>房间号码：</td>
-            <td><input type="text" value="" style="width: 135px;"></td>
+            <td><input type="text" value="" style="width: 135px;" ng-model="checkIn.roomId"></td>
             <td>会员卡号：</td>
-            <td colspan="3"><input type="text" value="" style="width: 277px;"></td>
+            <td colspan="3"><input type="text" value="" style="width: 277px;" ng-model="checkIn.member"></td>
         </tr>
         <tr>
             <td>客人来源：</td>
             <td>
-                <select style="width: 131px;">
-                    <option value="客人自入" selected="selected">客人自入</option>
-                    <option value="美团">美团</option>
-                    <option value="糯米团">糯米团</option>
+                <select style="width: 131px;" ng-model="" ng-options="x.sourceName for x in guestSource">
+                    <option value="">请选择客人来源</option>
                 </select>
             </td>
             <td>房价协议：</td>
             <td>
-                <select style="width: 148px;">
-                    <option value="客人自入">客人自入</option>
-                    <option value="美团">美团</option>
-                    <option value="糯米团">糯米团</option>
+                <select style="width: 148px;" ng-model="" ng-options="x.sourceName for x in protocol">
+                    <option value="">请选择房价协议</option>
                 </select>
             </td>
             <td>房租方式：</td>
             <td>
-                <select style="width: 120px;">
-                    <option value="小时房">小时房</option>
-                    <option value="常驻房">常驻房</option>
-                    <option value="房租方式2">房租方式2</option>
+                <select style="width: 120px;" ng-model="" ng-options="x.name for x in roomPriceCategory">
+                    <option value="">请选择房租方式</option>
                 </select>
             </td>
             <td>房价：</td>
@@ -217,74 +207,74 @@
         </tr>
     </table>
     <dl class="button">
-        <div class="fl"><a class="sbe">读取身份证</a> &nbsp; <input type="checkbox">是否贵宾</div>
-        <div class="fr"><a class="sbe">确认付款</a><a class="sbegray">关闭</a></div>
+        <div class="fl"><a class="sbe" ng-click="test()">读取身份证</a> &nbsp; <input type="checkbox">是否贵宾</div>
+        <div class="fr"><a class="sbe" >确认付款</a><a class="sbegray" sz-back>关闭</a></div>
     </dl>
 
+    <table id="divEditRow" class="none">
+        <tbody>
+        <tr>
+            <td>
+                <input type="text" value="" style="width: 65px;"></td>
+            <td>
+                <input type="text" value="" style="width: 80px;" class=" datetimepicker_mask"></td>
+            <td>
+                <select>
+                    <option>男</option>
+                    <option>女</option>
+                </select></td>
+            <td>
+                <select>
+                    <option value="">请选择</option>
+                    <option value="汉族">汉族</option>
+                    <option value="阿昌族">阿昌族</option>
+                    <option value="白族">白族</option>
+                    <option value="保安族">保安族</option>
+                    <option value="布朗族">布朗族</option>
+                    <option value="布依族">布依族</option>
+                    <option value="朝鲜族">朝鲜族</option>
+                </select>
+            </td>
+            <td>
+                <select>
+                    <option value="身份证">身份证</option>
+                    <option value="二代身份证">二代身份证</option>
+                    <option value="护照">护照</option>
+                    <option value="军官证">军官证</option>
+                </select>
+            </td>
+            <td>
+                <input type="text" style="width: 160px" value=""></td>
+            <td>
+                <input type="text" style="width: 160px" value=""></td>
+            <td>
+                <img src="../images/save.png" width="12" height="12" alt="保存">
+                <img src="../images/010.gif" width="12" height="12" onclick="RowDelete(this)" alt="删除">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table id="divDetailRow" class="none">
+        <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <input type="hidden" name="RowData" />
+                <input type="hidden" name="RowState" value="0" />
+                <a href="javascript:void(0)" onclick="RowEdit(this)">
+                    <img src="../images/037.gif" width="12" height="12" alt="" /></a>
+                <a href="javascript:void(0)" onclick="RowDelete(this)">
+                    <img src="../images/010.gif" width="12" height="12" alt="" /></a></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-<table id="divEditRow" class="none">
-    <tbody>
-    <tr>
-        <td>
-            <input type="text" value="" style="width: 65px;"></td>
-        <td>
-            <input type="text" value="" style="width: 80px;" class=" datetimepicker_mask"></td>
-        <td>
-            <select>
-                <option>男</option>
-                <option>女</option>
-            </select></td>
-        <td>
-            <select>
-                <option value="">请选择</option>
-                <option value="汉族">汉族</option>
-                <option value="阿昌族">阿昌族</option>
-                <option value="白族">白族</option>
-                <option value="保安族">保安族</option>
-                <option value="布朗族">布朗族</option>
-                <option value="布依族">布依族</option>
-                <option value="朝鲜族">朝鲜族</option>
-            </select>
-        </td>
-        <td>
-            <select>
-                <option value="身份证">身份证</option>
-                <option value="二代身份证">二代身份证</option>
-                <option value="护照">护照</option>
-                <option value="军官证">军官证</option>
-            </select>
-        </td>
-        <td>
-            <input type="text" style="width: 160px" value=""></td>
-        <td>
-            <input type="text" style="width: 160px" value=""></td>
-        <td>
-            <img src="../images/save.png" width="12" height="12" alt="保存">
-            <img src="../images/010.gif" width="12" height="12" onclick="RowDelete(this)" alt="删除">
-        </td>
-    </tr>
-    </tbody>
-</table>
-<table id="divDetailRow" class="none">
-    <tbody>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>
-            <input type="hidden" name="RowData" />
-            <input type="hidden" name="RowState" value="0" />
-            <a href="javascript:void(0)" onclick="RowEdit(this)">
-                <img src="../images/037.gif" width="12" height="12" alt="" /></a>
-            <a href="javascript:void(0)" onclick="RowDelete(this)">
-                <img src="../images/010.gif" width="12" height="12" alt="" /></a></td>
-    </tr>
-    </tbody>
-</table>
 
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../myjs/my_xiala.js"></script>
@@ -352,7 +342,7 @@
 </script>
 
 
-</body>
+</div>
 </html>
 
 
