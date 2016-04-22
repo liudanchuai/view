@@ -1,0 +1,72 @@
+.bookBox { margin: 20px; border: 1px solid #ccc; border-radius: 5px; position: relative;}
+.bookListHead { position:absolute; width: 100%; z-index: 9; line-height: 35px; border-radius: 5px 5px 0px 0px; font-size: 14px; background: #6b8bdf}
+.listHead { margin: 0px;}
+.listHead tr td { border-right: 1px solid #fff; padding: 5px 5px; line-height: 24px; text-align:center; height: auto; color:#fff; font-weight: bold;
+    /*text-shadow: 1px 0px 0px #fff,0px 1px 0px #fff,-1px 0px 0px #fff,0px -1px 0px #fff*/}
+.listHead tr td:last-child{ border-right: none}
+
+.tableBookDiv { height: 310px; overflow-y:scroll; margin-top: 35px;}
+.tableBook { }
+.tableBook tr { height: 30px; line-height: 30px; border-bottom: 1px solid #fff;}
+.tableBook tr:nth-child(odd) { background: #c0cae3;}
+.tableBook tr:nth-child(even) { background: #e1eaff;}
+.tableBook tr td { border-right:1px solid #fff; padding: 5px; line-height: 20px; height: auto; font-weight: normal; text-align: center; width: auto}
+.tableBook tr:hover{ background: #8faaef; cursor: pointer;}
+.tableBook tr.select{  background: #8faaef;}
+
+.tableBox { margin: 0px 20px}
+.tableBlue { box-shadow: 0px 1px 0px #ccc; -webkit-box-shadow: 0px 1px 0px #ccc; -moz-box-shadow: 0px 1px 0px #ccc; border-bottom: 1px solid #ccc;}
+.tableBlue tbody tr:nth-child(odd) { background: #dce6fe;}
+.tableBlue tbody tr:nth-child(even) { background: #eaf0fe;}
+.tableBlue tbody tr td { border-right:1px solid #fff;border-bottom: 1px solid #fff; padding: 5px; line-height: 20px; height: auto; font-weight: normal; text-align: center; width: auto}
+.tableBlue tbody tr td:last-child { border-right:none}
+.tableBlue tbody tr:last-child td{ border-bottom: none}
+.tableBlue tbody tr:hover{ background: #c3d1f7; cursor: pointer; color:#d20000}
+.tableBlue thead tr { background:#6b8bdf;
+    -webkit-box-shadow: 0px 1px 0px #5868a5;
+    -moz-box-shadow: 0px 1px 0px #5868a5;
+    box-shadow: 0px 1px 0px #5868a5;}
+.tableBlue thead tr th{  border-right: 1px solid #8dacfe!important; padding: 5px 5px; line-height: 24px; font-size: 14px; text-align:center; height: auto; color:#fff; font-weight: bold;}
+.tableBlue tfoot tr { background: #eee; color: #5771d9; border-bottom: 1px solid #fff;}
+.tableBlue tfoot tr:last-child { border-bottom: none;}
+.tableBlue tfoot tr td { border-right: 1px solid #fff; padding: 5px 5px; line-height: 20px; height: auto; }
+.tableBlue tfoot tr td:last-child { border-right: none}
+
+
+
+/*按钮*/
+.button {  background: none; margin-top: 20px; text-align: center; padding-top: 20px;}
+.button input[type=button],.button .sbegray { padding: 7px 20px; text-align: center; margin-right: 9px; border:1px solid #ba9761;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px; background: linear-gradient(#ffd777,#a16200);
+    color: #6e3e00; cursor: pointer; font-weight: bold; margin-bottom: 10px;
+    -webkit-box-shadow: inset -1px -1px 0px #fff6d0,inset 1px 1px 0px #fff6d0;
+    -moz-box-shadow: inset -1px -1px 0px #fff6d0;
+    box-shadow:inset -1px 0px 0px #c2a16e, inset 0px -1px 0px #c2a16e,inset 1px 1px 0px #e2c089;}
+.button input[type=button]:hover { background: linear-gradient(#a16200,#ffd777);}
+.button .sbegray { background: linear-gradient(#eee,#afafaf)!important; color: #555; border: 1px solid #ccc;}
+
+.littleButton input[type=button]{ padding: 5px 12px; text-align: center; margin-right: 9px; border:1px solid #ba9761;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px; background: linear-gradient(#ffd777,#a16200);
+    color: #fff; cursor: pointer; font-weight: bold; margin-bottom: 10px;
+    -webkit-box-shadow: inset -1px -1px 0px #fff6d0,inset 1px 1px 0px #fff6d0;
+    -moz-box-shadow: inset -1px -1px 0px #fff6d0;
+    box-shadow:inset -1px 0px 0px #c2a16e, inset 0px -1px 0px #c2a16e,inset 1px 1px 0px #e2c089; margin-left: -10px}
+.littleButton input[type=button]:hover { background: linear-gradient(#a16200,#ffd777);}
+
+
+.saixuanul .button { border: 0px!important; margin-top:0px; padding-top: 0px; }
+.button a.sbeyellow { display: block; float: left; padding: 0px 10px!important;}
+.saixuanul .button a { padding-left: 30px!important; position: relative}
+
+/**分页**/
+.page{text-align:center;font-size:12px; float:right;}
+.page A{border:#ddd 1px solid;margin:1px;color:#5771d9;text-decoration:none;padding:4px 8px;background:#fff}
+.page A:hover{border:#6982e4 1px solid;color:#fff;background-color:#6982e4}
+.page A:active{border:#999 1px solid;color:#666;}
+.page span{border:#ddd 1px solid;margin:1px;color:#5771d9;text-decoration:none;font-size:12px;padding:4px; cursor:pointer;}
+.page span.current{border:#6982e4 1px solid;padding:4px 8px;color:#fff;background-color:#6982e4}
+.page span.disabled{border-right:#ddd 1px solid;color: #ddd; background:#fff}

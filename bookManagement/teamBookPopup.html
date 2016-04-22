@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增团队预订</title>
+    <link href="../css/popup.css" rel="stylesheet">
+</head>
+<body>
+<!-- 新增团队预订弹窗begin -->
+<div class="bgblack">
+</div>
+<div class="tanchuang">
+    <dl class="tctit"><h1>团队预订</h1></dl>
+
+    <table class="tableBordernone">
+        <tr>
+            <td>房间类别：</td>
+            <td>
+                <select disabled="disabled" style="width: 131px;">
+                    <option value="豪华总统套房">豪华总统套房</option>
+                    <option value="标准间" selected="selected">标准间</option>
+                    <option value="单人间">单人间</option>
+                </select>
+            </td>
+            <td>房价协议：</td>
+            <td>
+                <select style="width: 148px;">
+                    <option value="客人自入">客人自入</option>
+                    <option value="美团">美团</option>
+                    <option value="糯米团">糯米团</option>
+                </select>
+            </td>
+            <td>房租方式：</td>
+            <td>
+                <select style="width: 120px;">
+                    <option value="小时房">小时房</option>
+                    <option value="常驻房">常驻房</option>
+                    <option value="房租方式2">房租方式2</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>房价：</td>
+            <td><input type="text" value="100.00" disabled="disabled" class="inputCover" style="width: 120px;"></td>
+            <td>房数：</td>
+            <td>
+                <input type="button" class="jia reduceDays" value="-" style="margin-right: -1px;">
+                <input type="text"m value="1" style="width: 60px;" id="Days">
+                <input type="button" class="jia addDays" value="+" style="margin-left: -1px;">
+                <span style="font-size: 12px; color: #666; margin-left: 10px;">可预定 <font color="#d20000">10</font> 间</span>
+            </td>
+            <td>网上单号：</td>
+            <td><input type="text" value="" style="width: 110px;"></td>
+        </tr>
+        <tr>
+            <td>来店时间：</td>
+            <td>
+                <input type="text" value="2016-05-22 10:00" style="width: 120px;">
+            </td>
+
+            <td>离店时间：</td>
+            <td>
+                <input type="text" value="2016-05-23 10:00" style="width: 110px;">
+            </td>
+            <td>留房时间：</td>
+            <td><input type="text" value="2016-05-23 10:00" style="width: 110px;"></td>
+
+        </tr>
+    </table>
+    <table class="tableBorderaaa">
+        <tr>
+            <td>团名：</td>
+            <td><input type="text" value="" style="width: 150px;"></td>
+            <td>领队人：</td>
+            <td><input type="text" value="" style="width: 80px;"></td>
+            <td>领队电话：</td>
+            <td colspan="3"><input type="text" value="" style="width: 120px;"></td>
+        </tr>
+        <tr>
+            <td>会员卡号：</td>
+            <td><input type="text" value="" style="width: 150px;"></td>
+            <td>预定人：</td>
+            <td><input type="text" name="name" style="width: 80px;"></td>
+            <td>电话：</td>
+            <td><input type="text" value="" style="width: 120px;"></td>
+            <td>客人来源：</td>
+            <td>
+                <select style="width: 131px;">
+                    <option value="客人自入" selected="selected">客人自入</option>
+                    <option value="美团">美团</option>
+                    <option value="糯米团">糯米团</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>备注：</td>
+            <td colspan="7">
+                <textarea style="width: 790px">备注内容</textarea>
+            </td>
+        </tr>
+    </table>
+
+    <table class="tableBorderfff">
+        <tr>
+            <td style="width:100px;">订金：</td>
+            <td><input type="text" name="money" class="input" style="width: 100px;"></td>
+            <td>支付方式：</td>
+            <td colspan="3">
+                <select style="width: 130px;">
+                    <option value="人民币">人民币</option>
+                    <option value="信用卡">信用卡</option>
+                    <option value="单位支付">单位支付</option>
+                </select>
+            </td>
+            <td>担保方式：</td>
+            <td>
+                <select style="width: 150px;">
+                    <option value="担保方式1">有担保</option>
+                    <option value="担保方式2">无担保</option>
+                    <option value="担保方式3">网上预付</option>
+                </select>
+            </td>
+            <td style="width: 100px"></td>
+        </tr>
+    </table>
+    <dl class="button">
+        <input type="button" value="确认预定"><input type="button" value="取消" class="sbegray">
+    </dl>
+
+
+</div>
+<!-- 新增团队预订弹窗end -->
+
+<script src="../js/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../js/minified/jquery-1.11.0.min.js"><\/script>')</script>
+
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script>
+    (function($){
+        $(window).load(function(){
+
+            $(".tableDiv").mCustomScrollbar({theme:"minimal-dark"});
+
+
+        });
+    })(jQuery);
+</script>
+<script type="text/javascript">
+    (function(){
+        $(".bgblack").on("click",function(){
+//$(window.parent.document.getElementById("np-pop-iframe")).remove();
+            $("#np-pop-iframe",window.parent.document).remove();
+        });
+    })(jQuery);
+</script>
+</body>
+</html>
+

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>单击开房</title>
+    <link href="myjs/jquery.datetimepicker.css" rel="stylesheet">
 </head>
 <div ng-controller="GuestInController">
 
@@ -56,9 +57,9 @@
             </td>
             <td>预住天数：</td>
             <td>
-                <input type="button" class="jia reduceDays" value="-" style="margin-right: -1px;">
-                <input type="text"m value="1" style="width: 60px;" id="Days">
-                <input type="button" class="jia addDays" value="+" style="margin-left: -1px;">
+                <input type="button" class="jia reduceDays" value="-" style="margin-right: -1px;" sz-minus="Days">
+                <input type="text" value="1" style="width: 60px;" id="Days">
+                <input type="button" class="jia addDays" value="+" style="margin-left: -1px;" sz-add="Days">
             </td>
             <td>预离时间：</td>
             <td colspan="3">
@@ -130,45 +131,7 @@
             </tr>
             </thead>
             <tbody>
-            <!--<tr>
-                <td>
-                    <input type="text" value="" style="width: 65px;"></td>
-                <td>
-                    <input type="text" value="" style="width: 80px;" class="datetimepicker_mask"></td>
-                <td>
-                    <select>
-                        <option>男</option>
-                        <option>女</option>
-                    </select></td>
-                <td>
-                    <select>
-                        <option value="">请选择</option>
-                        <option value="汉族">汉族</option>
-                        <option value="阿昌族">阿昌族</option>
-                        <option value="白族">白族</option>
-                        <option value="保安族">保安族</option>
-                        <option value="布朗族">布朗族</option>
-                        <option value="布依族">布依族</option>
-                        <option value="朝鲜族">朝鲜族</option>
-                    </select>
-                </td>
-                <td>
-                    <select>
-                        <option value="身份证">身份证</option>
-                        <option value="二代身份证">二代身份证</option>
-                        <option value="护照">护照</option>
-                        <option value="军官证">军官证</option>
-                    </select>
-                </td>
-                <td>
-                    <input type="text" style="width: 160px" value=""></td>
-                <td>
-                    <input type="text" style="width: 160px" value=""></td>
-                <td>
-                    <img src="../images/save.png" width="12" height="12" alt="保存">
-                    <img src="../images/010.gif" width="12" height="12" alt="删除">
-                </td>
-            </tr>-->
+
             </tbody>
         </table>
         <input type="button" value="+" class="butn btnAddOtherCustomer" />
@@ -275,6 +238,71 @@
         </tbody>
     </table>
 </div>
+
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../myjs/my_xiala.js"></script>
+<script type="text/javascript">
+    (function(){
+        $(".bgblack,.sbegray").on("click",function(){
+//$(window.parent.document.getElementById("np-pop-iframe")).remove();
+            $("#np-pop-iframe",window.parent.document).remove();
+        });
+    })(jQuery);
+    //预住天数事件绑定
+    $(".addDays").click(function () {
+        var days = parseInt($("#Days").val());
+        if (days < 30) {
+            $("#Days").val(days + 1);
+            $("#Days").blur();
+            getTotalAccount();//显示总房价
+        }
+    });
+    $(".reduceDays").click(function () {
+        var days = parseInt($("#Days").val());
+        if (days > 1) {
+            $("#Days").val(days - 1);
+            $("#Days").blur();
+            getTotalAccount();//显示总房价
+        }
+    });
+    //随客绑定事件
+    var isOne = true;   //执行一次
+    $(".btnOpenCustomer").click(function () {
+        if ($(".divOtherCustomer").is(":hidden")) {
+            $(".divOtherCustomer").show();
+            $(".btnOpenCustomer").html('隐藏');
+            if (isOne) {
+                $(".btnAddOtherCustomer").click();
+                isOne = false;
+            }
+        }
+        else {
+            $(".divOtherCustomer").hide();
+            $(".btnOpenCustomer").html('展开');
+        }
+    });
+    //添加随客
+    $(".btnAddOtherCustomer").click(function () {
+        if ($(".ruzhu tbody tr").length >= 4) {
+            alert("同一个房间最多只能新增4个随客");
+            return;
+        }
+        var trobj = $($("#divEditRow tbody").html());
+        $(".ruzhu tbody").append(trobj);
+    });
+    function RowDelete(obj) {
+        var trobj = $(obj).parent().parent();
+        $(trobj).remove();
+    }
+</script>
+<script src="../myjs/jquery.datetimepicker.js"></script>
+<script>
+
+    $('.datetimepicker_mask').datetimepicker({
+
+    });
+
+</script>
 
 
 </div>

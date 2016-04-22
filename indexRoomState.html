@@ -20,6 +20,7 @@
     <script src="AngularJS/controller/GuestInController.js"></script>
     <script src="AngularJS/directive/szPop.js"></script>
     <script src="AngularJS/directive/szBack.js"></script>
+    <script src="AngularJS/directive/common.js"></script>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -182,4 +183,14 @@
 </div>
 
 </body>
+<script type="text/javascript">
+    var reduce=function() {
+        var days = parseInt($("#Days").val());
+        if (days > 1) {
+            $("#Days").val(days - 1);
+            $("#Days").blur();
+            getTotalAccount();//显示总房价
+        }
+    }
+</script>
 </html>

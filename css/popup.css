@@ -126,6 +126,7 @@ table tr td:last-child{ border-right: none}
     -moz-box-shadow: 1px 1px 0px #bbb;
     box-shadow: 1px 1px 0px #bbb; margin-top: 20px;}
 .tableBorderaaa td { border-bottom: 1px solid #fff}
+.tableBorderaaa tr:last-child td { border: none}
 .tableBordernone { border:5px solid #fff;background: #e1eaff;
     -webkit-box-shadow: 1px 1px 0px #bbb;
     -moz-box-shadow: 1px 1px 0px #bbb;
@@ -148,6 +149,7 @@ table tr td:last-child{ border-right: none}
     -moz-box-shadow: 1px 1px 0px #bbb;
     box-shadow: 1px 1px 0px #bbb; margin-top: 20px;}
 .tableBorderfff td { border-bottom: 1px solid #c1c1c1}
+.tableBorderfff tr:last-child td { border: none}
 
 /*明细打印表格*/
 .printbg { position: fixed; left: 0px; right: 0px; top:0px; bottom:0px; background: rgba(0,0,0,0.1); z-index: 998}
@@ -246,7 +248,7 @@ table tr td:last-child{ border-right: none}
 
 
 /*按钮*/
-.button {  background: none; margin-top: 20px; text-align: center;border-top: 2px solid #a8b8e2;  padding-top: 20px;}
+/*.button {  background: none; margin-top: 20px; text-align: center;border-top: 2px solid #a8b8e2;  padding-top: 20px;}
 .button input[type=button],.button a.sbe,.button a.sbeyellow,.button a.sbegray { padding: 9px 20px; text-align: center; margin: 0px auto; margin-right: 9px; border:1px solid #ffe292;
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
@@ -261,17 +263,33 @@ table tr td:last-child{ border-right: none}
 .button i.icon-remove { color: #b70000}
 .button i.icon-edit { color:#9a6407; font-size: 18px;}
 .button i.icon-signout { color: #0067b7; font-size: 18px;}
-.button i.icon-print{color: #0067b7; }/*打印*/
-.button i.icon-search { color: #77a515}/*查询*/
-.button i.icon-user { color: #da7600}/*读取会员*/
-.button i.icon-inbox { color:#d41212;}/*哑房处理*/
-.button i.icon-share { color: #0067b7}/*转房客*/
-.button i.icon-external-link { color:#77a515}/*转单位*/
+.button i.icon-print{color: #0067b7; }!*打印*!
+.button i.icon-search { color: #77a515}!*查询*!
+.button i.icon-user { color: #da7600}!*读取会员*!
+.button i.icon-inbox { color:#d41212;}!*哑房处理*!
+.button i.icon-share { color: #0067b7}!*转房客*!
+.button i.icon-external-link { color:#77a515}!*转单位*!
 .button i.icon-plus { color: #d20000;}
 
 
 .button .gray {background: linear-gradient(#ff8400, #a75a07);  color:#000; border: 1px solid #ccc}
-.button .red { background: linear-gradient(#a02121,#721010); color:#fff; border: 1px solid #ccc}
+.button .red { background: linear-gradient(#a02121,#721010); color:#fff; border: 1px solid #ccc}*/
+
+.button {  background: none; margin-top: 20px; text-align: center; padding-top: 20px;}
+.button input[type=button],.button .sbegray { padding: 7px 20px; text-align: center; margin-right: 9px; border:1px solid #ba9761;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px; background: linear-gradient(#ffd777,#a16200);
+    color: #6e3e00; cursor: pointer; font-weight: bold; margin-bottom: 10px;
+    -webkit-box-shadow:inset -1px 0px 0px #c2a16e, inset 0px -1px 0px #c2a16e,inset 1px 1px 0px #e2c089;
+    -moz-box-shadow:inset -1px 0px 0px #c2a16e, inset 0px -1px 0px #c2a16e,inset 1px 1px 0px #e2c089;
+    box-shadow:inset -1px 0px 0px #c2a16e, inset 0px -1px 0px #c2a16e,inset 1px 1px 0px #e2c089;}
+.button input[type=button]:hover { background: linear-gradient(#a16200,#ffd777); border:1px solid #ba9761!important;}
+.button .sbegray { background: linear-gradient(#eee,#afafaf)!important; border: 1px solid #bbb!important;
+    -webkit-box-shadow:inset -1px 0px 0px #f1f1f1, inset 0px -1px 0px #eee,inset 1px 1px 0px #eee;
+    -moz-box-shadow:inset -1px 0px 0px #c2a16e, inset 0px -1px 0px #c2a16e,inset 1px 1px 0px #e2c089;
+    box-shadow:inset -1px 0px 0px #f1f1f1, inset 0px -1px 0px #eee,inset 1px 1px 0px #eee!important; color: #555!important;
+}
 
 /*新增随客信息*/
 .addCustomerh1 { border-bottom: 1px dashed #ccc; line-height: 20px; margin: 0px; padding: 0px; text-align: left; font-size: 14px; font-weight: normal;}

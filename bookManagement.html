@@ -9,15 +9,14 @@
     <link rel="stylesheet" href="css/public/common.css">
     <link rel="stylesheet" href="css/public/left.css"/>
     <link rel="stylesheet"  href="css/public/top.css"/>
-    <link rel="stylesheet"  href="css/bookManagement.css"/>
-    <link rel="stylesheet" href="css/public/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet"  href="css/public/tableStyle.css"/>
 </head>
 <body>
-<div id="lefbox" style="width: 265px; height:100%; float: left">
+<!--<div id="lefbox" style="width: 265px; height:100%; float: left">
 
-</div>
+</div>-->
 <!--main-container-part-->
-<div id="content">
+<div id="content" style="margin-left: 0px;">
     <div id="topbox">
 
     </div>
@@ -29,203 +28,185 @@
         <ul class="userbox">
             <a title="" href="../login.html"><i class="icon-user"></i> <span class="text">操作员设置</span></a>
             <a title="" href="../login.html"><i class="icon-signout"></i><span>退出</span></a>
-
         </ul>
         <ul class="saixuanul">
-            <li class="sxtit">操作日期：</li>
-            <li class="sxli">
-                <div class="my_xl sx_xl">
-                    <i class="icon-tasks lv"></i>
-                    <div class="my_xl_txt sx_xl_txt">2016-04-21</div>
-                    <div class="my_xl_btn"></div>
-                    <ul class="my_xl_list sx_xl_list">
-                        <li><span>2016-04-22</span></li>
-                        <li><span>2016-04-23</span></li>
-                        <li><span>2016-04-24</span></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="sxtit">-</li>
-            <li class="sxli">
-                <div class="my_xl sx_xl">
-                    <i class="icon-tasks lv"></i>
-                    <div class="my_xl_txt sx_xl_txt">2016-04-21</div>
-                    <div class="my_xl_btn"></div>
-                    <ul class="my_xl_list sx_xl_list">
-                        <li><span>2016-04-22</span></li>
-                        <li><span>2016-04-23</span></li>
-                        <li><span>2016-04-24</span></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="sxli">
+            <li class="sxtit">来店时间：</li>
+            <li class="sxli2" style="margin-right: 10px;">
+                <select style="width: 120px;">
+                   <option>2016-04-22</option>
+                   <option>2016-04-23</option>
+                   <option>2016-04-24</option>
+                </select>
 
-                <i class="icon-refresh lan"></i>
-                <div class="my_fresh">刷新全部预订</div>
             </li>
-            <li class="sxtit button">
-                <a class="sbeyellow" onclick="book()"><i class="icon-plus"></i>增加新预订</a>
+            <li class="sxtit">至</li>
+            <li class="sxli2">
+                <select style="width: 120px;">
+                    <option>2016-04-22</option>
+                    <option>2016-04-23</option>
+                    <option>2016-04-24</option>
+                </select>
             </li>
+            <li class="sxtit">单号</li>
+            <li class="sxli2"><input type="text" value="" style="width: 120px;"></li>
+            <li class="sxtit">预定人</li>
+            <li class="sxli2"><input type="text" value="" style="width: 80px;"></li>
+            <li class="sxtit">状态</li>
+            <li class="sxli2">
+                <select style="width: 150px;">
+                    <option value="">全部</option>
+                    <option value="0">待确认</option>
+                    <option value="1">预定</option>
+                    <option value="1,9">预定+部分入住</option>
+                    <option value="10">入住</option>
+                    <option value="20">取消</option>
+                    <option value="21">预定未达</option>
+                    <option value="22">拒绝</option>
+                </select>
+            </li>
+            <li class="sxtit">是否分房</li>
+            <li class="sxli2">
+                <select style="width: 65px;">
+                    <option value="">全部</option>
+                    <option value="0">是</option>
+                    <option value="1">否</option>
+                </select>
+            </li>
+            <li class="sxtit">房租方式</li>
+            <li class="sxli2">
+                <select style="width: 100px;">
+                    <option value="">全部</option>
+                    <option value="0">天房</option>
+                    <option value="1">小时房</option>
+                </select>
+            </li>
+            <li class="sxli2 littleButton"><input type="button" value="查询"></li>
         </ul>
     </div>
     <!--Filter end-->
-    <div class="bookBox">
-        <div class="bookListHead">
-            <table class="listHead">
-                <tr>
-                    <td style="width: 12%">订单号</td>
-                    <td style="width: 8%">房号</td>
-                    <td style="width: 8%">房价</td>
-                    <td style="width: 12%">来店日期</td>
-                    <td style="width: 12%">预离日期</td>
-                    <td style="width: 5%">预付订金</td>
-                    <td style="width: 8%">协议</td>
-                    <td style="width: 12%">电话</td>
-                    <td style="width: 12%">公付账号</td>
-                    <td style="width: 150px;">操作日期</td>
-                </tr>
-            </table>
+    <div class="tableBox">
+        <table class="tableBlue">
+            <thead>
+            <tr>
+                <th width="120">预订单号</th>
+                <th width="100">房间类别</th>
+                <th width="70">房租方式</th>
+                <th width="100">房号</th>
+                <th width="65">预订房数</th>
+                <th width="65">已开房数</th>
+                <th width="80">来店时间</th>
+                <th width="80">离店日期</th>
+                <th width="60">留房时间</th>
+                <th width="90">预订人</th>
+                <th width="100">电话</th>
+                <th width="80">客人来源</th>
+                <th width="80">订单来源</th>
+                <th width="80">订金</th>
+                <th width="80">状态</th>
+                <th width="60">备注</th>
+                <th width="100">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>123456789</td>
+                <td>豪华总统套房</td>
+                <td>小时房</td>
+                <td>5001</td>
+                <td>2</td>
+                <td>1</td>
+                <td>2016-05-22</td>
+                <td>2016-05-23</td>
+                <td>18：00</td>
+                <td>李某某</td>
+                <td>18624316147</td>
+                <td>客人自入</td>
+                <td>前台预定</td>
+                <td style="text-align: right">0.00</td>
+                <td>入住</td>
+                <td></td>
+                <td><a href="">[查看]</a> </td>
+            </tr>
+            <tr>
+                <td>123456789</td>
+                <td>标准间</td>
+                <td>小时房</td>
+                <td>5003</td>
+                <td>1</td>
+                <td>0</td>
+                <td>2016-05-22</td>
+                <td>2016-05-23</td>
+                <td>18：00</td>
+                <td>郭某某</td>
+                <td>18688888888</td>
+                <td>客人自入</td>
+                <td>电话预定</td>
+                <td style="text-align: right">0.00</td>
+                <td>取消</td>
+                <td></td>
+                <td><a href="">[查看]</a><a href="">[恢复]</a> </td>
+            </tr>
+            <tr>
+                <td>123456789</td>
+                <td>双人间</td>
+                <td>小时房</td>
+                <td>5008</td>
+                <td>2</td>
+                <td>0</td>
+                <td>2016-05-22</td>
+                <td>2016-05-23</td>
+                <td>18：00</td>
+                <td>刘某某</td>
+                <td>18699999999</td>
+                <td>客人自入</td>
+                <td>电话预定</td>
+                <td style="text-align: right">0.00</td>
+                <td>预定</td>
+                <td></td>
+                <td><a href="">[编辑]</a><a href="">[取消]</a> </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="4" style="text-align: right">当页合计：</td>
+                <td>5</td>
+                <td>1</td>
+                <td colspan="8" style="text-align: right">0.00</td>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right">总合计：</td>
+                <td>5</td>
+                <td>1</td>
+                <td colspan="8" style="text-align: right">0.00</td>
+                <td colspan="3"></td>
+            </tr>
+            </tfoot>
+        </table>
+        <div class="button" style="margin: 0px; border: 0px;">
+            <div class="fr">
+                <div class="page">
+                    <span class="disabled"> &lt;  上一页</span>
+                    <span class="current">1</span>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <span> 下一页  &gt;</span>
+                </div>
+            </div>
+            <div class="fl">
+                <input type="button" value="散客预定" onclick="indivibook()">
+                <input type="button" value="团队预定">
+                <input type="button" value="预定转入住">
+                <input type="button" value="补交订金">
+                <input type="button" value="分房">
+                <input type="button" value="未来房态图">
+                <input type="button" value="补打预订单">
+            </div>
         </div>
-        <div id="content-md" class="tableBookDiv">
-            <table class="tableBook">
-                <tr>
-                    <td style="width: 12%">012345678912</td>
-                    <td style="width: 8%">5004</td>
-                    <td style="width: 8%">208.00元</td>
-                    <td style="width: 12%">2016-04-22</td>
-                    <td style="width: 12%">2016-04-23</td>
-                    <td style="width: 5%">50.00元</td>
-                    <td style="width: 8%">协议</td>
-                    <td style="width: 12%">1860248888888</td>
-                    <td style="width: 12%">123456789012</td>
-                    <td style="width: 133px;">2016-04-18</td>
-                </tr>
-                <tr>
-                    <td>012345678912</td>
-                    <td>5001</td>
-                    <td>300.00元</td>
-                    <td>2016-04-22</td>
-                    <td>2016-04-23</td>
-                    <td>50.00元</td>
-                    <td>协议</td>
-                    <td>1860248888888</td>
-                    <td>123456789012</td>
-                    <td>2016-04-18</td>
-                </tr>
-                <tr>
-                    <td>012345678912</td>
-                    <td>5001</td>
-                    <td>300.00元</td>
-                    <td>2016-04-22</td>
-                    <td>2016-04-23</td>
-                    <td>50.00元</td>
-                    <td>协议</td>
-                    <td>1860248888888</td>
-                    <td>123456789012</td>
-                    <td>2016-04-18</td>
-                </tr>
-                <tr>
-                    <td>012345678912</td>
-                    <td>5001</td>
-                    <td>300.00元</td>
-                    <td>2016-04-22</td>
-                    <td>2016-04-23</td>
-                    <td>50.00元</td>
-                    <td>协议</td>
-                    <td>1860248888888</td>
-                    <td>123456789012</td>
-                    <td>2016-04-18</td>
-                </tr>
-                <tr>
-                    <td>012345678912</td>
-                    <td>5001</td>
-                    <td>300.00元</td>
-                    <td>2016-04-22</td>
-                    <td>2016-04-23</td>
-                    <td>50.00元</td>
-                    <td>协议</td>
-                    <td>1860248888888</td>
-                    <td>123456789012</td>
-                    <td>2016-04-18</td>
-                </tr>
-                <tr>
-                    <td>012345678912</td>
-                    <td>5001</td>
-                    <td>300.00元</td>
-                    <td>2016-04-22</td>
-                    <td>2016-04-23</td>
-                    <td>50.00元</td>
-                    <td>协议</td>
-                    <td>1860248888888</td>
-                    <td>123456789012</td>
-                    <td>2016-04-18</td>
-                </tr>
-                <tr>
-                    <td>012345678912</td>
-                    <td>5001</td>
-                    <td>300.00元</td>
-                    <td>2016-04-22</td>
-                    <td>2016-04-23</td>
-                    <td>50.00元</td>
-                    <td>协议</td>
-                    <td>1860248888888</td>
-                    <td>123456789012</td>
-                    <td>2016-04-18</td>
-                </tr>
-                <tr>
-                    <td>012345678912</td>
-                    <td>5001</td>
-                    <td>300.00元</td>
-                    <td>2016-04-22</td>
-                    <td>2016-04-23</td>
-                    <td>50.00元</td>
-                    <td>协议</td>
-                    <td>1860248888888</td>
-                    <td>123456789012</td>
-                    <td>2016-04-18</td>
-                </tr>
-                <tr>
-                    <td>012345678912</td>
-                    <td>5001</td>
-                    <td>300.00元</td>
-                    <td>2016-04-22</td>
-                    <td>2016-04-23</td>
-                    <td>50.00元</td>
-                    <td>协议</td>
-                    <td>1860248888888</td>
-                    <td>123456789012</td>
-                    <td>2016-04-18</td>
-                </tr>
-                <tr>
-                    <td>012345678912</td>
-                    <td>5001</td>
-                    <td>300.00元</td>
-                    <td>2016-04-22</td>
-                    <td>2016-04-23</td>
-                    <td>50.00元</td>
-                    <td>协议</td>
-                    <td>1860248888888</td>
-                    <td>123456789012</td>
-                    <td>2016-04-18</td>
-                </tr>
-                <tr>
-                    <td>012345678912</td>
-                    <td>5001</td>
-                    <td>300.00元</td>
-                    <td>2016-04-22</td>
-                    <td>2016-04-23</td>
-                    <td>50.00元</td>
-                    <td>协议</td>
-                    <td>1860248888888</td>
-                    <td>123456789012</td>
-                    <td>2016-04-18</td>
-                </tr>
-            </table>
-        </div>
-
     </div>
 
 </div>
+
 <!--end-main-container-part-->
 
 <!--Footer-part-->
@@ -237,22 +218,6 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="myjs/hotelMain.js"></script>
 <script src="js/jquery.contextmenu.js"></script>
-<script type="text/javascript" src="myjs/my_xiala.js"></script>
 
-<script>window.jQuery || document.write('<script src="js/minified/jquery-1.11.0.min.js"><\/script>')</script>
-
-<!-- custom scrollbar plugin -->
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-
-<script>
-    (function($){
-        $(window).load(function(){
-
-            $("#content-md").mCustomScrollbar({theme:"minimal-dark"});
-
-
-        });
-    })(jQuery);
-</script>
 </body>
 </html>
