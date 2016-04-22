@@ -12,6 +12,23 @@
     <link rel="stylesheet"  href="css/public/top.css"/>
     <link href="css/popup.css" rel="stylesheet"/>
     <link href="css/cashier/detailPrint.css" rel="stylesheet">
+    <!--AngularJS-->
+    <script src="AngularJS/angular.js"></script>
+    <script src="AngularJS/app.js"></script>
+    <script src="AngularJS/service/service.js"></script>
+    <script src="AngularJS/controller/mainController.js"></script>
+    <script src="AngularJS/controller/GuestInController.js"></script>
+    <script src="AngularJS/directive/szPop.js"></script>
+    <script src="AngularJS/directive/szBack.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.contextmenu.js"></script>
+    <script src="js/matrix.js"></script>
+    <script src="js/jquery.avgrund.js"></script>
+    <script src="myjs/hotelMain.js"></script>
+    <script type="text/javascript" src="myjs/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="myjs/my_xiala.js"></script>
 </head>
 
 <body ng-app="mainApp">
@@ -69,7 +86,7 @@
 
     <!--房态预览 begin-->
     <ul class="mainRoomState">
-        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" ng-click="GuestIn(r)"  >
+        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" sz-pop="reception/GuestIn.html">
             <ul>
                 <li ng-bind="r.roomId" ></li>
                 <li ng-bind="r.categoryName"></li>
@@ -100,24 +117,6 @@
 <div id="botbox">
 
 </div>
-
-
-
-<!--AngularJS-->
-<script src="AngularJS/angular.js"></script>
-<script src="AngularJS/app.js"></script>
-<script src="AngularJS/service/service.js"></script>
-<script src="AngularJS/controller/mainController.js"></script>
-<script src="AngularJS/controller/GuestInController.js"></script>
-
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.contextmenu.js"></script>
-<script src="js/matrix.js"></script>
-<script src="js/jquery.avgrund.js"></script>
-<script src="myjs/hotelMain.js"></script>
-<script type="text/javascript" src="myjs/jquery.hotkeys.js"></script>
-<script type="text/javascript" src="myjs/my_xiala.js"></script>
 
 </body>
 </html>
