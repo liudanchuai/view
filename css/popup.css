@@ -37,7 +37,7 @@ input[disabled=disabled],select[disabled=disabled]{
     padding: 0px;
     border: 1px solid #ccc;
     background: #eee;
-    width: 26px;
+    width: 26px!important;
     height: 26px;
     cursor: pointer;
     font-size: 20px;
@@ -47,7 +47,7 @@ input[disabled=disabled],select[disabled=disabled]{
 }
 #tanchuang { position:absolute; width: 100%; height: 100%; top:0px; bottom: 0px; left: 0px; right:0px; z-index: 999; background: rgba(0,0,0,0.5)}
 .bgblack { width: 100%; height: 100%; top:0px; right:0px; left: 0px; bottom: 0px; background: rgba(0,0,0,0.2); position:fixed; z-index: 980; display: block}
-.tanchuang { position:fixed; top:10%; left: 0px; right: 0px; margin: auto; z-index: 990; width: 940px; height:auto; display: block; padding:40px 30px 30px 30px; background: #f1f1f1; border-radius: 10px;
+.tanchuang { position:fixed; top:10%; left: 0px; right: 0px; margin: auto; z-index: 990; width: 980px; height:auto; display: block; padding:40px 30px 30px 30px; background: #f1f1f1; border-radius: 10px;
     -webkit-box-shadow: inset 0px 0px 8px #bbb;
     -moz-box-shadow: inset 0px 0px 8px #bbb;
     box-shadow: inset 0px 0px 8px #bbb;
@@ -124,13 +124,13 @@ table tr td:last-child{ border-right: none}
 .tableBorderaaa { border:5px solid #fff;background: #f1eae1;
     -webkit-box-shadow: 1px 1px 0px #bbb;
     -moz-box-shadow: 1px 1px 0px #bbb;
-    box-shadow: 1px 1px 0px #bbb; margin-top: 20px;}
+    box-shadow: 1px 1px 0px #bbb; margin-top: 20px; width: 940px;}
 .tableBorderaaa td { border-bottom: 1px solid #fff}
 .tableBorderaaa tr:last-child td { border: none}
 .tableBordernone { border:5px solid #fff;background: #e1eaff;
     -webkit-box-shadow: 1px 1px 0px #bbb;
     -moz-box-shadow: 1px 1px 0px #bbb;
-    box-shadow: 1px 1px 0px #bbb; margin-top: 20px;}
+    box-shadow: 1px 1px 0px #bbb; margin-top: 20px; width: 940px;}
 .tableBordernone td { border-bottom: 1px solid #fff; }
 .tableBordernone tr:last-child td { border: none}
 
@@ -147,7 +147,7 @@ table tr td:last-child{ border-right: none}
 .tableBorderfff { border: 5px solid #fff; background: #e1e1e1;
     -webkit-box-shadow: 1px 1px 0px #bbb;
     -moz-box-shadow: 1px 1px 0px #bbb;
-    box-shadow: 1px 1px 0px #bbb; margin-top: 20px;}
+    box-shadow: 1px 1px 0px #bbb; margin-top: 20px; width: 940px;}
 .tableBorderfff td { border-bottom: 1px solid #c1c1c1}
 .tableBorderfff tr:last-child td { border: none}
 
