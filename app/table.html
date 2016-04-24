@@ -1,0 +1,297 @@
+<div>
+    <div>操作员表</div>
+    <input ng-model="checkPassword" type="password">核对密码
+    <table class="nameTable">
+        <tr>
+            <td>序号</td>
+            <td>工号</td>
+            <td>姓名</td>
+            <td>密码</td>
+            <td>类别</td>
+            <td>权限</td>
+            <td>营业部门</td>
+            <td>操作</td>
+        </tr>
+        <tr ng-repeat="r in users">
+            <td><input ng-readonly="true" ng-model="r.id"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.userId"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.userName"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.userPassword" type="password"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.userCategory"></td><!--下拉-->
+            <td><input ng-readonly="r.checked==null" ng-model="r.userLevel"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.posNumber"></td><!--下拉-->
+            <td>
+                <button ng-click="updateClickUser(r)" ng-if="r.checked==null">编辑</button>
+                <button ng-click="updateByPath(r)" ng-if="r.checked=='true'">提交</button>
+                <button ng-click="deleteByPath(r)">删除</button>
+            </td>
+        </tr>
+    </table>
+    <form name="formUser" ng-submit="createByPath()">
+        <input ng-model="userAdded.id" readonly>
+        <input type="text" ng-model="userAdded.userId" required name="userId"><!--点击增加后自动获得焦点-->
+            <span style="color:red" ng-show="formUser.userId.$dirty && formUser.userId.$invalid">
+                <span ng-show="formUser.userId.$error.required">工号是必须的。</span>
+            </span>
+        <input type="text" ng-model="userAdded.userName">
+        <input type="text" ng-model="userAdded.userPassword">
+        <input type="text" ng-model="userAdded.userCategory">
+        <input type="text" ng-model="userAdded.userLevel">
+        <input type="text" ng-model="userAdded.posNumber" name="posNumber" ng-maxlength="3">
+            <span style="color:red" ng-show="formUser.posNumber.$dirty && formUser.posNumber.$invalid">
+                <span ng-show="formUser.posNumber.$error.maxlength">最大长度是3</span>
+            </span>
+        <input type="submit" value="增加" ng-disabled="formUser.$invalid">
+    </form>
+    <div>房间类型</div>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>房间类型编码</td>
+            <td>房间类型名称</td>
+        </tr>
+        <tr ng-repeat="r in roomCategories">
+            <td><input ng-readonly="true" ng-model="r.id"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.categoryCode"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.categoryName"></td>
+            <td>
+                <button ng-click="updateClick(r)" ng-if="r.checked==null">编辑</button>
+                <button ng-click="updateRoomCategory(r)" ng-if="r.checked=='true'">提交</button>
+                <button ng-click="deleteRoomCategory(r)">删除</button>
+            </td>
+        </tr>
+    </table>
+    <form name="formRoomCategory" ng-submit="createRoomCategory()">
+        <input ng-model="roomCategoryAdded.id" readonly>
+        <input type="text" ng-model="roomCategoryAdded.categoryCode" name="categoryCode" ng-maxlength="4" required><!--点击增加后自动获得焦点-->
+            <span style="color:red" ng-show="formRoomCategory.categoryCode.$dirty && formRoomCategory.categoryCode.$invalid">
+                <span ng-show="formRoomCategory.categoryCode.$error.maxlength">最大长度是4</span>
+                <span ng-show="formRoomCategory.categoryCode.$error.required">房间编码是必需的</span>
+            </span>
+        <input type="text" ng-model="roomCategoryAdded.categoryName" required name="categoryName">
+            <span style="color:red" ng-show="formRoomCategory.categoryName.$dirty && formRoomCategory.categoryName.$invalid">
+                <span ng-show="formRoomCategory.categoryName.$error.required">房间名称是必需的</span>
+            </span>
+        <input type="submit" value="增加" ng-disabled="formRoomCategory.$invalid">
+    </form>
+    <div>房间定义</div>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>房号</td>
+            <td>楼区</td>
+            <td>房间类别</td>
+            <td>房价</td>
+            <td>早餐标志</td>
+            <td>总共床位</td>
+        </tr>
+        <tr ng-repeat="r in rooms">
+            <td><input ng-readonly="true" ng-model="r.id"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.roomId"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.area"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.roomCategory"></td><!--下拉-->
+            <td><input ng-readonly="r.checked==null" ng-model="r.price"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.breakfast"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.totalBed"></td>
+            <td>
+                <button ng-click="updateClick(r)" ng-if="r.checked==null">编辑</button>
+                <button ng-click="updateRoom(r)" ng-if="r.checked=='true'">提交</button>
+                <button ng-click="deleteRoom(r)">删除</button>
+            </td>
+        </tr>
+    </table>
+    <form name="formRoom" ng-submit="createRoom()">
+        <input ng-model="roomAdded.id" readonly>
+        <input type="text" ng-model="roomAdded.roomId" name="roomId" ng-maxlength="5" required><!--点击增加后自动获得焦点-->
+            <span style="color:red" ng-show="formRoom.roomId.$dirty && formRoom.roomId.$invalid">
+                <span ng-show="formRoom.roomId.$error.maxlength">最大长度是5</span>
+                <span ng-show="formRoom.roomId.$error.required">房号是必需的</span>
+            </span>
+        <input type="text" ng-model="roomAdded.area" required name="area">
+            <span style="color:red" ng-show="formRoom.area.$dirty && formRoom.area.$invalid">
+                <span ng-show="formRoom.area.$error.maxlength">最大长度是2</span>
+                <span ng-show="formRoom.area.$error.required">楼区是必需的</span>
+            </span>
+        <input type="text" ng-model="roomAdded.roomCategory" required name="roomCategory">
+        <input type="text" ng-model="roomAdded.price" required name="price">
+            <span style="color:red" ng-show="formRoom.price.$dirty && formRoom.price.$invalid">
+                <span ng-show="formRoom.price.$error.required">房价是必需的</span>
+            </span>
+        <input type="text" ng-model="roomAdded.breakfast" required name="breakfast">
+            <span style="color:red" ng-show="formRoom.breakfast.$dirty && formRoom.breakfast.$invalid">
+                <span ng-show="formRoom.breakfast.$error.required">房间床位是必需的</span>
+            </span>
+        <input type="text" ng-model="roomAdded.totalBed" required name="totalBed">
+            <span style="color:red" ng-show="formRoom.totalBed.$dirty && formRoom.totalBed.$invalid">
+                <span ng-show="formRoom.totalBed.$error.required">房间床位是必需的</span>
+            </span>
+        <input type="submit" value="增加" ng-disabled="formRoom.$invalid">
+    </form>
+    <div>客源</div>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>客源编码</td>
+            <td>客源名称</td>
+        </tr>
+        <tr ng-repeat="r in guestSources">
+            <td><input ng-readonly="true" ng-model="r.id"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.sourceCode"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.sourceName"></td>
+            <td>
+                <button ng-click="updateClick(r)" ng-if="r.checked==null">编辑</button>
+                <button ng-click="updateGuestSource(r)" ng-if="r.checked=='true'">提交</button>
+                <button ng-click="deleteGuestSource(r)">删除</button>
+            </td>
+        </tr>
+    </table>
+    <form name="formGuestSource" ng-submit="createGuestSource()">
+        <input ng-model="guestSourceAdded.id" readonly>
+        <input type="text" ng-model="guestSourceAdded.sourceCode" name="sourceCode" ng-maxlength="4" required><!--点击增加后自动获得焦点-->
+            <span style="color:red" ng-show="formGuestSource.sourceCode.$dirty && formGuestSource.sourceCode.$invalid">
+                <span ng-show="formGuestSource.sourceCode.$error.maxlength">最大长度是4</span>
+                <span ng-show="formGuestSource.sourceCode.$error.required">客源编码是必需的</span>
+            </span>
+        <input type="text" ng-model="guestSourceAdded.sourceName" required name="sourceName">
+            <span style="color:red" ng-show="formGuestSource.sourceName.$dirty && formGuestSource.sourceName.$invalid">
+                <span ng-show="formGuestSource.sourceName.$error.required">客源名称是必需的</span>
+            </span>
+        <input type="submit" value="增加" ng-disabled="formGuestSource.$invalid">
+    </form>
+    <div>币种</div>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>币种编码</td>
+            <td>币种名称</td>
+        </tr>
+        <tr ng-repeat="r in currencies">
+            <td><input ng-readonly="true" ng-model="r.id"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.currencyCode"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.currencyName"></td>
+            <td>
+                <button ng-click="updateClick(r)" ng-if="r.checked==null">编辑</button>
+                <button ng-click="updateCurrency(r)" ng-if="r.checked=='true'">提交</button>
+                <button ng-click="deleteCurrency(r)">删除</button>
+            </td>
+        </tr>
+    </table>
+    <form name="formCurrency" ng-submit="createCurrency()">
+        <input ng-model="currencyAdded.id" readonly>
+        <input type="text" ng-model="currencyAdded.currencyCode" name="currencyCode" ng-maxlength="4" required><!--点击增加后自动获得焦点-->
+            <span style="color:red" ng-show="formCurrency.currencyCode.$dirty && formCurrency.currencyCode.$invalid">
+                <span ng-show="formCurrency.currencyCode.$error.maxlength">最大长度是4</span>
+                <span ng-show="formCurrency.currencyCode.$error.required">客源编码是必需的</span>
+            </span>
+        <input type="text" ng-model="currencyAdded.currencyName" required name="currencyName">
+            <span style="color:red" ng-show="formCurrency.currencyName.$dirty && formCurrency.currencyName.$invalid">
+                <span ng-show="formCurrency.currencyName.$error.required">客源名称是必需的</span>
+            </span>
+        <input type="submit" value="增加" ng-disabled="formCurrency.$invalid">
+    </form>
+    <div>核心参数</div>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>参数编码</td>
+            <td>参数数值</td>
+            <td>参数说明</td>
+        </tr>
+        <tr ng-repeat="r in otherParams">
+            <td><input ng-readonly="true" ng-model="r.id"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.otherParamCode"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.otherParamValue"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.otherParamDescription"></td>
+            <td>
+                <button ng-click="updateClick(r)" ng-if="r.checked==null">编辑</button>
+                <button ng-click="updateOtherParam(r)" ng-if="r.checked=='true'">提交</button>
+                <button ng-click="deleteOtherParam(r)">删除</button>
+            </td>
+        </tr>
+    </table>
+    <form name="formOtherParam" ng-submit="createOtherParam()">
+        <input ng-model="otherParamAdded.id" readonly>
+        <input type="text" ng-model="otherParamAdded.otherParamCode" name="otherParamCode" ng-maxlength="4" required><!--点击增加后自动获得焦点-->
+            <span style="color:red" ng-show="formOtherParam.otherParamCode.$dirty && formOtherParam.otherParamCode.$invalid">
+                <span ng-show="formOtherParam.otherParamCode.$error.maxlength">最大长度是4</span>
+                <span ng-show="formOtherParam.otherParamCode.$error.required">编码是必需的</span>
+            </span>
+        <input type="text" ng-model="otherParamAdded.otherParamValue" required name="otherParamValue">
+            <span style="color:red" ng-show="formOtherParam.otherParamValue.$dirty && formOtherParam.otherParamValue.$invalid">
+                <span ng-show="formOtherParam.otherParamValue.$error.required">编码值是必需的</span>
+            </span>
+        <input type="text" ng-model="otherParamAdded.otherParamDescription" name="otherParamDescription">
+        <input type="submit" value="增加" ng-disabled="formOtherParam.$invalid">
+    </form>
+    <div>协议价定义</div>
+    <table>
+        <tr>
+            <td>序号</td>
+            <td>协议代码</td>
+            <td>协议名称</td>
+            <td>房间类别</td>
+            <td>房间价格</td>
+            <td>早餐标志</td>
+        </tr>
+        <tr ng-repeat="r in protocols">
+            <td><input ng-readonly="true" ng-model="r.id"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.protocolCode"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.protocolName"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.roomCategory"></td><!--下拉-->
+            <td><input ng-readonly="r.checked==null" ng-model="r.roomPrice"></td>
+            <td><input ng-readonly="r.checked==null" ng-model="r.breakfast"></td><!--下拉-->
+            <td>
+                <button ng-click="updateClick(r)" ng-if="r.checked==null">编辑</button>
+                <button ng-click="updateProtocol(r)" ng-if="r.checked=='true'">提交</button>
+                <button ng-click="deleteProtocol(r)">删除</button>
+            </td>
+        </tr>
+    </table>
+    <form name="formProtocol" ng-submit="createProtocol()">
+        <input ng-model="protocolAdded.id" readonly>
+        <input type="text" ng-model="protocolAdded.protocolCode" name="protocolCode" ng-maxlength="5" required><!--点击增加后自动获得焦点-->
+            <span style="color:red" ng-show="formProtocol.protocolCode.$dirty && formProtocol.protocolCode.$invalid">
+                <span ng-show="formProtocol.protocolCode.$error.maxlength">最大长度是5</span>
+                <span ng-show="formProtocol.protocolCode.$error.required">房号是必需的</span>
+            </span>
+        <input type="text" ng-model="protocolAdded.protocolName" required name="protocolName">
+            <span style="color:red" ng-show="formProtocol.protocolName.$dirty && formProtocol.protocolName.$invalid">
+                <span ng-show="formProtocol.protocolName.$error.maxlength">最大长度是2</span>
+                <span ng-show="formProtocol.protocolName.$error.required">楼区是必需的</span>
+            </span>
+        <input type="text" ng-model="protocolAdded.roomCategory" required name="roomCategory"><!--下拉-->
+        <input type="text" ng-model="protocolAdded.roomPrice" required name="roomPrice">
+            <span style="color:red" ng-show="formProtocol.roomPrice.$dirty && formProtocol.roomPrice.$invalid">
+                <span ng-show="formProtocol.roomPrice.$error.required">房价是必需的</span>
+            </span>
+        <input type="text" ng-model="protocolAdded.breakfast" required name="breakfast">
+            <span style="color:red" ng-show="formProtocol.breakfast.$dirty && formProtocol.breakfast.$invalid"><!--下拉-->
+                <span ng-show="formProtocol.breakfast.$error.required">房间床位是必需的</span>
+            </span>
+        <input type="submit" value="增加" ng-disabled="formProtocol.$invalid">
+    </form>
+    <div>单位签单人</div>
+    <table>
+        <tr>
+            <td>单位编码</td>
+            <td>签单人编码</td>
+            <td>签单人姓名</td>
+        </tr>
+        <tr ng-repeat="cl in ctrl.companyLords">
+            <td ng-bind="cl.companyCode"></td>
+            <td ng-bind="cl.lordCode"></td>
+            <td ng-bind="cl.lordName"></td>
+        </tr>
+    </table>
+    <div>单位帐卡</div>
+    <table>
+        <tr>
+            <td>单位编码</td>
+            <td>单位名称</td>
+        </tr>
+        <tr ng-repeat="cc in ctrl.companyCards">
+            <td ng-bind="cc.companyCode"></td>
+            <td ng-bind="cc.companyName"></td>
+        </tr>
+    </table>
+</div>

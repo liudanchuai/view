@@ -159,8 +159,8 @@ App.controller('MainController', ['$scope','$compile', 'Service', 'Util', functi
         //开始排序,先判断房间状态有没有选择，有选择的话要包含上
         $scope.roomSortBy();
     };
-    /*左键单击房间开房*/
-    $scope.GuestIn = function (r) {
+    /*鼠标移动进入房态框时触发*/
+    $scope.mouseIn = function (r) {
         $scope.room = angular.copy(r);
     };
     /**

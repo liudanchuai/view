@@ -1,44 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>房态预览</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
-    <link rel="stylesheet" href="../css/jquery.contextmenu.css"/>
-    <link rel="stylesheet" href="../css/indexRoomState.css"/>
-    <link rel="stylesheet" href="../css/public/common.css">
-    <link rel="stylesheet" href="../css/public/left.css"/>
-    <link rel="stylesheet" href="../css/public/top.css"/>
-    <link href="../css/popup.css" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="../myjs/jquery.datetimepicker.css"/>
-
-    <!--jquery-->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../myjs/jquery.datetimepicker.js"></script>
-
-    <!--AngularJS-->
-    <script src="angular.js"></script>
-    <script src="app.js"></script>
-    <script src="service/service.js"></script>
-    <script src="service/util.js"></script>
-    <script src="directive/szPop.js"></script>
-    <script src="directive/szBack.js"></script>
-    <script src="directive/common.js"></script>
-    <script src="directive/myJquery.js"></script>
-    <script src="mainController.js"></script>
-    <script src="login/loginController.js"></script>
-    <script src="GuestIn/GuestInController.js"></script>
-</head>
-
-<body ng-app="mainApp">
-
-<div id="lefbox" style="width: 265px; height:100%; float: left">
-
-</div>
 
 <!--main-container-part-->
-<div id="content" ng-controller="MainController">
+<div id="content">
     <div id="topbox">
 
     </div>
@@ -49,7 +11,7 @@
     <!--Filter begin-->
     <div class="saixuanbox">
         <ul class="userbox">
-            <a title="" href="../login.html"><i class="icon-user"></i> <span class="text">操作员设置</span></a>
+            <a title="" href="#settings"><i class="icon-user"></i> <span class="text">操作员设置</span></a>
             <a title="" href="../login.html"><i class="icon-signout"></i><span>退出</span></a>
         </ul>
         <ul class="saixuanul">
@@ -86,7 +48,7 @@
 
     <!--房态预览 begin-->
     <ul class="mainRoomState">
-        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" sz-pop="GuestIn/GuestIn.html" ng-mouseenter="GuestIn(r)">
+        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" sz-pop="GuestIn/GuestIn.html" ng-mouseenter="mouseIn(r)">
             <ul>
                 <li ng-bind="r.roomId" ></li>
                 <li ng-bind="r.roomCategoryShow"></li>
@@ -110,11 +72,6 @@
     </ul>
     <!--房态预览 end-->
 </div>
-
-<!--end-main-container-part-->
-
-<!--Footer-part-->
-<div id="botbox"></div>
-
-</body>
-</html>
+<button ng-click="popGuestIn=true">出现</button>
+<button ng-click="popGuestIn=false">关闭</button>
+<div ng-include="'GuestIn/GuestIn.html'" ng-if="popGuestIn" ng-init="popGuestIn=false"></div>

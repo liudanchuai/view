@@ -1,8 +1,8 @@
 'use strict';
 
-var App = angular.module('mainApp',[]);
-App.constant('host','http://192.168.0.102:8080');
-App.config(['$httpProvider', function($httpProvider) {
+var App = angular.module("mainApp", ['ngRoute']);
+App.constant('host', 'http://192.168.0.102:8080');
+App.config(['$httpProvider', function ($httpProvider) {
     //initialize get if not there
     if (!$httpProvider.defaults.headers.get) {
         $httpProvider.defaults.headers.get = {};
@@ -17,5 +17,23 @@ App.config(['$httpProvider', function($httpProvider) {
     $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
     $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
 }]);
-
+App.config(['$routeProvider',
+    function ($routeProvider) {
+        $routeProvider.
+            when('/addStudent', {
+                templateUrl: 'addStudent.html',
+                controller: 'AddStudentController'
+            }).
+            when('/viewStudents', {
+                templateUrl: '../app/indexRoomState.html',
+                controller: 'MainController'
+            }).
+            when('/settings', {
+                templateUrl: 'table.html',
+                controller:'ConfigureController'
+            }).
+            otherwise({
+                redirectTo: '/'
+            });
+    }]);
 

@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Angular JS Views</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../css/jquery.contextmenu.css"/>
+    <link rel="stylesheet" href="../css/indexRoomState.css"/>
+    <link rel="stylesheet" href="../css/public/common.css">
+    <link rel="stylesheet" href="../css/public/left.css"/>
+    <link rel="stylesheet" href="../css/public/top.css"/>
+    <link href="../css/popup.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../myjs/jquery.datetimepicker.css"/>
+    <script src="../AngularJS/angular.js"></script>
+    <script src="../AngularJS/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="service/service.js"></script>
+    <script src="service/util.js"></script>
+    <script src="directive/szPop.js"></script>
+    <script src="directive/szBack.js"></script>
+    <script src="directive/common.js"></script>
+    <script src="directive/myJquery.js"></script>
+    <script src="mainController.js"></script>
+    <script src="indexController.js"></script>
+    <script src="login/loginController.js"></script>
+    <script src="GuestIn/GuestInController.js"></script>
+    <script src="controller/configureController.js"></script>
 </head>
-<body>
+<body  ng-app="mainApp">
+<h2>AngularJS Sample Application</h2>
+<div ng-controller="Index">
+    <p><a href="#addStudent">Add Student{{2+2}}</a></p>
+    <p><a href="#viewStudents">View Students</a></p>
+    <div ng-view></div>
+</div>
 
 </body>
 </html>
