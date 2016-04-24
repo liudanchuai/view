@@ -11,6 +11,7 @@
     <select ng-model="" ng-options="a.name for a in animals">
         <option value="">请选择你的萌宠</option>
     </select>
+    <button ng-click="asd()">asd</button>
     <select ng-model="seleted" ng-options="(a.name + '的爱好是' + a.favor) group by a.sex for a in animals | filter: myFilter">
         <option value="">请选择你的萌宠</option>
     </select>
@@ -22,6 +23,9 @@
     var app = angular.module('OptionApp', []);
     app.controller('OptionCtrl', ['$scope', function($scope){
         $scope.seleted = '';
+        $scope.asd=function(){
+            alert($scope.seleted.name);
+        }
         $scope.myFilter=function(item){
           return item.name=='猫';
         };

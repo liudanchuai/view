@@ -6,6 +6,7 @@ App.directive('szBack', function () {
     return function (scope, element, attrs) {
         element.bind("click", function () {
             angular.element(document.getElementById('sz-popup-frame')).remove();
+            angular.element(document.getElementsByClassName('xdsoft_noselect')).remove();
         });
     }
 });

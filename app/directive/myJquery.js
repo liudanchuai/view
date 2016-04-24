@@ -24,7 +24,7 @@ var jqAddCustomer=function(){
     }
     var trobj = $($("#divEditRow tbody").html());
     $(".ruzhu tbody").append(trobj);
-}
+};
 
 function RowDelete(obj) {
     var trobj = $(obj).parent().parent();

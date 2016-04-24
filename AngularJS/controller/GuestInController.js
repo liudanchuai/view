@@ -74,6 +74,7 @@ App.controller('GuestInController',['$scope','Service', function ($scope, Servic
     };
     /*开房*/
     $scope.guestIn=function(){
+        $scope.roomPriceCategory=$scope.roomPriceCategory.code;
         Service.doAction('guestIn')
             .then(
             function(d){

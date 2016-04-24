@@ -3,87 +3,132 @@
  */
 'use strict';
 
-App.controller('GuestInController',['$scope','Service','Util', function ($scope, Service,Util) {
+App.controller('GuestInController',['$scope','$filter','Service','Util', function ($scope,$filter, Service,Util) {
     /**
      * 用于提交的对象
      */
+    /*对象集合*/
+    $scope.guestIn={};
     /*在店户籍数组和对象*/
     $scope.checkInList=[];
     $scope.checkIn={};
     /*同住宾客数组*/
     $scope.checkInSameList=[];
+    $scope.checkInSame={};
     /*押金数组*/
     $scope.debtList=[];
-    /*操作员日志对象*/
-    $scope.userLog={};
-    /**
-     * 用于显示不提交的对象
-     */
-    /*房间类别*/
-    $scope.roomCategory=sessionStorage.getItem("categoryName");//中文名
     /**
      * 初始化数据
      */
-
     $scope.onLoad=function(){
-        $scope.checkIn.roomId=sessionStorage.getItem("roomId");
-        /*获得客源数组*/
-        Service.getAllByPath('guestSource')
-            .then(
-            function (d) {
-                $scope.guestSource = d;
-            },
-            function (errResponse) {
-                alert(errResponse.data.message);
-            }
-        );
-        /*获得协议价数组*/
-        Service.getAllByPath('protocol')
-            .then(
-            function (d) {
-                $scope.protocol = d;
-            },
-            function (errResponse) {
-                alert(errResponse.data.message);
-            }
-        );
-        /*获得房租方式数组*/
-        Service.getAllByPath('roomPriceCategory')
-            .then(
-            function (d) {
-                $scope.roomPriceCategory = d;
-            },
-            function (errResponse) {
-                alert(errResponse.data.message);
-            }
-        );
         /*获取当前时间*/
-        $scope.getNowTime();
-    };
-    /*获取当前时间*/
-    $scope.getNowTime=function(){
         Service.getAllByPath('time')
             .then(
             function(d){
+                /*押金对象，在这初始化*/
+                $scope.debt={};
                 $scope.now= d.nowTime;
+                $scope.checkIn.leaveTime=$scope.now;
+                $scope.checkIn.reachTime=$scope.now;
+                $scope.debt.doTime=$scope.now;
+                $scope.userLog.actionTime=$scope.now;
             },
             function (errResponse) {
                 alert(errResponse.data.message);
             }
-        )
+        );
+        /*获取checkIn对象*/
+        $scope.guestSource={
+            sourceName:'散客',
+            sourceCode:'SK'
+        };
+        $scope.protocol={
+            protocolName:'门市价',
+            protocolCode:'MS'
+        };
+        $scope.roomPriceCategory={
+            name:'日租房',
+            code:'DAY'
+        };
+        $scope.cardCategory={
+            name:'身份证',
+            code:'IdCard'
+        };
+    };
+    $scope.onLoad();
+    /**
+     * 界面上用到的方法
+     */
+    /*房号输入框改变之后改变room对象*/
+    $scope.roomIdChanged= function(){
+        var temp=Util.getValueByField($scope.rooms,'roomId',$scope.room.roomId);
+        if(temp) {
+            $scope.room = angular.copy(temp);
+            $scope.somethingWrong=false;
+        }else{
+            /*乱输入房号无法开房*/
+            $scope.somethingWrong=true;
+        }
+    };
+    /*增加随行宾客*/
+    $scope.addCheckInSame=function(){
+        if($scope.checkInSameList.length<$scope.room.totalBed-1) {
+            $scope.checkInSameList.push(angular.copy($scope.checkInSame));
+        }else{
+            alert("该房床位数为"+$scope.room.totalBed);
+        }
+    };
+    /*弹出随行宾客*/
+    $scope.delCheckInSame=function(){
+        $scope.checkInSameList.pop();
     };
     /*开房*/
-    $scope.guestIn=function(){
-        Service.doAction('guestIn')
+    $scope.guestInAction=function(){
+        /*封装要提交的对象*/
+        /*在店户籍对象，因为是散客开房只有一个*/
+        $scope.checkIn.roomPriceCategory=$scope.roomPriceCategory.code;
+        $scope.checkIn.protocolCode=$scope.protocol.protocolCode;
+        $scope.checkIn.sourceCode=$scope.guestSource.sourceCode;
+        $scope.checkIn.cardType=$scope.cardCategory.code;
+        $scope.checkIn.finalRoomPrice=$scope.room.price;
+        $scope.checkIn.roomId=$scope.room.roomId;
+        $scope.checkIn.gOrS='S';
+        $scope.checkIn.breakfast=$scope.room.breakfast;
+        $scope.checkIn.userId=$scope.user.userId;
+
+        /*在店户籍数组*/
+        $scope.checkInList.push($scope.checkIn);
+        $scope.guestIn.checkInList=$scope.checkInList;
+        /*同行房客数组*/
+        $scope.guestIn.checkInSameList=$scope.checkInSameList;
+        /*开房押金数组*/
+        $scope.debt.posNumber='100';
+        $scope.debt.consume=0;
+        $scope.debt.deposit=$scope.checkIn.checkInDeposit;
+        $scope.debt.description='押金';
+        $scope.debt.groupAccount=0;
+        $scope.debt.roomId=$scope.room.roomId;
+        $scope.debt.priceCode=$scope.checkIn.protocolCode;
+        $scope.debt.userId=$scope.user.userId;
+        $scope.debtList.push(angular.copy($scope.debt));
+        $scope.guestIn.debtList=$scope.debtList;
+        /*操作员日志对象*/
+        $scope.userLog.userId=$scope.user.userId;
+        $scope.userLog.userAction='开房:'+$scope.room.roomId+' 押金:'+$scope.checkIn.checkInDeposit;
+        $scope.userLog.userCategory='KF';
+        $scope.guestIn.userLog=$scope.userLog;
+
+        Service.doAction('guestIn',$scope.guestIn)
             .then(
             function(d){
-
+                /*开房成功转换房态*/
+                $scope.$emit('refresh');
+                /*关闭该页面*/
+                angular.element(document.getElementById('sz-popup-frame')).remove();
             },
             function(errResponse){
                 alert(errResponse.data.message);
             }
         )
     };
-    $scope.$emit('room',{qwe:'999',asd:'666'});
-    $scope.onLoad();
 }]);
