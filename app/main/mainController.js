@@ -94,10 +94,12 @@ App.controller('MainController', ['$scope', 'Service', 'Util', function ($scope,
         //开始排序,先判断房间状态有没有选择，有选择的话要包含上
         $scope.roomSortBy();
     };
-    /*鼠标移动进入房态框时触发*/
+    /*鼠标左键单击开放时间*/
     $scope.clickGuestIn = function (r) {
-        $scope.room = angular.copy(r);
-        $scope.popGuestIn = true;
+        if(r.state=='V'|| r.state=='L') {
+            $scope.room = angular.copy(r);
+            $scope.popGuestIn = true;
+        }
     };
     /**
      * 私有方法

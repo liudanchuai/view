@@ -69,6 +69,21 @@ App.controller('Index',['$scope','Service','Util', function($scope,Service,Util)
                 alert(errResponse.data.message);
             }
         );
+        /*获取小时房定义*/
+        Service.getAllByPath('hourRoom')
+            .then(
+            function(d){
+                $scope.hourRooms=d;
+            },
+            function(errResponse){
+                alert(errResponse.data.message);
+            }
+        );
+        /**
+         * 常量数组
+         */
+        /*性别*/
+        $scope.sexes=['男','女'];
     };
     $scope.onLoad();
 }]);

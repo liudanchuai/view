@@ -16,6 +16,15 @@ App.factory('Util', ['Service', function (Service) {
                 }
             }
             return false;
+        },
+        getHourRoomByProtocolAndRoomCategory:function(hourRooms,protocolCode,roomCategory){
+            var l=hourRooms.length;
+            for(var i=0;i<l;i++){
+                if(hourRooms[i].protocolCode==protocolCode && hourRooms[i].roomCategory==roomCategory){
+                    return hourRooms[i];
+                }
+            }
+            return false;
         }
     };
 }]);

@@ -34,28 +34,15 @@ App.controller('GuestInController',['$scope','$filter','Service','Util', functio
                 alert(errResponse.data.message);
             }
         );
-        /*获取checkIn对象*/
-        $scope.guestSource={
-            sourceName:'散客',
-            sourceCode:'SK'
-        };
-        $scope.protocol={
-            protocolName:'门市价',
-            protocolCode:'MS'
-        };
-        $scope.roomPriceCategory={
-            name:'日租房',
-            code:'DAY'
-        };
-        $scope.cardCategory={
-            name:'身份证',
-            code:'IdCard'
-        };
     };
     $scope.onLoad();
     /**
      * 界面上用到的方法
      */
+    /*协议房价过滤器*/
+    $scope.protocolFilter=function(item){
+        return item.roomCategory==$scope.room.roomCategory;
+    };
     /*房号输入框改变之后改变room对象*/
     $scope.roomIdChanged= function(){
         var temp=Util.getValueByField($scope.rooms,'roomId',$scope.room.roomId);
@@ -64,13 +51,34 @@ App.controller('GuestInController',['$scope','$filter','Service','Util', functio
             $scope.somethingWrong=false;
         }else{
             /*乱输入房号无法开房*/
+            $scope.wrongMessage='输入的房号不存在';
             $scope.somethingWrong=true;
+        }
+    };
+    /*改变房价协议和房租方式之后改变room.price*/
+    $scope.resetRoomPriceAndBreakfast=function(){
+        if($scope.roomPriceCategory.code=='day'){
+            $scope.room.price=$scope.protocol.roomPrice;
+            $scope.room.breakfast=$scope.protocol.breakfast;
+            $scope.somethingWrong=false;
+        }else if($scope.roomPriceCategory.code=='hour'){
+            var hourRoom=Util.getHourRoomByProtocolAndRoomCategory($scope.hourRooms,$scope.protocol.protocolCode,$scope.room.roomCategory);
+            if(hourRoom){
+                $scope.room.price=hourRoom.basePrice+'('+hourRoom.baseTime+')'+'+'+hourRoom.stepPrice+'('+hourRoom.stepTime+')';
+                $scope.somethingWrong=false;
+            }else{
+                $scope.wrongMessage='该类对应的房价协议不存在小时房计费方式';
+                $scope.somethingWrong=true;
+            }
+            $scope.room.breakfast=0;
         }
     };
     /*增加随行宾客*/
     $scope.addCheckInSame=function(){
         if($scope.checkInSameList.length<$scope.room.totalBed-1) {
+            $scope.checkInSame.cardType=$scope.cardCategoryInSame.code;
             $scope.checkInSameList.push(angular.copy($scope.checkInSame));
+            $scope.checkInSame=null;
         }else{
             alert("该房床位数为"+$scope.room.totalBed);
         }
@@ -110,16 +118,17 @@ App.controller('GuestInController',['$scope','$filter','Service','Util', functio
         $scope.debt.consume=0;
         $scope.debt.deposit=$scope.checkIn.checkInDeposit;
         $scope.debt.description='押金';
+        $scope.debt.currencyCode=$scope.currency.currencyCode;
         $scope.debt.groupAccount=0;
+        $scope.debt.selfAccount=0;
         $scope.debt.roomId=$scope.room.roomId;
-        $scope.debt.priceCode=$scope.checkIn.protocolCode;
+        $scope.debt.protocolCode=$scope.checkIn.protocolCode;
         $scope.debt.userId=$scope.user.userId;
-        $scope.debtList.push(angular.copy($scope.debt));
-        $scope.guestIn.debtList=$scope.debtList;
+        $scope.guestIn.debt=$scope.debt;
         /*操作员日志对象*/
         $scope.userLog.userId=$scope.user.userId;
         $scope.userLog.userAction='开房:'+$scope.room.roomId+' 押金:'+$scope.checkIn.checkInDeposit;
-        $scope.userLog.userCategory='KF';
+        $scope.userLog.actionCategory='KF';
         $scope.guestIn.userLog=$scope.userLog;
 
         Service.doAction('guestIn',$scope.guestIn)

@@ -23,22 +23,24 @@
                     <td>客人来源：</td>
                     <td>
                         <select style="width: 131px;" ng-model="guestSource"
-                                ng-options="x.sourceName for x in guestSources">
-                            <option value="">散客</option>
+                                ng-options="x.sourceName for x in guestSources"
+                                ng-init="guestSource=guestSources[0]">
                         </select>
                     </td>
                     <td>房价协议：</td>
                     <td>
                         <select style="width: 148px;" ng-model="protocol"
-                                ng-options="x.protocolName for x in protocols">
-                            <option value="">门市价</option>
+                                ng-options="x.protocolName for x in protocols | filter: protocolFilter"
+                                ng-init="protocol=protocols[0]"
+                                ng-change="resetRoomPriceAndBreakfast()">
                         </select>
                     </td>
                     <td>房租方式：</td>
                     <td>
                         <select style="width: 130px;" ng-model="roomPriceCategory"
-                                ng-options="x.name for x in roomPriceCategories">
-                            <option value="">日租房</option>
+                                ng-options="x.name for x in roomPriceCategories"
+                                ng-init="roomPriceCategory=roomPriceCategories[0]"
+                                ng-change="resetRoomPriceAndBreakfast()">
                         </select>
                     </td>
                     <td>房价：</td>
@@ -72,41 +74,28 @@
                     <td><input type="text" name="name" style="width: 130px;" ng-model="checkIn.name"></td>
                     <td>证件类型：</td>
                     <td>
-                        <select ng-options="x.name for x in cardCategories" ng-model="cardCategory">
-                            <option value="">身份证</option>
+                        <select ng-options="x.name for x in cardCategories" ng-model="cardCategory" ng-init="cardCategory=cardCategories[0]">
                         </select>
                     </td>
                     <td>证件号码：</td>
-                    <td><input type="text" value="" style="width: 250px"></td>
+                    <td><input type="text" value="" style="width: 250px" ng-model="checkIn.cardId"></td>
                 </tr>
                 <tr>
                     <td>出生日期：</td>
-                    <td><input type="text" value="" style="width: 130px;" class="birthday datetimepicker_mask"></td>
+                    <td><input type="text" value="" style="width: 130px;" class="birthday datetimepicker_mask" ng-model="checkIn.birthday"></td>
                     <td>性别：</td>
                     <td>
-                        <select style="width: 120px;">
-                            <option value="女">女</option>
-                            <option value="男" selected="selected">男</option>
+                        <select style="width: 120px;" ng-model="checkIn.sex" ng-options="x for x in sexes" ng-init="checkIn.sex=sexes[0]">
                         </select>
                     </td>
                     <td>民族：</td>
                     <td>
-                        <select style="width: 158px;display: inline">
-                            <option value="汉族" selected="selected">汉族</option>
-                            <option value="阿昌族">阿昌族</option>
-                            <option value="白族">白族</option>
-                            <option value="保安族">保安族</option>
-                            <option value="布朗族">布朗族</option>
-                            <option value="布依族">布依族</option>
-                            <option value="朝鲜族">朝鲜族</option>
-                            <option value="达斡尔族">达斡尔族</option>
-                            <option value="傣族">傣族</option>
-                        </select>
+                        <input style="width: 158px;display: inline" ng-model="checkIn.race">
                     </td>
                 </tr>
                 <tr>
                     <td>地址：</td>
-                    <td colspan="5"><input type="text" value="" style="width: 770px;"></td>
+                    <td colspan="5"><input type="text" value="" style="width: 770px;" ng-model="checkIn.address"></td>
                 </tr>
             </table>
             <h1 class="addCustomerh1">
@@ -144,14 +133,13 @@
                             <input ng-model="checkInSame.birthday" type="text" value="" style="width: 80px;"
                                    class="datetimepicker_mask"></td>
                         <td>
-                            <input model="checkInSame.sex"/>
+                            <select ng-model="checkInSame.sex" ng-options="x for x in sexes" ng-init="checkInSame.sex=sexes[0]"></select>
                         </td>
                         <td>
-                            <input model="checkInSame.race"/>
+                            <input ng-model="checkInSame.race"/>
                         </td>
                         <td>
-                            <select ng-options="x.name for x in cardCategory" ng-model="cardCategory">
-                                <option value="">身份证</option>
+                            <select ng-options="x.name for x in cardCategories" ng-model="cardCategoryInSame" ng-init="cardCategoryInSame=cardCategories[0]">
                             </select>
                         </td>
                         <td>
@@ -173,8 +161,7 @@
                                style="width: 100px;"></td>
                     <td>支付方式：</td>
                     <td colspan="3">
-                        <select style="width: 130px;" ng-options="x.name for x in currencies" >
-                            <option value="">人民币</option>
+                        <select style="width: 130px;" ng-options="x.currencyName for x in currencies" ng-model="currency" ng-init="currency=currencies[0]">
                         </select>
                     </td>
                 </tr>
@@ -201,7 +188,7 @@
                 <div class="fl">
                     <input type="button" ng-click="test()" value="读取身份证"> &nbsp;<input type="checkbox" ng-model="checkIn.vip">是否贵宾
                 </div>
-                <div ng-show="somethingWrong">输入的房号不存在</div>
+                <div ng-show="somethingWrong" ng-bind="wrongMessage"></div>
                 <div class="fr">
                     <input type="button" ng-click="guestInAction()" value="确认付款" ng-disabled="somethingWrong">
                     <input type="button" class="sbegray" value="关闭" ng-click="closeGuestIn()">
