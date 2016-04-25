@@ -48,7 +48,7 @@
 
     <!--房态预览 begin-->
     <ul class="mainRoomState">
-        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" sz-pop="GuestIn/GuestIn.html" ng-mouseenter="mouseIn(r)">
+        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" ng-click="popGuestIn=true" ng-mouseenter="mouseIn(r)">
             <ul>
                 <li ng-bind="r.roomId" ></li>
                 <li ng-bind="r.roomCategoryShow"></li>

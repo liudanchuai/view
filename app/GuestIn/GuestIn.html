@@ -204,7 +204,7 @@
                 <div ng-show="somethingWrong">输入的房号不存在</div>
                 <div class="fr">
                     <input type="button" ng-click="guestInAction()" value="确认付款" ng-disabled="somethingWrong">
-                    <input type="button" class="sbegray" value="关闭" sz-back>
+                    <input type="button" class="sbegray" value="关闭" ng-click="closeGuestIn()">
                 </div>
             </dl>
         </div>

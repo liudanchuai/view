@@ -182,6 +182,10 @@ App.controller('MainController', ['$scope','$compile', 'Service', 'Util', functi
     /**
      * 广播接收
      */
+    /*关闭*/
+    $scope.$on('closeGuest',function(event,data){
+       $scope.popGuestIn=data;
+    });
     /*room*/
     $scope.$on('refresh', function (event) {
         $scope.onLoad();

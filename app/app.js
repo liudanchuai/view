@@ -1,7 +1,7 @@
 'use strict';
 
 var App = angular.module("mainApp", ['ngRoute']);
-App.constant('host', 'http://192.168.0.102:8080');
+App.constant('host', 'http://192.168.1.77:8080');
 App.config(['$httpProvider', function ($httpProvider) {
     //initialize get if not there
     if (!$httpProvider.defaults.headers.get) {
@@ -25,7 +25,7 @@ App.config(['$routeProvider',
                 controller: 'AddStudentController'
             }).
             when('/viewStudents', {
-                templateUrl: '../app/indexRoomState.html',
+                templateUrl: 'indexRoomState.html',
                 controller: 'MainController'
             }).
             when('/settings', {
@@ -33,7 +33,7 @@ App.config(['$routeProvider',
                 controller:'ConfigureController'
             }).
             otherwise({
-                redirectTo: '/'
+                redirectTo: '/viewStudents'
             });
     }]);
 

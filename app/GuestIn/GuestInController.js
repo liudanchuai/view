@@ -82,6 +82,10 @@ App.controller('GuestInController',['$scope','$filter','Service','Util', functio
     $scope.delCheckInSame=function(){
         $scope.checkInSameList.pop();
     };
+    /*关闭*/
+    $scope.closeGuestIn = function(){
+        $scope.$emit('closeGuest',false);
+    }
     /*开房*/
     $scope.guestInAction=function(){
         /*封装要提交的对象*/
