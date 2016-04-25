@@ -6,8 +6,8 @@ i { margin: 0px;
 select::-ms-expand { display: none; }
 table { border-collapse: collapse; border-spacing: 0px; font-size: 14px;}
 table,tr,td { margin: 0px; padding: 0px;}
-textarea { border: 1px solid #ccc; padding: 10px; line-height: 24px; overflow-y: auto; text-align: left; color: #555}
-input[type=text],select{ border: 1px solid #ccc; padding: 0px 5px; width: 70%; height:24px; line-height: 24px; color: #555; float: left}
+textarea { border: 1px solid #ccc; padding: 10px; line-height: 24px; overflow-y: auto; font-size: 14px; text-align: left; color: #555}
+input[type=text],select{ border: 1px solid #ccc; padding: 0px 5px; width: 70%; height:24px; line-height: 24px; color: #555; float: left; font-size: 14px;}
 option { color: #555; line-height: 24px; height: 24px;}
 input:hover, select:hover, textarea:hover,.inputCover {
     border-color: #66afe9 !important;
@@ -37,8 +37,8 @@ input[disabled=disabled],select[disabled=disabled]{
     padding: 0px;
     border: 1px solid #ccc;
     background: #eee;
-    width: 26px!important;
-    height: 26px;
+    width: 24px!important;
+    height: 24px;
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
@@ -275,7 +275,7 @@ table tr td:last-child{ border-right: none}
 .button .gray {background: linear-gradient(#ff8400, #a75a07);  color:#000; border: 1px solid #ccc}
 .button .red { background: linear-gradient(#a02121,#721010); color:#fff; border: 1px solid #ccc}*/
 
-.button {  background: none; margin-top: 20px; text-align: center; padding-top: 20px;}
+.button {  background: none; margin-top: 20px; text-align: center;border-top: 2px solid #c0cae3;  padding-top: 20px;}
 .button input[type=button],.button .sbegray { padding: 7px 20px; text-align: center; margin-right: 9px; border:1px solid #ba9761;
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
@@ -322,7 +322,7 @@ input.butn {
 
 .tableBlue th {
     font-size: 14px;
-    border-bottom: 1px #efd6a5 solid;
+    border-bottom: 1px #967040 solid;
     border-right: 1px #efd6a5 solid;
     height: 32px;
     background: #b79044;
@@ -335,6 +335,8 @@ input.butn {
     line-height: 28px;
     text-align: center;
     padding: 2px 5px;
+    font-size: 12px;
+
 }
 .tableBlue input,.tableBlue select{ width: 100%}
 

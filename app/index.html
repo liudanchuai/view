@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="../css/jquery.contextmenu.css"/>
     <link rel="stylesheet" href="../css/indexRoomState.css"/>
     <link rel="stylesheet" href="../css/public/common.css">
-    <link rel="stylesheet" href="../css/public/left.css"/>
-    <link rel="stylesheet" href="../css/public/top.css"/>
+    <link rel="stylesheet" href="../css/index.css">
     <link href="../css/popup.css" rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="../myjs/jquery.datetimepicker.css"/>
     <script src="../js/jquery.min.js"></script>
@@ -27,12 +26,71 @@
     <script src="login/loginController.js"></script>
     <script src="GuestIn/GuestInController.js"></script>
     <script src="setting/configureController.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function (){
+            $(".menubox a").each(function(index){
+                $(this).click(function(){
+                    $(".menubox a").removeClass("hover");
+                    $(".menubox a").eq(index).addClass("hover");
+                });
+            });
+        });
+    </script>
 </head>
 <body  ng-app="mainApp">
-<h2>AngularJS Sample Application</h2>
+<div class="topbox">
+    <div class="logo"><img src="../images/logo.png"></div>
+    <div class="menubox">
+        <a href="#viewStudents" class="hover">
+            <i class="icon-home"></i>
+            <h1>房态预览</h1>
+        </a>
+        <a href="#">
+            <i class="icon-lock"></i>
+            <h1>营销预定</h1>
+        </a>
+        <a href="#">
+            <i class="icon-laptop"></i>
+            <h1>前台管理</h1>
+        </a>
+        <a href="#">
+            <i class="icon-vip"></i>
+            <h1>会员系统</h1>
+        </a>
+        <a href="#">
+            <i class="icon-file-alt"></i>
+            <h1>报表系统</h1>
+        </a>
+        <a href="#">
+            <i class="icon-inbox"></i>
+            <h1>库存管理</h1>
+        </a>
+        <a href="#">
+            <i class="icon-bookmark-empty"></i>
+            <h1>协议单位</h1>
+        </a>
+        <a href="#">
+            <i class="icon-edit"></i>
+            <h1>应收应付</h1>
+        </a>
+        <a href="#settings">
+            <i class="icon-cog"></i>
+            <h1>系统参数</h1>
+        </a>
+        <a href="#">
+            <i class="icon-mobile-phone"></i>
+            <h1>移动终端</h1>
+        </a>
+        <a href="#">
+            <i class="icon-ota"></i>
+            <h1>OTA订单</h1>
+        </a>
+    </div>
+</div>
+
 <div ng-controller="Index">
-    <p><a href="#addStudent">Add Student{{2+2}}</a></p>
-    <p><a href="#viewStudents">View Students</a></p>
+    <!--<p><a href="#addStudent">Add Student{{2+2}}</a></p>
+    <p><a href="#viewStudents">View Students</a></p>-->
     <div ng-view></div>
 </div>
 

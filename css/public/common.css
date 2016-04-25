@@ -2,17 +2,17 @@
 * {  outline:none;}
 html,body { margin: 0px; padding: 0px;}
 /* webkit, opera, IE9 */
-::selection { background:none; }
-/* mozilla firefox */
-::-moz-selection { background:none; }
+/*::selection { background:none; }
+!* mozilla firefox *!
+::-moz-selection { background:none; }*/
 ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
+a,a:hover,a:active,a:checked,a:focus { text-decoration: none}
 .lv { color: #507b04}
 .hong { color: #670f0f}
 .lan { color: #085cb3}
 
 #content {
     background: none repeat scroll 0 0 #fff;
-    margin-left: 265px;
     margin-right: 0;
     padding-bottom: 25px;
     position: relative;
@@ -46,6 +46,9 @@ ul,li,dl,dt,dd { margin: 0px; padding: 0px;list-style: none}
 }
 .saixuanbox { padding: 10px 20px; margin: 20px 20px; font-size: 14px; height: auto; background: #6b8bdf; border-bottom: 10px solid #93a9e4; margin-top: 0px;}
 .saixuanbox input,.saixuanbox select,.saixuanbox textarea { background: rgba(255,255,255,0.15); margin-top: 3px; border: 1px solid #c5d1ff; color: #fff; box-shadow: none}
+.saixuanbox select { background:url(../../images/my_xiala1.png) no-repeat right!important; background-color:rgba(255,255,255,0.15)!important;appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none; height: 30px; line-height: 30px;}
 .saixuanbox select option { background: #fff; line-height: 20px; height: 20px; color:#666;}
 .saixuanbox input{ outline: none;}
 .saixuanbox input:focus { box-shadow: none; border: 1px solid #c5d1ff;}
@@ -90,7 +93,7 @@ input[type=checkbox],input[type=radio]{ margin-top: -2px; margin-right: 5px; out
 .fr{ float: right}
 .fl{ float: left}
 
-.button {  background: none; margin-top: 20px; text-align: center;border-top: 2px solid #c0cae3;  padding-top: 20px;}
+.button {  background: none; margin-top: 20px; text-align: center; padding-top: 20px;}
 .button input[type=button],.button a.sbe,.button a.sbeyellow { padding: 9px 20px; text-align: center; margin: 0px auto; margin-right: 10px; border:1px solid #bbb;
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
@@ -120,6 +123,19 @@ input[type=checkbox],input[type=radio]{ margin-top: -2px; margin-right: 5px; out
 .nameButton a { color: #705614;}
 .nameButton.hover,.nameButton:hover  { border: 2px solid #fff; background: #4666b9; color: #fff; font-weight: bold;}
 .nameButton.hover a,.nameButton:hover a { color: #fff;}
+
+
+
+.littleButton input[type=button]{ padding: 5px 12px; text-align: center; margin-right: 9px; border:1px solid #ba9761;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px; background: linear-gradient(#ffd777,#a16200);
+    color: #fff; cursor: pointer; font-weight: bold; margin-bottom: 10px;
+    -webkit-box-shadow: inset -1px -1px 0px #fff6d0,inset 1px 1px 0px #fff6d0;
+    -moz-box-shadow: inset -1px -1px 0px #fff6d0;
+    box-shadow:inset -1px 0px 0px #c2a16e, inset 0px -1px 0px #c2a16e,inset 1px 1px 0px #e2c089; margin-left: -10px}
+.littleButton input[type=button]:hover { background: linear-gradient(#a16200,#ffd777);}
+
 
 #np-pop-iframe {width: 100%; z-index: 9998; position: fixed; top: 0px; left: 0px; border: none; overflow: hidden; height: 100%;}
 #np-pop-iframe-print {width: 100%; z-index: 9999; position: fixed; top: 0px; left: 0px; border: none; overflow: hidden; height: 100%;}
