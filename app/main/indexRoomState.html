@@ -15,33 +15,20 @@
             <a title="" href="../../login.html"><i class="icon-signout"></i><span>退出</span></a>
         </ul>
         <ul class="saixuanul">
-            <li class="sxli">
-                <div class="my_xl sx_xl">
-                    <i class="icon-tasks lv"></i>
-                    <div class="my_xl_txt sx_xl_txt" ng-bind="roomCategory.name"></div>
-                    <div class="my_xl_btn"></div>
-                    <ul class="my_xl_list sx_xl_list">
-                        <li ng-repeat="c in roomCategories"
-                            ng-click="choiceRoomCategory(c)">
-                           <span>{{c.categoryName+'-'+c.categoryCode}}</span>
-                        </li>
-                    </ul>
-                </div>
+            <li class="sxtit">房间类别：</li>
+            <li class="sxli2">
+                <select style="width: 120px;" ng-model="roomCategory" ng-options="x.categoryName for x in roomCategories">
+                    <option value="">全部</option>
+                </select>
+
             </li>
-            <li class="sxli">
-                <div class="my_xl sx_xl">
-                    <i class="icon-check hong"></i>
-                    <div class="my_xl_txt sx_xl_txt" ng-bind="roomState.name"></div>
-                    <div class="my_xl_btn"></div>
-                    <ul class="my_xl_list sx_xl_list">
-                        <li ng-repeat="s in roomStates" ng-click="choiceRoomState(s)"><span>{{s.name}}</span></li>
-                    </ul>
-                </div>
+            <li class="sxtit">房间状态：</li>
+            <li class="sxli2">
+                <select style="width: 120px;">
+                    <option ng-repeat="s in roomStates">{{s.name}}</option>
+                </select>
             </li>
-            <li class="sxli">
-                    <i class="icon-refresh lan"></i>
-                    <div class="my_fresh">刷新全部房态</div>
-            </li>
+            <li class="sxli2 littleButton"><input type="button" value="刷新全部房态"></li>
         </ul>
     </div>
     <!--Filter end-->
@@ -67,8 +54,6 @@
                   <ul>你好文字</ul>
               </div>
         </li>
-
-
     </ul>
     <!--房态预览 end-->
 </div>

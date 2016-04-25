@@ -51,7 +51,7 @@
                 <tr>
                     <td>当前时间：</td>
                     <td>
-                        <input type="text" value="2016-05-22 10:00" disabled="disabled" style="width: 120px;"
+                        <input type="text" disabled="disabled" style="width: 130px;"
                                ng-model="checkIn.reachTime">
                     </td>
                     <td>预住天数：</td>
@@ -62,7 +62,7 @@
                     </td>
                     <td>预离时间：</td>
                     <td colspan="3">
-                        <input type="text" value="2016-05-23 10:00" style="width: 120px;"
+                        <input type="text" value="2016-05-23 10:00" style="width: 130px;"
                                ng-model="checkIn.leaveTime"
                                class="datetimepicker_mask">
                     </td>
@@ -103,7 +103,7 @@
             </h1>
 
             <div class="divOther none">
-                <table cellpadding="0" cellspacing="0" class="ruzhu tableBlue">
+                <table class="ruzhu tableBlue">
                     <thead>
                     <tr>
                         <th>姓名</th>
@@ -117,20 +117,20 @@
                     </tr>
                     </thead>
                     <tr ng-repeat="r in checkInSameList">
-                        <td><input ng-model="r.name"/></td>
-                        <td><input ng-model="r.birthday" style="width: 90px"/></td>
-                        <td><input ng-model="r.sex"/></td>
-                        <td><input ng-model="r.race"/></td>
-                        <td><input ng-model="r.cardType"/></td>
-                        <td><input ng-model="r.cardId" width="160"/></td>
-                        <td><input ng-model="r.address" width="180"/></td>
+                        <td><input type="text" ng-model="r.name"/></td>
+                        <td><input type="text" ng-model="r.birthday" style="width: 90px"/></td>
+                        <td><input type="text" ng-model="r.sex"/></td>
+                        <td><input type="text" ng-model="r.race"/></td>
+                        <td><input type="text" ng-model="r.cardType"/></td>
+                        <td><input type="text" ng-model="r.cardId" width="160"/></td>
+                        <td><input type="text" ng-model="r.address" width="180"/></td>
                         <td width="65"></td>
                     </tr>
                     <tr>
                         <td>
-                            <input ng-model="checkInSame.name" type="text" value="" style="width: 65px;"></td>
+                            <input ng-model="checkInSame.name" type="text" value=""></td>
                         <td>
-                            <input ng-model="checkInSame.birthday" type="text" value="" style="width: 80px;"
+                            <input ng-model="checkInSame.birthday" type="text" value="" style="width: 90px;"
                                    class="datetimepicker_mask"></td>
                         <td>
                             <select ng-model="checkInSame.sex" ng-options="x for x in sexes" ng-init="checkInSame.sex=sexes[0]"></select>
