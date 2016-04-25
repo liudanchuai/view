@@ -35,7 +35,7 @@
 
     <!--房态预览 begin-->
     <ul class="mainRoomState">
-        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" ng-click="clickGuestIn(r)">
+        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" ng-click="clickGuestIn(r)" sz-right-click ng-mouseenter="mouseEnter(r)">
             <ul>
                 <li ng-bind="r.roomId" ></li>
                 <li ng-bind="r.roomCategoryShow"></li>
@@ -57,4 +57,15 @@
     </ul>
     <!--房态预览 end-->
 </div>
-<div ng-include="'GuestIn/GuestIn.html'" ng-if="popGuestIn" ng-init="popGuestIn=false"></div>
+<!--右键菜单-->
+<!--需要创建一个透明的覆盖层防止鼠标mousein如其他的房态-->
+<div ng-if='mainStateOpened' style="background-color: #353cb7">
+    <ul>
+        <li ng-click="clickGuestOut()">离店结算</li>
+        <li ng-click="">收取预付</li>
+        <li ng-click="">房吧录入</li>
+    </ul>
+</div>
+<!--弹出界面-->
+<div ng-include="'guestIn/GuestIn.html'" ng-if="popGuestIn" ng-init="popGuestIn=false"></div>
+<div ng-include="'guestOut/leaveBalance.html'" ng-if="popGuestOut" ng-init="popGuestOut=false"></div>

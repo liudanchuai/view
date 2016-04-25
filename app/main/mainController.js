@@ -11,6 +11,8 @@ App.controller('MainController', ['$scope', 'Service', 'Util', function ($scope,
     /**
      * 声明基本变量
      */
+    /*是否打开右键菜单*/
+    $scope.opened=false;
     /*点选后选择的房间对象*/
     $scope.room = {};
     /*筛选后显示的房态*/
@@ -94,12 +96,20 @@ App.controller('MainController', ['$scope', 'Service', 'Util', function ($scope,
         //开始排序,先判断房间状态有没有选择，有选择的话要包含上
         $scope.roomSortBy();
     };
+    /*鼠标移动到盘态--用于右键菜单确定房间对象*/
+    $scope.mouseEnter=function(r){
+        $scope.room=angular.copy(r);
+    };
     /*鼠标左键单击开放时间*/
     $scope.clickGuestIn = function (r) {
         if(r.state=='V'|| r.state=='L') {
             $scope.room = angular.copy(r);
             $scope.popGuestIn = true;
         }
+    };
+    /*鼠标左键单击离店结算按钮*/
+    $scope.clickGuestOut=function(){
+        $scope.popGuestOut=true
     };
     /**
      * 私有方法
@@ -120,9 +130,19 @@ App.controller('MainController', ['$scope', 'Service', 'Util', function ($scope,
     /**
      * 广播接收
      */
-    /*关闭*/
+    /*右键菜单弹出*/
+    $scope.$on('mainStateOpened',function(event,data){
+        $scope.mainStateOpened=data;
+    });
+    /*关闭开房界面*/
     $scope.$on('closeGuest',function(event,data){
        $scope.popGuestIn=data;
+    });
+    /*打开离店结算界面*/
+    $scope.$on('popGuestOut',function(event,data){
+        $scope.popGuestOut=true;
+        $scope.room=data;
+        alert($scope.room.roomId);
     });
     /*room*/
     $scope.$on('refresh', function (event) {

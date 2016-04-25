@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../app/angular.js"></script>
+    <script>
+        var app = angular.module('app', []);
+
+        app.directive('contextMenu123', ['$window', function ($window) {
+            return {
+                restrict: 'A',
+                link: function ($scope, element, attrs) {
+                    $scope.opened = false;
+                    $scope.guestOut=function(){
+                    };
+                    $scope.takeDeposit=function(){
+                    };
+                    $scope.otherItem=function(){
+                    };
+                    element.bind('contextmenu', function (event) {
+                        $scope.$apply(function () {
+                            event.preventDefault();
+                            $scope.opened=true;
+                        });
+                    });
+                    angular.element($window).bind('click', function (event) {
+                        if ($scope.opened) {
+                            $scope.$apply(function () {
+                                event.preventDefault();
+                                $scope.opened=false;
+                            });
+                        }
+                    });
+                }
+            };
+        }]);
+    </script>
+</head>
+<body ng-app='app'>
+
+<div context-menu123 target='a' ng-init='model=[{name:"查看"},{name:"刷新"},{name:"点击"}]'>hello</div>
+
+<ul ng-if='opened' style="background-color: #353cb7">
+
+    <li ng-click="guestOut()">离店结算</li>
+    <li ng-click="takeDeposit()">收取预付</li>
+    <li ng-click="otherItem()">房吧录入</li>
+
+</ul>
+
+</body>
+</html>
