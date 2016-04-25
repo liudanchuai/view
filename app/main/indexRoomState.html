@@ -12,7 +12,7 @@
     <div class="saixuanbox">
         <ul class="userbox">
             <a title="" href="#settings"><i class="icon-user"></i> <span class="text">操作员设置</span></a>
-            <a title="" href="../login.html"><i class="icon-signout"></i><span>退出</span></a>
+            <a title="" href="../../login.html"><i class="icon-signout"></i><span>退出</span></a>
         </ul>
         <ul class="saixuanul">
             <li class="sxli">
@@ -48,7 +48,7 @@
 
     <!--房态预览 begin-->
     <ul class="mainRoomState">
-        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" ng-click="popGuestIn=true" ng-mouseenter="mouseIn(r)">
+        <li class="roomState" ng-repeat="r in roomsShow" id="{{r.roomId}}" ng-click="clickGuestIn(r)">
             <ul>
                 <li ng-bind="r.roomId" ></li>
                 <li ng-bind="r.roomCategoryShow"></li>

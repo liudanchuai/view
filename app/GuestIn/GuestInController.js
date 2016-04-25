@@ -1,5 +1,5 @@
 /**
- *
+ *开房提交guestIn对象，其中包括checkIn数组，checkInSameList数组，debtList数组，userLog对象
  */
 'use strict';
 
@@ -10,13 +10,10 @@ App.controller('GuestInController',['$scope','$filter','Service','Util', functio
     /*对象集合*/
     $scope.guestIn={};
     /*在店户籍数组和对象*/
-    $scope.checkInList=[];
     $scope.checkIn={};
     /*同住宾客数组*/
-    $scope.checkInSameList=[];
     $scope.checkInSame={};
-    /*押金数组*/
-    $scope.debtList=[];
+    $scope.checkInSameList=[];
     /**
      * 初始化数据
      */
@@ -84,10 +81,13 @@ App.controller('GuestInController',['$scope','$filter','Service','Util', functio
     };
     /*关闭*/
     $scope.closeGuestIn = function(){
+        angular.element(document.getElementsByClassName('xdsoft_noselect')).remove();
         $scope.$emit('closeGuest',false);
-    }
+    };
     /*开房*/
     $scope.guestInAction=function(){
+        $scope.checkInList=[];
+        $scope.debtList=[];
         /*封装要提交的对象*/
         /*在店户籍对象，因为是散客开房只有一个*/
         $scope.checkIn.roomPriceCategory=$scope.roomPriceCategory.code;
@@ -128,7 +128,7 @@ App.controller('GuestInController',['$scope','$filter','Service','Util', functio
                 /*开房成功转换房态*/
                 $scope.$emit('refresh');
                 /*关闭该页面*/
-                angular.element(document.getElementById('sz-popup-frame')).remove();
+                $scope.closeGuestIn();
             },
             function(errResponse){
                 alert(errResponse.data.message);

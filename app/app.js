@@ -25,11 +25,11 @@ App.config(['$routeProvider',
                 controller: 'AddStudentController'
             }).
             when('/viewStudents', {
-                templateUrl: 'indexRoomState.html',
+                templateUrl: 'main/indexRoomState.html',
                 controller: 'MainController'
             }).
             when('/settings', {
-                templateUrl: 'table.html',
+                templateUrl: 'setting/table.html',
                 controller:'ConfigureController'
             }).
             otherwise({

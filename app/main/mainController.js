@@ -7,11 +7,7 @@
  * roomsShow[i]/room.roomCategoryShow：由于房间定义只有房类代码，所以这里Show是用于显示的，也就是中文
  */
 
-App.controller('MainController', ['$scope','$compile', 'Service', 'Util', function ($scope,$compile, Service, Util) {
-    /**
-     * 调试期临时变量
-     */
-    $scope.user={};
+App.controller('MainController', ['$scope', 'Service', 'Util', function ($scope, Service, Util) {
     /**
      * 声明基本变量
      */
@@ -35,11 +31,6 @@ App.controller('MainController', ['$scope','$compile', 'Service', 'Util', functi
      * 初始化基础数据
      */
     $scope.onLoad =function() {
-        /*如果没有登录，先登录*/
-        if ($scope.user == null) {
-            angular.element(document.body).append('<div id="sz-popup-frame"></div>')
-            angular.element(document.getElementById('sz-popup-frame')).append($compile(angular.element('<div ng-include="\'login/login.html\'"></div>'))($scope));
-        }
         /*获取全部房间类别*/
         Service.getAllByPath('roomCategory').then(function (d) {
             $scope.roomCategories = d;
@@ -84,62 +75,6 @@ App.controller('MainController', ['$scope','$compile', 'Service', 'Util', functi
         }, function (errResponse) {
             alert(errResponse.data.message);
         });
-        /*获得客源数组*/
-        Service.getAllByPath('guestSource')
-            .then(
-            function (d) {
-                $scope.guestSources = d;
-                /*初始化Map*/
-                var l = $scope.guestSources.length;
-                for (var i = 0; i < l; i++) {
-                    Util.pushMapValue($scope.guestSources[i].sourceCode, $scope.guestSources[i].sourceName);
-                    Util.pushMapValue($scope.guestSources[i].sourceName, $scope.guestSources[i].sourceCode);
-                }
-            },
-            function (errResponse) {
-                alert(errResponse.data.message);
-            }
-        );
-        /*获得协议价数组*/
-        Service.getAllByPath('protocol')
-            .then(
-            function (d) {
-                $scope.protocols = d;
-            },
-            function (errResponse) {
-                alert(errResponse.data.message);
-            }
-        );
-        /*获得房租方式数组*/
-        Service.getAllByPath('roomPriceCategory')
-            .then(
-            function (d) {
-                $scope.roomPriceCategories = d;
-            },
-            function (errResponse) {
-                alert(errResponse.data.message);
-            }
-        );
-        /*获得证件类别数组*/
-        Service.getAllByPath('cardCategory')
-            .then(
-            function(d){
-                $scope.cardCategories=d;
-            },
-            function(errResponse){
-                alert(errResponse.data.message);
-            }
-        );
-        /*获得币种类别数组*/
-        Service.getAllByPath('currency')
-            .then(
-            function(d){
-                $scope.currencies=d;
-            },
-            function(errResponse){
-                alert(errResponse.data.message);
-            }
-        );
     };
     $scope.onLoad();
     /**
@@ -160,8 +95,9 @@ App.controller('MainController', ['$scope','$compile', 'Service', 'Util', functi
         $scope.roomSortBy();
     };
     /*鼠标移动进入房态框时触发*/
-    $scope.mouseIn = function (r) {
+    $scope.clickGuestIn = function (r) {
         $scope.room = angular.copy(r);
+        $scope.popGuestIn = true;
     };
     /**
      * 私有方法
