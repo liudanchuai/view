@@ -10,6 +10,8 @@
 .menubox a i.icon-bookmark-empty,.menubox a i.icon-edit,.menubox a i.icon-file-alt { font-size: 30px;}
 .menubox a i.icon-vip { background: url('../images/vipota.png') no-repeat 0px 10px;}
 .menubox a i.icon-ota { background: url('../images/vipota.png') no-repeat -47px 10px; width: 42px; height: 35px;}
+.menubox a.hover i.icon-vip { background: url('../images/vipotah.png') no-repeat 0px 10px;}
+.menubox a.hover i.icon-ota { background: url('../images/vipotah.png') no-repeat -47px 10px; width: 42px; height: 35px;}
 .menubox a h1 { font-size: 14px; margin: 0px; padding: 0px; text-align: center; line-height: 20px; font-weight: normal}
 .menubox a:hover { background: rgba(255,255,255,0.1);
     -webkit-box-shadow: inset 0px 0px 5px #eee;
