@@ -29,29 +29,3 @@ App.directive('szMinus', function () {
         });
     }
 });
-
-/*
-/!*展开 隐藏*!/
-App.directive('szToggle', function () {
-    return function (scope, element) {
-        element.bind("click", function () {
-            var other=angular.element(document.getElementsByClassName("divOther"));
-            var btnopen=angular.element(document.getElementsByClassName("btnOpen"));
-            var isOne = true;
-            if (other.is(":hidden")) {  //jquery
-                other.show();
-                btnopen.html('隐藏');
-                if(isOne){
-                    szAddCustomer="";
-                    isOne=false;
-                }
-            }
-            else {
-                other.hide();
-                btnopen.html('展开');
-            }
-        });
-    }
-});*/
-
-

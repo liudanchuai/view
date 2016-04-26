@@ -1,5 +1,22 @@
-<div class="bgblack" ng-click="closeGuestIn()">
-</div>
+<!doctype html>
+<html lang="zh-CN" ng-app="test" ng-app="test" ng-cloak>
+<head>
+    <meta charset="utf-8">
+
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <link href="jquery.datetimepicker.css" rel="stylesheet">
+    <script src="jquery.datetimepicker.js"></script>
+
+    <script src="angular.js"></script>
+    <script src="angular.datetime.js"></script>
+    <script src="test.js"></script>
+
+    <title>Test</title>
+</head>
+<body ng-controller="testCtrl">
 <div>
     <!-- 单击开房begin -->
     <!--<div class="bgblack" sz-back>
@@ -84,7 +101,7 @@
                 </tr>
                 <tr>
                     <td>出生日期：</td>
-                    <td><datetimepicker type="text" value="" style="width: 130px;" class="birthday" ng-model="checkIn.birthday"></datetimepicker></td>
+                    <td><input type="text" value="" style="width: 130px;" class="birthday datetimepicker_mask" ng-model="checkIn.birthday"></td>
                     <td>性别：</td>
                     <td>
                         <select style="width: 120px;" ng-model="checkIn.sex" ng-options="x for x in sexes" ng-init="checkIn.sex=sexes[0]">
@@ -200,6 +217,9 @@
 
     </div>
 </div>
+<datetimepicker ng-model="time23"  class="form-control"></datetimepicker>
+</body>
+</html>
 <!--<script>
     $('.datetimepicker_mask').datetimepicker({
 
