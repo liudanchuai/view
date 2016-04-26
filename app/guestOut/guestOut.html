@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>客人结账</title>
-    <link href="../css/popup.css" rel="stylesheet">
-
-</head>
-<body>
-<!-- 客人结账begin -->
-
-<div class="bgblack">
+<div class="bgblack" ng-click="closeGuestOut()">
 </div>
-
 <div class="tanchuang">
     <dl class="tctit"><h1>客人结账{{room.roomId}}</h1></dl>
     <div style="max-height: 530px; overflow-y: auto;">
@@ -100,19 +88,10 @@
             <input type="button" class="sbe" value="商品入账"><input type="button" class="sbe" value="费用入账"><input type="button" class="sbe" value="门锁清卡"><input type="button" class="sbe" value="退押金">
         </div>
         <div class="fr">
-            <input type="button" class="sbe" value="结账"><input type="button" class="sbe" value="打印"><input type="button" class="sbegray" value="关闭" ng-click="closeGuestIn()">
+            <input type="button" class="sbe" value="结账">
+            <input type="button" class="sbe" value="打印">
+            <input type="button" class="sbegray" value="关闭" ng-click="closeGuestOut()">
         </div>
     </dl>
 
 </div>
-<script src="../js/jquery.min.js"></script>
-<script type="text/javascript">
-    (function(){
-        $(".bgblack").on("click",function(){
-//$(window.parent.document.getElementById("np-pop-iframe")).remove();
-            $("#np-pop-iframe",window.parent.document).remove();
-        });
-    })(jQuery);
-</script>
-</body>
-</html>

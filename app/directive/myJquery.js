@@ -1,5 +1,6 @@
 /**
  * Created by Administrator on 2016-04-22.
+ *
  */
 var jqToggle=function(){
     var isOne = true;

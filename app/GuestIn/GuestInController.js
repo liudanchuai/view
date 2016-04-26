@@ -89,8 +89,7 @@ App.controller('GuestInController',['$scope','$filter','Service','Util', functio
     };
     /*关闭*/
     $scope.closeGuestIn = function(){
-        angular.element(document.getElementsByClassName('xdsoft_noselect')).remove();
-        $scope.$emit('closeGuest',false);
+        $scope.$emit('closePop','popGuestIn');
     };
     /*开房*/
     $scope.guestInAction=function(){

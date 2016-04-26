@@ -53,12 +53,10 @@
               <div class="hoverDiv">
                   <ul>你好文字</ul>
               </div>
-
         </li>
     </ul>
     <!--房态预览 end-->
 </div>
-
 <!--右键菜单-->
 <!--需要创建一个透明的覆盖层防止鼠标mousein如其他的房态-->
 <div id="rightClickMainState" style="display: none; position: absolute; width: 100px; height: 100px; background: #ccc; z-index: 99999">
@@ -68,7 +66,7 @@
         <li ng-click="">房吧录入</li>
     </ul>
 </div>
+<div class="bgblack" style="display: none;"></div>
 <!--弹出界面-->
-
-<div ng-include="'guestIn/GuestIn.html'" ng-if="popGuestIn" ng-init="popGuestIn=false"></div>
-<div ng-include="'guestOut/leaveBalance.html'" ng-if="popGuestOut" ng-init="popGuestOut=false"></div>
+<div ng-include="'guestIn/GuestIn.html'" ng-if="popGuestIn" ng-controller="GuestInController"></div>
+<div ng-include="'guestOut/guestOut.html'" ng-if="popGuestOut" ng-controller="GuestOutController"></div>

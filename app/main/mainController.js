@@ -1,10 +1,6 @@
 'use strict';
 /**
  * 主页控制器，主要负责初始化所有经常用到的系统参数,Service负责从服务器索取数据，Util提供一些本模块用到的方法
- * 通用的命名规则：根据实体类和表名(一样的)，复数形式为从服务器获取来的数组，单数形式为当前选中的正在操作的对象
- * 通用后缀Show：根据前边单词的单复数形式来判断是数组还是对象，主要负责用于显示的东西，不与持久层数据发生关系
- * 特殊变量--试题中不存在的变量：
- * roomsShow[i]/room.roomCategoryShow：由于房间定义只有房类代码，所以这里Show是用于显示的，也就是中文
  */
 
 App.controller('MainController', ['$scope', 'Service', 'Util', function ($scope, Service, Util) {
@@ -103,7 +99,6 @@ App.controller('MainController', ['$scope', 'Service', 'Util', function ($scope,
     /*鼠标左键单击开放时间*/
     $scope.clickGuestIn = function (r) {
         if(r.state=='V'|| r.state=='L') {
-            $scope.room = angular.copy(r);
             $scope.popGuestIn = true;
         }
     };
@@ -130,13 +125,9 @@ App.controller('MainController', ['$scope', 'Service', 'Util', function ($scope,
     /**
      * 广播接收
      */
-    /*右键菜单弹出*/
-    $scope.$on('mainStateOpened',function(event,data){
-        $scope.mainStateOpened=data;
-    });
-    /*关闭开房界面*/
-    $scope.$on('closeGuest',function(event,data){
-       $scope.popGuestIn=data;
+    /*弹窗界面关闭方法,data为弹窗div中ng-if对应的变量*/
+    $scope.$on('closePop',function(event,data){
+       $scope[data]=false;
     });
     /*打开离店结算界面*/
     $scope.$on('popGuestOut',function(event,data){
