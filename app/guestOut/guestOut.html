@@ -1,23 +1,23 @@
 <div class="bgblack" ng-click="closeGuestOut()">
 </div>
-<div class="tanchuang">
-    <dl class="tctit"><h1>客人结账{{room.roomId}}</h1></dl>
+<div class="tanchuang" ng-controller="GuestOutController">
+    <dl class="tctit"><h1>客人结账</h1></dl>
     <div style="max-height: 530px; overflow-y: auto;">
     <table class="tableBordernone">
         <tr>
             <td>入住单号：</td>
-            <td>201604250000</td>
+            <td ng-bind="checkIn.selfAccount">2</td>
             <td>房号：</td>
             <td>
-                <input type="text" style="width: 70px;" value="309">
-                <span style="font-size: 12px; margin-left: 10px;"><a href="#" style="margin-right: 10px;">读门锁卡</a> &nbsp; &nbsp;结账房间数：1间 &nbsp; &nbsp; 房号：102  &nbsp; &nbsp;<input type="checkbox">延迟退房</span>
+                <input type="text" style="width: 70px;" value="309" ng-model="room.roomId">
+                <span style="font-size: 12px; margin-left: 10px;"><a href="#" style="margin-right: 10px;">读门锁卡</a> &nbsp; &nbsp;结账房间数：1间 &nbsp; &nbsp; 房号：{{room.roomId}}  &nbsp; &nbsp;<input type="checkbox" ng-checked="ifRoomPriceAdd()" readonly>延迟退房</span>
             </td>
         </tr>
         <tr>
             <td>入住时间：</td>
-            <td>2016-04-25 11:00</td>
+            <td ng-bind="checkIn.reachTime">2016-04-25 11:00</td>
             <td>姓名：</td>
-            <td>无某某</td>
+            <td ng-bind="checkIn.name"></td>
         </tr>
     </table>
     <table class="tableBlue" style="width: 960px; margin-left: -10px;">
@@ -33,52 +33,40 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>309</td>
-            <td>房租</td>
-            <td>100.00</td>
-            <td></td>
-            <td>0.00</td>
-            <td>2016-04-25 11:03</td>
-            <td>自动加收房租</td>
-        </tr>
-        <tr>
-            <td>309</td>
-            <td>入住押金</td>
-            <td>0.00</td>
-            <td>现金</td>
-            <td>999.00</td>
-            <td>2016-04-25 11:03</td>
-            <td>入住押金</td>
+        <tr ng-repeat="r in debtList">
+            <td ng-bind="r.roomId"></td>
+            <td ng-bind="r.description"></td>
+            <td ng-bind="r.consume"></td>
+            <td ng-bind="r.currencyCode"></td>
+            <td ng-bind="r.deposit"></td>
+            <td ng-bind="r.doTime"></td>
+            <td>（准备不要）</td>
         </tr>
         </tbody>
     </table>
     <table class="tableBorderfff">
         <tr>
             <td style="width: 120px;">消费金额：</td>
-            <td><input type="text" value="100.00" disabled="disabled " style="width: 130px;"></td>
+            <td><input type="text" ng-model="checkIn.checkInConsume" disabled="disabled " style="width: 130px;"></td>
             <td>客人预付：</td>
-            <td><input type="text" value="999.00" disabled="disabled" style="width: 130px;"></td>
+            <td><input type="text" ng-model="checkIn.checkInDeposit" disabled="disabled" style="width: 130px;"></td>
             <td>本次应退：</td>
-            <td><input type="text" value="999.00" disabled="disabled" class="inputCover" style="width: 130px;"></td>
+            <td><input type="text" ng-model="checkIn.checkInDeposit-checkIn.checkInConsume" disabled="disabled" class="inputCover" style="width: 130px;"></td>
         </tr>
         <tr>
-            <td>预授权金额：</td>
+            <td>预授权金额：（准备不要）</td>
             <td><input type="text" value="0.00" disabled="disabled " style="width: 130px;"></td>
             <td>备注：</td>
-            <td colspan="3"><input type="text" style="width: 455px;"></td>
+            <td colspan="3"><input type="text" style="width: 455px;" ng-model="guestOut.remark"></td>
         </tr>
         <tr>
             <td>支付方式：</td>
             <td>
-                <select>
-                    <option>现金</option>
-                    <option>支付宝</option>
-                    <option>信用卡</option>
+                <select ng-options="x.currencyCode for x in currencies" ng-model="currency" ng-init="currency=currencies[0]">
                 </select>
             </td>
             <td>退款金额：</td>
-            <td colspan="3"><input type="text" style="width:130px;" class="inputCover"></td>
+            <td colspan="3"><input type="text" style="width:130px;" class="inputCover" ng-model="checkIn.checkInDeposit-checkIn.checkInConsume"></td>
         </tr>
 
     </table>
@@ -88,8 +76,8 @@
             <input type="button" class="sbe" value="商品入账"><input type="button" class="sbe" value="费用入账"><input type="button" class="sbe" value="门锁清卡"><input type="button" class="sbe" value="退押金">
         </div>
         <div class="fr">
-            <input type="button" class="sbe" value="结账">
-            <input type="button" class="sbe" value="打印">
+            <input type="button" class="sbe" value="结账" ng-click="guestOutAction()">
+            <input type="button" class="sbe" value="打印" >
             <input type="button" class="sbegray" value="关闭" ng-click="closeGuestOut()">
         </div>
     </dl>

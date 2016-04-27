@@ -1,5 +1,7 @@
 App.factory('Util', ['Service', function (Service) {
     var map = {};
+    /*核心参数Map*/
+    var otherParamMap={};
     return {
         /*进行逻辑业务操作*/
         getMapValue: function (key) {
@@ -7,6 +9,12 @@ App.factory('Util', ['Service', function (Service) {
         },
         pushMapValue: function (key, value) {
             map[key] = value;
+        },
+        getOtherParamMapValue: function (key) {
+            return otherParamMap[key];
+        },
+        pushOtherParamMapValue: function (key, value) {
+            otherParamMap[key] = value;
         },
         getValueByField: function (array, field, value) {
             var l = array.length;

@@ -51,8 +51,20 @@ App.factory('Service', ['$http', '$q','host', function ($http, $q,host) {
             );
         },
         /*根据条件查找*/
-        getSelectByPath:function(object,path){
+        getSelectSomeByPath:function(path,object){
             return $http.post(host+'/'+path+'/selectSome',object)
+                .then(
+                function (response) {
+                    return response.data;
+                },
+                function (errResponse) {
+                    return $q.reject(errResponse);
+                }
+            );
+        },
+        /*根据条件查找*/
+        getSelectOneByPath:function(path,object){
+            return $http.post(host+'/'+path+'/selectOne',object)
                 .then(
                 function (response) {
                     return response.data;

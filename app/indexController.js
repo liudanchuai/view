@@ -7,15 +7,15 @@
  * 特殊变量--试题中不存在的变量：
  * roomsShow[i]/room.roomCategoryShow：由于房间定义只有房类代码，所以这里Show是用于显示的，也就是中文
  */
-App.controller('Index',['$scope','Service','Util', function($scope,Service,Util) {
+App.controller('Index', ['$scope', 'Service', 'Util', function ($scope, Service, Util) {
     /**
      * 调试期临时变量
      */
-    $scope.user={};
+    $scope.user = {};
     /**
      * 页面加载就执行的方法
      */
-    $scope.onLoad =function() {
+    $scope.onLoad = function () {
         /*如果没有登录，先登录*/
         if ($scope.user == null) {
             angular.element(document.body).append('<div id="sz-popup-frame"></div>')
@@ -60,30 +60,56 @@ App.controller('Index',['$scope','Service','Util', function($scope,Service,Util)
         /*获得证件类别数组*/
         Service.getAllByPath('cardCategory')
             .then(
-            function(d){
-                $scope.cardCategories=d;
+            function (d) {
+                $scope.cardCategories = d;
             },
-            function(errResponse){
+            function (errResponse) {
                 alert(errResponse.data.message);
             }
         );
         /*获得币种类别数组*/
         Service.getAllByPath('currency')
             .then(
-            function(d){
-                $scope.currencies=d;
+            function (d) {
+                $scope.currencies = d;
             },
-            function(errResponse){
+            function (errResponse) {
                 alert(errResponse.data.message);
             }
         );
         /*获取小时房定义*/
         Service.getAllByPath('hourRoom')
             .then(
-            function(d){
-                $scope.hourRooms=d;
+            function (d) {
+                $scope.hourRooms = d;
             },
-            function(errResponse){
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        );
+        /*获得核心参数数组*/
+        Service.getAllByPath('otherParam')
+            .then(
+            function (d) {
+                $scope.otherParams = d;
+                /*初始化Map*/
+                var l = $scope.otherParams.length;
+                for (var i = 0; i < l; i++) {
+                    Util.pushOtherParamMapValue($scope.otherParams[i].otherParamCode, $scope.otherParams[i].otherParamValue);
+                    Util.pushOtherParamMapValue($scope.otherParams[i].otherParamValue, $scope.otherParams[i].otherParamCode);
+                }
+            },
+            function (errResponse) {
+                alert(errResponse.data.message);
+            }
+        );
+        /*获取加收房租定义*/
+        Service.getAllByPath('roomPriceAdd')
+            .then(
+            function (d) {
+                $scope.roomPriceAdds = d;
+            },
+            function (errResponse) {
                 alert(errResponse.data.message);
             }
         );
@@ -91,7 +117,7 @@ App.controller('Index',['$scope','Service','Util', function($scope,Service,Util)
          * 常量数组
          */
         /*性别*/
-        $scope.sexes=['男','女'];
+        $scope.sexes = ['男', '女'];
     };
     $scope.onLoad();
 }]);
