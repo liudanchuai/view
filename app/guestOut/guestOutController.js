@@ -3,35 +3,27 @@
  * 离店结算
  */
 App.controller('GuestOutController', ['$scope', 'Service', 'Util', function ($scope, Service, Util) {
-    /**
-     * 用于提交的对象
-     */
-    /*对象集合*/
+    /*用于提交的对象集合*/
     $scope.guestOut={};
-    /*消费明细数组*/
-    $scope.debtList=[];
-    /*结账记录对象*/
-    $scope.debtPay={};
-    /*离店明细对象*/
-    $scope.checkOut={};
-    /*离店团队房明细数组（散客离店则为空）*/
-    $scope.checkOutGroupRoom={};
     /**
      * 用于查询和显示的对象
      */
+    /*消费明细数组*/
+    $scope.debtList=[];
     /*消费明细查询对象（根据他查找出需要显示的消费明细）*/
     $scope.debtQuery={};
     /*在店户籍信息*/
     $scope.checkIn={};
     /*在店户籍查询对象*/
     $scope.checkInQuery={};
+    /*额外加收的房租debt*/
+    $scope.debtAdd={};
     /**
      * 初始化数据
      */
     $scope.onLoad=function(){
         /*设计查询对象*/
         $scope.debtQuery.roomId=$scope.room.roomId;
-        $scope.checkInQuery.roomId=$scope.room.roomId;
         Service.getSelectSomeByPath('debt',$scope.debtQuery)
             .then(
             function(d){
@@ -41,6 +33,7 @@ App.controller('GuestOutController', ['$scope', 'Service', 'Util', function ($sc
                 alert(errResponse.data.message);
             }
         );
+        $scope.checkInQuery.roomId=$scope.room.roomId;
         Service.getSelectOneByPath('checkIn',$scope.checkInQuery)
             .then(
             function(d){
@@ -73,6 +66,19 @@ App.controller('GuestOutController', ['$scope', 'Service', 'Util', function ($sc
             var timeLimit=moment('2050-01-01 '+a[l].timeLimit);
             /*获取时间成功之后判断是否加收房租*/
             if(Util.getOtherParamMapValue('JSFZ')=='Y' && $scope.now.hour()>timeLimit.hour()){
+                $scope.debtAdd.doTime=$scope.now.format('YYYY-MM-DD hh:mm:ss');
+                $scope.debtAdd.posNumber=$scope.debtList[0].posNumber;
+                if(a[l].roomAddByMultiple!=null){
+                    $scope.debtAdd.consume=$scope.checkIn.finalRoomPrice*a[l].roomAddByMultiple;
+                }else{
+                    $scope.debtAdd.consume=a[l].roomAddStatic;
+                }
+                $scope.debtAdd.description='加收房租:'+$scope.debtAdd.consume;
+                $scope.debtAdd.selfAccount=$scope.checkIn.selfAccount;
+                $scope.debtAdd.roomId=$scope.room.roomId;
+                $scope.debtAdd.protocolCode=$scope.checkIn.protocolCode;
+                $scope.debtAdd.userId=$scope.user.userId;
+                $scope.debtList.push($scope.debtAdd);
                 return true
             }
         }
@@ -84,6 +90,7 @@ App.controller('GuestOutController', ['$scope', 'Service', 'Util', function ($sc
         $scope.guestOut.roomIdList.push($scope.room.roomId);
         $scope.guestOut.currency=$scope.currency.currencyCode;
         $scope.guestOut.userId=$scope.user.userId;
+        $scope.guestOut.debtAdd=$scope.debtAdd;
         Service.doAction('guestOut',$scope.guestOut)
             .then(
             function(d){
