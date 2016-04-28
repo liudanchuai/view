@@ -2,15 +2,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Angular JS Views</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css"/>
-    <link rel="stylesheet" href="../css/jquery.contextmenu.css"/>
-    <link rel="stylesheet" href="../css/indexRoomState.css"/>
-    <link rel="stylesheet" href="../css/public/common.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link href="../css/popup.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="../css/teamCheckIn.css">
-    <link rel="stylesheet" type="text/css" href="../myjs/jquery.datetimepicker.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/jquery.contextmenu.css"/>
+    <link rel="stylesheet" href="css/indexRoomState.css"/>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/popup.css"/>
+    <link rel="stylesheet" href="css/teamCheckIn.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css"/>
     <!--OtherJs-->
     <script src="otherJS/jquery.min.js"></script>
     <script src="otherJS/jquery.datetimepicker.js"></script>
@@ -29,25 +29,14 @@
     <script src="directive/datetimepicker.js"></script>
     <script src="directive/szRightClick.js"></script>
     <!--controller-->
-    <script src="mainState/mainStateController.js"></script>
     <script src="indexController.js"></script>
+    <script src="mainState/mainStateController.js"></script>
     <script src="login/loginController.js"></script>
     <script src="guestIn/guestInController.js"></script>
     <script src="guestOut/guestOutController.js"></script>
     <script src="setting/settingController.js"></script>
-    <script src="teamGuestOut/guestOutGroupController.js"></script>
+    <script src="guestOutGroup/guestOutGroupController.js"></script>
     <script src="guestInGroup/guestInGroupController.js"></script>
-    <!--other-->
-    <script language="javascript" type="text/javascript">
-        $(document).ready(function (){
-            $(".menubox a").each(function(index){
-                $(this).click(function(){
-                    $(".menubox a").removeClass("hover");
-                    $(".menubox a").eq(index).addClass("hover");
-                });
-            });
-        });
-    </script>
 </head>
 <body  ng-app="mainApp">
 <div class="topbox">
@@ -100,7 +89,7 @@
     </div>
 </div>
 
-<div ng-controller="Index">
+<div ng-controller="IndexController">
     <div ng-view></div>
 </div>
 

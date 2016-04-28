@@ -30,10 +30,10 @@ App.config(['$routeProvider',
             }).
             when('/guestInGroup',{
                 templateUrl:'guestInGroup/guestInGroup.html',
-                controller:'GuestInController'
+                controller:'GuestInGroupController'
             }).
             otherwise({
-                redirectTo: '/viewStudents'
+                redirectTo: '/mainState'
             });
     }]);
 

@@ -19,7 +19,7 @@ select {
     appearance:none;
     -moz-appearance:none;
     -webkit-appearance:none;
-    background: #fff url(../images/my_xiala1.gif) 93% 9px no-repeat;
+    background: #fff url(../../images/my_xiala1.gif) 93% 9px no-repeat;
     padding:0px 14px 0px 5px!important;
     height: 26px;
 }
@@ -95,7 +95,7 @@ text-shadow: 0px 2px 0px #fff,0px -2px 0px #fff,2px 0px 0px #fff, -2px 0px 0px #
 .tanchuang dl.jiesuan .input { border: 1px solid #ccc; height: 28px; line-height: 28px; width: 93%;}
 
 
-.tc_xl{width:90%;padding-left: 10px; position:relative;background: #fff url(../images/my_xiala1.gif) 93% 9px no-repeat;cursor:pointer; height: 24px; line-height: 24px; border: 1px solid #ccc;}
+.tc_xl{width:90%;padding-left: 10px; position:relative;background: #fff url(../../images/my_xiala1.gif) 93% 9px no-repeat;cursor:pointer; height: 24px; line-height: 24px; border: 1px solid #ccc;}
 .tc_xl_txt{float:left;width: 100%;line-height: 24px;padding-right:17px;color:#555; font-size: 14px; font-weight: normal}
 .tc_xl_list{border:1px solid #ccc; background: #fff}
 .tc_xl_txt,.tc_xl_list li{text-indent:0px;overflow:hidden;}

@@ -7,7 +7,7 @@
  * 特殊变量--试题中不存在的变量：
  * roomsShow[i]/room.roomCategoryShow：由于房间定义只有房类代码，所以这里Show是用于显示的，也就是中文
  */
-App.controller('Index', ['$scope', 'Service', 'Util', function ($scope, Service, Util) {
+App.controller('IndexController', ['$scope', 'Service', 'Util', function ($scope, Service, Util) {
     /**
      * 调试期临时变量
      */

@@ -1,4 +1,4 @@
-@import "foot.css";
+@import "../../css/public/foot.css";
 * {  outline:none;}
 html,body { margin: 0px; padding: 0px;}
 /* webkit, opera, IE9 */

@@ -31,3 +31,12 @@ function RowDelete(obj) {
     var trobj = $(obj).parent().parent();
     $(trobj).remove();
 }
+/*index.html调用*/
+    $(document).ready(function (){
+        $(".menubox a").each(function(index){
+            $(this).click(function(){
+                $(".menubox a").removeClass("hover");
+                $(".menubox a").eq(index).addClass("hover");
+            });
+        });
+    });
