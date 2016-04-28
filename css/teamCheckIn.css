@@ -1,18 +1,25 @@
 .canUseRoom { border: 2px solid #ccc; margin-top: 20px; position: relative; height: 200px;}
 .canUseRoom .curTit { width: 70px; height: 20px; line-height: 20px; position: absolute;
     top:-20px; text-align: center; font-size: 14px; color: #0e90d2; background: #e1eaff; left: 50%; margin-left: -35px;}
-.checkInRoom { height: 160px; overflow-y: auto; padding: 20px 0px 10px 10px}
-.checkInRoom .roomID,.checkInRoomC .roomID { width: 60px; height: 25px; line-height: 25px; text-align: center; border: 1px solid #fff; background: #e5e5e5;
-    -webkit-border-radius:3px;
-    -moz-border-radius:3px;
-    border-radius:3px;
-    box-shadow: 1px 1px 1px #999;
-    -webkit-box-shadow: 1px 1px 1px #999;
-    -moz-box-shadow: 1px 1px 1px #999;
+
+.checkInDiv { margin-left: 400px;}
+.checkInEnter {padding: 10px; border:5px solid #fff;background: #f1eae1;
+    -webkit-box-shadow: 1px 1px 0px #bbb;
+    -moz-box-shadow: 1px 1px 0px #bbb;
+    box-shadow: 1px 1px 0px #bbb; margin-top: 20px; height: 150px}
+.checkInEnter:after { content: ''; height: 0px; line-height: 0px; display: block; overflow: hidden; clear: both}
+.checkInEnter ul { float: left; width: 100%}
+.checkInEnter ul li {padding: 5px 5px 5px 0px; height: 25px; line-height: 25px; width: 250px; float: left}
+.checkInEnter ul li label {
+    width:90px;
     float: left;
-    display: block;
-    margin:4px 4px;
-    color:#3e5797; font-weight: normal; font-size: 12px;
+    text-align: right;
+    line-height: 24px;
 }
-.checkInRoom .roomID:hover,.checkInRoomC .roomID:hover { color: #a14e04}
-.checkInRoom .roomID.hover,.checkInRoomC .roomID.hover  { background:#a14e04; color: #fff; }
+
+.tableTabBox { padding: 20px 10px; border: 1px solid #ddd; background: #f1f1f1; height: 230px; margin: 50px 0px 0px 0px; position: relative}
+.tableTabTitBox { width: 100%; height: 30px; position: absolute; top:-40px; left: -1px;}
+.tableTabTit { width: 100px; height: 30px; line-height: 30px;text-align: center; font-size: 14px; color: #333;
+ float: left; background: #fff;
+}
+.tabTitHover { background: #f1f1f1!important; border: 1px solid #ddd; border-bottom:0px; }

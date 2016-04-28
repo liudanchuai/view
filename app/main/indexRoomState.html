@@ -61,7 +61,8 @@
 <!--需要创建一个透明的覆盖层防止鼠标mousein如其他的房态-->
 <div id="rightClickMainState" style="display: none; position: absolute; width: 100px; height: 100px; background: #ccc; z-index: 99999">
     <ul>
-        <li ng-click="clickGuestOut()">离店结算</li>
+        <li ng-click="clickGuestOut()">客人结账</li>
+        <li ng-click="clickGuestOutGroup()">团队结账</li>
         <li ng-click="">收取预付</li>
         <li ng-click="">房吧录入</li>
     </ul>
@@ -70,3 +71,4 @@
 <!--弹出界面-->
 <div ng-include="'guestIn/GuestIn.html'" ng-if="popGuestIn"></div>
 <div ng-include="'guestOut/guestOut.html'" ng-if="popGuestOut"></div>
+<div ng-include="'teamGuestOut/teamGuestOut.html'" ng-if="popGuestOutGroup"></div>

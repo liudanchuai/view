@@ -106,6 +106,10 @@ App.controller('MainController', ['$scope', 'Service', 'Util', function ($scope,
     $scope.clickGuestOut=function(){
         $scope.popGuestOut=true
     };
+    /*鼠标左键单击团队结算*/
+    $scope.clickGuestOutGroup=function(){
+        $scope.popGuestOutGroup=true;
+    }
     /**
      * 私有方法
      */

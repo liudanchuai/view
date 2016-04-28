@@ -28,8 +28,11 @@
         </ul>
     </div>
     <!--Filter end-->
+
+
     <div id="main" style="height: 700px;">
-        <div class="tableBordernone" style="width:350px; height: 100%; float: right;">
+        <!-- 房间信息录入 begin -->
+        <div class="tableBordernone" style="width:350px; height: 100%; float: left; margin-right: 30px; margin-top: 0px;">
             <table>
                 <tr>
                     <td>房间类别：</td>
@@ -89,18 +92,208 @@
                 <input type="button" value="添加" class="sbe">
             </dl>
         </div>
-        <div style="float: left">
-            <table class="tableBorderaaa" style="width:100%">
-                <tr>
-                    <td>团名：</td>
-                    <td><input type="text"></td>
-                    <td>领队姓名：</td>
-                    <td><input type="text"></td>
-                    <td>电话：</td>
-                    <td><input type="text"></td>
-                </tr>
-            </table>
+        <!-- 房间信息录入end -->
+
+        <!-- right begin -->
+        <div class="checkInDiv">
+            <!-- 团队信息录入begin -->
+            <div class="checkInEnter">
+                <ul>
+                    <li>
+                        <label>团名：</label>
+                        <input type="text" style="width: 120px;">
+                    </li>
+                    <li>
+                        <label>客人来源：</label>
+                        <select style="width: 132px;">
+                            <option>客人自入</option>
+                            <option>美团</option>
+                        </select>
+                    </li>
+                    <li style="width: 300px">
+                        <label style="width: 100px">预定转入住：</label>
+                        <select style="width: 192px;">
+                            <option>请选择预定单号</option>
+                            <option>123456</option>
+                            <option>456789</option>
+                        </select>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label>领队姓名：</label>
+                        <input type="text" style="width: 120px;">
+                    </li>
+                    <li>
+                        <label>电话：</label>
+                        <input type="text" style="width: 120px;">
+                    </li>
+                    <li style="width: 300px">
+                        <label style="width: 100px">会员卡号：</label>
+                        <input type="text" style="width: 180px;">
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label>押金：</label>
+                        <input type="text" value="" style="width: 120px;">
+                    </li>
+
+                    <li>
+                        <label>支付方式：</label>
+                        <select style="width: 132px;">
+                            <option>信用卡</option>
+                            <option>支付宝</option>
+                            <option>微信</option>
+                        </select>
+                    </li>
+                    <li style="width: 300px">
+                        <label style="width: 100px">备注：</label>
+                        <input type="text" style="width: 180px;">
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label>入住时间：</label>
+                        <input type="text" value="2016-05-22 10:00" disabled="disabled" style="width: 120px;">
+                    </li>
+                    <li>
+                        <label>预住天数：</label>
+                        <input type="button" class="jia" value="-" style="margin-right: -1px;" sz-minus="Days">
+                        <input type="text" m value="1" style="width: 60px;" id="Days">
+                        <input type="button" class="jia" value="+" style="margin-left: -1px;" sz-add="Days">
+                    </li>
+                    <li style="width: 300px">
+                        <label style="width: 100px">预离时间：</label>
+                        <input type="text" value="2016-05-23 10:00" style="width: 120px;">
+                    </li>
+                </ul>
+            </div>
+            <!-- 团队信息录入 end -->
+
+            <div class="tableTabBox">
+                <!-- tab 切换按钮 -->
+                <div class="tableTabTitBox">
+                    <h1 class="tableTabTit tabTitHover">入住信息</h1>
+                    <h1 class="tableTabTit">客人信息</h1>
+                </div>
+                <!-- tab 切换按钮 end -->
+                <!-- 入住信息表格 begin -->
+                <div>
+                    <div style="margin-right: 15px;">
+                        <table class="tableBlue" style="margin:0px; padding:0px!important; ">
+                            <thead>
+                            <tr>
+                                <td width="70">房号</td>
+                                <td width="150">房型</td>
+                                <td width="90">标准房价</td>
+                                <td width="90">结算价格</td>
+                                <td>早餐人数</td>
+                                <td width="50">操作</td>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div style="height:150px; overflow-y: scroll">
+                        <table class="tableBlue" style="margin: 0px!important; padding: 0px!important;">
+                            <tbody>
+                            <tr>
+                                <td width="70">203</td>
+                                <td width="150">标准双人间</td>
+                                <td width="90">100.00</td>
+                                <td width="90">100.00</td>
+                                <td>2</td>
+                                <td width="50"><span style="color: #d20000">[删除]</span></td>
+                            </tr>
+                            <tr>
+                                <td width="70">203</td>
+                                <td width="150">标准双人间</td>
+                                <td width="90">100.00</td>
+                                <td width="90">100.00</td>
+                                <td>2</td>
+                                <td width="50"><span style="color: #d20000">[删除]</span></td>
+                            </tr>
+                            <tr>
+                                <td width="70">203</td>
+                                <td width="150">标准双人间</td>
+                                <td width="90">100.00</td>
+                                <td width="90">100.00</td>
+                                <td>2</td>
+                                <td width="50"><span style="color: #d20000">[删除]</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 入住信息表格 end -->
+
+                <!-- 客人信息表格 begin -->
+                <div class="none">
+                    <div style="margin-right: 15px;">
+                        <table class="tableBlue" style="margin:0px; padding:0px!important; ">
+                            <thead>
+                            <tr>
+                                <td style="width:8%">房号</td>
+                                <td style="width:9%">姓名</td>
+                                <td style="width:5%">性别</td>
+                                <td style="width:11%">民族</td>
+                                <td style="width:8%">证件类型</td>
+                                <td style="width:20%">证件号码</td>
+                                <td style="width:35%">地址</td>
+                                <td style="width:5%">操作</td>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div style="height:150px; overflow-y: scroll">
+                        <table class="tableBlue" style="margin: 0px!important; padding: 0px!important;">
+                            <tbody>
+                            <tr>
+                                <td style="width:8%">
+                                    <select>
+                                        <option>203</option>
+                                    </select>
+                                </td>
+                                <td style="width:9%"><input type="text"></td>
+                                <td style="width:5%">
+                                    <select>
+                                        <option>男</option>
+                                        <option>女</option>
+                                    </select>
+                                </td>
+                                <td style="width:11%">
+                                    <select>
+                                        <option>汉族</option>
+                                        <option>满族</option>
+                                        <option>维吾尔族</option>
+                                    </select>
+                                </td>
+                                <td style="width:8%">
+                                    <select>
+                                        <option>身份证</option>
+                                        <option>军人证</option>
+                                        <option>退休证</option>
+                                    </select>
+                                </td>
+                                <td style="width:20%"><input type="text"></td>
+                                <td style="width:35%"><input type="text"></td>
+                                <td style="width:5%"><span style="color: #d20000">[删除]</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="button" style="padding: 10px 0px; margin: 0px;">
+                        <div class="fr">增加客人信息</div><div class="fl"><input type="button" value="读身份证"></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <!-- 客人信息表格end -->
+            </div>
+            <div class="button" style="border: none">
+                <input type="button" value="确认团队开房">
+            </div>
         </div>
+        <!-- right end -->
 
     </div>
 </div>

@@ -1,0 +1,108 @@
+<div class="bgblack" ng-click="closeGuestOutGroup()">
+</div>
+<div class="tanchuang">
+    <dl class="tctit"><h1>团队结账</h1></dl>
+    <div style="max-height: 530px; overflow-y: auto;">
+    <table class="tableBordernone">
+        <tr>
+            <td>入住单号：</td>
+            <td>201604250000</td>
+            <td>团名：</td>
+            <td style="width: 200px;">
+                <input type="text" style="width: 150px;" value="芭啦芭啦樱之花">
+            </td>
+            <td>领队姓名：</td>
+            <td><input type="text" value="李某某" disabled="disabled"></td>
+            <td>电话：</td>
+            <td style="width: 120px;"><input type="text" value="12345678901" disabled="disabled"></td>
+        </tr>
+        <tr>
+            <td>入住时间：</td>
+            <td style="width: 140px;">2016-04-25 11:00</td>
+            <td>占房信息：</td>
+            <td colspan="5">
+                <div class="checkInRoom">
+                    <a href="#" class="roomID hover">6001</a>
+                    <a href="#" class="roomID hover">6002</a>
+                    <a href="#" style="margin-left: 10px; margin-top: 10px; color: #d20000" class="icon-credit-card fl">读门锁卡</a>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+    <table class="tableBlue" style="width: 960px; margin-left: -10px;">
+        <thead>
+        <tr>
+            <td width="10%">房号</td>
+            <td width="23%">项目名称</td>
+            <td width="10%">消费金额</td>
+            <td width="12%">支付方式</td>
+            <td width="15%">入账时间</td>
+            <td width="20%">备注</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>309</td>
+            <td>房租</td>
+            <td>100.00</td>
+            <td></td>
+            <td>2016-04-25 11:03</td>
+            <td>自动加收房租</td>
+        </tr>
+        <tr>
+            <td>309</td>
+            <td>入住押金</td>
+            <td>0.00</td>
+            <td>现金</td>
+            <td>2016-04-25 11:03</td>
+            <td>入住押金</td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="tableBorderfff">
+        <tr>
+            <td style="width: 120px;">消费金额：</td>
+            <td><input type="text" value="100.00" disabled="disabled " style="width: 130px;"></td>
+            <td>团队预付：</td>
+            <td><input type="text" value="999.00" disabled="disabled" style="width: 130px;"></td>
+            <td>现金退款：</td>
+            <td><input type="text" value="999.00" disabled="disabled" class="inputCover" style="width: 130px;"></td>
+        </tr>
+        <tr>
+            <td>预授权：</td>
+            <td><input type="text" value="0.00" disabled="disabled " style="width: 130px;"></td>
+            <td>备注：</td>
+            <td colspan="3"><input type="text" style="width: 455px;"></td>
+        </tr>
+        <tr>
+            <td>支付方式：</td>
+            <td>
+                <select>
+                    <option>现金</option>
+                    <option>支付宝</option>
+                    <option>信用卡</option>
+                </select>
+            </td>
+            <td>储值卡号：</td>
+            <td colspan="3"><input type="text" style="width:130px;" class="inputCover"></td>
+        </tr>
+
+    </table>
+   </div>
+    <dl class="button">
+        <div class="fl" style="width:450px; text-align: left ">
+            <input type="button" class="sbe" value="商品入账">
+            <input type="button" class="sbe" value="费用入账">
+            <input type="button" class="sbe" value="单退押金">
+            <input type="button" value="城市挂账">
+        </div>
+        <div class="fr">
+            <input type="button" value="读储值卡">
+            <input type="button" class="sbe" value="结账">
+            <input type="button" class="sbe" value="明细打印">
+            <input type="button" class="sbegray" value="关闭" ng-click="closeGuestOutGroup()">
+        </div>
+    </dl>
+
+</div>

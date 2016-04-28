@@ -72,7 +72,7 @@
             <span style="color:red" ng-show="formRoomCategory.categoryName.$dirty && formRoomCategory.categoryName.$invalid">
                 <span ng-show="formRoomCategory.categoryName.$error.required">房间名称是必需的</span>
             </span>
-        <input type="submit" value="增加" ng-disabled="formRoomCategory.$invalid">
+        <input type="submit" value="增加" ng-disabled="formRoomCategory.$invalid" ng-click="createRoomCategory()">
     </form>
     <div>房间定义</div>
     <table>

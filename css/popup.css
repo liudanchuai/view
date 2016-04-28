@@ -7,7 +7,7 @@ select::-ms-expand { display: none; }
 table { border-collapse: collapse; border-spacing: 0px; font-size: 14px;}
 table,tr,td { margin: 0px; padding: 0px;}
 textarea { border: 1px solid #ccc; padding: 10px; line-height: 24px; overflow-y: auto; font-size: 14px; text-align: left; color: #555}
-input[type=text],select{ border: 1px solid #ccc; padding: 0px 5px; width: 70%; height:24px; line-height: 24px; color: #555; float: left; font-size: 14px;}
+input[type=text],input[type=password],select{ border: 1px solid #ccc; padding: 0px 5px; width: 70%; height:24px; line-height: 24px; color: #555; float: left; font-size: 14px;}
 option { color: #555; line-height: 24px; height: 24px;}
 input:hover, select:hover, textarea:hover,.inputCover {
     border-color: #66afe9 !important;
@@ -20,7 +20,7 @@ select {
     -moz-appearance:none;
     -webkit-appearance:none;
     background: #fff url(../images/my_xiala1.gif) 93% 9px no-repeat;
-    padding-right: 14px;
+    padding:0px 14px 0px 5px!important;
     height: 26px;
 }
 
@@ -37,15 +37,15 @@ input[disabled=disabled],select[disabled=disabled]{
     padding: 0px;
     border: 1px solid #ccc;
     background: #eee;
-    width: 24px!important;
-    height: 24px;
+    width: 26px!important;
+    height: 26px;
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
     line-height: 18px;
     float: left;
 }
-#tanchuang { position:absolute; width: 100%; height: 100%; top:0px; bottom: 0px; left: 0px; right:0px; z-index: 999; background: rgba(0,0,0,0.5)}
+#tanchuang { position:absolute; width: 100%; height: 100%; top:0px; bottom: 0px; left: 0px; right:0px; z-index: 9999; background: rgba(0,0,0,0.5)}
 .bgblack { width: 100%; height: 100%; top:0px; right:0px; left: 0px; bottom: 0px; background: rgba(0,0,0,0.2); position:fixed; z-index: 980; display: block}
 .tanchuang { position:fixed; top:10%; left: 0px; right: 0px; margin: auto; z-index: 990; width: 980px; height:auto; display: block; padding:40px 30px 30px 30px; background: #f1f1f1; border-radius: 10px;
     -webkit-box-shadow: inset 0px 0px 8px #bbb;
@@ -77,8 +77,8 @@ input[disabled=disabled],select[disabled=disabled]{
 .tanchuang dl.add_delet { background: none; height: 25px; line-height: 25px; text-align: left; font-size:20px; margin: 0px; font-weight: lighter}
 .tanchuang dl dd i { width: 25px; height: 25px; line-height: 25px; float: right; font-size: 20px; color: #6b8bdf; margin: 0px; margin-top: 3px;}
 .tanchuang dl dd i span { display: none}
-.tanchuang dl.tctit { height: 2px; line-height: 2px; background: #a8b8e2; position: relative}
-.tanchuang dl.tctit h1 { font-size: 16px; line-height: 30px; position: absolute; width: 150px; top:-30px; left: 50%; margin-left: -75px; text-align: center; padding: 0px 10px; color: #274286; background: #f1f1f1;
+.tctit { height: 2px; line-height: 2px; background: #a8b8e2; position: relative}
+.tctit h1 { font-size: 16px; line-height: 30px; position: absolute; width: 150px; top:-30px; left: 50%; margin-left: -75px; text-align: center; padding: 0px 10px; color: #274286; background: #f1f1f1;
 text-shadow: 0px 2px 0px #fff,0px -2px 0px #fff,2px 0px 0px #fff, -2px 0px 0px #fff;
 }
 .tanchuang dl.tabsheet { margin-bottom: 0px; margin-top: 20px; background: none;line-height: 25px;text-shadow: 1px 0px 0px #fff,-1px 0px 0px #fff,0px 1px 1px #fff,0px -1px 0px #fff;color: #274286;}
@@ -243,37 +243,24 @@ table tr td:last-child{ border-right: none}
 .leaveButton .button { margin: 0px; padding: 5px 0px; border: none}
 .leaveButton .button a.sbe { width: 80px; height: 20px; line-height: 20px; overflow: hidden; display: block; float: left; margin-bottom: 10px;}
 
-
-
-
-
-/*按钮*/
-/*.button {  background: none; margin-top: 20px; text-align: center;border-top: 2px solid #a8b8e2;  padding-top: 20px;}
-.button input[type=button],.button a.sbe,.button a.sbeyellow,.button a.sbegray { padding: 9px 20px; text-align: center; margin: 0px auto; margin-right: 9px; border:1px solid #ffe292;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px; background: linear-gradient(#f0b14d,#835c31);
-    color: #482d0a; cursor: pointer; font-weight: bold; margin-bottom: 10px;}
-.button a.sbe:hover { background: linear-gradient(#835c31,#f0b14d);}
-.button a.sbegray { background: linear-gradient(#eee,#afafaf); color: #555; border: 1px solid #ccc;}
-.button a.sbeyellow {background: linear-gradient(#f19300,#ae6a00); color: #fff;}
-.button a.sbeyellow:hover { background: linear-gradient(#ffac29,#ae6a00); color: #fff2de}
-.button i { margin-right: 5px;}
-.button i.icon-ok { color: #218e03}
-.button i.icon-remove { color: #b70000}
-.button i.icon-edit { color:#9a6407; font-size: 18px;}
-.button i.icon-signout { color: #0067b7; font-size: 18px;}
-.button i.icon-print{color: #0067b7; }!*打印*!
-.button i.icon-search { color: #77a515}!*查询*!
-.button i.icon-user { color: #da7600}!*读取会员*!
-.button i.icon-inbox { color:#d41212;}!*哑房处理*!
-.button i.icon-share { color: #0067b7}!*转房客*!
-.button i.icon-external-link { color:#77a515}!*转单位*!
-.button i.icon-plus { color: #d20000;}
-
-
-.button .gray {background: linear-gradient(#ff8400, #a75a07);  color:#000; border: 1px solid #ccc}
-.button .red { background: linear-gradient(#a02121,#721010); color:#fff; border: 1px solid #ccc}*/
+/*房号样式*/
+.tanchuang .checkInRoom { width: 100%; height: auto; overflow: auto; padding: 0px;}
+.checkInRoom { height: 160px; overflow-y: auto; padding: 20px 0px 10px 10px}
+.checkInRoom .roomID,.checkInRoomC .roomID { width: 60px; height: 25px; line-height: 25px; text-align: center; border: 1px solid #fff; background: #e5e5e5;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    box-shadow: 1px 1px 1px #999;
+    -webkit-box-shadow: 1px 1px 1px #999;
+    -moz-box-shadow: 1px 1px 1px #999;
+    float: left;
+    display: block;
+    margin:4px 4px;
+    color:#3e5797; font-weight: normal; font-size: 12px;
+}
+.checkInRoom .roomID:hover,.checkInRoomC .roomID:hover { color: #a14e04}
+.checkInRoom .roomID.hover,.checkInRoomC .roomID.hover  { background:#a14e04; color: #fff; }
+/*房号样式end*/
 
 .button {  background: none; margin-top: 20px; text-align: center;border-top: 2px solid #c0cae3;  padding-top: 20px;}
 .button input[type=button],.button .sbegray { padding: 7px 20px; text-align: center; margin-right: 9px; border:1px solid #ba9761;
@@ -320,7 +307,7 @@ input.butn {
 
 .accruedTableBox { float: left; margin-left: 50px; margin-top: 50px; position: relative}
 
-.tableBlue th {
+.tableBlue thead td {
     font-size: 14px;
     border-bottom: 1px #967040 solid;
     border-right: 1px #efd6a5 solid;
@@ -336,8 +323,9 @@ input.butn {
     text-align: center;
     padding: 2px 5px;
     font-size: 12px;
+    background: #fff;
 
 }
-.tableBlue input,.tableBlue select{ width: 100%}
+.tableBlue input,.tableBlue select{ width: 88%; float: none}
 
 
