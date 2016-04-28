@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="../css/public/common.css">
     <link rel="stylesheet" href="../css/index.css">
     <link href="../css/popup.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/teamCheckIn.css">
     <link rel="stylesheet" type="text/css" href="../myjs/jquery.datetimepicker.css"/>
-    <!--Jquery-->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../myjs/jquery.datetimepicker.js"></script>
+    <!--OtherJs-->
+    <script src="otherJS/jquery.min.js"></script>
+    <script src="otherJS/jquery.datetimepicker.js"></script>
+    <script src="otherJS/myJquery.js"></script>
+    <script src="otherJS/moment.js"></script>
     <!--AngularJs-->
     <script src="angular.js"></script>
     <script src="angular-route.js"></script>
@@ -22,20 +25,19 @@
     <script src="service/service.js"></script>
     <script src="service/util.js"></script>
     <!--directive-->
-    <script src="directive/common.js"></script>
-    <script src="directive/myJquery.js"></script>
+    <script src="directive/addAndMinus.js"></script>
     <script src="directive/datetimepicker.js"></script>
+    <script src="directive/szRightClick.js"></script>
     <!--controller-->
-    <script src="main/szRightClick.js"></script>
-    <script src="main/mainController.js"></script>
+    <script src="mainState/mainStateController.js"></script>
     <script src="indexController.js"></script>
     <script src="login/loginController.js"></script>
-    <script src="GuestIn/GuestInController.js"></script>
+    <script src="guestIn/guestInController.js"></script>
     <script src="guestOut/guestOutController.js"></script>
-    <script src="setting/configureController.js"></script>
+    <script src="setting/settingController.js"></script>
     <script src="teamGuestOut/guestOutGroupController.js"></script>
+    <script src="guestInGroup/guestInGroupController.js"></script>
     <!--other-->
-    <script src="otherJS/moment.js"></script>
     <script language="javascript" type="text/javascript">
         $(document).ready(function (){
             $(".menubox a").each(function(index){
@@ -51,7 +53,7 @@
 <div class="topbox">
     <div class="logo"><img src="../images/logo.png"></div>
     <div class="menubox">
-        <a href="#viewStudents" class="hover">
+        <a href="#mainState" class="hover">
             <i class="icon-home"></i>
             <h1>房态预览</h1>
         </a>
@@ -59,9 +61,9 @@
             <i class="icon-lock"></i>
             <h1>营销预定</h1>
         </a>
-        <a href="#">
+        <a href="#guestInGroup">
             <i class="icon-laptop"></i>
-            <h1>前台管理</h1>
+            <h1>团队开房</h1>
         </a>
         <a href="#">
             <i class="icon-vip"></i>
@@ -99,8 +101,6 @@
 </div>
 
 <div ng-controller="Index">
-    <!--<p><a href="#addStudent">Add Student{{2+2}}</a></p>
-    <p><a href="#viewStudents">View Students</a></p>-->
     <div ng-view></div>
 </div>
 

@@ -8,7 +8,7 @@
  */
 'use strict';
 
-App.controller('ConfigureController', ['$scope', 'Service', function ($scope, Service) {
+App.controller('SettingController', ['$scope', 'Service', function ($scope, Service) {
 
     $scope.companyCards = [];//单位帐卡
     $scope.companyLords = [];//单位签单人----单位帐卡从表 3列

@@ -3,7 +3,7 @@
  * 主页控制器，主要负责初始化所有经常用到的系统参数,Service负责从服务器索取数据，Util提供一些本模块用到的方法
  */
 
-App.controller('MainController', ['$scope', 'Service', 'Util', function ($scope, Service, Util) {
+App.controller('MainStateController', ['$scope', 'Service', 'Util', function ($scope, Service, Util) {
     /**
      * 声明基本变量
      */
