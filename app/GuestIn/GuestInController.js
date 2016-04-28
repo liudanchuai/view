@@ -76,6 +76,7 @@ App.controller('GuestInController',['$scope','$filter','Service','Util', functio
     /*增加随行宾客*/
     $scope.addCheckInSame=function(){
         if($scope.checkInSameList.length<$scope.room.totalBed-1) {
+            $scope.checkInSame.roomId=$scope.room.roomId;
             $scope.checkInSame.cardType=$scope.cardCategoryInSame.code;
             $scope.checkInSameList.push(angular.copy($scope.checkInSame));
             $scope.checkInSame=null;
